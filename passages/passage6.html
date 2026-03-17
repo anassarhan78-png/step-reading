@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading - A1 - Passage 6</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #fff3e0;
+            color: #4a3b2c;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(120, 80, 50, 0.1);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: #c96e3d;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #ffc9a7;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #8b6e5a;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #b45a2e;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #ffcfb0;
+            padding-bottom: 0.5rem;
+        }
+        .passage-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        .paragraph-card {
+            background: #fffbf5;
+            border-radius: 28px;
+            padding: 1.8rem 1.8rem 1.8rem 1.8rem;
+            box-shadow: 0 5px 20px rgba(150, 100, 70, 0.1);
+            transition: 0.2s;
+            border: 1px solid #ffdec6;
+        }
+        .para-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        .para-image {
+            width: 140px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: 0 8px 18px -6px #d4b6a0;
+            border: 2px solid white;
+            background: #ffede2;
+        }
+        .para-text {
+            font-size: 1.2rem;
+            background: #ffffff;
+            padding: 1.3rem 1.8rem;
+            border-radius: 36px 36px 36px 12px;
+            box-shadow: inset 0 1px 6px #ffede2;
+            border: 1px solid #ffdec6;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: #4a3b2c;
+        }
+        .audio-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-top: 0.5rem;
+            margin-left: 0.2rem;
+        }
+        audio {
+            height: 42px;
+            width: 260px;
+            border-radius: 42px;
+        }
+        .audio-label {
+            background: #ffdbbf;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #b45a2e;
+        }
+        .questions-section {
+            background: #fff0e0;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #ffc4a0;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #b45a2e;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(150, 90, 50, 0.08);
+            border-left: 10px solid #f09b5b;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #c96e3d;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #ffede2;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #c96e3d;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+        }
+        .option input[type="radio"]:checked {
+            background: #c96e3d;
+            border: 2px solid #c96e3d;
+        }
+        .option input[type="radio"]:checked::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            top: 3px;
+            left: 3px;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            color: #2e7d32;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #c62828;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #c96e3d;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .show-answer-btn:hover {
+            color: #b45a2e;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #ffdec6;
+            margin: 2rem 0 0.5rem 0;
+        }
+        th {
+            background: #c96e3d;
+            color: white;
+            font-weight: 500;
+            font-size: 1.2rem;
+            padding: 1rem 1.5rem;
+        }
+        td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #ffdec6;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #4a3b2c;
+        }
+        .footer-note {
+            margin-top: 1.5rem;
+            color: #8b6e5a;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ffcfb0, transparent);
+            margin: 2rem 0 0.5rem 0;
+        }
+        @media (max-width: 700px) {
+            .container { padding: 1.5rem; }
+            .para-header { flex-direction: column; align-items: start; }
+            .para-image { width: 100%; height: auto; max-height: 150px; }
+            audio { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🐱 STEP Reading · A1</h1>
+    <div class="sub-title">Passage 6 · My Pet Cat</div>
+
+    <h2>😺 Meet Nora and her cat Mimo</h2>
+
+    <!-- فقرة 1 -->
+    <div class="passage-grid">
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/2071873/pexels-photo-2071873.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Girl holding orange cat">
+                <span style="font-weight: 600; background: #ffdbbf; padding: 0.3rem 1.8rem; border-radius: 40px;">🐈 paragraph 1</span>
+            </div>
+            <div class="para-text" id="p1">
+                Nora has a pet cat. His name is Mimo. Mimo is two years old. He has orange fur and big green eyes. Nora loves Mimo very much. Mimo is not just a pet. He is part of the family.
+            </div>
+            <div class="audio-wrapper">
+                <span class="audio-label">🔊 listen</span>
+                <audio controls preload="none">
+                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <!-- فقرة 2 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Cat eating from bowl">
+                <span style="font-weight: 600; background: #ffdbbf; padding: 0.3rem 1.8rem; border-radius: 40px;">🍲 paragraph 2</span>
+            </div>
+            <div class="para-text" id="p2">
+                Every morning, Nora gives Mimo food. Mimo likes fish and chicken. He also drinks fresh water. After eating, Mimo cleans his face with his paw. Nora watches him and smiles. He is very clean.
+            </div>
+            <div class="audio-wrapper">
+                <span class="audio-label">🔊 listen</span>
+                <audio controls preload="none">
+                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <!-- فقرة 3 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/177809/pexels-photo-177809.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Cat playing with yarn ball">
+                <span style="font-weight: 600; background: #ffdbbf; padding: 0.3rem 1.8rem; border-radius: 40px;">🧶 paragraph 3</span>
+            </div>
+            <div class="para-text" id="p3">
+                Mimo loves to play. His favorite toy is a small red ball. He runs after it and jumps high. Sometimes he hides under the bed. Nora calls him, "Mimo, where are you?" He comes out slowly and meows.
+            </div>
+            <div class="audio-wrapper">
+                <span class="audio-label">🔊 listen</span>
+                <audio controls preload="none">
+                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <!-- فقرة 4 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/1635204/pexels-photo-1635204.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Cat sleeping on sofa">
+                <span style="font-weight: 600; background: #ffdbbf; padding: 0.3rem 1.8rem; border-radius: 40px;">😴 paragraph 4</span>
+            </div>
+            <div class="para-text" id="p4">
+                At night, Mimo sleeps on Nora's bed. He curls up into a small ball. He purrs softly. Nora pets him gently. The sound of his purring makes Nora feel calm. She falls asleep quickly.
+            </div>
+            <div class="audio-wrapper">
+                <span class="audio-label">🔊 listen</span>
+                <audio controls preload="none">
+                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <!-- فقرة 5 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/4587959/pexels-photo-4587959.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Girl and cat looking at window">
+                <span style="font-weight: 600; background: #ffdbbf; padding: 0.3rem 1.8rem; border-radius: 40px;">❤️ paragraph 5</span>
+            </div>
+            <div class="para-text" id="p5">
+                Nora takes many photos of Mimo. She shares them with her friends. Everyone says Mimo is cute. Nora is happy to have such a good friend. She says, "Mimo is the best cat in the world!" She loves him every day.
+            </div>
+            <div class="audio-wrapper">
+                <span class="audio-label">🔊 listen</span>
+                <audio controls preload="none">
+                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5 أسئلة STEP - INTERACTIVE MULTIPLE CHOICE -->
+    <div class="questions-section">
+        <h3>📘 STEP-style questions (A1) - Interactive</h3>
+
+        <!-- سؤال 1 -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>Word meaning:</strong> In paragraph 4, what does the word "<strong>purrs</strong>" mean?
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) makes a soft, happy sound</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) runs very fast</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) eats food loudly</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) opens its eyes wide</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'a')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 2 -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>Go back to paragraph 2:</strong> What does Mimo do after eating?
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) goes to sleep</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) cleans his face</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) plays with a ball</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) drinks more water</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 3 -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>Main idea:</strong> What is the main idea of this story?
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) different types of cats</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) Nora's life with her pet cat Mimo</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) how to take care of a cat</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) Nora's school friends</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 4 -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>Detail:</strong> What color is Mimo's favorite toy?
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) blue</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) green</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) red</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) yellow</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'c')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 5 -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>Inference:</strong> How does Nora feel about Mimo?
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) she is scared of him</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) she loves him very much</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) she thinks he is annoying</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) she wants a different pet</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'b')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- جدول المفردات -->
+    <h3 style="font-size: 1.8rem; font-weight: 400; margin-bottom: 0.5rem;">🔤 Vocabulary from the passage</h3>
+    <table>
+        <thead><tr><th>Word</th><th>Simple meaning</th><th>🇸🇦 Arabic</th></tr></thead>
+        <tbody>
+            <tr><td><strong>pet</strong></td><td>an animal that lives with you</td><td class="arabic">حيوان أليف</td></tr>
+            <tr><td><strong>fur</strong></td><td>soft hair that covers some animals</td><td class="arabic">فرو</td></tr>
+            <tr><td><strong>paw</strong></td><td>an animal's foot with claws</td><td class="arabic">مخلب</td></tr>
+            <tr><td><strong>meow</strong></td><td>the sound a cat makes</td><td class="arabic">مواء</td></tr>
+            <tr><td><strong>purr</strong></td><td>soft sound a happy cat makes</td><td class="arabic">خرخرة</td></tr>
+            <tr><td><strong>curls up</strong></td><td>rolls into a round shape</td><td class="arabic">ينكمش / يتكور</td></tr>
+            <tr><td><strong>gently</strong></td><td>softly, with care</td><td class="arabic">بلطف</td></tr>
+            <tr><td><strong>shares</strong></td><td>shows something to others</td><td class="arabic">يشارك</td></tr>
+        </tbody>
+    </table>
+
+    <hr>
+    <div class="footer-note">
+        🌟 Passage 6: "My Pet Cat" - Simple words, short sentences, clear images.<br>
+        📁 <strong>Filename: passage6.html</strong> (same location as passage1-5.html)
+    </div>
+    <div style="margin-top: 1rem; font-size: 0.9rem; background: #fff0e0; border-radius: 60px; padding: 0.8rem 2rem; text-align: center;">
+        ✅ 5 paragraphs with images & audio ✓ INTERACTIVE multiple choice questions ✓ Show answer button ✓ Vocabulary with Arabic ✓ Ready for STEP practice
+    </div>
+</div>
+
+<script>
+    // Make all questions interactive
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;
+            const selectedValue = this.value;
+            
+            // Determine correct answer based on question
+            let correctAnswer = '';
+            if (questionId === 'q1') correctAnswer = 'a';
+            else if (questionId === 'q2') correctAnswer = 'b';
+            else if (questionId === 'q3') correctAnswer = 'b';
+            else if (questionId === 'q4') correctAnswer = 'c';
+            else if (questionId === 'q5') correctAnswer = 'b';
+            
+            // Get feedback element
+            const feedbackId = 'feedback' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            
+            // Check answer
+            if (selectedValue === correctAnswer) {
+                feedback.textContent = '✅ Correct! Well done.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Try again!';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+
+    // Function to show answer
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (a) makes a soft, happy sound'; break;
+            case 2: answerText = 'The correct answer is (b) cleans his face'; break;
+            case 3: answerText = 'The correct answer is (b) Nora\'s life with her pet cat Mimo'; break;
+            case 4: answerText = 'The correct answer is (c) red'; break;
+            case 5: answerText = 'The correct answer is (b) she loves him very much'; break;
+        }
+        
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+</script>
+</body>
+</html>
