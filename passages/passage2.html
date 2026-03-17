@@ -125,8 +125,8 @@
         .question-item {
             background: white;
             border-radius: 60px;
-            padding: 1.2rem 2rem;
-            margin-bottom: 1rem;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
             box-shadow: 0 4px 8px rgba(100, 60, 20, 0.05);
             border-left: 10px solid #e6a56f;
             font-size: 1.1rem;
@@ -142,6 +142,77 @@
             line-height: 30px;
             border-radius: 30px;
             margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #fef0e0;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #c77933;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+        }
+        .option input[type="radio"]:checked {
+            background: #c77933;
+            border: 2px solid #c77933;
+        }
+        .option input[type="radio"]:checked::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            top: 3px;
+            left: 3px;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            color: #2e7d32;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #c62828;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #b6581a;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .show-answer-btn:hover {
+            color: #8b5a2b;
         }
         table {
             width: 100%;
@@ -286,24 +357,74 @@
         </div>
     </div>
 
-    <!-- 5 أسئلة STEP - ALL MULTIPLE CHOICE -->
+    <!-- 5 أسئلة STEP - INTERACTIVE MULTIPLE CHOICE -->
     <div class="questions-section">
-        <h3>📘 STEP-style questions (A1) - Multiple Choice</h3>
+        <h3>📘 STEP-style questions (A1) - Interactive</h3>
 
-        <div class="question-item"><span class="q-num">1</span> <strong>Word meaning:</strong> In paragraph 2, what does the word "<strong>patient</strong>" mean?<br> 
-        (a) sick  <br> (b) calm and not in a hurry  <br> (c) fast  <br> (d) strong</div>
+        <!-- سؤال 1 -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>Word meaning:</strong> In paragraph 2, what does the word "<strong>patient</strong>" mean?
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) sick</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) calm and not in a hurry</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) fast</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) strong</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'b')">🔍 Show answer</button>
+        </div>
 
-        <div class="question-item"><span class="q-num">2</span> <strong>Go back to paragraph 4:</strong> How old is Sara?<br> 
-        (a) 4 years old  <br> (b) 6 years old  <br> (c) 8 years old  <br> (d) 10 years old</div>
+        <!-- سؤال 2 -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>Go back to paragraph 4:</strong> How old is Sara?
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) 4 years old</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) 6 years old</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) 8 years old</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) 10 years old</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'c')">🔍 Show answer</button>
+        </div>
 
-        <div class="question-item"><span class="q-num">3</span> <strong>Main idea:</strong> What is the main idea of this story?<br> 
-        (a) Ahmed's school  <br> (b) Ahmed's family  <br> (c) Ahmed's city  <br> (d) Ahmed's friends</div>
+        <!-- سؤال 3 -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>Main idea:</strong> What is the main idea of this story?
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) Ahmed's school</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) Ahmed's family</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) Ahmed's city</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) Ahmed's friends</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'b')">🔍 Show answer</button>
+        </div>
 
-        <div class="question-item"><span class="q-num">4</span> <strong>Detail:</strong> What does Ahmed's father do on Fridays? (paragraph 3)<br> 
-        (a) He works late  <br> (b) He takes them to the park  <br> (c) He cooks dinner  <br> (d) He visits friends</div>
+        <!-- سؤال 4 -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>Detail:</strong> What does Ahmed's father do on Fridays? (paragraph 3)
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) He works late</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) He takes them to the park</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) He cooks dinner</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) He visits friends</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'b')">🔍 Show answer</button>
+        </div>
 
-        <div class="question-item"><span class="q-num">5</span> <strong>Inference:</strong> How does Ahmed feel when he sees his grandparents?<br> 
-        (a) Sad  <br> (b) Angry  <br> (c) Happy  <br> (d) Tired</div>
+        <!-- سؤال 5 -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>Inference:</strong> How does Ahmed feel when he sees his grandparents?
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) Sad</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) Angry</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) Happy</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) Tired</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'c')">🔍 Show answer</button>
+        </div>
     </div>
 
     <!-- جدول المفردات -->
@@ -328,8 +449,57 @@
         📁 <strong>Filename: passage2.html</strong> (same location as passage1.html)
     </div>
     <div style="margin-top: 1rem; font-size: 0.9rem; background: #fef3e9; border-radius: 60px; padding: 0.8rem 2rem; text-align: center;">
-        ✅ ALL questions are now multiple choice ✓ Ready for STEP practice ✓ Correct filename: passage2.html
+        ✅ ALL questions are now INTERACTIVE ✓ Click on answers to check ✓ Show answer button ✓ Ready for STEP practice
     </div>
 </div>
+
+<script>
+    // Make all questions interactive
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;
+            const selectedValue = this.value;
+            
+            // Determine correct answer based on question
+            let correctAnswer = '';
+            if (questionId === 'q1') correctAnswer = 'b';
+            else if (questionId === 'q2') correctAnswer = 'c';
+            else if (questionId === 'q3') correctAnswer = 'b';
+            else if (questionId === 'q4') correctAnswer = 'b';
+            else if (questionId === 'q5') correctAnswer = 'c';
+            
+            // Get feedback element
+            const feedbackId = 'feedback' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            
+            // Check answer
+            if (selectedValue === correctAnswer) {
+                feedback.textContent = '✅ Correct! Well done.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Try again!';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+
+    // Function to show answer
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (b) calm and not in a hurry'; break;
+            case 2: answerText = 'The correct answer is (c) 8 years old'; break;
+            case 3: answerText = 'The correct answer is (b) Ahmed\'s family'; break;
+            case 4: answerText = 'The correct answer is (b) He takes them to the park'; break;
+            case 5: answerText = 'The correct answer is (c) Happy'; break;
+        }
+        
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+</script>
 </body>
 </html>
