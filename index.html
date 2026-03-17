@@ -4,41 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STEP Reading - تعلم القراءة بالإنجليزية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>📚 STEP Reading</h1>
+        <div class="floating-elements">
+            <i class="fas fa-book-open"></i>
+            <i class="fas fa-graduation-cap"></i>
+            <i class="fas fa-language"></i>
+        </div>
+        <h1><i class="fas fa-book-reader"></i> STEP Reading</h1>
         <p>تطوير مهارات القراءة للإختبار التحصيلي STEP</p>
+        <div class="header-stats">
+            <span><i class="fas fa-file-alt"></i> 85+ قطعة</span>
+            <span><i class="fas fa-users"></i> 1000+ طالب</span>
+            <span><i class="fas fa-star"></i> 4.8 تقييم</span>
+        </div>
     </header>
     
     <main>
+        <div class="section-title">
+            <h2>اختر مستواك <i class="fas fa-arrow-down"></i></h2>
+        </div>
+        
         <div class="levels-grid">
             <div class="level-card" data-level="a1">
+                <div class="level-icon"><i class="fas fa-seedling"></i></div>
                 <h2>A1 - مبتدئ</h2>
                 <p>20 قطعة قراءة للمستوى المبتدئ</p>
-                <a href="levels.html?level=a1" class="btn">ابدأ الآن</a>
+                <div class="level-features">
+                    <span><i class="fas fa-check"></i> مفردات أساسية</span>
+                    <span><i class="fas fa-check"></i> جمل بسيطة</span>
+                </div>
+                <a href="levels.html?level=a1" class="btn">ابدأ الآن <i class="fas fa-arrow-left"></i></a>
             </div>
             
             <div class="level-card" data-level="a2">
+                <div class="level-icon"><i class="fas fa-tree"></i></div>
                 <h2>A2 - أساسي</h2>
                 <p>20 قطعة قراءة للمستوى الأساسي</p>
-                <a href="levels.html?level=a2" class="btn">ابدأ الآن</a>
+                <div class="level-features">
+                    <span><i class="fas fa-check"></i> محادثات يومية</span>
+                    <span><i class="fas fa-check"></i> نصوص قصيرة</span>
+                </div>
+                <a href="levels.html?level=a2" class="btn">ابدأ الآن <i class="fas fa-arrow-left"></i></a>
             </div>
             
             <div class="level-card" data-level="b1">
+                <div class="level-icon"><i class="fas fa-mountain"></i></div>
                 <h2>B1 - متوسط</h2>
                 <p>20 قطعة قراءة للمستوى المتوسط</p>
-                <a href="levels.html?level=b1" class="btn">ابدأ الآن</a>
+                <div class="level-features">
+                    <span><i class="fas fa-check"></i> مواضيع متنوعة</span>
+                    <span><i class="fas fa-check"></i> مفردات متقدمة</span>
+                </div>
+                <a href="levels.html?level=b1" class="btn">ابدأ الآن <i class="fas fa-arrow-left"></i></a>
             </div>
             
             <div class="level-card" data-level="step">
+                <div class="level-icon"><i class="fas fa-crown"></i></div>
                 <h2>🎯 STEP</h2>
                 <p>25 قطعة قراءة بمستوى الإختبار</p>
-                <a href="levels.html?level=step" class="btn">ابدأ الآن</a>
+                <div class="level-features">
+                    <span><i class="fas fa-check"></i> نصوص أكاديمية</span>
+                    <span><i class="fas fa-check"></i> أسئلة تحدي</span>
+                </div>
+                <a href="levels.html?level=step" class="btn pulse">ابدأ الآن <i class="fas fa-arrow-left"></i></a>
+            </div>
+        </div>
+        
+        <!-- إضافة قسم إحصائيات -->
+        <div class="stats-section">
+            <h3>لماذا STEP Reading؟</h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <i class="fas fa-clock"></i>
+                    <span class="stat-number">24/7</span>
+                    <span>تدريب مستمر</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span class="stat-number">100%</span>
+                    <span>متجاوب مع الجوال</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-tasks"></i>
+                    <span class="stat-number">5</span>
+                    <span>أنواع أسئلة</span>
+                </div>
             </div>
         </div>
     </main>
+    
+    <!-- إضافة Footer -->
+    <footer>
+        <p>© 2024 STEP Reading - جميع الحقوق محفوظة</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-telegram"></i></a>
+        </div>
+    </footer>
     
     <script src="js/main.js"></script>
 </body>
