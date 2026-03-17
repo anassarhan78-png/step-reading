@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading - A1 - Passage 5</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #e8f5e9;
+            color: #1e4a2b;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(30, 70, 40, 0.12);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: #2e7d5e;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #a5d6b6;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #3d6b4f;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #1f6e4a;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #b8e0c2;
+            padding-bottom: 0.5rem;
+        }
+        .passage-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        .paragraph-card {
+            background: #f3faf6;
+            border-radius: 28px;
+            padding: 1.8rem 1.8rem 1.8rem 1.8rem;
+            box-shadow: 0 5px 20px rgba(60, 120, 80, 0.12);
+            transition: 0.2s;
+            border: 1px solid #c8e6d9;
+        }
+        .para-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        .para-image {
+            width: 140px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: 0 8px 18px -6px #9ac0aa;
+            border: 2px solid white;
+            background: #dcf0e3;
+        }
+        .para-text {
+            font-size: 1.2rem;
+            background: #ffffff;
+            padding: 1.3rem 1.8rem;
+            border-radius: 36px 36px 36px 12px;
+            box-shadow: inset 0 1px 6px #dcf0e3;
+            border: 1px solid #c8e6d9;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: #1e4a2b;
+        }
+        .audio-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-top: 0.5rem;
+            margin-left: 0.2rem;
+        }
+        audio {
+            height: 42px;
+            width: 260px;
+            border-radius: 42px;
+        }
+        .audio-label {
+            background: #c1e5d3;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #1f6e4a;
+        }
+        .questions-section {
+            background: #e1f3ea;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #9fd9bb;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #1f6e4a;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(40, 100, 60, 0.08);
+            border-left: 10px solid #5cb68b;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #2e8b6b;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #dcf0e3;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #2e8b6b;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+        }
+        .option input[type="radio"]:checked {
+            background: #2e8b6b;
+            border: 2px solid #2e8b6b;
+        }
+        .option input[type="radio"]:checked::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            top: 3px;
+            left: 3px;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            color: #2e7d32;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #c62828;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #2e7d5e;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .show-answer-btn:hover {
+            color: #1f6e4a;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #c8e6d9;
+            margin: 2rem 0 0.5rem 0;
+        }
+        th {
+            background: #2e8b6b;
+            color: white;
+            font-weight: 500;
+            font-size: 1.2rem;
+            padding: 1rem 1.5rem;
+        }
+        td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #c8e6d9;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #1e4a2b;
+        }
+        .footer-note {
+            margin-top: 1.5rem;
+            color: #3d6b4f;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #b8e0c2, transparent);
+            margin: 2rem 0 0.5rem 0;
+        }
+        @media (max-width: 700px) {
+            .container { padding: 1.5rem; }
+            .para-header { flex-direction: column; align-items: start; }
+            .para-image { width: 100%; height: auto; max-height: 150px; }
+            audio { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🌳 STEP Reading · A1</h1>
+    <div class="sub-title">Passage 5 · A Day at the Park</div>
+
+    <h2>☀️ Lina's fun day outside</h2>
+
+    <!-- فقرة 1 -->
+    <div class="passage-grid">
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/917510/pexels-photo-917510.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Sunny green park with a bench and trees">
+                <span style="font-weight: 600; background: #c1e5d3; padding: 0.3rem 1.8rem; border-radius: 40px;">🌼 paragraph 1</span>
+            </div>
+            <div class="para-text" id="p1">
+                Lina wakes up early on Saturday morning. The sun is shining. She looks out the window and sees a blue sky. "Mom, can we go to the park today?" she asks. Her mother smiles and says, "Yes, we can go after breakfast." Lina is very happy. She eats her cereal quickly.
+            </div>
+            <div class="audio-wrapper">
+                <span class="audio-label">🔊 listen</span>
+                <audio controls preload="none">
+                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <!-- فقرة 2 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/1242762/pexels-photo-1242762.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Children playing on swings and slide">
+                <span style="font-weight: 600; background: #c1e5d3; padding: 0.3rem 1.8rem; border-radius: 40px;">🧸 paragraph 2</span>
+            </div>
+            <div class="para-text" id="p2">
+                At the park, Lina runs to the playground. She loves the swings. She swings high in the air. She feels like a bird. Then she goes down the slide. It is fast and fun. Other children are playing too. Lina makes a new friend. Her name is Sara. They play together.
+            </div>
+            <div class="audio-wrapper">
+                <span class="audio-label">🔊 listen</span>
+                <audio controls preload="none">
+                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <!-- فقرة 3 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/162190/dogs-animals-funny-pets-162190.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Happy dog running on grass">
+                <span style="font-weight: 600; background: #c1e5d3; padding: 0.3rem 1.8rem; border-radius: 40px;">🐕 paragraph 3</span>
+            </div>
+            <div class="para-text" id="p3">
+                Near the playground, a man is walking his dog. The dog is white and fluffy. It runs and jumps. Lina asks, "Can I pet your dog?" The man says yes. The dog licks Lina's hand. It wags its tail. Lina laughs. "He is so cute!" she says. She gives the dog a gentle pat.
+            </div>
+            <div class="audio-wrapper">
+                <span class="audio-label">🔊 listen</span>
+                <audio controls preload="none">
+                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <!-- فقرة 4 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/474044/pexels-photo-474044.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Ducks swimming in a pond">
+                <span style="font-weight: 600; background: #c1e5d3; padding: 0.3rem 1.8rem; border-radius: 40px;">🦆 paragraph 4</span>
+            </div>
+            <div class="para-text" id="p4">
+                Lina and her mother walk to the pond. They see ducks swimming. The ducks are brown and white. Lina has some bread. She throws little pieces to the ducks. The ducks quack and eat quickly. A small duck comes near her feet. Lina giggles. "Look, Mom! It's so close!"
+            </div>
+            <div class="audio-wrapper">
+                <span class="audio-label">🔊 listen</span>
+                <audio controls preload="none">
+                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <!-- فقرة 5 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/1732272/pexels-photo-1732272.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Family walking home at sunset">
+                <span style="font-weight: 600; background: #c1e5d3; padding: 0.3rem 1.8rem; border-radius: 40px;">🌇 paragraph 5</span>
+            </div>
+            <div class="para-text" id="p5">
+                After a long day, it is time to go home. Lina is tired but happy. She holds her mother's hand. "I had the best day ever," she says. "Can we come again tomorrow?" Her mother laughs. "Maybe next weekend," she says. Lina smiles. She cannot wait to come back to the park.
+            </div>
+            <div class="audio-wrapper">
+                <span class="audio-label">🔊 listen</span>
+                <audio controls preload="none">
+                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5 أسئلة STEP - INTERACTIVE MULTIPLE CHOICE -->
+    <div class="questions-section">
+        <h3>📘 STEP-style questions (A1) - Interactive</h3>
+
+        <!-- سؤال 1 -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>Word meaning:</strong> In paragraph 3, what does the word "<strong>gentle</strong>" mean?
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) hard and strong</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) soft and kind</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) fast and quick</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) loud and noisy</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 2 -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>Go back to paragraph 2:</strong> What does Lina love to play on at the playground?
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) the seesaw</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) the swings</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) the monkey bars</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) the sandbox</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 3 -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>Main idea:</strong> What is the main idea of this story?
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) Lina's favorite food</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) A fun day at the park with family</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) How to take care of a dog</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) Lina's school friends</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 4 -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>Detail:</strong> What does Lina feed the ducks?
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) crackers</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) bread</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) popcorn</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) cereal</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 5 -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>Inference:</strong> How does Lina feel at the end of the story?
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) sad because she has to leave</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) tired but happy</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) angry at her mother</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) scared of the ducks</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'b')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- جدول المفردات -->
+    <h3 style="font-size: 1.8rem; font-weight: 400; margin-bottom: 0.5rem;">🔤 Vocabulary from the passage</h3>
+    <table>
+        <thead><tr><th>Word</th><th>Simple meaning</th><th>🇸🇦 Arabic</th></tr></thead>
+        <tbody>
+            <tr><td><strong>cereal</strong></td><td>breakfast food made from grains, eaten with milk</td><td class="arabic">حبوب الإفطار</td></tr>
+            <tr><td><strong>swings</strong></td><td>seats hanging from ropes that you move back and forth</td><td class="arabic">أراجيح</td></tr>
+            <tr><td><strong>slide</strong></td><td>a structure to slide down for fun</td><td class="arabic">زحليقة</td></tr>
+            <tr><td><strong>fluffy</strong></td><td>soft and light like fur or feathers</td><td class="arabic">منفوش / ناعم</td></tr>
+            <tr><td><strong>pet</strong></td><td>to touch an animal gently</td><td class="arabic">يداعب (حيوان)</td></tr>
+            <tr><td><strong>wags</strong></td><td>moves its tail quickly from side to side</td><td class="arabic">يهز (الذيل)</td></tr>
+            <tr><td><strong>pond</strong></td><td>small area of water</td><td class="arabic">بركة ماء</td></tr>
+            <tr><td><strong>giggles</strong></td><td>laughs in a silly, happy way</td><td class="arabic">يقهقه / يضحك</td></tr>
+        </tbody>
+    </table>
+
+    <hr>
+    <div class="footer-note">
+        🌟 Passage 5: "A Day at the Park" - Simple words, short sentences, clear images.<br>
+        📁 <strong>Filename: passage5.html</strong> (same location as passage1.html, passage2.html, passage3.html, passage4.html)
+    </div>
+    <div style="margin-top: 1rem; font-size: 0.9rem; background: #e1f3ea; border-radius: 60px; padding: 0.8rem 2rem; text-align: center;">
+        ✅ 5 paragraphs with images & audio ✓ INTERACTIVE multiple choice questions ✓ Show answer button ✓ Vocabulary with Arabic ✓ Ready for STEP practice
+    </div>
+</div>
+
+<script>
+    // Make all questions interactive
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;
+            const selectedValue = this.value;
+            
+            // Determine correct answer based on question
+            let correctAnswer = '';
+            if (questionId === 'q1') correctAnswer = 'b';
+            else if (questionId === 'q2') correctAnswer = 'b';
+            else if (questionId === 'q3') correctAnswer = 'b';
+            else if (questionId === 'q4') correctAnswer = 'b';
+            else if (questionId === 'q5') correctAnswer = 'b';
+            
+            // Get feedback element
+            const feedbackId = 'feedback' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            
+            // Check answer
+            if (selectedValue === correctAnswer) {
+                feedback.textContent = '✅ Correct! Well done.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Try again!';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+
+    // Function to show answer
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (b) soft and kind'; break;
+            case 2: answerText = 'The correct answer is (b) the swings'; break;
+            case 3: answerText = 'The correct answer is (b) A fun day at the park with family'; break;
+            case 4: answerText = 'The correct answer is (b) bread'; break;
+            case 5: answerText = 'The correct answer is (b) tired but happy'; break;
+        }
+        
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+</script>
+</body>
+</html>
