@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading - A1 - Passage 3</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #e0f0f5;
+            color: #1a3b4a;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(0, 80, 100, 0.1);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: #1d7a8c;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #9ed9e6;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #4d6a73;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #1c6273;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #b0e0ed;
+            padding-bottom: 0.5rem;
+        }
+        .passage-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        .paragraph-card {
+            background: #f6fbfd;
+            border-radius: 28px;
+            padding: 1.8rem 1.8rem 1.8rem 1.8rem;
+            box-shadow: 0 5px 20px rgba(70, 150, 170, 0.15);
+            transition: 0.2s;
+            border: 1px solid #c2e4f0;
+        }
+        .para-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        .para-image {
+            width: 140px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: 0 8px 18px -6px #8fb9c9;
+            border: 2px solid white;
+            background: #e0f2f7;
+        }
+        .para-text {
+            font-size: 1.2rem;
+            background: #ffffff;
+            padding: 1.3rem 1.8rem;
+            border-radius: 36px 36px 36px 12px;
+            box-shadow: inset 0 1px 6px #d4f0f7;
+            border: 1px solid #c2e4f0;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: #1a3b4a;
+        }
+        .audio-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-top: 0.5rem;
+            margin-left: 0.2rem;
+        }
+        audio {
+            height: 42px;
+            width: 260px;
+            border-radius: 42px;
+        }
+        .audio-label {
+            background: #b3e2f0;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #175a6b;
+        }
+        .questions-section {
+            background: #dcf2f7;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #91d2e3;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #1c6273;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(20, 100, 120, 0.1);
+            border-left: 10px solid #4faec9;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #2f8ca3;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #e3f0f5;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #2f8ca3;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+        }
+        .option input[type="radio"]:checked {
+            background: #2f8ca3;
+            border: 2px solid #2f8ca3;
+        }
+        .option input[type="radio"]:checked::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            top: 3px;
+            left: 3px;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            color: #2e7d32;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #c62828;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #1d7a8c;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .show-answer-btn:hover {
+            color: #1c6273;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #c5e2ec;
+            margin: 2rem 0 0.5rem 0;
+        }
+        th {
+            background: #1f7a8c;
+            color: white;
+            font-weight: 500;
+            font-size: 1.2rem;
+            padding: 1rem 1.5rem;
+        }
+        td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #c5e2ec;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #1a3b4a;
+        }
+        .footer-note {
+            margin-top: 1.5rem;
+            color: #4d6a73;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #b0e0ed, transparent);
+            margin: 2rem 0 0.5rem 0;
+        }
+        @media (max-width: 700px) {
+            .container { padding: 1.5rem; }
+            .para-header { flex-direction: column; align-items: start; }
+            .para-image { width: 100%; height: auto; max-height: 150px; }
+            audio { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🛒 STEP Reading · A1</h1>
+    <div class="sub-title">Passage 3 · At the Supermarket</div>
+
+    <h2>🏪 Let's go shopping with Samira</h2>
+
+    <!-- فقرة 1 -->
+    <div class="passage-grid">
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/1087727/pexels-photo-1087727.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Supermarket entrance with shopping carts">
+                <span style="font-weight: 600; background: #b3e2f0; padding: 0.3rem 1.8rem; border-radius: 40px;">🛒 paragraph 1</span>
+            </div>
+            <div class="para-text" id="p1">
+                Samira goes to the supermarket with her mother. The supermarket is big and bright. There are many aisles with different things. Samira takes a shopping cart. She pushes it slowly. She sees many people shopping. It is busy but fun.
+            </div>
+            <div class="audio-wrapper">
+                <span class="audio-label">🔊 listen</span>
+                <audio controls preload="none">
+                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <!-- فقرة 2 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/1300975/pexels-photo-1300975.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Fresh fruits and vegetables in supermarket">
+                <span style="font-weight: 600; background: #b3e2f0; padding: 0.3rem 1.8rem; border-radius: 40px;">🍎 paragraph 2</span>
+            </div>
+            <div class="para-text" id="p2">
+                First, they go to the fruit and vegetable section. There are red apples, yellow bananas, and green grapes. Samira picks some oranges. Her mother chooses fresh tomatoes and lettuce. The vegetables look very fresh. Samira loves the bright colours.
+            </div>
+            <div class="audio-wrapper">
+                <span class="audio-label">🔊 listen</span>
+                <audio controls preload="none">
+                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <!-- فقرة 3 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/264547/pexels-photo-264547.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Dairy section with milk and yogurt">
+                <span style="font-weight: 600; background: #b3e2f0; padding: 0.3rem 1.8rem; border-radius: 40px;">🥛 paragraph 3</span>
+            </div>
+            <div class="para-text" id="p3">
+                Next, they go to the dairy section. Samira sees many types of milk, cheese, and yogurt. Her mother puts a bottle of milk in the cart. She also takes some butter and cream. Samira likes strawberry yogurt. She puts one in the cart.
+            </div>
+            <div class="audio-wrapper">
+                <span class="audio-label">🔊 listen</span>
+                <audio controls preload="none">
+                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <!-- فقرة 4 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/5638705/pexels-photo-5638705.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Shelf with bread and bakery items">
+                <span style="font-weight: 600; background: #b3e2f0; padding: 0.3rem 1.8rem; border-radius: 40px;">🍞 paragraph 4</span>
+            </div>
+            <div class="para-text" id="p4">
+                After that, they go to the bakery section. The smell of fresh bread is nice. Her mother picks a loaf of brown bread. Samira sees delicious cakes and cookies. She asks her mother, "Can we buy some cookies?" Her mother smiles and says yes.
+            </div>
+            <div class="audio-wrapper">
+                <span class="audio-label">🔊 listen</span>
+                <audio controls preload="none">
+                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <!-- فقرة 5 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/4483610/pexels-photo-4483610.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Cashier scanning items at checkout">
+                <span style="font-weight: 600; background: #b3e2f0; padding: 0.3rem 1.8rem; border-radius: 40px;">💰 paragraph 5</span>
+            </div>
+            <div class="para-text" id="p5">
+                Finally, they go to the checkout counter. The cashier scans all the items. Samira helps put the things in bags. Her mother pays with a card. They walk home happily. Samira says, "I like shopping at the supermarket. It is always an adventure!"
+            </div>
+            <div class="audio-wrapper">
+                <span class="audio-label">🔊 listen</span>
+                <audio controls preload="none">
+                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5 أسئلة STEP - INTERACTIVE MULTIPLE CHOICE -->
+    <div class="questions-section">
+        <h3>📘 STEP-style questions (A1) - Interactive</h3>
+
+        <!-- سؤال 1 -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>Word meaning:</strong> In paragraph 1, what does the word "<strong>aisles</strong>" mean?
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) counters where you pay</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) long passages between shelves</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) shopping carts</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) fruits and vegetables</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 2 -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>Go back to paragraph 2:</strong> What colour are the bananas?
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) Red</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) Green</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) Yellow</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) Orange</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'c')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 3 -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>Main idea:</strong> What is the main idea of this story?
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) How to cook healthy food</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) A shopping trip to the supermarket</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) Different types of fruits</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) Working at a supermarket</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 4 -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>Detail:</strong> What does Samira put in the cart from the dairy section?
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) Chocolate milk</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) Strawberry yogurt</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) Orange juice</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) Ice cream</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 5 -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>Inference:</strong> How does Samira feel at the end of the story?
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) Tired and sad</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) Bored and angry</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) Happy and excited</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) Scared and worried</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'c')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- جدول المفردات -->
+    <h3 style="font-size: 1.8rem; font-weight: 400; margin-bottom: 0.5rem;">🔤 Vocabulary from the passage</h3>
+    <table>
+        <thead><tr><th>Word</th><th>Simple meaning</th><th>🇸🇦 Arabic</th></tr></thead>
+        <tbody>
+            <tr><td><strong>supermarket</strong></td><td>large shop where you buy food and things</td><td class="arabic">سوبرماركت</td></tr>
+            <tr><td><strong>aisle</strong></td><td>long passage between shelves in a shop</td><td class="arabic">ممر (بين الأرفف)</td></tr>
+            <tr><td><strong>shopping cart</strong></td><td>metal basket on wheels for carrying items</td><td class="arabic">عربة تسوق</td></tr>
+            <tr><td><strong>fresh</strong></td><td>newly picked or made, not old</td><td class="arabic">طازج</td></tr>
+            <tr><td><strong>dairy</strong></td><td>foods made from milk like cheese, yogurt</td><td class="arabic">ألبان</td></tr>
+            <tr><td><strong>bakery</strong></td><td>place where bread and cakes are made/sold</td><td class="arabic">مخبز</td></tr>
+            <tr><td><strong>cashier</strong></td><td>person who takes your money at checkout</td><td class="arabic">أمين الصندوق</td></tr>
+            <tr><td><strong>scans</strong></td><td>passes items over a machine to read prices</td><td class="arabic">يمسح (الباركود)</td></tr>
+        </tbody>
+    </table>
+
+    <hr>
+    <div class="footer-note">
+        🌟 Passage 3: "At the Supermarket" - Simple words, short sentences, clear images.<br>
+        📁 <strong>Filename: passage3.html</strong> (same location as passage1.html and passage2.html)
+    </div>
+    <div style="margin-top: 1rem; font-size: 0.9rem; background: #dcf2f7; border-radius: 60px; padding: 0.8rem 2rem; text-align: center;">
+        ✅ 5 paragraphs with images & audio ✓ INTERACTIVE multiple choice questions ✓ Show answer button ✓ Ready for STEP practice
+    </div>
+</div>
+
+<script>
+    // Make all questions interactive
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;
+            const selectedValue = this.value;
+            
+            // Determine correct answer based on question
+            let correctAnswer = '';
+            if (questionId === 'q1') correctAnswer = 'b';
+            else if (questionId === 'q2') correctAnswer = 'c';
+            else if (questionId === 'q3') correctAnswer = 'b';
+            else if (questionId === 'q4') correctAnswer = 'b';
+            else if (questionId === 'q5') correctAnswer = 'c';
+            
+            // Get feedback element
+            const feedbackId = 'feedback' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            
+            // Check answer
+            if (selectedValue === correctAnswer) {
+                feedback.textContent = '✅ Correct! Well done.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Try again!';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+
+    // Function to show answer
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (b) long passages between shelves'; break;
+            case 2: answerText = 'The correct answer is (c) Yellow'; break;
+            case 3: answerText = 'The correct answer is (b) A shopping trip to the supermarket'; break;
+            case 4: answerText = 'The correct answer is (b) Strawberry yogurt'; break;
+            case 5: answerText = 'The correct answer is (c) Happy and excited'; break;
+        }
+        
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+</script>
+</body>
+</html>
