@@ -3,143 +3,365 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>القطعة 1 - STEP Reading</title>
+    <title>القطعة 1 - My Healthy Morning | STEP Reading</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
     <style>
         .passage-container {
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 900px;
+            margin: 2rem auto;
             background: white;
             padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--box-shadow);
+            direction: rtl;
+        }
+        
+        .passage-title {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+        
+        .passage-text {
+            line-height: 2;
+            margin-bottom: 3rem;
+            padding: 1rem;
+            background: #f9f9f9;
+            border-radius: 15px;
+        }
+        
+        .english-text {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px dashed #e0e0e0;
+        }
+        
+        .english-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .arabic-translation {
+            background: #e8f4fd;
+            padding: 1rem;
             border-radius: 10px;
+            margin-top: 0.5rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            font-size: 1rem;
+            border-right: 4px solid var(--secondary-color);
+        }
+        
+        .arabic-translation p {
+            margin: 0.5rem 0;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+        
+        .vocab-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
-        .question {
-            margin: 2rem 0;
+        .vocab-table th {
+            background: var(--gradient-1);
+            color: white;
             padding: 1rem;
-            background: #f8f9fa;
-            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .vocab-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: center;
+        }
+        
+        .vocab-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .vocab-table tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .question {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 15px;
+            border-right: 4px solid var(--secondary-color);
+        }
+        
+        .question p {
+            margin-bottom: 1rem;
+            font-weight: bold;
         }
         
         .options {
-            margin: 1rem 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
         }
         
         .option {
-            display: block;
-            padding: 0.5rem;
-            margin: 0.5rem 0;
             background: white;
-            border: 1px solid #ddd;
-            border-radius: 3px;
+            padding: 1rem;
+            border-radius: 10px;
+            border: 2px solid #e0e0e0;
             cursor: pointer;
+            transition: all 0.3s ease;
         }
         
         .option:hover {
-            background: #e9ecef;
-        }
-        
-        .option.selected {
-            background: var(--secondary-color);
-            color: white;
             border-color: var(--secondary-color);
+            background: #f0f8ff;
+            transform: translateY(-2px);
         }
         
-        #show-answers {
+        .option input[type="radio"] {
+            margin-left: 0.5rem;
+        }
+        
+        .answers-section {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: #f0f8ff;
+            border-radius: 15px;
+            border: 2px solid var(--success-color);
+        }
+        
+        .answer-item {
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            background: white;
+            border-radius: 8px;
+            border-right: 4px solid var(--success-color);
+        }
+        
+        .btn-show-answers {
             background: var(--success-color);
             color: white;
             border: none;
             padding: 1rem 2rem;
-            border-radius: 5px;
+            border-radius: 50px;
             cursor: pointer;
             font-size: 1.1rem;
             margin: 2rem 0;
+            transition: all 0.3s ease;
+            width: 100%;
         }
         
-        #show-answers:hover {
+        .btn-show-answers:hover {
             background: #219a52;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(39, 174, 96, 0.4);
         }
         
-        .answer-explanation {
-            margin: 1rem 0;
-            padding: 1rem;
-            background: #d4edda;
-            border: 1px solid #c3e6cb;
-            border-radius: 5px;
-            color: #155724;
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .level-badge {
+            background: var(--success-color);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .options {
+                grid-template-columns: 1fr;
+            }
+            
+            .vocab-table {
+                font-size: 0.9rem;
+            }
+            
+            .passage-container {
+                padding: 1rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>📖 قطعة قراءة - مستوى STEP</h1>
-        <p><a href="../levels.html?level=step">← العودة إلى المستوى</a></p>
+        <h1><i class="fas fa-book-open"></i> قطعة قراءة - المستوى A1</h1>
+        <p><a href="../levels.html?level=a1" class="back-link"><i class="fas fa-arrow-right"></i> العودة إلى المستوى A1</a></p>
     </header>
     
     <main>
         <div class="passage-container">
-            <h2>The Impact of Screen Time on Adolescent Cognitive Development</h2>
+            <span class="level-badge"><i class="fas fa-seedling"></i> المستوى المبتدئ A1</span>
+            <h2 class="passage-title">🌅 My Healthy Morning - صباحي الصحي</h2>
             
-            <!-- نص القطعة من المثال السابق -->
+            <!-- Passage Text with Translation -->
             <div class="passage-text">
-                <!-- انسخ نص القطعة من المثال السابق هنا -->
-            </div>
-            
-            <!-- الأسئلة -->
-            <div class="questions-section">
-                <h3>📝 الأسئلة</h3>
-                
-                <!-- سؤال 1 -->
-                <div class="question" id="q1">
-                    <p><strong>1. Vocabulary Question</strong><br>
-                    In the context of the second paragraph, what is the closest meaning of the word "correlations"?</p>
-                    <div class="options">
-                        <label class="option">
-                            <input type="radio" name="q1" value="a"> a) Causes and effects
-                        </label>
-                        <label class="option">
-                            <input type="radio" name="q1" value="b"> b) Mutual relationships or connections
-                        </label>
-                        <label class="option">
-                            <input type="radio" name="q1" value="c"> c) Imaginary scenarios
-                        </label>
-                        <label class="option">
-                            <input type="radio" name="q1" value="d"> d) Significant differences
-                        </label>
-                    </div>
+                <!-- Paragraph 1 -->
+                <div class="english-text">
+                    <p><strong>Paragraph 1:</strong> Every day I wake up at 6 o'clock in the morning. The sun is bright and the birds are singing outside my window. I feel happy and ready to start my day.</p>
+                </div>
+                <div class="arabic-translation">
+                    <p><strong>الترجمة:</strong> كل يوم أستيقظ في الساعة السادسة صباحاً. الشمس مشرقة والعصافير تغرد خارج نافذتي. أشعر بالسعادة والاستعداد لبدء يومي.</p>
                 </div>
                 
-                <!-- أضف باقي الأسئلة بنفس النمط -->
+                <!-- Paragraph 2 -->
+                <div class="english-text">
+                    <p><strong>Paragraph 2:</strong> First, I go to the bathroom and wash my face with cold water. This helps me feel awake and fresh. Then I brush my teeth for two minutes. My mother says healthy teeth are very important.</p>
+                </div>
+                <div class="arabic-translation">
+                    <p><strong>الترجمة:</strong> أولاً، أذهب إلى الحمام وأغسل وجهي بالماء البارد. هذا يساعدني على الشعور باليقظة والانتعاش. ثم أفرش أسناني لمدة دقيقتين. تقول أمي أن الأسنان الصحية مهمة جداً.</p>
+                </div>
                 
-                <button id="show-answers">عرض الإجابات</button>
-                <div id="answers-container"></div>
+                <!-- Paragraph 3 -->
+                <div class="english-text">
+                    <p><strong>Paragraph 3:</strong> After that, I go to the kitchen and eat a good breakfast. I usually eat bread with cheese and a banana. I also drink a glass of milk because it is good for my bones.</p>
+                </div>
+                <div class="arabic-translation">
+                    <p><strong>الترجمة:</strong> بعد ذلك، أذهب إلى المطبخ وأتناول فطوراً جيداً. عادةً آكل خبزاً مع جبن وموزة. وأشرب أيضاً كوباً من الحليب لأنه مفيد لعظامي.</p>
+                </div>
+                
+                <!-- Paragraph 4 -->
+                <div class="english-text">
+                    <p><strong>Paragraph 4:</strong> I do not drink coffee in the morning. Coffee is not good for children. I only drink water or milk. Water gives my body energy to play and learn.</p>
+                </div>
+                <div class="arabic-translation">
+                    <p><strong>الترجمة:</strong> أنا لا أشرب القهوة في الصباح. القهوة ليست جيدة للأطفال. أنا أشرب فقط الماء أو الحليب. الماء يعطي جسمي الطاقة للعب والتعلم.</p>
+                </div>
+                
+                <!-- Paragraph 5 -->
+                <div class="english-text">
+                    <p><strong>Paragraph 5:</strong> At 7 o'clock, I put on my school uniform and take my bag. I walk to school with my friend Ahmed. We talk and laugh on the way. It is a nice start to the day.</p>
+                </div>
+                <div class="arabic-translation">
+                    <p><strong>الترجمة:</strong> في الساعة السابعة، أرتدي زيّ المدرسة وآخذ حقيبتي. أمشي إلى المدرسة مع صديقي أحمد. نتحدث ونضحك في الطريق. إنها بداية لطيفة لليوم.</p>
+                </div>
+            </div>
+            
+            <!-- Vocabulary Section -->
+            <h3 class="section-title"><i class="fas fa-book"></i> المفردات Vocabulary</h3>
+            <table class="vocab-table">
+                <thead>
+                    <tr>
+                        <th>Word الكلمة</th>
+                        <th>Simple English Meaning المعنى بالإنجليزية</th>
+                        <th>Arabic Meaning المعنى بالعربية</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>wake up</td><td>stop sleeping</td><td>يستيقظ</td></tr>
+                    <tr><td>bright</td><td>full of light</td><td>مشرق</td></tr>
+                    <tr><td>wash</td><td>clean with water</td><td>يغسل</td></tr>
+                    <tr><td>brush</td><td>clean teeth with a brush</td><td>يفرش</td></tr>
+                    <tr><td>important</td><td>having great value</td><td>مهم</td></tr>
+                    <tr><td>breakfast</td><td>first meal of the day</td><td>فطور</td></tr>
+                    <tr><td>energy</td><td>power to do things</td><td>طاقة</td></tr>
+                    <tr><td>uniform</td><td>special clothes for school</td><td>زي مدرسي</td></tr>
+                </tbody>
+            </table>
+            
+            <!-- Questions Section -->
+            <h3 class="section-title"><i class="fas fa-question-circle"></i> الأسئلة Questions</h3>
+            
+            <div class="question" id="q1">
+                <p><strong>1. Vocabulary Question:</strong> What does the word "bright" mean in the passage?</p>
+                <div class="options">
+                    <label class="option"><input type="radio" name="q1" value="A"> A) Dark and cloudy</label>
+                    <label class="option"><input type="radio" name="q1" value="B"> B) Full of light</label>
+                    <label class="option"><input type="radio" name="q1" value="C"> C) Very cold</label>
+                    <label class="option"><input type="radio" name="q1" value="D"> D) Quiet and calm</label>
+                </div>
+            </div>
+            
+            <div class="question" id="q2">
+                <p><strong>2. Main Idea Question:</strong> What is the main idea of this passage?</p>
+                <div class="options">
+                    <label class="option"><input type="radio" name="q2" value="A"> A) How to cook breakfast</label>
+                    <label class="option"><input type="radio" name="q2" value="B"> B) A student's healthy morning routine</label>
+                    <label class="option"><input type="radio" name="q2" value="C"> C) Why birds sing in the morning</label>
+                    <label class="option"><input type="radio" name="q2" value="D"> D) The best time to go to school</label>
+                </div>
+            </div>
+            
+            <div class="question" id="q3">
+                <p><strong>3. Reference Question:</strong> In paragraph 3, what does the word "it" refer to?</p>
+                <div class="options">
+                    <label class="option"><input type="radio" name="q3" value="A"> A) Breakfast</label>
+                    <label class="option"><input type="radio" name="q3" value="B"> B) Cheese</label>
+                    <label class="option"><input type="radio" name="q3" value="C"> C) Milk</label>
+                    <label class="option"><input type="radio" name="q3" value="D"> D) A banana</label>
+                </div>
+            </div>
+            
+            <div class="question" id="q4">
+                <p><strong>4. Detail Question:</strong> What time does the writer wake up?</p>
+                <div class="options">
+                    <label class="option"><input type="radio" name="q4" value="A"> A) 5 o'clock</label>
+                    <label class="option"><input type="radio" name="q4" value="B"> B) 7 o'clock</label>
+                    <label class="option"><input type="radio" name="q4" value="C"> C) 6 o'clock</label>
+                    <label class="option"><input type="radio" name="q4" value="D"> D) 8 o'clock</label>
+                </div>
+            </div>
+            
+            <div class="question" id="q5">
+                <p><strong>5. Detail Question:</strong> Why does the writer NOT drink coffee?</p>
+                <div class="options">
+                    <label class="option"><input type="radio" name="q5" value="A"> A) He does not like the taste</label>
+                    <label class="option"><input type="radio" name="q5" value="B"> B) His mother does not buy it</label>
+                    <label class="option"><input type="radio" name="q5" value="C"> C) Coffee is not good for children</label>
+                    <label class="option"><input type="radio" name="q5" value="D"> D) He drinks tea instead</label>
+                </div>
+            </div>
+            
+            <!-- Answers Section -->
+            <button class="btn-show-answers" onclick="showAnswers()"><i class="fas fa-check-circle"></i> عرض الإجابات</button>
+            
+            <div class="answers-section" id="answers" style="display: none;">
+                <h4><i class="fas fa-check"></i> الإجابات الصحيحة:</h4>
+                <div class="answer-item"><strong>1.</strong> B) Full of light - مشرق</div>
+                <div class="answer-item"><strong>2.</strong> B) A student's healthy morning routine - الروتين الصباحي الصحي لطالب</div>
+                <div class="answer-item"><strong>3.</strong> C) Milk - الحليب</div>
+                <div class="answer-item"><strong>4.</strong> C) 6 o'clock - السادسة صباحاً</div>
+                <div class="answer-item"><strong>5.</strong> C) Coffee is not good for children - القهوة ليست جيدة للأطفال</div>
             </div>
         </div>
     </main>
     
+    <footer>
+        <p>© 2024 STEP Reading - جميع الحقوق محفوظة</p>
+    </footer>
+    
     <script>
-        document.getElementById('show-answers').addEventListener('click', function() {
-            const answers = [
-                { question: 1, correct: 'b', explanation: 'Correlations تعني علاقات متبادلة أو ارتباطات إحصائية.' },
-                { question: 2, correct: 'c', explanation: 'الهدف الرئيسي هو وصف التأثيرات السلبية المحتملة.' },
-                { question: 3, correct: 'b', explanation: 'This تعود على displacement of crucial offline activities.' },
-                { question: 4, correct: 'c', explanation: 'تم ذكر premature thinning of the cerebral cortex.' },
-                { question: 5, correct: 'b', explanation: 'الضوء الأزرق يعطل إنتاج الميلاتونين.' }
-            ];
-            
-            let html = '<h4>الإجابات:</h4>';
-            answers.forEach(answer => {
-                html += `
-                    <div class="answer-explanation">
-                        <strong>السؤال ${answer.question}:</strong> الإجابة ${answer.correct.toUpperCase()}<br>
-                        <small>${answer.explanation}</small>
-                    </div>
-                `;
-            });
-            
-            document.getElementById('answers-container').innerHTML = html;
-        });
+        function showAnswers() {
+            const answersDiv = document.getElementById('answers');
+            if (answersDiv.style.display === 'none') {
+                answersDiv.style.display = 'block';
+            } else {
+                answersDiv.style.display = 'none';
+            }
+        }
     </script>
+    <script src="../js/main.js"></script>
 </body>
 </html>
