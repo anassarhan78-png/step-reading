@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading - A1 - Passage 7</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #e3f2fd;
+            color: #1a3a4e;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(20, 80, 120, 0.12);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: #1976d2;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #90caf9;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #4f6f8f;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #1565c0;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #bbdefb;
+            padding-bottom: 0.5rem;
+        }
+        .passage-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        .paragraph-card {
+            background: #f5faff;
+            border-radius: 28px;
+            padding: 1.8rem 1.8rem 1.8rem 1.8rem;
+            box-shadow: 0 5px 20px rgba(30, 100, 150, 0.1);
+            transition: 0.2s;
+            border: 1px solid #bdd9fa;
+        }
+        .para-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        .para-image {
+            width: 140px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: 0 8px 18px -6px #8fb4d4;
+            border: 2px solid white;
+            background: #e1f0ff;
+        }
+        .para-text {
+            font-size: 1.2rem;
+            background: #ffffff;
+            padding: 1.3rem 1.8rem;
+            border-radius: 36px 36px 36px 12px;
+            box-shadow: inset 0 1px 6px #e1f0ff;
+            border: 1px solid #bdd9fa;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: #1a3a4e;
+        }
+        .audio-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-top: 0.5rem;
+            margin-left: 0.2rem;
+        }
+        audio {
+            height: 42px;
+            width: 260px;
+            border-radius: 42px;
+        }
+        .audio-label {
+            background: #b8d9fa;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #0d47a1;
+        }
+        .questions-section {
+            background: #e3f0ff;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #90caf9;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #1565c0;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(30, 80, 120, 0.08);
+            border-left: 10px solid #42a5f5;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #1976d2;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #e1f0ff;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #1976d2;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+        }
+        .option input[type="radio"]:checked {
+            background: #1976d2;
+            border: 2px solid #1976d2;
+        }
+        .option input[type="radio"]:checked::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            top: 3px;
+            left: 3px;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            color: #2e7d32;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #c62828;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #1976d2;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .show-answer-btn:hover {
+            color: #1565c0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #bbdefb;
+            margin: 2rem 0 0.5rem 0;
+        }
+        th {
+            background: #1976d2;
+            color: white;
+            font-weight: 500;
+            font-size: 1.2rem;
+            padding: 1rem 1.5rem;
+        }
+        td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #bbdefb;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #1a3a4e;
+        }
+        .footer-note {
+            margin-top: 1.5rem;
+            color: #4f6f8f;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #bbdefb, transparent);
+            margin: 2rem 0 0.5rem 0;
+        }
+        @media (max-width: 700px) {
+            .container { padding: 1.5rem; }
+            .para-header { flex-direction: column; align-items: start; }
+            .para-image { width: 100%; height: auto; max-height: 150px; }
+            audio { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>⏰ STEP Reading · A1</h1>
+    <div class="sub-title">Passage 7 · My Daily Routine</div>
+
+    <h2>🌅 A day in the life of Karim</h2>
+
+    <!-- فقرة 1 -->
+    <div class="passage-grid">
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/3785705/pexels-photo-3785705.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Boy waking up in morning">
+                <span style="font-weight: 600; background: #b8d9fa; padding: 0.3rem 1.8rem; border-radius: 40px;">🌄 paragraph 1</span>
+            </div>
+            <div class="para-text" id="p1">
+                My name is Karim. I am eight years old. I wake up at 6:30 every morning. The sun is not fully up yet. I stretch my arms and yawn. Then I make my bed. I like to start my day with a clean room.
+            </div>
+            <div class="audio-wrapper">
+                <span class="audio-label">🔊 listen</span>
+                <audio controls preload="none">
+                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <!-- فقرة 2 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/4197493/pexels-photo-4197493.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Boy brushing teeth">
+                <span style="font-weight: 600; background: #b8d9fa; padding: 0.3rem 1.8rem; border-radius: 40px;">🪥 paragraph 2</span>
+            </div>
+            <div class="para-text" id="p2">
+                After making my bed, I go to the bathroom. I wash my face and brush my teeth. I use toothpaste with a mint flavor. It makes my mouth feel fresh. Then I comb my hair. I am ready for breakfast.
+            </div>
+            <div class="audio-wrapper">
+                <span class="audio-label">🔊 listen</span>
+                <audio controls preload="none">
+                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <!-- فقرة 3 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Family having breakfast">
+                <span style="font-weight: 600; background: #b8d9fa; padding: 0.3rem 1.8rem; border-radius: 40px;">🍳 paragraph 3</span>
+            </div>
+            <div class="para-text" id="p3">
+                Breakfast is my favorite meal. I eat bread with cheese and olives. I drink a glass of milk. Sometimes I have eggs. My mother makes sure I eat well. She says breakfast gives me energy for school.
+            </div>
+            <div class="audio-wrapper">
+                <span class="audio-label">🔊 listen</span>
+                <audio controls preload="none">
+                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <!-- فقرة 4 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/5215026/pexels-photo-5215026.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Boy walking to school">
+                <span style="font-weight: 600; background: #b8d9fa; padding: 0.3rem 1.8rem; border-radius: 40px;">🎒 paragraph 4</span>
+            </div>
+            <div class="para-text" id="p4">
+                At 7:30, I put on my school uniform. I pack my bag with books and pencils. My friend Ali waits for me outside. We walk to school together. It takes ten minutes. We talk and laugh on the way.
+            </div>
+            <div class="audio-wrapper">
+                <span class="audio-label">🔊 listen</span>
+                <audio controls preload="none">
+                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <!-- فقرة 5 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/2611816/pexels-photo-2611816.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Family having dinner together">
+                <span style="font-weight: 600; background: #b8d9fa; padding: 0.3rem 1.8rem; border-radius: 40px;">🍽️ paragraph 5</span>
+            </div>
+            <div class="para-text" id="p5">
+                School ends at 2:30. I come home and have lunch. Then I do my homework. In the evening, I play with my brother. We have dinner together at 7:00. Before bed, I read a story. I sleep at 9:00. That is my daily routine.
+            </div>
+            <div class="audio-wrapper">
+                <span class="audio-label">🔊 listen</span>
+                <audio controls preload="none">
+                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5 أسئلة STEP - INTERACTIVE MULTIPLE CHOICE -->
+    <div class="questions-section">
+        <h3>📘 STEP-style questions (A1) - Interactive</h3>
+
+        <!-- سؤال 1 -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>Word meaning:</strong> In paragraph 1, what does the word "<strong>yawn</strong>" mean?
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) open mouth wide when tired</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) close eyes tightly</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) stretch arms up high</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) run very fast</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'a')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 2 -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>Go back to paragraph 3:</strong> What does Karim drink for breakfast?
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) orange juice</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) water</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) milk</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) tea</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'c')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 3 -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>Main idea:</strong> What is the main idea of this story?
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) Karim's favorite foods</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) Karim's daily routine from morning to night</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) Karim's school subjects</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) Karim's friends at school</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 4 -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>Detail:</strong> What time does Karim wake up?
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) 7:00</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) 6:00</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) 6:30</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) 7:30</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'c')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 5 -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>Inference:</strong> How does Karim feel about his daily routine?
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) he doesn't like it</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) he is okay with it</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) he loves every part</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) he wants to change it</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'b')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- جدول المفردات -->
+    <h3 style="font-size: 1.8rem; font-weight: 400; margin-bottom: 0.5rem;">🔤 Vocabulary from the passage</h3>
+    <table>
+        <thead><tr><th>Word</th><th>Simple meaning</th><th>🇸🇦 Arabic</th></tr></thead>
+        <tbody>
+            <tr><td><strong>routine</strong></td><td>things you do regularly every day</td><td class="arabic">روتين</td></tr>
+            <tr><td><strong>yawn</strong></td><td>open mouth wide when tired or bored</td><td class="arabic">يتثاءب</td></tr>
+            <tr><td><strong>stretch</strong></td><td>extend arms or legs</td><td class="arabic">يتمدد</td></tr>
+            <tr><td><strong>make my bed</strong></td><td>arrange sheets and covers neatly</td><td class="arabic">يرتب السرير</td></tr>
+            <tr><td><strong>brush teeth</strong></td><td>clean teeth with a toothbrush</td><td class="arabic">ينظف الأسنان</td></tr>
+            <tr><td><strong>comb hair</strong></td><td>make hair neat with a comb</td><td class="arabic">يمشط الشعر</td></tr>
+            <tr><td><strong>uniform</strong></td><td>special clothes for school or work</td><td class="arabic">زي مدرسي</td></tr>
+            <tr><td><strong>pack</strong></td><td>put things in a bag</td><td class="arabic">يحزم</td></tr>
+        </tbody>
+    </table>
+
+    <hr>
+    <div class="footer-note">
+        🌟 Passage 7: "My Daily Routine" - Simple words, short sentences, clear images.<br>
+        📁 <strong>Filename: passage7.html</strong> (same location as passage1-6.html)
+    </div>
+    <div style="margin-top: 1rem; font-size: 0.9rem; background: #e3f0ff; border-radius: 60px; padding: 0.8rem 2rem; text-align: center;">
+        ✅ 5 paragraphs with images & audio ✓ INTERACTIVE multiple choice questions ✓ Show answer button ✓ Vocabulary with Arabic ✓ Ready for STEP practice
+    </div>
+</div>
+
+<script>
+    // Make all questions interactive
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;
+            const selectedValue = this.value;
+            
+            // Determine correct answer based on question
+            let correctAnswer = '';
+            if (questionId === 'q1') correctAnswer = 'a';
+            else if (questionId === 'q2') correctAnswer = 'c';
+            else if (questionId === 'q3') correctAnswer = 'b';
+            else if (questionId === 'q4') correctAnswer = 'c';
+            else if (questionId === 'q5') correctAnswer = 'b';
+            
+            // Get feedback element
+            const feedbackId = 'feedback' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            
+            // Check answer
+            if (selectedValue === correctAnswer) {
+                feedback.textContent = '✅ Correct! Well done.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Try again!';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+
+    // Function to show answer
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (a) open mouth wide when tired'; break;
+            case 2: answerText = 'The correct answer is (c) milk'; break;
+            case 3: answerText = 'The correct answer is (b) Karim\'s daily routine from morning to night'; break;
+            case 4: answerText = 'The correct answer is (c) 6:30'; break;
+            case 5: answerText = 'The correct answer is (b) he is okay with it'; break;
+        }
+        
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+</script>
+</body>
+</html>
