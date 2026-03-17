@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading - A1 - Passage 8</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #fff8e7;
+            color: #5d4a36;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(150, 100, 70, 0.1);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: #d98c5f;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #fcd5b5;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #8b7a67;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #b5714a;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #fad4b5;
+            padding-bottom: 0.5rem;
+        }
+        .passage-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        .paragraph-card {
+            background: #fffbf5;
+            border-radius: 28px;
+            padding: 1.8rem 1.8rem 1.8rem 1.8rem;
+            box-shadow: 0 5px 20px rgba(170, 120, 70, 0.1);
+            transition: 0.2s;
+            border: 1px solid #ffe5cf;
+        }
+        .para-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        .para-image {
+            width: 140px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: 0 8px 18px -6px #dbbd9c;
+            border: 2px solid white;
+            background: #ffefe2;
+        }
+        .para-text {
+            font-size: 1.2rem;
+            background: #ffffff;
+            padding: 1.3rem 1.8rem;
+            border-radius: 36px 36px 36px 12px;
+            box-shadow: inset 0 1px 6px #ffefe2;
+            border: 1px solid #ffe5cf;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: #5d4a36;
+        }
+        .audio-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-top: 0.5rem;
+            margin-left: 0.2rem;
+        }
+        audio {
+            height: 42px;
+            width: 260px;
+            border-radius: 42px;
+        }
+        .audio-label {
+            background: #fde3cd;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #b5714a;
+        }
+        .questions-section {
+            background: #fff2e4;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #fccfad;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #b5714a;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(150, 90, 50, 0.08);
+            border-left: 10px solid #f0a87d;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #d98c5f;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #ffefe2;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #d98c5f;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+        }
+        .option input[type="radio"]:checked {
+            background: #d98c5f;
+            border: 2px solid #d98c5f;
+        }
+        .option input[type="radio"]:checked::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            top: 3px;
+            left: 3px;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            color: #2e7d32;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #c62828;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #d98c5f;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .show-answer-btn:hover {
+            color: #b5714a;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #ffdec6;
+            margin: 2rem 0 0.5rem 0;
+        }
+        th {
+            background: #d98c5f;
+            color: white;
+            font-weight: 500;
+            font-size: 1.2rem;
+            padding: 1rem 1.5rem;
+        }
+        td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #ffdec6;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #5d4a36;
+        }
+        .footer-note {
+            margin-top: 1.5rem;
+            color: #8b7a67;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #fad4b5, transparent);
+            margin: 2rem 0 0.5rem 0;
+        }
+        @media (max-width: 700px) {
+            .container { padding: 1.5rem; }
+            .para-header { flex-direction: column; align-items: start; }
+            .para-image { width: 100%; height: auto; max-height: 150px; }
+            audio { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>👥 STEP Reading · A1</h1>
+    <div class="sub-title">Passage 8 · My Best Friend</div>
+
+    <h2>🤝 Meet Youssef and his best friend Adam</h2>
+
+    <!-- فقرة 1 -->
+    <div class="passage-grid">
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/8111838/pexels-photo-8111838.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Two boys laughing together">
+                <span style="font-weight: 600; background: #fde3cd; padding: 0.3rem 1.8rem; border-radius: 40px;">👬 paragraph 1</span>
+            </div>
+            <div class="para-text" id="p1">
+                My name is Youssef. I am nine years old. I have a best friend. His name is Adam. He is also nine. We are in the same class at school. We sit next to each other. Adam is my best friend because he is kind and funny.
+            </div>
+            <div class="audio-wrapper">
+                <span class="audio-label">🔊 listen</span>
+                <audio controls preload="none">
+                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <!-- فقرة 2 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/5955389/pexels-photo-5955389.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Boys playing football together">
+                <span style="font-weight: 600; background: #fde3cd; padding: 0.3rem 1.8rem; border-radius: 40px;">⚽ paragraph 2</span>
+            </div>
+            <div class="para-text" id="p2">
+                After school, we often play together. We like to play football in the park. Adam is very good at football. He runs fast and scores many goals. I am not as good as him, but he never makes fun of me. He always passes the ball to me.
+            </div>
+            <div class="audio-wrapper">
+                <span class="audio-label">🔊 listen</span>
+                <audio controls preload="none">
+                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <!-- فقرة 3 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/5473959/pexels-photo-5473959.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Boys studying together">
+                <span style="font-weight: 600; background: #fde3cd; padding: 0.3rem 1.8rem; border-radius: 40px;">📚 paragraph 3</span>
+            </div>
+            <div class="para-text" id="p3">
+                Adam helps me with my homework. Sometimes I do not understand math. He explains it to me slowly. He never gets angry. I help him with spelling. We study together at my house. My mother gives us cookies and juice.
+            </div>
+            <div class="audio-wrapper">
+                <span class="audio-label">🔊 listen</span>
+                <audio controls preload="none">
+                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <!-- فقرة 4 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/8613073/pexels-photo-8613073.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Boys sharing snacks">
+                <span style="font-weight: 600; background: #fde3cd; padding: 0.3rem 1.8rem; border-radius: 40px;">🍪 paragraph 4</span>
+            </div>
+            <div class="para-text" id="p4">
+                Adam always shares his snacks with me. He gives me half of his sandwich. I share my chocolate with him. We laugh and tell jokes. When I am sad, Adam makes me feel better. He is a true friend. I am lucky to have him.
+            </div>
+            <div class="audio-wrapper">
+                <span class="audio-label">🔊 listen</span>
+                <audio controls preload="none">
+                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <!-- فقرة 5 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/7129700/pexels-photo-7129700.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Two friends hugging">
+                <span style="font-weight: 600; background: #fde3cd; padding: 0.3rem 1.8rem; border-radius: 40px;">❤️ paragraph 5</span>
+            </div>
+            <div class="para-text" id="p5">
+                This weekend, Adam is coming to my birthday party. I am so excited. We will play games and eat cake. I made him a special card. It says, "Thank you for being my best friend." Good friends are hard to find. I will always be Adam's friend.
+            </div>
+            <div class="audio-wrapper">
+                <span class="audio-label">🔊 listen</span>
+                <audio controls preload="none">
+                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5 أسئلة STEP - INTERACTIVE MULTIPLE CHOICE -->
+    <div class="questions-section">
+        <h3>📘 STEP-style questions (A1) - Interactive</h3>
+
+        <!-- سؤال 1 -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>Word meaning:</strong> In paragraph 2, what does the phrase "<strong>makes fun of</strong>" mean?
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) helps someone</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) laughs at someone in a mean way</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) plays with someone</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) gives food to someone</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 2 -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>Go back to paragraph 3:</strong> What subject does Adam help Youssef with?
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) science</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) English</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) math</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) history</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'c')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 3 -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>Main idea:</strong> What is the main idea of this story?
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) how to play football</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) Youssef's friendship with Adam</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) Youssef's birthday party</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) Adam's favorite hobbies</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 4 -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>Detail:</strong> What does Youssef give Adam at the birthday party?
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) a football</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) a book</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) a special card</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) a toy</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'c')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 5 -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>Inference:</strong> Why does Youssef think Adam is a good friend?
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) because he is rich</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) because he is kind, helpful, and shares</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) because he is good at sports</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) because he has many toys</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'b')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- جدول المفردات -->
+    <h3 style="font-size: 1.8rem; font-weight: 400; margin-bottom: 0.5rem;">🔤 Vocabulary from the passage</h3>
+    <table>
+        <thead><tr><th>Word</th><th>Simple meaning</th><th>🇸🇦 Arabic</th></tr></thead>
+        <tbody>
+            <tr><td><strong>best friend</strong></td><td>closest friend you have</td><td class="arabic">صديق مقرب</td></tr>
+            <tr><td><strong>kind</strong></td><td>nice, caring about others</td><td class="arabic">لطيف</td></tr>
+            <tr><td><strong>funny</strong></td><td>makes you laugh</td><td class="arabic">مضحك</td></tr>
+            <tr><td><strong>make fun of</strong></td><td>laugh at someone in a mean way</td><td class="arabic">يسخر من</td></tr>
+            <tr><td><strong>score goals</strong></td><td>get points in a game like football</td><td class="arabic">يسجل أهداف</td></tr>
+            <tr><td><strong>explain</strong></td><td>tell about something so it is clear</td><td class="arabic">يشرح</td></tr>
+            <tr><td><strong>spelling</strong></td><td>writing words with correct letters</td><td class="arabic">تهجئة</td></tr>
+            <tr><td><strong>share</strong></td><td>give part of something to someone</td><td class="arabic">يشارك</td></tr>
+        </tbody>
+    </table>
+
+    <hr>
+    <div class="footer-note">
+        🌟 Passage 8: "My Best Friend" - Simple words, short sentences, clear images.<br>
+        📁 <strong>Filename: passage8.html</strong> (same location as passage1-7.html)
+    </div>
+    <div style="margin-top: 1rem; font-size: 0.9rem; background: #fff2e4; border-radius: 60px; padding: 0.8rem 2rem; text-align: center;">
+        ✅ 5 paragraphs with images & audio ✓ INTERACTIVE multiple choice questions ✓ Show answer button ✓ Vocabulary with Arabic ✓ Ready for STEP practice
+    </div>
+</div>
+
+<script>
+    // Make all questions interactive
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;
+            const selectedValue = this.value;
+            
+            // Determine correct answer based on question
+            let correctAnswer = '';
+            if (questionId === 'q1') correctAnswer = 'b';
+            else if (questionId === 'q2') correctAnswer = 'c';
+            else if (questionId === 'q3') correctAnswer = 'b';
+            else if (questionId === 'q4') correctAnswer = 'c';
+            else if (questionId === 'q5') correctAnswer = 'b';
+            
+            // Get feedback element
+            const feedbackId = 'feedback' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            
+            // Check answer
+            if (selectedValue === correctAnswer) {
+                feedback.textContent = '✅ Correct! Well done.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Try again!';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+
+    // Function to show answer
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (b) laughs at someone in a mean way'; break;
+            case 2: answerText = 'The correct answer is (c) math'; break;
+            case 3: answerText = 'The correct answer is (b) Youssef\'s friendship with Adam'; break;
+            case 4: answerText = 'The correct answer is (c) a special card'; break;
+            case 5: answerText = 'The correct answer is (b) because he is kind, helpful, and shares'; break;
+        }
+        
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+</script>
+</body>
+</html>
