@@ -1,5 +1,6 @@
 name: Run Datadog Synthetic tests
 
+# متى يتم تشغيل الـ workflow
 on:
   push:
     branches: [ "main" ]
@@ -11,18 +12,46 @@ env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
-  build:
+  synthetic-tests:
     runs-on: ubuntu-latest
 
     steps:
       # Checkout أحدث نسخة من المستودع
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
+
+      # إعداد Node.js 24 لضمان التوافق مع جميع الخطوات
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      # تثبيت dependencies (إذا كان هناك package.json)
+      - name: Install dependencies
+        run: |
+          if [ -f package.json ]; then
+            npm install
+          else
+            echo "No package.json found, skipping npm install"
+          fi
 
       # Run Datadog Synthetic tests
       - name: Run Datadog Synthetic tests
-        uses: DataDog/synthetics-ci-github-action@v1.4.0
+        uses: DataDog/synthetics-ci-github-action@v2.0.0
         with:
           api_key: ${{ secrets.DD_API_KEY }}
           app_key: ${{ secrets.DD_APP_KEY }}
-          test_search_query: 'tag:e2e-tests' # عدّل الوسم حسب استراتيجيتك
+          test_search_query: 'tag:e2e-tests'
+          # يمكنك إضافة خيارات إضافية:
+          # files: 'synthetics/*.synthetics.json'
+          # variables: 'USER_NAME=test-user,PASSWORD=test-pass'
+          # timeout: 15
+          # public_ids: 'abc-def-ghi,xyz-123-456'
+
+      # خطوة إضافية: عرض نتيجة الاختبارات
+      - name: Test Report
+        if: always()
+        run: |
+          echo "✅ Datadog Synthetic tests completed"
+          echo "📊 Check results in Datadog dashboard"
