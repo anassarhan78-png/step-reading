@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading · A2 – My Best Friend (مع الصور + استماع)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #f0f7f0;
+            color: #2d4a2d;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(40, 90, 40, 0.1);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: #4a8b4a;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #b5d8b5;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #4d6b4d;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #3b6e3b;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #b5d8b5;
+            padding-bottom: 0.5rem;
+        }
+        .passage-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        .paragraph-card {
+            background: #f5fbf5;
+            border-radius: 28px;
+            padding: 1.8rem 1.8rem 1.8rem 1.8rem;
+            box-shadow: 0 5px 20px rgba(70, 120, 70, 0.1);
+            transition: 0.2s;
+            border: 1px solid #c8e0c8;
+        }
+        .para-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        .para-image {
+            width: 140px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: 0 8px 18px -6px #a0bda0;
+            border: 2px solid white;
+            background: #dff0df;
+        }
+        .para-text {
+            font-size: 1.2rem;
+            background: #ffffff;
+            padding: 1.3rem 1.8rem;
+            border-radius: 36px 36px 36px 12px;
+            box-shadow: inset 0 1px 6px #dff0df;
+            border: 1px solid #c8e0c8;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: #2d4a2d;
+        }
+        .listen-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-top: 0.5rem;
+            margin-left: 0.2rem;
+        }
+        .listen-btn {
+            background: #dff0df;
+            border: none;
+            padding: 0.6rem 1.8rem;
+            border-radius: 40px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #3b6e3b;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 4px 8px rgba(40, 90, 40, 0.1);
+            border: 1px solid #a8d0a8;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .listen-btn:hover {
+            background: #c8e6c8;
+            transform: scale(1.02);
+        }
+        .questions-section {
+            background: #e8f3e8;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #a8d0a8;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #3b6e3b;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(40, 90, 40, 0.08);
+            border-left: 10px solid #6fa36f;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #4a8b4a;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #dff0df;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #4a8b4a;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+        }
+        .option input[type="radio"]:checked {
+            background: #4a8b4a;
+            border: 2px solid #4a8b4a;
+        }
+        .option input[type="radio"]:checked::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            top: 3px;
+            left: 3px;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            color: #2e7d32;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #c62828;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #4a8b4a;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .show-answer-btn:hover {
+            color: #3b6e3b;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #c8e0c8;
+            margin: 2rem 0 0.5rem 0;
+        }
+        th {
+            background: #4a8b4a;
+            color: white;
+            font-weight: 500;
+            font-size: 1.2rem;
+            padding: 1rem 1.5rem;
+        }
+        td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #c8e0c8;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #2d4a2d;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #b5d8b5, transparent);
+            margin: 2rem 0 0.5rem 0;
+        }
+        @media (max-width: 700px) {
+            .container { padding: 1.5rem; }
+            .para-header { flex-direction: column; align-items: start; }
+            .para-image { width: 100%; height: auto; max-height: 150px; }
+            .listen-btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📘 STEP Reading · A2</h1>
+    <div class="sub-title">Passage 7 · My Best Friend (نصوص متكاملة + استماع)</div>
+
+    <h2>👫 My Best Friend, Ahmed</h2>
+
+    <!-- فقرة 1 -->
+    <div class="passage-grid">
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=400" alt="صديقان يضحكان">
+                <span style="font-weight: 600; background: #dff0df; padding: 0.3rem 1.8rem; border-radius: 40px;">🤝 paragraph 1</span>
+            </div>
+            <div class="para-text" id="p1">
+                My best friend's name is Ahmed. He is twelve years old, the same age as me. We are in the same class at school. Ahmed has black hair and brown eyes. He is very kind and always helps me when I need him.
+            </div>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p1')">🔊 استمع للفقرة</button>
+            </div>
+        </div>
+
+        <!-- فقرة 2 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?auto=compress&cs=tinysrgb&w=400" alt="أطفال في المدرسة">
+                <span style="font-weight: 600; background: #dff0df; padding: 0.3rem 1.8rem; border-radius: 40px;">🏫 paragraph 2</span>
+            </div>
+            <div class="para-text" id="p2">
+                We met on the first day of school three years ago. I was nervous because I didn't know anyone. Ahmed sat next to me and started talking. He asked about my favorite hobbies. Soon, we became good friends.
+            </div>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p2')">🔊 استمع للفقرة</button>
+            </div>
+        </div>
+
+        <!-- فقرة 3 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/4962882/pexels-photo-4962882.jpeg?auto=compress&cs=tinysrgb&w=400" alt="يلعبان كرة القدم">
+                <span style="font-weight: 600; background: #dff0df; padding: 0.3rem 1.8rem; border-radius: 40px;">⚽ paragraph 3</span>
+            </div>
+            <div class="para-text" id="p3">
+                Ahmed and I like to do many things together. After school, we often play football in the park. On weekends, we ride our bikes or play video games. Sometimes we do homework together at my house.
+            </div>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p3')">🔊 استمع للفقرة</button>
+            </div>
+        </div>
+
+        <!-- فقرة 4 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/4065781/pexels-photo-4065781.jpeg?auto=compress&cs=tinysrgb&w=400" alt="يساعد صديقه">
+                <span style="font-weight: 600; background: #dff0df; padding: 0.3rem 1.8rem; border-radius: 40px;">💪 paragraph 4</span>
+            </div>
+            <div class="para-text" id="p4">
+                Last month, I was sick and missed school for a week. Ahmed visited me and brought my homework. He explained the lessons I missed. Thanks to him, I didn't fall behind in class. I was very grateful.
+            </div>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p4')">🔊 استمع للفقرة</button>
+            </div>
+        </div>
+
+        <!-- فقرة 5 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/1884584/pexels-photo-1884584.jpeg?auto=compress&cs=tinysrgb&w=400" alt="صديقان يمشيان">
+                <span style="font-weight: 600; background: #dff0df; padding: 0.3rem 1.8rem; border-radius: 40px;">🌟 paragraph 5</span>
+            </div>
+            <div class="para-text" id="p5">
+                A true friend is hard to find. I am lucky to have Ahmed in my life. We share secrets, laugh a lot, and support each other. I hope we stay friends forever. Everyone needs a friend like Ahmed.
+            </div>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p5')">🔊 استمع للفقرة</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- أسئلة تفاعلية (STEP‑style) -->
+    <div class="questions-section">
+        <h3>📘 STEP‑style questions (A2) – اختبر فهمك</h3>
+
+        <!-- سؤال 1: معنى كلمة -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>Word meaning:</strong> In paragraph 2, what does “<strong>nervous</strong>” mean?
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) happy and excited</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) worried or a little scared</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) angry</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) tired</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 2: تفاصيل من الفقرة 1 -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>Detail (paragraph 1):</strong> How old is Ahmed?
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) eleven years old</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) twelve years old</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) thirteen years old</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) ten years old</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 3: فكرة رئيسية -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>Main idea:</strong> What is the passage mainly about?
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) How to make friends at school</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) The writer's best friend and their friendship</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) Football and video games</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) Being sick and missing school</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 4: تفاصيل من الفقرة 4 -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>Detail (paragraph 4):</strong> Why did Ahmed visit the writer last month?
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) to play video games</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) to bring homework and explain lessons</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) to go to the park together</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) to watch a movie</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 5: استنتاج -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>Inference:</strong> How does the writer feel about Ahmed?
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) He is jealous of Ahmed.</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) He thinks Ahmed is boring.</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) He is thankful and values their friendship.</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) He wants to find new friends.</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'c')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- جدول المفردات -->
+    <h3 style="font-size: 1.8rem; font-weight: 400; margin-bottom: 0.5rem;">🔤 Vocabulary from the passage</h3>
+    <table>
+        <thead><tr><th>Word</th><th>Simple meaning</th><th>🇸🇦 Arabic</th></tr></thead>
+        <tbody>
+            <tr><td><strong>best friend</strong></td><td>the friend you like the most</td><td class="arabic">صديق مقرب</td></tr>
+            <tr><td><strong>kind</strong></td><td>friendly and helpful</td><td class="arabic">لطيف</td></tr>
+            <tr><td><strong>nervous</strong></td><td>worried or frightened about something</td><td class="arabic">متوتر</td></tr>
+            <tr><td><strong>hobby</strong></td><td>an activity you enjoy in your free time</td><td class="arabic">هواية</td></tr>
+            <tr><td><strong>together</strong></td><td>with each other</td><td class="arabic">معاً</td></tr>
+            <tr><td><strong>sick</strong></td><td>ill, not healthy</td><td class="arabic">مريض</td></tr>
+            <tr><td><strong>missed</strong></td><td>did not go to</td><td class="arabic">غاب عن</td></tr>
+            <tr><td><strong>explain</strong></td><td>to make something clear</td><td class="arabic">يشرح</td></tr>
+            <tr><td><strong>grateful</strong></td><td>feeling thankful</td><td class="arabic">ممتن</td></tr>
+            <tr><td><strong>secret</strong></td><td>something you do not tell others</td><td class="arabic">سر</td></tr>
+            <tr><td><strong>support</strong></td><td>to help someone</td><td class="arabic">يدعم</td></tr>
+            <tr><td><strong>forever</strong></td><td>for all time</td><td class="arabic">للأبد</td></tr>
+        </tbody>
+    </table>
+
+    <hr>
+</div>
+
+<script>
+    // قراءة النص بصوت عالٍ (Web Speech API)
+    function readAloud(elementId) {
+        const textElement = document.getElementById(elementId);
+        if (!textElement) return;
+
+        if (window.speechSynthesis.speaking) {
+            window.speechSynthesis.cancel();
+        }
+
+        const text = textElement.innerText;
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.9;
+        utterance.pitch = 1;
+        window.speechSynthesis.speak(utterance);
+    }
+
+    // التحقق من الإجابات عند اختيار خيار
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;
+            const selectedValue = this.value;
+            
+            // الإجابات الصحيحة
+            let correctAnswer = '';
+            if (questionId === 'q1') correctAnswer = 'b';
+            else if (questionId === 'q2') correctAnswer = 'b';
+            else if (questionId === 'q3') correctAnswer = 'b';
+            else if (questionId === 'q4') correctAnswer = 'b';
+            else if (questionId === 'q5') correctAnswer = 'c';
+            
+            const feedbackId = 'feedback' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            
+            if (selectedValue === correctAnswer) {
+                feedback.textContent = '✅ Correct! Well done.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Try again!';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+
+    // إظهار الإجابة الصحيحة عند الضغط على الزر
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (b) worried or a little scared.'; break;
+            case 2: answerText = 'The correct answer is (b) twelve years old.'; break;
+            case 3: answerText = 'The correct answer is (b) The writer\'s best friend and their friendship.'; break;
+            case 4: answerText = 'The correct answer is (b) to bring homework and explain lessons.'; break;
+            case 5: answerText = 'The correct answer is (c) He is thankful and values their friendship.'; break;
+        }
+        
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+</script>
+</body>
+</html>
