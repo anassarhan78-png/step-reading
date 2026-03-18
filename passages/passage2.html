@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STEP Reading - A1 - Passage 2 (بدون صور + استماع ناطق)</title>
+    <title>STEP Reading - A1 - Passage 2 (استماع ناطق)</title>
     <style>
         * {
             box-sizing: border-box;
@@ -69,7 +69,6 @@
             flex-wrap: wrap;
             margin-bottom: 1.5rem;
         }
-        /* تم إزالة أنماط الصور */
         .para-text {
             font-size: 1.2rem;
             background: #ffffff;
@@ -107,9 +106,6 @@
         .listen-btn:hover {
             background: #f5c89e;
             transform: scale(1.02);
-        }
-        .listen-btn:active {
-            transform: scale(0.98);
         }
         .questions-section {
             background: #fef3e9;
@@ -267,11 +263,11 @@
 <body>
 <div class="container">
     <h1>👪 STEP Reading · A1</h1>
-    <div class="sub-title">Passage 2 · My Family (بدون صور + استماع ناطق)</div>
+    <div class="sub-title">Passage 2 · My Family (استماع ناطق)</div>
 
     <h2>🏡 Meet Ahmed and his family</h2>
 
-    <!-- فقرة 1 (بدون صورة) -->
+    <!-- فقرة 1 -->
     <div class="passage-grid">
         <div class="paragraph-card">
             <div class="para-header">
@@ -426,11 +422,11 @@
 
     <hr>
     <div class="footer-note">
-        🌟 Passage 2: "My Family" - تمت إزالة الصور وإصلاح الاستماع (نطق آلي).<br>
-        📁 <strong>Filename: passage2.html</strong> (نسخة محدثة)
+        🌟 Passage 2: "My Family" - إصلاح الاستماع (نطق آلي).<br>
+        📁 <strong>Filename: passage2.html</strong>
     </div>
     <div style="margin-top: 1rem; font-size: 0.9rem; background: #fef3e9; border-radius: 60px; padding: 0.8rem 2rem; text-align: center;">
-        ✅ الاستماع الآن يعمل عبر زر "استمع للفقرة" (تخاطب آلي). جميع الأسئلة تفاعلية.
+        ✅ الاستماع الآن يعمل عبر زر "استمع للفقرة". جميع الأسئلة تفاعلية.
     </div>
 </div>
 
@@ -440,7 +436,6 @@
         const textElement = document.getElementById(elementId);
         if (!textElement) return;
 
-        // إيقاف أي تحديث جارٍ
         if (window.speechSynthesis.speaking) {
             window.speechSynthesis.cancel();
         }
@@ -448,12 +443,11 @@
         const text = textElement.innerText;
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = 'en-US';
-        utterance.rate = 0.9; // سرعة مناسبة للمستوى A1
+        utterance.rate = 0.9;
         utterance.pitch = 1;
         window.speechSynthesis.speak(utterance);
     }
 
-    // تفاعل الأسئلة (كما هو)
     document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
         radio.addEventListener('change', function() {
             const questionItem = this.closest('.question-item');
@@ -480,7 +474,6 @@
         });
     });
 
-    // وظيفة إظهار الإجابة الصحيحة
     function showAnswer(questionNum, correctLetter) {
         const feedback = document.getElementById('feedback' + questionNum);
         let answerText = '';
