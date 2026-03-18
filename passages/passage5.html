@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STEP Reading - A1 - Passage 5</title>
+    <title>STEP Reading - A1 - Passage 5 (مع الصور + استماع ناطق)</title>
     <style>
         * {
             box-sizing: border-box;
@@ -89,25 +89,32 @@
             line-height: 1.8;
             color: #1e4a2b;
         }
-        .audio-wrapper {
+        .listen-wrapper {
             display: flex;
             align-items: center;
             gap: 0.8rem;
             margin-top: 0.5rem;
             margin-left: 0.2rem;
         }
-        audio {
-            height: 42px;
-            width: 260px;
-            border-radius: 42px;
-        }
-        .audio-label {
+        .listen-btn {
             background: #c1e5d3;
-            padding: 0.3rem 1rem;
+            border: none;
+            padding: 0.6rem 1.8rem;
             border-radius: 40px;
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: 600;
             color: #1f6e4a;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 4px 8px rgba(40, 100, 60, 0.1);
+            border: 1px solid #9fd9bb;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .listen-btn:hover {
+            background: #a5d6b6;
+            transform: scale(1.02);
         }
         .questions-section {
             background: #e1f3ea;
@@ -259,18 +266,18 @@
             .container { padding: 1.5rem; }
             .para-header { flex-direction: column; align-items: start; }
             .para-image { width: 100%; height: auto; max-height: 150px; }
-            audio { width: 100%; }
+            .listen-btn { width: 100%; justify-content: center; }
         }
     </style>
 </head>
 <body>
 <div class="container">
     <h1>🌳 STEP Reading · A1</h1>
-    <div class="sub-title">Passage 5 · A Day at the Park</div>
+    <div class="sub-title">Passage 5 · A Day at the Park (مع الصور + استماع ناطق)</div>
 
     <h2>☀️ Lina's fun day outside</h2>
 
-    <!-- فقرة 1 -->
+    <!-- فقرة 1 مع الصورة -->
     <div class="passage-grid">
         <div class="paragraph-card">
             <div class="para-header">
@@ -280,15 +287,12 @@
             <div class="para-text" id="p1">
                 Lina wakes up early on Saturday morning. The sun is shining. She looks out the window and sees a blue sky. "Mom, can we go to the park today?" she asks. Her mother smiles and says, "Yes, we can go after breakfast." Lina is very happy. She eats her cereal quickly.
             </div>
-            <div class="audio-wrapper">
-                <span class="audio-label">🔊 listen</span>
-                <audio controls preload="none">
-                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
-                </audio>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p1')">🔊 استمع للفقرة</button>
             </div>
         </div>
 
-        <!-- فقرة 2 -->
+        <!-- فقرة 2 مع الصورة -->
         <div class="paragraph-card">
             <div class="para-header">
                 <img class="para-image" src="https://images.pexels.com/photos/1242762/pexels-photo-1242762.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Children playing on swings and slide">
@@ -297,15 +301,12 @@
             <div class="para-text" id="p2">
                 At the park, Lina runs to the playground. She loves the swings. She swings high in the air. She feels like a bird. Then she goes down the slide. It is fast and fun. Other children are playing too. Lina makes a new friend. Her name is Sara. They play together.
             </div>
-            <div class="audio-wrapper">
-                <span class="audio-label">🔊 listen</span>
-                <audio controls preload="none">
-                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
-                </audio>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p2')">🔊 استمع للفقرة</button>
             </div>
         </div>
 
-        <!-- فقرة 3 -->
+        <!-- فقرة 3 مع الصورة -->
         <div class="paragraph-card">
             <div class="para-header">
                 <img class="para-image" src="https://images.pexels.com/photos/162190/dogs-animals-funny-pets-162190.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Happy dog running on grass">
@@ -314,15 +315,12 @@
             <div class="para-text" id="p3">
                 Near the playground, a man is walking his dog. The dog is white and fluffy. It runs and jumps. Lina asks, "Can I pet your dog?" The man says yes. The dog licks Lina's hand. It wags its tail. Lina laughs. "He is so cute!" she says. She gives the dog a gentle pat.
             </div>
-            <div class="audio-wrapper">
-                <span class="audio-label">🔊 listen</span>
-                <audio controls preload="none">
-                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
-                </audio>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p3')">🔊 استمع للفقرة</button>
             </div>
         </div>
 
-        <!-- فقرة 4 -->
+        <!-- فقرة 4 مع الصورة -->
         <div class="paragraph-card">
             <div class="para-header">
                 <img class="para-image" src="https://images.pexels.com/photos/474044/pexels-photo-474044.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Ducks swimming in a pond">
@@ -331,15 +329,12 @@
             <div class="para-text" id="p4">
                 Lina and her mother walk to the pond. They see ducks swimming. The ducks are brown and white. Lina has some bread. She throws little pieces to the ducks. The ducks quack and eat quickly. A small duck comes near her feet. Lina giggles. "Look, Mom! It's so close!"
             </div>
-            <div class="audio-wrapper">
-                <span class="audio-label">🔊 listen</span>
-                <audio controls preload="none">
-                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
-                </audio>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p4')">🔊 استمع للفقرة</button>
             </div>
         </div>
 
-        <!-- فقرة 5 -->
+        <!-- فقرة 5 مع الصورة -->
         <div class="paragraph-card">
             <div class="para-header">
                 <img class="para-image" src="https://images.pexels.com/photos/1732272/pexels-photo-1732272.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Family walking home at sunset">
@@ -348,11 +343,8 @@
             <div class="para-text" id="p5">
                 After a long day, it is time to go home. Lina is tired but happy. She holds her mother's hand. "I had the best day ever," she says. "Can we come again tomorrow?" Her mother laughs. "Maybe next weekend," she says. Lina smiles. She cannot wait to come back to the park.
             </div>
-            <div class="audio-wrapper">
-                <span class="audio-label">🔊 listen</span>
-                <audio controls preload="none">
-                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
-                </audio>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p5')">🔊 استمع للفقرة</button>
             </div>
         </div>
     </div>
@@ -445,23 +437,39 @@
 
     <hr>
     <div class="footer-note">
-        🌟 Passage 5: "A Day at the Park" - Simple words, short sentences, clear images.<br>
-        📁 <strong>Filename: passage5.html</strong> (same location as passage1.html, passage2.html, passage3.html, passage4.html)
+        🌟 Passage 5: "A Day at the Park" - إصلاح الاستماع (نطق آلي).<br>
+        📁 <strong>Filename: passage5.html</strong>
     </div>
     <div style="margin-top: 1rem; font-size: 0.9rem; background: #e1f3ea; border-radius: 60px; padding: 0.8rem 2rem; text-align: center;">
-        ✅ 5 paragraphs with images & audio ✓ INTERACTIVE multiple choice questions ✓ Show answer button ✓ Vocabulary with Arabic ✓ Ready for STEP practice
+        ✅ الاستماع الآن يعمل عبر زر "استمع للفقرة". جميع الأسئلة تفاعلية.
     </div>
 </div>
 
 <script>
-    // Make all questions interactive
+    // وظيفة قراءة النص بصوت عالٍ (Web Speech API)
+    function readAloud(elementId) {
+        const textElement = document.getElementById(elementId);
+        if (!textElement) return;
+
+        if (window.speechSynthesis.speaking) {
+            window.speechSynthesis.cancel();
+        }
+
+        const text = textElement.innerText;
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.9;
+        utterance.pitch = 1;
+        window.speechSynthesis.speak(utterance);
+    }
+
+    // تفاعل الأسئلة
     document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
         radio.addEventListener('change', function() {
             const questionItem = this.closest('.question-item');
             const questionId = questionItem.id;
             const selectedValue = this.value;
             
-            // Determine correct answer based on question
             let correctAnswer = '';
             if (questionId === 'q1') correctAnswer = 'b';
             else if (questionId === 'q2') correctAnswer = 'b';
@@ -469,11 +477,9 @@
             else if (questionId === 'q4') correctAnswer = 'b';
             else if (questionId === 'q5') correctAnswer = 'b';
             
-            // Get feedback element
             const feedbackId = 'feedback' + questionId.substring(1);
             const feedback = document.getElementById(feedbackId);
             
-            // Check answer
             if (selectedValue === correctAnswer) {
                 feedback.textContent = '✅ Correct! Well done.';
                 feedback.className = 'feedback correct';
@@ -484,7 +490,6 @@
         });
     });
 
-    // Function to show answer
     function showAnswer(questionNum, correctLetter) {
         const feedback = document.getElementById('feedback' + questionNum);
         let answerText = '';
