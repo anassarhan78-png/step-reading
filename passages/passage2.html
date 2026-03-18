@@ -57,7 +57,7 @@
         .paragraph-card {
             background: #fff9f2;
             border-radius: 28px;
-            padding: 1.8rem 1.8rem 1.8rem 1.8rem;
+            padding: 1.8rem;
             box-shadow: 0 5px 20px rgba(150, 110, 70, 0.1);
             transition: 0.2s;
             border: 1px solid #fadfc4;
@@ -110,7 +110,7 @@
         .questions-section {
             background: #fef3e9;
             border-radius: 40px;
-            padding: 2rem 2rem 1.8rem 2rem;
+            padding: 2rem;
             margin: 2.5rem 0 2rem 0;
             border: 2px solid #f5cba0;
         }
@@ -241,18 +241,6 @@
             font-size: 1.1rem;
             color: #2c3a2c;
         }
-        .footer-note {
-            margin-top: 1.5rem;
-            color: #7e6b5a;
-            font-size: 0.95rem;
-            text-align: center;
-        }
-        hr {
-            border: none;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #f5d2b0, transparent);
-            margin: 2rem 0 0.5rem 0;
-        }
         @media (max-width: 700px) {
             .container { padding: 1.5rem; }
             .para-header { flex-direction: column; align-items: start; }
@@ -267,7 +255,6 @@
 
     <h2>🏡 Meet Ahmed and his family</h2>
 
-    <!-- فقرة 1 -->
     <div class="passage-grid">
         <div class="paragraph-card">
             <div class="para-header">
@@ -281,7 +268,6 @@
             </div>
         </div>
 
-        <!-- فقرة 2 -->
         <div class="paragraph-card">
             <div class="para-header">
                 <span style="font-weight: 600; background: #f8d7b5; padding: 0.3rem 1.8rem; border-radius: 40px;">👩‍🍳 paragraph 2</span>
@@ -294,7 +280,6 @@
             </div>
         </div>
 
-        <!-- فقرة 3 -->
         <div class="paragraph-card">
             <div class="para-header">
                 <span style="font-weight: 600; background: #f8d7b5; padding: 0.3rem 1.8rem; border-radius: 40px;">👨‍💼 paragraph 3</span>
@@ -307,7 +292,6 @@
             </div>
         </div>
 
-        <!-- فقرة 4 -->
         <div class="paragraph-card">
             <div class="para-header">
                 <span style="font-weight: 600; background: #f8d7b5; padding: 0.3rem 1.8rem; border-radius: 40px;">👧👧 paragraph 4</span>
@@ -320,7 +304,6 @@
             </div>
         </div>
 
-        <!-- فقرة 5 -->
         <div class="paragraph-card">
             <div class="para-header">
                 <span style="font-weight: 600; background: #f8d7b5; padding: 0.3rem 1.8rem; border-radius: 40px;">👴👵 paragraph 5</span>
@@ -334,11 +317,9 @@
         </div>
     </div>
 
-    <!-- 5 أسئلة STEP - تفاعلية -->
     <div class="questions-section">
         <h3>📘 STEP-style questions (A1) - Interactive</h3>
 
-        <!-- سؤال 1 -->
         <div class="question-item" id="q1">
             <span class="q-num">1</span> <strong>Word meaning:</strong> In paragraph 2, what does the word "<strong>patient</strong>" mean?
             <div class="options">
@@ -351,7 +332,6 @@
             <button class="show-answer-btn" onclick="showAnswer(1, 'b')">🔍 Show answer</button>
         </div>
 
-        <!-- سؤال 2 -->
         <div class="question-item" id="q2">
             <span class="q-num">2</span> <strong>Go back to paragraph 4:</strong> How old is Sara?
             <div class="options">
@@ -364,7 +344,6 @@
             <button class="show-answer-btn" onclick="showAnswer(2, 'c')">🔍 Show answer</button>
         </div>
 
-        <!-- سؤال 3 -->
         <div class="question-item" id="q3">
             <span class="q-num">3</span> <strong>Main idea:</strong> What is the main idea of this story?
             <div class="options">
@@ -377,7 +356,6 @@
             <button class="show-answer-btn" onclick="showAnswer(3, 'b')">🔍 Show answer</button>
         </div>
 
-        <!-- سؤال 4 -->
         <div class="question-item" id="q4">
             <span class="q-num">4</span> <strong>Detail:</strong> What does Ahmed's father do on Fridays? (paragraph 3)
             <div class="options">
@@ -390,7 +368,6 @@
             <button class="show-answer-btn" onclick="showAnswer(4, 'b')">🔍 Show answer</button>
         </div>
 
-        <!-- سؤال 5 -->
         <div class="question-item" id="q5">
             <span class="q-num">5</span> <strong>Inference:</strong> How does Ahmed feel when he sees his grandparents?
             <div class="options">
@@ -404,7 +381,6 @@
         </div>
     </div>
 
-    <!-- جدول المفردات -->
     <h3 style="font-size: 1.8rem; font-weight: 400; margin-bottom: 0.5rem;">🔤 Vocabulary from the passage</h3>
     <table>
         <thead><tr><th>Word</th><th>Simple meaning</th><th>🇸🇦 Arabic</th></tr></thead>
@@ -419,19 +395,10 @@
             <tr><td><strong>weekend</strong></td><td>Saturday and Sunday (days off)</td><td class="arabic">عطلة نهاية الأسبوع</td></tr>
         </tbody>
     </table>
-
-    <hr>
-    <div class="footer-note">
-        🌟 Passage 2: "My Family" - إصلاح الاستماع (نطق آلي).<br>
-        📁 <strong>Filename: passage2.html</strong>
-    </div>
-    <div style="margin-top: 1rem; font-size: 0.9rem; background: #fef3e9; border-radius: 60px; padding: 0.8rem 2rem; text-align: center;">
-        ✅ الاستماع الآن يعمل عبر زر "استمع للفقرة". جميع الأسئلة تفاعلية.
-    </div>
 </div>
 
 <script>
-    // وظيفة قراءة النص بصوت عالٍ (Web Speech API)
+    // Audio function
     function readAloud(elementId) {
         const textElement = document.getElementById(elementId);
         if (!textElement) return;
@@ -448,6 +415,7 @@
         window.speechSynthesis.speak(utterance);
     }
 
+    // Interaction logic
     document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
         radio.addEventListener('change', function() {
             const questionItem = this.closest('.question-item');
@@ -474,6 +442,7 @@
         });
     });
 
+    // Show answer button logic
     function showAnswer(questionNum, correctLetter) {
         const feedback = document.getElementById('feedback' + questionNum);
         let answerText = '';
