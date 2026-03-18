@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading · A2 – The Joy of Reading (مع الصور + استماع)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #f0f7f0;
+            color: #2d4a2d;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(40, 90, 40, 0.1);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: #4a8b4a;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #b5d8b5;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #4d6b4d;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #3b6e3b;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #b5d8b5;
+            padding-bottom: 0.5rem;
+        }
+        .passage-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        .paragraph-card {
+            background: #f5fbf5;
+            border-radius: 28px;
+            padding: 1.8rem 1.8rem 1.8rem 1.8rem;
+            box-shadow: 0 5px 20px rgba(70, 120, 70, 0.1);
+            transition: 0.2s;
+            border: 1px solid #c8e0c8;
+        }
+        .para-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        .para-image {
+            width: 140px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: 0 8px 18px -6px #a0bda0;
+            border: 2px solid white;
+            background: #dff0df;
+        }
+        .para-text {
+            font-size: 1.2rem;
+            background: #ffffff;
+            padding: 1.3rem 1.8rem;
+            border-radius: 36px 36px 36px 12px;
+            box-shadow: inset 0 1px 6px #dff0df;
+            border: 1px solid #c8e0c8;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: #2d4a2d;
+        }
+        .listen-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-top: 0.5rem;
+            margin-left: 0.2rem;
+        }
+        .listen-btn {
+            background: #dff0df;
+            border: none;
+            padding: 0.6rem 1.8rem;
+            border-radius: 40px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #3b6e3b;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 4px 8px rgba(40, 90, 40, 0.1);
+            border: 1px solid #a8d0a8;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .listen-btn:hover {
+            background: #c8e6c8;
+            transform: scale(1.02);
+        }
+        .questions-section {
+            background: #e8f3e8;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #a8d0a8;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #3b6e3b;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(40, 90, 40, 0.08);
+            border-left: 10px solid #6fa36f;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #4a8b4a;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #dff0df;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #4a8b4a;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+        }
+        .option input[type="radio"]:checked {
+            background: #4a8b4a;
+            border: 2px solid #4a8b4a;
+        }
+        .option input[type="radio"]:checked::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            top: 3px;
+            left: 3px;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            color: #2e7d32;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #c62828;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #4a8b4a;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .show-answer-btn:hover {
+            color: #3b6e3b;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #c8e0c8;
+            margin: 2rem 0 0.5rem 0;
+        }
+        th {
+            background: #4a8b4a;
+            color: white;
+            font-weight: 500;
+            font-size: 1.2rem;
+            padding: 1rem 1.5rem;
+        }
+        td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #c8e0c8;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #2d4a2d;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #b5d8b5, transparent);
+            margin: 2rem 0 0.5rem 0;
+        }
+        @media (max-width: 700px) {
+            .container { padding: 1.5rem; }
+            .para-header { flex-direction: column; align-items: start; }
+            .para-image { width: 100%; height: auto; max-height: 150px; }
+            .listen-btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📘 STEP Reading · A2</h1>
+    <div class="sub-title">Passage 2 · The Joy of Reading (نصوص متكاملة + استماع)</div>
+
+    <h2>📖 The Joy of Reading</h2>
+
+    <!-- فقرة 1 -->
+    <div class="passage-grid">
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/256450/pexels-photo-256450.jpeg?auto=compress&cs=tinysrgb&w=400" alt="طفل يقرأ كتاباً">
+                <span style="font-weight: 600; background: #dff0df; padding: 0.3rem 1.8rem; border-radius: 40px;">📚 paragraph 1</span>
+            </div>
+            <div class="para-text" id="p1">
+                Reading is one of the most enjoyable hobbies. Many people love to read in their free time. It helps you relax and learn new things. You can read anywhere: at home, in a park, or on a bus.
+            </div>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p1')">🔊 استمع للفقرة</button>
+            </div>
+        </div>
+
+        <!-- فقرة 2 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/159866/books-book-pages-literature-159866.jpeg?auto=compress&cs=tinysrgb&w=400" alt="كومة من الكتب">
+                <span style="font-weight: 600; background: #dff0df; padding: 0.3rem 1.8rem; border-radius: 40px;">📖 paragraph 2</span>
+            </div>
+            <div class="para-text" id="p2">
+                There are many types of books. Some people enjoy fiction stories, like mystery or romance. Others prefer non‑fiction, such as history or science books. Every reader can find something they like.
+            </div>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p2')">🔊 استمع للفقرة</button>
+            </div>
+        </div>
+
+        <!-- فقرة 3 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/374016/pexels-photo-374016.jpeg?auto=compress&cs=tinysrgb&w=400" alt="شخص يقرأ في مقهى">
+                <span style="font-weight: 600; background: #dff0df; padding: 0.3rem 1.8rem; border-radius: 40px;">☕ paragraph 3</span>
+            </div>
+            <div class="para-text" id="p3">
+                I usually read before I go to sleep. It helps me forget about the day and enter a different world. My favorite place to read is a quiet coffee shop near my house. I order a warm drink and read for an hour.
+            </div>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p3')">🔊 استمع للفقرة</button>
+            </div>
+        </div>
+
+        <!-- فقرة 4 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/2954199/pexels-photo-2954199.jpeg?auto=compress&cs=tinysrgb&w=400" alt="مكتبة عامة">
+                <span style="font-weight: 600; background: #dff0df; padding: 0.3rem 1.8rem; border-radius: 40px;">🏛️ paragraph 4</span>
+            </div>
+            <div class="para-text" id="p4">
+                Last week, I visited the public library. I borrowed two novels and a book about space. The library is very quiet, and there are many comfortable chairs. I spent the whole afternoon there.
+            </div>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p4')">🔊 استمع للفقرة</button>
+            </div>
+        </div>
+
+        <!-- فقرة 5 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/3768914/pexels-photo-3768914.jpeg?auto=compress&cs=tinysrgb&w=400" alt="شخص يقرأ في الطبيعة">
+                <span style="font-weight: 600; background: #dff0df; padding: 0.3rem 1.8rem; border-radius: 40px;">🌳 paragraph 5</span>
+            </div>
+            <div class="para-text" id="p5">
+                Reading improves your vocabulary and your imagination. It also makes you a better writer. I believe that everyone should read at least one book every month. It is a wonderful habit that stays with you forever.
+            </div>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p5')">🔊 استمع للفقرة</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- أسئلة تفاعلية (STEP‑style) -->
+    <div class="questions-section">
+        <h3>📘 STEP‑style questions (A2) – اختبر فهمك</h3>
+
+        <!-- سؤال 1: معنى كلمة -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>Word meaning:</strong> In paragraph 2, what does “<strong>fiction</strong>” mean?
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) books about real events and facts</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) stories that are made up by the writer</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) a type of magazine</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) a very long book</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 2: تفاصيل من الفقرة 3 -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>Detail (paragraph 3):</strong> When does the writer usually read?
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) in the morning</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) during lunch</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) before sleeping</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) at midnight</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'c')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 3: فكرة رئيسية -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>Main idea:</strong> What is the passage mainly about?
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) How to write a book</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) The importance and enjoyment of reading</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) Different types of coffee shops</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) The history of libraries</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 4: تفاصيل من الفقرة 4 -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>Detail (paragraph 4):</strong> What did the writer borrow from the library?
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) two novels and a book about space</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) three magazines</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) a dictionary and a map</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) only one novel</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'a')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 5: استنتاج -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>Inference:</strong> Based on the last paragraph, what does the writer think about reading?
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) It is only for students.</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) It is a useful and lifelong habit.</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) It is difficult and boring.</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) It takes too much time.</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'b')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- جدول المفردات -->
+    <h3 style="font-size: 1.8rem; font-weight: 400; margin-bottom: 0.5rem;">🔤 Vocabulary from the passage</h3>
+    <table>
+        <thead><tr><th>Word</th><th>Simple meaning</th><th>🇸🇦 Arabic</th></tr></thead>
+        <tbody>
+            <tr><td><strong>enjoyable</strong></td><td>giving pleasure</td><td class="arabic">ممتع</td></tr>
+            <tr><td><strong>fiction</strong></td><td>stories that are not real</td><td class="arabic">خيال</td></tr>
+            <tr><td><strong>non‑fiction</strong></td><td>books about real facts</td><td class="arabic">واقعي / غير خيالي</td></tr>
+            <tr><td><strong>mystery</strong></td><td>a story about a crime or secret</td><td class="arabic">غموض</td></tr>
+            <tr><td><strong>romance</strong></td><td>a love story</td><td class="arabic">رومانسي</td></tr>
+            <tr><td><strong>quiet</strong></td><td>with little noise</td><td class="arabic">هادئ</td></tr>
+            <tr><td><strong>borrow</strong></td><td>to take and use something that you will return</td><td class="arabic">يستعير</td></tr>
+            <tr><td><strong>library</strong></td><td>a place with many books you can borrow</td><td class="arabic">مكتبة</td></tr>
+            <tr><td><strong>vocabulary</strong></td><td>all the words you know</td><td class="arabic">مفردات</td></tr>
+            <tr><td><strong>imagination</strong></td><td>the ability to create pictures in your mind</td><td class="arabic">خيال / تصور</td></tr>
+            <tr><td><strong>habit</strong></td><td>something you do regularly</td><td class="arabic">عادة</td></tr>
+        </tbody>
+    </table>
+
+    <hr>
+</div>
+
+<script>
+    // قراءة النص بصوت عالٍ (Web Speech API)
+    function readAloud(elementId) {
+        const textElement = document.getElementById(elementId);
+        if (!textElement) return;
+
+        if (window.speechSynthesis.speaking) {
+            window.speechSynthesis.cancel();
+        }
+
+        const text = textElement.innerText;
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.9;
+        utterance.pitch = 1;
+        window.speechSynthesis.speak(utterance);
+    }
+
+    // التحقق من الإجابات عند اختيار خيار
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;
+            const selectedValue = this.value;
+            
+            // الإجابات الصحيحة
+            let correctAnswer = '';
+            if (questionId === 'q1') correctAnswer = 'b';
+            else if (questionId === 'q2') correctAnswer = 'c';
+            else if (questionId === 'q3') correctAnswer = 'b';
+            else if (questionId === 'q4') correctAnswer = 'a';
+            else if (questionId === 'q5') correctAnswer = 'b';
+            
+            const feedbackId = 'feedback' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            
+            if (selectedValue === correctAnswer) {
+                feedback.textContent = '✅ Correct! Well done.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Try again!';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+
+    // إظهار الإجابة الصحيحة عند الضغط على الزر
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (b) stories that are made up by the writer.'; break;
+            case 2: answerText = 'The correct answer is (c) before sleeping.'; break;
+            case 3: answerText = 'The correct answer is (b) The importance and enjoyment of reading.'; break;
+            case 4: answerText = 'The correct answer is (a) two novels and a book about space.'; break;
+            case 5: answerText = 'The correct answer is (b) It is a useful and lifelong habit.'; break;
+        }
+        
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+</script>
+</body>
+</html>
