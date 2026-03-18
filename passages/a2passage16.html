@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading · A2 – My Favorite Food (مع الصور + استماع)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #f0f7f0;
+            color: #2d4a2d;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(40, 90, 40, 0.1);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: #4a8b4a;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #b5d8b5;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #4d6b4d;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #3b6e3b;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #b5d8b5;
+            padding-bottom: 0.5rem;
+        }
+        .passage-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        .paragraph-card {
+            background: #f5fbf5;
+            border-radius: 28px;
+            padding: 1.8rem 1.8rem 1.8rem 1.8rem;
+            box-shadow: 0 5px 20px rgba(70, 120, 70, 0.1);
+            transition: 0.2s;
+            border: 1px solid #c8e0c8;
+        }
+        .para-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        .para-image {
+            width: 140px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: 0 8px 18px -6px #a0bda0;
+            border: 2px solid white;
+            background: #dff0df;
+        }
+        .para-text {
+            font-size: 1.2rem;
+            background: #ffffff;
+            padding: 1.3rem 1.8rem;
+            border-radius: 36px 36px 36px 12px;
+            box-shadow: inset 0 1px 6px #dff0df;
+            border: 1px solid #c8e0c8;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: #2d4a2d;
+        }
+        .listen-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-top: 0.5rem;
+            margin-left: 0.2rem;
+        }
+        .listen-btn {
+            background: #dff0df;
+            border: none;
+            padding: 0.6rem 1.8rem;
+            border-radius: 40px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #3b6e3b;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 4px 8px rgba(40, 90, 40, 0.1);
+            border: 1px solid #a8d0a8;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .listen-btn:hover {
+            background: #c8e6c8;
+            transform: scale(1.02);
+        }
+        .questions-section {
+            background: #e8f3e8;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #a8d0a8;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #3b6e3b;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(40, 90, 40, 0.08);
+            border-left: 10px solid #6fa36f;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #4a8b4a;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #dff0df;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #4a8b4a;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+        }
+        .option input[type="radio"]:checked {
+            background: #4a8b4a;
+            border: 2px solid #4a8b4a;
+        }
+        .option input[type="radio"]:checked::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            top: 3px;
+            left: 3px;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            color: #2e7d32;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #c62828;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #4a8b4a;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .show-answer-btn:hover {
+            color: #3b6e3b;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #c8e0c8;
+            margin: 2rem 0 0.5rem 0;
+        }
+        th {
+            background: #4a8b4a;
+            color: white;
+            font-weight: 500;
+            font-size: 1.2rem;
+            padding: 1rem 1.5rem;
+        }
+        td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #c8e0c8;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #2d4a2d;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #b5d8b5, transparent);
+            margin: 2rem 0 0.5rem 0;
+        }
+        @media (max-width: 700px) {
+            .container { padding: 1.5rem; }
+            .para-header { flex-direction: column; align-items: start; }
+            .para-image { width: 100%; height: auto; max-height: 150px; }
+            .listen-btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📘 STEP Reading · A2</h1>
+    <div class="sub-title">Passage 16 · My Favorite Food: Kabsa (نصوص متكاملة + استماع)</div>
+
+    <h2>🍛 My Favorite Food: Kabsa</h2>
+
+    <!-- فقرة 1 -->
+    <div class="passage-grid">
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg?auto=compress&cs=tinysrgb&w=400" alt="طبق كبسة">
+                <span style="font-weight: 600; background: #dff0df; padding: 0.3rem 1.8rem; border-radius: 40px;">🍚 paragraph 1</span>
+            </div>
+            <div class="para-text" id="p1">
+                My favorite food is Kabsa. It is a traditional rice dish from Saudi Arabia. People often eat it for lunch or dinner, especially on special occasions like Eid or family gatherings. Kabsa is famous for its rich flavor and beautiful color.
+            </div>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p1')">🔊 استمع للفقرة</button>
+            </div>
+        </div>
+
+        <!-- فقرة 2 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/1389116/pexels-photo-1389116.jpeg?auto=compress&cs=tinysrgb&w=400" alt="مكونات الكبسة">
+                <span style="font-weight: 600; background: #dff0df; padding: 0.3rem 1.8rem; border-radius: 40px;">🥘 paragraph 2</span>
+            </div>
+            <div class="para-text" id="p2">
+                To make Kabsa, you need rice, meat (usually chicken or lamb), and a special mix of spices. The spices include cardamom, cinnamon, cloves, and black lime. These give the dish its amazing taste. Sometimes people add raisins or nuts for extra flavor.
+            </div>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p2')">🔊 استمع للفقرة</button>
+            </div>
+        </div>
+
+        <!-- فقرة 3 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/5908224/pexels-photo-5908224.jpeg?auto=compress&cs=tinysrgb&w=400" alt="عائلة تتناول الطعام">
+                <span style="font-weight: 600; background: #dff0df; padding: 0.3rem 1.8rem; border-radius: 40px;">👪 paragraph 3</span>
+            </div>
+            <div class="para-text" id="p3">
+                Every Friday, my mother cooks Kabsa for the family. We all sit together on the floor around a large plate. We eat with our right hand, as is the tradition. It is a special time when we talk and share stories. I always look forward to Fridays.
+            </div>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p3')">🔊 استمع للفقرة</button>
+            </div>
+        </div>
+
+        <!-- فقرة 4 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/7263020/pexels-photo-7263020.jpeg?auto=compress&cs=tinysrgb&w=400" alt="صحن كبسة مع لحم">
+                <span style="font-weight: 600; background: #dff0df; padding: 0.3rem 1.8rem; border-radius: 40px;">😋 paragraph 4</span>
+            </div>
+            <div class="para-text" id="p4">
+                The taste of Kabsa is unforgettable. The rice is soft and mixed with tender meat. The spices make it warm and slightly spicy. I love the combination of flavors. It is not just food; it is a part of our culture and identity.
+            </div>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p4')">🔊 استمع للفقرة</button>
+            </div>
+        </div>
+
+        <!-- فقرة 5 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/3952065/pexels-photo-3952065.jpeg?auto=compress&cs=tinysrgb&w=400" alt="أصدقاء يتناولون الطعام">
+                <span style="font-weight: 600; background: #dff0df; padding: 0.3rem 1.8rem; border-radius: 40px;">🤝 paragraph 5</span>
+            </div>
+            <div class="para-text" id="p5">
+                When I have friends from other countries over, I ask my mother to cook Kabsa. They always love it and ask for the recipe. I am proud to share my favorite dish with them. If you ever visit Saudi Arabia, you must try Kabsa!
+            </div>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p5')">🔊 استمع للفقرة</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- أسئلة تفاعلية (STEP‑style) -->
+    <div class="questions-section">
+        <h3>📘 STEP‑style questions (A2) – اختبر فهمك</h3>
+
+        <!-- سؤال 1: معنى كلمة -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>Word meaning:</strong> In paragraph 2, what does “<strong>spices</strong>” mean?
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) vegetables</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) substances from plants that give flavor to food</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) types of meat</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) cooking pots</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 2: تفاصيل من الفقرة 3 -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>Detail (paragraph 3):</strong> When does the writer's mother cook Kabsa?
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) every Monday</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) every Friday</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) only on Eid</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) every Sunday</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 3: فكرة رئيسية -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>Main idea:</strong> What is the passage mainly about?
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) How to cook rice</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) The writer's love for Kabsa and its cultural importance</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) Different Saudi dishes</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) The history of spices</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 4: تفاصيل من الفقرة 5 -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>Detail (paragraph 5):</strong> What do the writer's friends ask for after trying Kabsa?
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) more meat</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) the recipe</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) to meet the mother</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) to visit Saudi Arabia</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 5: استنتاج -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>Inference:</strong> How does the writer feel about sharing Kabsa with friends?
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) He feels shy.</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) He feels proud.</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) He feels it is too much work.</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) He prefers to eat alone.</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'b')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- جدول المفردات -->
+    <h3 style="font-size: 1.8rem; font-weight: 400; margin-bottom: 0.5rem;">🔤 Vocabulary from the passage</h3>
+    <table>
+        <thead><tr><th>Word</th><th>Simple meaning</th><th>🇸🇦 Arabic</th></tr></thead>
+        <tbody>
+            <tr><td><strong>traditional</strong></td><td>part of the customs of a country</td><td class="arabic">تقليدي</td></tr>
+            <tr><td><strong>occasion</strong></td><td>a special event</td><td class="arabic">مناسبة</td></tr>
+            <tr><td><strong>flavor</strong></td><td>the taste of food</td><td class="arabic">نكهة</td></tr>
+            <tr><td><strong>spice</strong></td><td>a substance that gives flavor to food</td><td class="arabic">بهار</td></tr>
+            <tr><td><strong>cardamom</strong></td><td>a spice with a strong sweet taste</td><td class="arabic">هيل</td></tr>
+            <tr><td><strong>cinnamon</strong></td><td>a sweet spice from tree bark</td><td class="arabic">قرفة</td></tr>
+            <tr><td><strong>cloves</strong></td><td>a strong spice from dried flowers</td><td class="arabic">قرنفل</td></tr>
+            <tr><td><strong>black lime</strong></td><td>dried lime used in Middle Eastern cooking</td><td class="arabic">لومي</td></tr>
+            <tr><td><strong>raisin</strong></td><td>dried grape</td><td class="arabic">زبيب</td></tr>
+            <tr><td><strong>nut</strong></td><td>a dry fruit with a hard shell</td><td class="arabic">مكسرات</td></tr>
+            <tr><td><strong>tender</strong></td><td>soft and easy to cut (meat)</td><td class="arabic">طري</td></tr>
+            <tr><td><strong>culture</strong></td><td>the customs and beliefs of a group</td><td class="arabic">ثقافة</td></tr>
+            <tr><td><strong>identity</strong></td><td>who you are as a person or group</td><td class="arabic">هوية</td></tr>
+            <tr><td><strong>recipe</strong></td><td>instructions for cooking a dish</td><td class="arabic">وصفة</td></tr>
+            <tr><td><strong>proud</strong></td><td>feeling good about something you or your family does</td><td class="arabic">فخور</td></tr>
+        </tbody>
+    </table>
+
+    <hr>
+</div>
+
+<script>
+    // قراءة النص بصوت عالٍ (Web Speech API)
+    function readAloud(elementId) {
+        const textElement = document.getElementById(elementId);
+        if (!textElement) return;
+
+        if (window.speechSynthesis.speaking) {
+            window.speechSynthesis.cancel();
+        }
+
+        const text = textElement.innerText;
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.9;
+        utterance.pitch = 1;
+        window.speechSynthesis.speak(utterance);
+    }
+
+    // التحقق من الإجابات عند اختيار خيار
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;
+            const selectedValue = this.value;
+            
+            // الإجابات الصحيحة
+            let correctAnswer = '';
+            if (questionId === 'q1') correctAnswer = 'b';
+            else if (questionId === 'q2') correctAnswer = 'b';
+            else if (questionId === 'q3') correctAnswer = 'b';
+            else if (questionId === 'q4') correctAnswer = 'b';
+            else if (questionId === 'q5') correctAnswer = 'b';
+            
+            const feedbackId = 'feedback' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            
+            if (selectedValue === correctAnswer) {
+                feedback.textContent = '✅ Correct! Well done.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Try again!';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+
+    // إظهار الإجابة الصحيحة عند الضغط على الزر
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (b) substances from plants that give flavor to food.'; break;
+            case 2: answerText = 'The correct answer is (b) every Friday.'; break;
+            case 3: answerText = 'The correct answer is (b) The writer\'s love for Kabsa and its cultural importance.'; break;
+            case 4: answerText = 'The correct answer is (b) the recipe.'; break;
+            case 5: answerText = 'The correct answer is (b) He feels proud.'; break;
+        }
+        
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+</script>
+</body>
+</html>
