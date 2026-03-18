@@ -57,7 +57,7 @@
         .paragraph-card {
             background: #fffbf5;
             border-radius: 28px;
-            padding: 1.8rem 1.8rem 1.8rem 1.8rem;
+            padding: 1.8rem;
             box-shadow: 0 5px 20px rgba(150, 100, 70, 0.1);
             transition: 0.2s;
             border: 1px solid #ffdec6;
@@ -119,7 +119,7 @@
         .questions-section {
             background: #fff0e0;
             border-radius: 40px;
-            padding: 2rem 2rem 1.8rem 2rem;
+            padding: 2rem;
             margin: 2.5rem 0 2rem 0;
             border: 2px solid #ffc4a0;
         }
@@ -200,14 +200,8 @@
             font-weight: bold;
             display: none;
         }
-        .feedback.correct {
-            color: #2e7d32;
-            display: block;
-        }
-        .feedback.incorrect {
-            color: #c62828;
-            display: block;
-        }
+        .feedback.correct { color: #2e7d32; display: block; }
+        .feedback.incorrect { color: #c62828; display: block; }
         .show-answer-btn {
             margin-left: 2.5rem;
             margin-top: 0.3rem;
@@ -218,9 +212,6 @@
             cursor: pointer;
             font-size: 0.9rem;
         }
-        .show-answer-btn:hover {
-            color: #b45a2e;
-        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -228,7 +219,7 @@
             border-radius: 28px;
             overflow: hidden;
             box-shadow: 0 10px 20px #ffdec6;
-            margin: 2rem 0 0.5rem 0;
+            margin: 2rem 0;
         }
         th {
             background: #c96e3d;
@@ -241,27 +232,12 @@
             padding: 1rem 1.5rem;
             border-bottom: 1px solid #ffdec6;
         }
-        tr:last-child td {
-            border-bottom: none;
-        }
+        tr:last-child td { border-bottom: none; }
         .arabic {
             font-family: 'Amiri', 'Traditional Arabic', serif;
             direction: rtl;
             font-size: 1.1rem;
             color: #4a3b2c;
-        }
-        hr {
-            border: none;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #ffcfb0, transparent);
-            margin: 2rem 0 0.5rem 0;
-        }
-        /* تذييل بسيط - فقط اسم الملف */
-        .simple-footer {
-            margin-top: 1.5rem;
-            color: #8b6e5a;
-            font-size: 0.9rem;
-            text-align: center;
         }
         @media (max-width: 700px) {
             .container { padding: 1.5rem; }
@@ -278,7 +254,6 @@
 
     <h2>😺 Meet Nora and her cat Mimo</h2>
 
-    <!-- فقرة 1 مع الصورة -->
     <div class="passage-grid">
         <div class="paragraph-card">
             <div class="para-header">
@@ -293,7 +268,6 @@
             </div>
         </div>
 
-        <!-- فقرة 2 مع الصورة -->
         <div class="paragraph-card">
             <div class="para-header">
                 <img class="para-image" src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Cat eating from bowl">
@@ -307,7 +281,6 @@
             </div>
         </div>
 
-        <!-- فقرة 3 مع الصورة -->
         <div class="paragraph-card">
             <div class="para-header">
                 <img class="para-image" src="https://images.pexels.com/photos/177809/pexels-photo-177809.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Cat playing with yarn ball">
@@ -321,7 +294,6 @@
             </div>
         </div>
 
-        <!-- فقرة 4 مع الصورة -->
         <div class="paragraph-card">
             <div class="para-header">
                 <img class="para-image" src="https://images.pexels.com/photos/1635204/pexels-photo-1635204.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Cat sleeping on sofa">
@@ -335,7 +307,6 @@
             </div>
         </div>
 
-        <!-- فقرة 5 مع الصورة -->
         <div class="paragraph-card">
             <div class="para-header">
                 <img class="para-image" src="https://images.pexels.com/photos/4587959/pexels-photo-4587959.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Girl and cat looking at window">
@@ -350,11 +321,9 @@
         </div>
     </div>
 
-    <!-- 5 أسئلة STEP - INTERACTIVE MULTIPLE CHOICE -->
     <div class="questions-section">
         <h3>📘 STEP-style questions (A1) - Interactive</h3>
 
-        <!-- سؤال 1 -->
         <div class="question-item" id="q1">
             <span class="q-num">1</span> <strong>Word meaning:</strong> In paragraph 4, what does the word "<strong>purrs</strong>" mean?
             <div class="options">
@@ -367,7 +336,6 @@
             <button class="show-answer-btn" onclick="showAnswer(1, 'a')">🔍 Show answer</button>
         </div>
 
-        <!-- سؤال 2 -->
         <div class="question-item" id="q2">
             <span class="q-num">2</span> <strong>Go back to paragraph 2:</strong> What does Mimo do after eating?
             <div class="options">
@@ -380,7 +348,6 @@
             <button class="show-answer-btn" onclick="showAnswer(2, 'b')">🔍 Show answer</button>
         </div>
 
-        <!-- سؤال 3 -->
         <div class="question-item" id="q3">
             <span class="q-num">3</span> <strong>Main idea:</strong> What is the main idea of this story?
             <div class="options">
@@ -393,7 +360,6 @@
             <button class="show-answer-btn" onclick="showAnswer(3, 'b')">🔍 Show answer</button>
         </div>
 
-        <!-- سؤال 4 -->
         <div class="question-item" id="q4">
             <span class="q-num">4</span> <strong>Detail:</strong> What color is Mimo's favorite toy?
             <div class="options">
@@ -406,7 +372,6 @@
             <button class="show-answer-btn" onclick="showAnswer(4, 'c')">🔍 Show answer</button>
         </div>
 
-        <!-- سؤال 5 -->
         <div class="question-item" id="q5">
             <span class="q-num">5</span> <strong>Inference:</strong> How does Nora feel about Mimo?
             <div class="options">
@@ -420,7 +385,6 @@
         </div>
     </div>
 
-    <!-- جدول المفردات -->
     <h3 style="font-size: 1.8rem; font-weight: 400; margin-bottom: 0.5rem;">🔤 Vocabulary from the passage</h3>
     <table>
         <thead><tr><th>Word</th><th>Simple meaning</th><th>🇸🇦 Arabic</th></tr></thead>
@@ -435,50 +399,25 @@
             <tr><td><strong>shares</strong></td><td>shows something to others</td><td class="arabic">يشارك</td></tr>
         </tbody>
     </table>
-
-    <hr>
-    <!-- تم إزالة التذييل الطويل واستبداله بسطر بسيط -->
-    <div class="simple-footer">
-        📁 passage6.html | إصلاح الاستماع (نطق آلي)
-    </div>
 </div>
 
 <script>
-    // وظيفة قراءة النص بصوت عالٍ (Web Speech API)
     function readAloud(elementId) {
         const textElement = document.getElementById(elementId);
         if (!textElement) return;
-
-        if (window.speechSynthesis.speaking) {
-            window.speechSynthesis.cancel();
-        }
-
-        const text = textElement.innerText;
-        const utterance = new SpeechSynthesisUtterance(text);
+        if (window.speechSynthesis.speaking) window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(textElement.innerText);
         utterance.lang = 'en-US';
         utterance.rate = 0.9;
-        utterance.pitch = 1;
         window.speechSynthesis.speak(utterance);
     }
 
-    // تفاعل الأسئلة
     document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
         radio.addEventListener('change', function() {
-            const questionItem = this.closest('.question-item');
-            const questionId = questionItem.id;
-            const selectedValue = this.value;
-            
-            let correctAnswer = '';
-            if (questionId === 'q1') correctAnswer = 'a';
-            else if (questionId === 'q2') correctAnswer = 'b';
-            else if (questionId === 'q3') correctAnswer = 'b';
-            else if (questionId === 'q4') correctAnswer = 'c';
-            else if (questionId === 'q5') correctAnswer = 'b';
-            
-            const feedbackId = 'feedback' + questionId.substring(1);
-            const feedback = document.getElementById(feedbackId);
-            
-            if (selectedValue === correctAnswer) {
+            const questionId = this.closest('.question-item').id;
+            const answers = {q1:'a', q2:'b', q3:'b', q4:'c', q5:'b'};
+            const feedback = document.getElementById('feedback' + questionId.substring(1));
+            if (this.value === answers[questionId]) {
                 feedback.textContent = '✅ Correct! Well done.';
                 feedback.className = 'feedback correct';
             } else {
@@ -488,19 +427,10 @@
         });
     });
 
-    function showAnswer(questionNum, correctLetter) {
-        const feedback = document.getElementById('feedback' + questionNum);
-        let answerText = '';
-        
-        switch(questionNum) {
-            case 1: answerText = 'The correct answer is (a) makes a soft, happy sound'; break;
-            case 2: answerText = 'The correct answer is (b) cleans his face'; break;
-            case 3: answerText = 'The correct answer is (b) Nora\'s life with her pet cat Mimo'; break;
-            case 4: answerText = 'The correct answer is (c) red'; break;
-            case 5: answerText = 'The correct answer is (b) she loves him very much'; break;
-        }
-        
-        feedback.textContent = '🔍 ' + answerText;
+    function showAnswer(num, letter) {
+        const feedback = document.getElementById('feedback' + num);
+        const labels = {1:'(a) makes a soft, happy sound', 2:'(b) cleans his face', 3:'(b) Nora\'s life with her pet cat Mimo', 4:'(c) red', 5:'(b) she loves him very much'};
+        feedback.textContent = '🔍 The correct answer is ' + labels[num];
         feedback.className = 'feedback correct';
     }
 </script>
