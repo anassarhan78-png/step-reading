@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STEP Reading - A1 - Passage 4</title>
+    <title>STEP Reading - A1 - Passage 4 (بدون صور + استماع)</title>
     <style>
         * {
             box-sizing: border-box;
@@ -69,15 +69,7 @@
             flex-wrap: wrap;
             margin-bottom: 1.5rem;
         }
-        .para-image {
-            width: 140px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 24px;
-            box-shadow: 0 8px 18px -6px #aa99cc;
-            border: 2px solid white;
-            background: #ede4ff;
-        }
+        /* تم إزالة أنماط الصور */
         .para-text {
             font-size: 1.2rem;
             background: #ffffff;
@@ -89,25 +81,32 @@
             line-height: 1.8;
             color: #3a2b5c;
         }
-        .audio-wrapper {
+        .listen-wrapper {
             display: flex;
             align-items: center;
             gap: 0.8rem;
             margin-top: 0.5rem;
             margin-left: 0.2rem;
         }
-        audio {
-            height: 42px;
-            width: 260px;
-            border-radius: 42px;
-        }
-        .audio-label {
+        .listen-btn {
             background: #d4c2f0;
-            padding: 0.3rem 1rem;
+            border: none;
+            padding: 0.6rem 1.8rem;
             border-radius: 40px;
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: 600;
             color: #4a3570;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 4px 8px rgba(90, 60, 130, 0.1);
+            border: 1px solid #c2afe6;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .listen-btn:hover {
+            background: #c2b0e6;
+            transform: scale(1.02);
         }
         .questions-section {
             background: #ede1ff;
@@ -258,101 +257,80 @@
         @media (max-width: 700px) {
             .container { padding: 1.5rem; }
             .para-header { flex-direction: column; align-items: start; }
-            .para-image { width: 100%; height: auto; max-height: 150px; }
-            audio { width: 100%; }
+            .listen-btn { width: 100%; justify-content: center; }
         }
     </style>
 </head>
 <body>
 <div class="container">
     <h1>🎨 STEP Reading · A1</h1>
-    <div class="sub-title">Passage 4 · My Favorite Hobby</div>
+    <div class="sub-title">Passage 4 · My Favorite Hobby (بدون صور + استماع ناطق)</div>
 
     <h2>⭐ Let's learn about Omar's hobby</h2>
 
-    <!-- فقرة 1 -->
+    <!-- فقرة 1 (بدون صورة) -->
     <div class="passage-grid">
         <div class="paragraph-card">
             <div class="para-header">
-                <img class="para-image" src="https://images.pexels.com/photos/159644/art-supplies-brushes-paint-artist-159644.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Art supplies: brushes, paints, and paper">
                 <span style="font-weight: 600; background: #d4c2f0; padding: 0.3rem 1.8rem; border-radius: 40px;">🎨 paragraph 1</span>
             </div>
             <div class="para-text" id="p1">
                 My name is Omar. I am nine years old. I have a favorite hobby. I love to draw and paint. After school, I take out my colors and paper. I sit at my desk and start drawing. It makes me feel calm and happy.
             </div>
-            <div class="audio-wrapper">
-                <span class="audio-label">🔊 listen</span>
-                <audio controls preload="none">
-                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
-                </audio>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p1')">🔊 استمع للفقرة</button>
             </div>
         </div>
 
         <!-- فقرة 2 -->
         <div class="paragraph-card">
             <div class="para-header">
-                <img class="para-image" src="https://images.pexels.com/photos/102127/pexels-photo-102127.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Child drawing a house and trees">
                 <span style="font-weight: 600; background: #d4c2f0; padding: 0.3rem 1.8rem; border-radius: 40px;">🏠 paragraph 2</span>
             </div>
             <div class="para-text" id="p2">
                 I like to draw many things. I draw my house, my family, and my cat. Sometimes I draw trees and flowers. I use different colors. Green for the grass, blue for the sky, and red for the apples. My mother puts my drawings on the fridge.
             </div>
-            <div class="audio-wrapper">
-                <span class="audio-label">🔊 listen</span>
-                <audio controls preload="none">
-                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
-                </audio>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p2')">🔊 استمع للفقرة</button>
             </div>
         </div>
 
         <!-- فقرة 3 -->
         <div class="paragraph-card">
             <div class="para-header">
-                <img class="para-image" src="https://images.pexels.com/photos/1912868/pexels-photo-1912868.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Art class with children painting">
                 <span style="font-weight: 600; background: #d4c2f0; padding: 0.3rem 1.8rem; border-radius: 40px;">🏫 paragraph 3</span>
             </div>
             <div class="para-text" id="p3">
                 On Saturdays, I go to an art class. My friend Ahmed goes with me. The teacher shows us new things. We learn to mix colors. We learn to draw animals. Last week, I drew a big elephant. The teacher said it was very good. I felt so proud.
             </div>
-            <div class="audio-wrapper">
-                <span class="audio-label">🔊 listen</span>
-                <audio controls preload="none">
-                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
-                </audio>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p3')">🔊 استمع للفقرة</button>
             </div>
         </div>
 
         <!-- فقرة 4 -->
         <div class="paragraph-card">
             <div class="para-header">
-                <img class="para-image" src="https://images.pexels.com/photos/3755245/pexels-photo-3755245.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Child showing drawing to parent">
                 <span style="font-weight: 600; background: #d4c2f0; padding: 0.3rem 1.8rem; border-radius: 40px;">👨‍👦 paragraph 4</span>
             </div>
             <div class="para-text" id="p4">
                 My father loves my drawings too. He gave me a special box for my art supplies. It has pencils, erasers, and a sharpener. He also bought me a new set of colored pencils. Now I have 24 colors! I can draw better with them.
             </div>
-            <div class="audio-wrapper">
-                <span class="audio-label">🔊 listen</span>
-                <audio controls preload="none">
-                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
-                </audio>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p4')">🔊 استمع للفقرة</button>
             </div>
         </div>
 
         <!-- فقرة 5 -->
         <div class="paragraph-card">
             <div class="para-header">
-                <img class="para-image" src="https://images.pexels.com/photos/5749776/pexels-photo-5749776.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Dream of becoming an artist">
                 <span style="font-weight: 600; background: #d4c2f0; padding: 0.3rem 1.8rem; border-radius: 40px;">✨ paragraph 5</span>
             </div>
             <div class="para-text" id="p5">
                 When I grow up, I want to be an artist. I want to paint beautiful pictures. Maybe I will have my own art show. People will come and see my work. I will paint a picture for everyone in my family. Drawing is not just a hobby. It is my dream.
             </div>
-            <div class="audio-wrapper">
-                <span class="audio-label">🔊 listen</span>
-                <audio controls preload="none">
-                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
-                </audio>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p5')">🔊 استمع للفقرة</button>
             </div>
         </div>
     </div>
@@ -445,23 +423,41 @@
 
     <hr>
     <div class="footer-note">
-        🌟 Passage 4: "My Favorite Hobby" - Simple words, short sentences, clear images.<br>
-        📁 <strong>Filename: passage4.html</strong> (same location as passage1.html, passage2.html, passage3.html)
+        🌟 Passage 4: "My Favorite Hobby" - تمت إزالة الصور وإصلاح الاستماع (نطق آلي).<br>
+        📁 <strong>Filename: passage4.html</strong> (نسخة محدثة)
     </div>
     <div style="margin-top: 1rem; font-size: 0.9rem; background: #ede1ff; border-radius: 60px; padding: 0.8rem 2rem; text-align: center;">
-        ✅ 5 paragraphs with images & audio ✓ INTERACTIVE multiple choice questions ✓ Show answer button ✓ Vocabulary with Arabic ✓ Ready for STEP practice
+        ✅ الاستماع الآن يعمل عبر زر "استمع للفقرة" (تخاطب آلي). جميع الأسئلة تفاعلية.
     </div>
 </div>
 
 <script>
-    // Make all questions interactive
+    // وظيفة قراءة النص بصوت عالٍ (Web Speech API)
+    function readAloud(elementId) {
+        const textElement = document.getElementById(elementId);
+        if (!textElement) return;
+
+        // إيقاف أي تحديث جارٍ
+        if (window.speechSynthesis.speaking) {
+            window.speechSynthesis.cancel();
+        }
+
+        const text = textElement.innerText;
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.9; // سرعة مناسبة للمستوى A1
+        utterance.pitch = 1;
+        window.speechSynthesis.speak(utterance);
+    }
+
+    // تفاعل الأسئلة
     document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
         radio.addEventListener('change', function() {
             const questionItem = this.closest('.question-item');
             const questionId = questionItem.id;
             const selectedValue = this.value;
             
-            // Determine correct answer based on question
+            // تحديد الإجابة الصحيحة حسب السؤال
             let correctAnswer = '';
             if (questionId === 'q1') correctAnswer = 'b';
             else if (questionId === 'q2') correctAnswer = 'b';
@@ -469,11 +465,9 @@
             else if (questionId === 'q4') correctAnswer = 'c';
             else if (questionId === 'q5') correctAnswer = 'd';
             
-            // Get feedback element
             const feedbackId = 'feedback' + questionId.substring(1);
             const feedback = document.getElementById(feedbackId);
             
-            // Check answer
             if (selectedValue === correctAnswer) {
                 feedback.textContent = '✅ Correct! Well done.';
                 feedback.className = 'feedback correct';
@@ -484,7 +478,7 @@
         });
     });
 
-    // Function to show answer
+    // وظيفة إظهار الإجابة الصحيحة
     function showAnswer(questionNum, correctLetter) {
         const feedback = document.getElementById('feedback' + questionNum);
         let answerText = '';
