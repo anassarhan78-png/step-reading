@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading · A2 – My School (مع الصور + استماع)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #f0f7f0;
+            color: #2d4a2d;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(40, 90, 40, 0.1);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: #4a8b4a;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #b5d8b5;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #4d6b4d;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #3b6e3b;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #b5d8b5;
+            padding-bottom: 0.5rem;
+        }
+        .passage-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        .paragraph-card {
+            background: #f5fbf5;
+            border-radius: 28px;
+            padding: 1.8rem 1.8rem 1.8rem 1.8rem;
+            box-shadow: 0 5px 20px rgba(70, 120, 70, 0.1);
+            transition: 0.2s;
+            border: 1px solid #c8e0c8;
+        }
+        .para-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        .para-image {
+            width: 140px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: 0 8px 18px -6px #a0bda0;
+            border: 2px solid white;
+            background: #dff0df;
+        }
+        .para-text {
+            font-size: 1.2rem;
+            background: #ffffff;
+            padding: 1.3rem 1.8rem;
+            border-radius: 36px 36px 36px 12px;
+            box-shadow: inset 0 1px 6px #dff0df;
+            border: 1px solid #c8e0c8;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: #2d4a2d;
+        }
+        .listen-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-top: 0.5rem;
+            margin-left: 0.2rem;
+        }
+        .listen-btn {
+            background: #dff0df;
+            border: none;
+            padding: 0.6rem 1.8rem;
+            border-radius: 40px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #3b6e3b;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 4px 8px rgba(40, 90, 40, 0.1);
+            border: 1px solid #a8d0a8;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .listen-btn:hover {
+            background: #c8e6c8;
+            transform: scale(1.02);
+        }
+        .questions-section {
+            background: #e8f3e8;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #a8d0a8;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #3b6e3b;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(40, 90, 40, 0.08);
+            border-left: 10px solid #6fa36f;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #4a8b4a;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #dff0df;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #4a8b4a;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+        }
+        .option input[type="radio"]:checked {
+            background: #4a8b4a;
+            border: 2px solid #4a8b4a;
+        }
+        .option input[type="radio"]:checked::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            top: 3px;
+            left: 3px;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            color: #2e7d32;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #c62828;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #4a8b4a;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .show-answer-btn:hover {
+            color: #3b6e3b;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #c8e0c8;
+            margin: 2rem 0 0.5rem 0;
+        }
+        th {
+            background: #4a8b4a;
+            color: white;
+            font-weight: 500;
+            font-size: 1.2rem;
+            padding: 1rem 1.5rem;
+        }
+        td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #c8e0c8;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #2d4a2d;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #b5d8b5, transparent);
+            margin: 2rem 0 0.5rem 0;
+        }
+        @media (max-width: 700px) {
+            .container { padding: 1.5rem; }
+            .para-header { flex-direction: column; align-items: start; }
+            .para-image { width: 100%; height: auto; max-height: 150px; }
+            .listen-btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📘 STEP Reading · A2</h1>
+    <div class="sub-title">Passage 12 · My School (نصوص متكاملة + استماع)</div>
+
+    <h2>🏫 My Wonderful School</h2>
+
+    <!-- فقرة 1 -->
+    <div class="passage-grid">
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/256468/pexels-photo-256468.jpeg?auto=compress&cs=tinysrgb&w=400" alt="مبنى المدرسة">
+                <span style="font-weight: 600; background: #dff0df; padding: 0.3rem 1.8rem; border-radius: 40px;">🏛️ paragraph 1</span>
+            </div>
+            <div class="para-text" id="p1">
+                My school is called Al-Noor International School. It is a big school with three floors. There are more than 500 students and 40 teachers. I am in grade 7, and my classroom is on the second floor.
+            </div>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p1')">🔊 استمع للفقرة</button>
+            </div>
+        </div>
+
+        <!-- فقرة 2 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/159844/cellular-education-classroom-159844.jpeg?auto=compress&cs=tinysrgb&w=400" alt="فصل دراسي">
+                <span style="font-weight: 600; background: #dff0df; padding: 0.3rem 1.8rem; border-radius: 40px;">📚 paragraph 2</span>
+            </div>
+            <div class="para-text" id="p2">
+                We have many subjects at school. I like English and Science the most. My English teacher, Ms. Fatima, is very kind. She makes learning fun. Math is a bit difficult for me, but I try my best.
+            </div>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p2')">🔊 استمع للفقرة</button>
+            </div>
+        </div>
+
+        <!-- فقرة 3 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/8613074/pexels-photo-8613074.jpeg?auto=compress&cs=tinysrgb&w=400" alt="طلاب في المكتبة">
+                <span style="font-weight: 600; background: #dff0df; padding: 0.3rem 1.8rem; border-radius: 40px;">📖 paragraph 3</span>
+            </div>
+            <div class="para-text" id="p3">
+                Our school has a big library. I go there every week to borrow books. My favorite books are adventure stories. The library also has computers. We can use them to do research for our projects.
+            </div>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p3')">🔊 استمع للفقرة</button>
+            </div>
+        </div>
+
+        <!-- فقرة 4 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/2819319/pexels-photo-2819319.jpeg?auto=compress&cs=tinysrgb&w=400" alt="ملعب المدرسة">
+                <span style="font-weight: 600; background: #dff0df; padding: 0.3rem 1.8rem; border-radius: 40px;">⚽ paragraph 4</span>
+            </div>
+            <div class="para-text" id="p4">
+                After classes, I often play with my friends in the school playground. We play football or basketball. There is also a sports club on Thursdays. I joined the football team last month. We practice every week.
+            </div>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p4')">🔊 استمع للفقرة</button>
+            </div>
+        </div>
+
+        <!-- فقرة 5 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/3769981/pexels-photo-3769981.jpeg?auto=compress&cs=tinysrgb&w=400" alt="طلاب سعداء">
+                <span style="font-weight: 600; background: #dff0df; padding: 0.3rem 1.8rem; border-radius: 40px;">🎓 paragraph 5</span>
+            </div>
+            <div class="para-text" id="p5">
+                School is not just about studying. It is also a place to make friends and learn new things. I love my school because it feels like a second home. I am happy to go there every day.
+            </div>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p5')">🔊 استمع للفقرة</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- أسئلة تفاعلية (STEP‑style) -->
+    <div class="questions-section">
+        <h3>📘 STEP‑style questions (A2) – اختبر فهمك</h3>
+
+        <!-- سؤال 1: معنى كلمة -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>Word meaning:</strong> In paragraph 2, what does “<strong>subjects</strong>” mean?
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) teachers</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) areas of study like math, science, etc.</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) classrooms</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) books</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 2: تفاصيل من الفقرة 3 -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>Detail (paragraph 3):</strong> What type of books does the writer like best?
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) science fiction</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) history books</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) adventure stories</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) poetry</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'c')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 3: فكرة رئيسية -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>Main idea:</strong> What is the passage mainly about?
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) The writer's favorite subjects</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) The writer's school and daily life there</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) How to join a football team</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) Different schools around the world</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 4: تفاصيل من الفقرة 4 -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>Detail (paragraph 4):</strong> What team did the writer join?
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) basketball team</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) swimming team</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) football team</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) volleyball team</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'c')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 5: استنتاج -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>Inference:</strong> How does the writer feel about school?
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) He hates it.</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) He thinks it is boring.</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) He loves it and feels happy there.</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) He wants to change schools.</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'c')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- جدول المفردات -->
+    <h3 style="font-size: 1.8rem; font-weight: 400; margin-bottom: 0.5rem;">🔤 Vocabulary from the passage</h3>
+    <table>
+        <thead><tr><th>Word</th><th>Simple meaning</th><th>🇸🇦 Arabic</th></tr></thead>
+        <tbody>
+            <tr><td><strong>school</strong></td><td>a place where children learn</td><td class="arabic">مدرسة</td></tr>
+            <tr><td><strong>floor</strong></td><td>a level of a building</td><td class="arabic">طابق</td></tr>
+            <tr><td><strong>grade</strong></td><td>a year level at school</td><td class="arabic">صف دراسي</td></tr>
+            <tr><td><strong>subject</strong></td><td>an area of study</td><td class="arabic">مادة دراسية</td></tr>
+            <tr><td><strong>kind</strong></td><td>friendly and nice</td><td class="arabic">لطيف</td></tr>
+            <tr><td><strong>difficult</strong></td><td>not easy</td><td class="arabic">صعب</td></tr>
+            <tr><td><strong>library</strong></td><td>a place with many books to read or borrow</td><td class="arabic">مكتبة</td></tr>
+            <tr><td><strong>adventure</strong></td><td>an exciting experience</td><td class="arabic">مغامرة</td></tr>
+            <tr><td><strong>research</strong></td><td>careful study to find information</td><td class="arabic">بحث</td></tr>
+            <tr><td><strong>project</strong></td><td>a school task that takes time to complete</td><td class="arabic">مشروع</td></tr>
+            <tr><td><strong>playground</strong></td><td>an outdoor area where children play</td><td class="arabic">ملعب</td></tr>
+            <tr><td><strong>join</strong></td><td>to become a member of a group</td><td class="arabic">ينضم</td></tr>
+            <tr><td><strong>team</strong></td><td>a group of people who play or work together</td><td class="arabic">فريق</td></tr>
+            <tr><td><strong>practice</strong></td><td>to do something again and again to improve</td><td class="arabic">يتدرب</td></tr>
+        </tbody>
+    </table>
+
+    <hr>
+</div>
+
+<script>
+    // قراءة النص بصوت عالٍ (Web Speech API)
+    function readAloud(elementId) {
+        const textElement = document.getElementById(elementId);
+        if (!textElement) return;
+
+        if (window.speechSynthesis.speaking) {
+            window.speechSynthesis.cancel();
+        }
+
+        const text = textElement.innerText;
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.9;
+        utterance.pitch = 1;
+        window.speechSynthesis.speak(utterance);
+    }
+
+    // التحقق من الإجابات عند اختيار خيار
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;
+            const selectedValue = this.value;
+            
+            // الإجابات الصحيحة
+            let correctAnswer = '';
+            if (questionId === 'q1') correctAnswer = 'b';
+            else if (questionId === 'q2') correctAnswer = 'c';
+            else if (questionId === 'q3') correctAnswer = 'b';
+            else if (questionId === 'q4') correctAnswer = 'c';
+            else if (questionId === 'q5') correctAnswer = 'c';
+            
+            const feedbackId = 'feedback' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            
+            if (selectedValue === correctAnswer) {
+                feedback.textContent = '✅ Correct! Well done.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Try again!';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+
+    // إظهار الإجابة الصحيحة عند الضغط على الزر
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (b) areas of study like math, science, etc.'; break;
+            case 2: answerText = 'The correct answer is (c) adventure stories.'; break;
+            case 3: answerText = 'The correct answer is (b) The writer\'s school and daily life there.'; break;
+            case 4: answerText = 'The correct answer is (c) football team.'; break;
+            case 5: answerText = 'The correct answer is (c) He loves it and feels happy there.'; break;
+        }
+        
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+</script>
+</body>
+</html>
