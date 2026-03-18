@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STEP Reading - A1 - Passage 4 (بدون صور + استماع)</title>
+    <title>STEP Reading - A1 - Passage 4 (مع الصور + استماع)</title>
     <style>
         * {
             box-sizing: border-box;
@@ -69,7 +69,15 @@
             flex-wrap: wrap;
             margin-bottom: 1.5rem;
         }
-        /* تم إزالة أنماط الصور */
+        .para-image {
+            width: 140px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: 0 8px 18px -6px #aa99cc;
+            border: 2px solid white;
+            background: #ede4ff;
+        }
         .para-text {
             font-size: 1.2rem;
             background: #ffffff;
@@ -257,6 +265,7 @@
         @media (max-width: 700px) {
             .container { padding: 1.5rem; }
             .para-header { flex-direction: column; align-items: start; }
+            .para-image { width: 100%; height: auto; max-height: 150px; }
             .listen-btn { width: 100%; justify-content: center; }
         }
     </style>
@@ -264,14 +273,15 @@
 <body>
 <div class="container">
     <h1>🎨 STEP Reading · A1</h1>
-    <div class="sub-title">Passage 4 · My Favorite Hobby (بدون صور + استماع ناطق)</div>
+    <div class="sub-title">Passage 4 · My Favorite Hobby (مع الصور + استماع ناطق)</div>
 
     <h2>⭐ Let's learn about Omar's hobby</h2>
 
-    <!-- فقرة 1 (بدون صورة) -->
+    <!-- فقرة 1 مع الصورة -->
     <div class="passage-grid">
         <div class="paragraph-card">
             <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/159644/art-supplies-brushes-paint-artist-159644.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Art supplies: brushes, paints, and paper">
                 <span style="font-weight: 600; background: #d4c2f0; padding: 0.3rem 1.8rem; border-radius: 40px;">🎨 paragraph 1</span>
             </div>
             <div class="para-text" id="p1">
@@ -282,9 +292,10 @@
             </div>
         </div>
 
-        <!-- فقرة 2 -->
+        <!-- فقرة 2 مع الصورة -->
         <div class="paragraph-card">
             <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/102127/pexels-photo-102127.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Child drawing a house and trees">
                 <span style="font-weight: 600; background: #d4c2f0; padding: 0.3rem 1.8rem; border-radius: 40px;">🏠 paragraph 2</span>
             </div>
             <div class="para-text" id="p2">
@@ -295,9 +306,10 @@
             </div>
         </div>
 
-        <!-- فقرة 3 -->
+        <!-- فقرة 3 مع الصورة -->
         <div class="paragraph-card">
             <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/1912868/pexels-photo-1912868.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Art class with children painting">
                 <span style="font-weight: 600; background: #d4c2f0; padding: 0.3rem 1.8rem; border-radius: 40px;">🏫 paragraph 3</span>
             </div>
             <div class="para-text" id="p3">
@@ -308,9 +320,10 @@
             </div>
         </div>
 
-        <!-- فقرة 4 -->
+        <!-- فقرة 4 مع الصورة -->
         <div class="paragraph-card">
             <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/3755245/pexels-photo-3755245.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Child showing drawing to parent">
                 <span style="font-weight: 600; background: #d4c2f0; padding: 0.3rem 1.8rem; border-radius: 40px;">👨‍👦 paragraph 4</span>
             </div>
             <div class="para-text" id="p4">
@@ -321,9 +334,10 @@
             </div>
         </div>
 
-        <!-- فقرة 5 -->
+        <!-- فقرة 5 مع الصورة -->
         <div class="paragraph-card">
             <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/5749776/pexels-photo-5749776.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Dream of becoming an artist">
                 <span style="font-weight: 600; background: #d4c2f0; padding: 0.3rem 1.8rem; border-radius: 40px;">✨ paragraph 5</span>
             </div>
             <div class="para-text" id="p5">
@@ -423,11 +437,11 @@
 
     <hr>
     <div class="footer-note">
-        🌟 Passage 4: "My Favorite Hobby" - تمت إزالة الصور وإصلاح الاستماع (نطق آلي).<br>
-        📁 <strong>Filename: passage4.html</strong> (نسخة محدثة)
+        🌟 Passage 4: "My Favorite Hobby" - إصلاح الاستماع (نطق آلي).<br>
+        📁 <strong>Filename: passage4.html</strong>
     </div>
     <div style="margin-top: 1rem; font-size: 0.9rem; background: #ede1ff; border-radius: 60px; padding: 0.8rem 2rem; text-align: center;">
-        ✅ الاستماع الآن يعمل عبر زر "استمع للفقرة" (تخاطب آلي). جميع الأسئلة تفاعلية.
+        ✅ الاستماع الآن يعمل عبر زر "استمع للفقرة". جميع الأسئلة تفاعلية.
     </div>
 </div>
 
@@ -437,7 +451,6 @@
         const textElement = document.getElementById(elementId);
         if (!textElement) return;
 
-        // إيقاف أي تحديث جارٍ
         if (window.speechSynthesis.speaking) {
             window.speechSynthesis.cancel();
         }
@@ -445,7 +458,7 @@
         const text = textElement.innerText;
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = 'en-US';
-        utterance.rate = 0.9; // سرعة مناسبة للمستوى A1
+        utterance.rate = 0.9;
         utterance.pitch = 1;
         window.speechSynthesis.speak(utterance);
     }
@@ -457,7 +470,6 @@
             const questionId = questionItem.id;
             const selectedValue = this.value;
             
-            // تحديد الإجابة الصحيحة حسب السؤال
             let correctAnswer = '';
             if (questionId === 'q1') correctAnswer = 'b';
             else if (questionId === 'q2') correctAnswer = 'b';
@@ -478,7 +490,6 @@
         });
     });
 
-    // وظيفة إظهار الإجابة الصحيحة
     function showAnswer(questionNum, correctLetter) {
         const feedback = document.getElementById('feedback' + questionNum);
         let answerText = '';
