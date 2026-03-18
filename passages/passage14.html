@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading - A1 - Passage 14 (مع الصور + استماع ناطق)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #fff8e7;
+            color: #5d4a36;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(150, 100, 70, 0.1);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: #d98c5f;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #fcd5b5;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #8b7a67;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #b5714a;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #fad4b5;
+            padding-bottom: 0.5rem;
+        }
+        .passage-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        .paragraph-card {
+            background: #fffbf5;
+            border-radius: 28px;
+            padding: 1.8rem 1.8rem 1.8rem 1.8rem;
+            box-shadow: 0 5px 20px rgba(170, 120, 70, 0.1);
+            transition: 0.2s;
+            border: 1px solid #ffe5cf;
+        }
+        .para-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        .para-image {
+            width: 140px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: 0 8px 18px -6px #dbbd9c;
+            border: 2px solid white;
+            background: #ffefe2;
+        }
+        .para-text {
+            font-size: 1.2rem;
+            background: #ffffff;
+            padding: 1.3rem 1.8rem;
+            border-radius: 36px 36px 36px 12px;
+            box-shadow: inset 0 1px 6px #ffefe2;
+            border: 1px solid #ffe5cf;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: #5d4a36;
+        }
+        .listen-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-top: 0.5rem;
+            margin-left: 0.2rem;
+        }
+        .listen-btn {
+            background: #fde3cd;
+            border: none;
+            padding: 0.6rem 1.8rem;
+            border-radius: 40px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #b5714a;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 4px 8px rgba(150, 90, 50, 0.1);
+            border: 1px solid #fccfad;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .listen-btn:hover {
+            background: #fcd5b5;
+            transform: scale(1.02);
+        }
+        .questions-section {
+            background: #fff2e4;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #fccfad;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #b5714a;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(150, 90, 50, 0.08);
+            border-left: 10px solid #f0a87d;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #d98c5f;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #ffefe2;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #d98c5f;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+        }
+        .option input[type="radio"]:checked {
+            background: #d98c5f;
+            border: 2px solid #d98c5f;
+        }
+        .option input[type="radio"]:checked::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            top: 3px;
+            left: 3px;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            color: #2e7d32;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #c62828;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #d98c5f;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .show-answer-btn:hover {
+            color: #b5714a;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #ffdec6;
+            margin: 2rem 0 0.5rem 0;
+        }
+        th {
+            background: #d98c5f;
+            color: white;
+            font-weight: 500;
+            font-size: 1.2rem;
+            padding: 1rem 1.5rem;
+        }
+        td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #ffdec6;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #5d4a36;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #fad4b5, transparent);
+            margin: 2rem 0 0.5rem 0;
+        }
+        @media (max-width: 700px) {
+            .container { padding: 1.5rem; }
+            .para-header { flex-direction: column; align-items: start; }
+            .para-image { width: 100%; height: auto; max-height: 150px; }
+            .listen-btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>👥 STEP Reading · A1</h1>
+    <div class="sub-title">Passage 14 · My Favorite Food (مع الصور + استماع ناطق)</div>
+
+    <h2>🍕 Meet Lina and her favorite food</h2>
+
+    <!-- فقرة 1 مع الصورة -->
+    <div class="passage-grid">
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/699521/pexels-photo-699521.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Girl eating pizza happily">
+                <span style="font-weight: 600; background: #fde3cd; padding: 0.3rem 1.8rem; border-radius: 40px;">🍕 paragraph 1</span>
+            </div>
+            <div class="para-text" id="p1">
+                Hello! My name is Lina. I am eight years old. I love food! My favorite food is pizza.
+            </div>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p1')">🔊 استمع للفقرة</button>
+            </div>
+        </div>
+
+        <!-- فقرة 2 مع الصورة -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/905847/pexels-photo-905847.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Delicious pizza with toppings">
+                <span style="font-weight: 600; background: #fde3cd; padding: 0.3rem 1.8rem; border-radius: 40px;">🍕 paragraph 2</span>
+            </div>
+            <div class="para-text" id="p2">
+                Pizza has bread, tomato sauce, and cheese. I like pizza with mushrooms and olives. My mother puts extra cheese on top.
+            </div>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p2')">🔊 استمع للفقرة</button>
+            </div>
+        </div>
+
+        <!-- فقرة 3 مع الصورة -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/4262742/pexels-photo-4262742.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Mother and daughter making pizza in kitchen">
+                <span style="font-weight: 600; background: #fde3cd; padding: 0.3rem 1.8rem; border-radius: 40px;">👩‍🍳 paragraph 3</span>
+            </div>
+            <div class="para-text" id="p3">
+                On Friday nights, we make pizza at home. I help my mother roll the dough. We put our favorite toppings on it.
+            </div>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p3')">🔊 استمع للفقرة</button>
+            </div>
+        </div>
+
+        <!-- فقرة 4 مع الصورة -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/262917/pexels-photo-262917.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Family eating together at dinner table">
+                <span style="font-weight: 600; background: #fde3cd; padding: 0.3rem 1.8rem; border-radius: 40px;">👪 paragraph 4</span>
+            </div>
+            <div class="para-text" id="p4">
+                When the pizza is ready, we all eat together. My father and brother love it too. We laugh and talk while we eat.
+            </div>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p4')">🔊 استمع للفقرة</button>
+            </div>
+        </div>
+
+        <!-- فقرة 5 مع الصورة -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/5469908/pexels-photo-5469908.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Girl with pizza smiling">
+                <span style="font-weight: 600; background: #fde3cd; padding: 0.3rem 1.8rem; border-radius: 40px;">😊 paragraph 5</span>
+            </div>
+            <div class="para-text" id="p5">
+                Pizza is my favorite because it is delicious and making it with my family is fun. What is your favorite food?
+            </div>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p5')">🔊 استمع للفقرة</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5 أسئلة STEP - INTERACTIVE MULTIPLE CHOICE -->
+    <div class="questions-section">
+        <h3>📘 STEP-style questions (A1) - Interactive</h3>
+
+        <!-- سؤال 1 -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>Word meaning:</strong> In paragraph 2, what does "<strong>toppings</strong>" mean?
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) the bread part of pizza</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) things you put on top of pizza like mushrooms</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) the sauce inside</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) the box</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 2 -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>Go back to paragraph 2:</strong> What toppings does Lina like on her pizza?
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) chicken and peppers</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) mushrooms and olives</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) onions and tomatoes</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) ham and pineapple</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 3 -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>Main idea:</strong> What is the story about?
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) how to cook pasta</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) Lina's favorite food and family pizza night</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) Lina's school lunch</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) a pizza restaurant</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 4 -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>Detail:</strong> When does Lina's family make pizza at home?
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) on Saturday mornings</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) on Friday nights</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) on Sundays</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) on Monday evenings</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 5 -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>Inference:</strong> Why does Lina love pizza so much?
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) because it is healthy</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) because it is sweet</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) because it is delicious and fun to make with her family</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) because she eats it at school</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'c')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- جدول المفردات -->
+    <h3 style="font-size: 1.8rem; font-weight: 400; margin-bottom: 0.5rem;">🔤 Vocabulary from the passage</h3>
+    <table>
+        <thead><tr><th>Word</th><th>Simple meaning</th><th>🇸🇦 Arabic</th></tr></thead>
+        <tbody>
+            <tr><td><strong>pizza</strong></td><td>a food with bread, sauce, and cheese</td><td class="arabic">بيتزا</td></tr>
+            <tr><td><strong>toppings</strong></td><td>ingredients on top of pizza</td><td class="arabic">إضافات</td></tr>
+            <tr><td><strong>mushrooms</strong></td><td>a type of fungus we eat</td><td class="arabic">فطر</td></tr>
+            <tr><td><strong>olives</strong></td><td>small green or black fruits</td><td class="arabic">زيتون</td></tr>
+            <tr><td><strong>dough</strong></td><td>mixture of flour and water for bread</td><td class="arabic">عجين</td></tr>
+            <tr><td><strong>roll</strong></td><td>to make dough flat with your hands</td><td class="arabic">يفرد</td></tr>
+            <tr><td><strong>ready</strong></td><td>finished and prepared</td><td class="arabic">جاهز</td></tr>
+            <tr><td><strong>delicious</strong></td><td>very tasty</td><td class="arabic">لذيذ</td></tr>
+        </tbody>
+    </table>
+
+    <hr>
+</div>
+
+<script>
+    // وظيفة قراءة النص بصوت عالٍ (Web Speech API)
+    function readAloud(elementId) {
+        const textElement = document.getElementById(elementId);
+        if (!textElement) return;
+
+        if (window.speechSynthesis.speaking) {
+            window.speechSynthesis.cancel();
+        }
+
+        const text = textElement.innerText;
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.9;
+        utterance.pitch = 1;
+        window.speechSynthesis.speak(utterance);
+    }
+
+    // تفاعل الأسئلة
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;
+            const selectedValue = this.value;
+            
+            let correctAnswer = '';
+            if (questionId === 'q1') correctAnswer = 'b';
+            else if (questionId === 'q2') correctAnswer = 'b';
+            else if (questionId === 'q3') correctAnswer = 'b';
+            else if (questionId === 'q4') correctAnswer = 'b';
+            else if (questionId === 'q5') correctAnswer = 'c';
+            
+            const feedbackId = 'feedback' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            
+            if (selectedValue === correctAnswer) {
+                feedback.textContent = '✅ Correct! Well done.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Try again!';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (b) things you put on top of pizza like mushrooms'; break;
+            case 2: answerText = 'The correct answer is (b) mushrooms and olives'; break;
+            case 3: answerText = 'The correct answer is (b) Lina\'s favorite food and family pizza night'; break;
+            case 4: answerText = 'The correct answer is (b) on Friday nights'; break;
+            case 5: answerText = 'The correct answer is (c) because it is delicious and fun to make with her family'; break;
+        }
+        
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+</script>
+</body>
+</html>
