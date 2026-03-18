@@ -4,203 +4,342 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>القطعة 1 - My Healthy Morning | STEP Reading</title>
+    <!-- Font Awesome (للأيقونات) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../style.css">
     <style>
-        .passage-container {
-            max-width: 900px;
-            margin: 2rem auto;
-            background: white;
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: var(--box-shadow);
-            direction: rtl;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-        
+
+        :root {
+            --primary-color: #b6581a;
+            --secondary-color: #f5cba0;
+            --success-color: #27ae60;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --gradient-1: linear-gradient(135deg, #b6581a, #d48b4c);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+            background-color: #f9f2e7;
+            color: #2c3a2c;
+            line-height: 1.6;
+            padding: 1rem;
+        }
+
+        header {
+            background: var(--gradient-1);
+            color: white;
+            padding: 2rem;
+            border-radius: 0 0 50px 50px;
+            text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: var(--box-shadow);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .back-link {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            display: inline-block;
+            margin-top: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+
+        .back-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .passage-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 40px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .level-badge {
+            background: #27ae60;
+            color: white;
+            padding: 0.4rem 1.5rem;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
         .passage-title {
             color: var(--primary-color);
             text-align: center;
             margin-bottom: 2rem;
-            font-size: 2rem;
+            font-size: 2.2rem;
+            border-bottom: 3px dashed var(--secondary-color);
+            padding-bottom: 0.8rem;
         }
-        
+
         .passage-text {
-            line-height: 2;
-            margin-bottom: 3rem;
-            padding: 1rem;
-            background: #f9f9f9;
-            border-radius: 15px;
+            background: #fefbf7;
+            border-radius: 30px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid #fadfc4;
         }
-        
+
         .english-text {
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px dashed #e0e0e0;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px #faebdd;
+            position: relative;
         }
-        
+
         .english-text p {
             margin-bottom: 1rem;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
-        
+
         .arabic-translation {
             background: #e8f4fd;
-            padding: 1rem;
-            border-radius: 10px;
-            margin-top: 0.5rem;
-            margin-bottom: 1.5rem;
+            padding: 1rem 1.5rem;
+            border-radius: 15px;
+            margin: 0.5rem 0 1rem 0;
             color: #2c3e50;
+            border-right: 5px solid var(--secondary-color);
+            font-size: 1.1rem;
+        }
+
+        .listen-wrapper {
+            display: flex;
+            justify-content: flex-start;
+            margin-top: 0.5rem;
+        }
+
+        .listen-btn {
+            background: #f8d7b5;
+            border: none;
+            padding: 0.6rem 1.8rem;
+            border-radius: 40px;
             font-size: 1rem;
-            border-right: 4px solid var(--secondary-color);
+            font-weight: 600;
+            color: #6a4e2e;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 4px 8px rgba(150, 110, 70, 0.1);
+            border: 1px solid #f5cba0;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
-        
-        .arabic-translation p {
-            margin: 0.5rem 0;
+
+        .listen-btn:hover {
+            background: #f5c89e;
+            transform: scale(1.02);
         }
-        
+
         .section-title {
             color: var(--primary-color);
-            margin: 2rem 0 1rem;
+            margin: 2.5rem 0 1rem;
             padding-bottom: 0.5rem;
             border-bottom: 2px solid var(--secondary-color);
+            font-size: 1.8rem;
         }
-        
+
         .vocab-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 1.5rem 0;
             background: white;
-            border-radius: 15px;
+            border-radius: 25px;
             overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 20px #eddac8;
+            margin: 1.5rem 0;
         }
-        
+
         .vocab-table th {
-            background: var(--gradient-1);
+            background: #9b6d47;
             color: white;
+            font-weight: 500;
+            font-size: 1.2rem;
             padding: 1rem;
             text-align: center;
         }
-        
+
         .vocab-table td {
             padding: 1rem;
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px solid #eed7c1;
             text-align: center;
         }
-        
+
         .vocab-table tr:last-child td {
             border-bottom: none;
         }
-        
-        .vocab-table tr:hover {
-            background: #f5f5f5;
+
+        .question-item {
+            background: #fef3e9;
+            border-radius: 50px;
+            padding: 1.8rem 2rem;
+            margin-bottom: 1.5rem;
+            border: 2px solid #f5cba0;
+            border-right: 10px solid #e6a56f;
         }
-        
-        .question {
-            background: #f9f9f9;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 15px;
-            border-right: 4px solid var(--secondary-color);
-        }
-        
-        .question p {
-            margin-bottom: 1rem;
+
+        .question-num {
+            display: inline-block;
+            background: #c77933;
+            color: white;
             font-weight: bold;
+            width: 35px;
+            height: 35px;
+            text-align: center;
+            line-height: 35px;
+            border-radius: 50%;
+            margin-left: 0.8rem;
         }
-        
+
         .options {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
+            margin: 1.5rem 0 0.5rem 0;
         }
-        
+
         .option {
             background: white;
-            padding: 1rem;
-            border-radius: 10px;
+            padding: 0.8rem 1.2rem;
+            border-radius: 60px;
             border: 2px solid #e0e0e0;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
-        
+
         .option:hover {
-            border-color: var(--secondary-color);
-            background: #f0f8ff;
+            border-color: #c77933;
+            background: #fef0e0;
             transform: translateY(-2px);
         }
-        
+
         .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #c77933;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+            position: relative;
             margin-left: 0.5rem;
         }
-        
+
+        .option input[type="radio"]:checked {
+            background: #c77933;
+            border-color: #c77933;
+        }
+
+        .option input[type="radio"]:checked::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            top: 3px;
+            left: 3px;
+        }
+
+        .feedback {
+            margin-right: 1rem;
+            margin-top: 0.5rem;
+            font-weight: bold;
+            display: none;
+        }
+
+        .feedback.correct {
+            color: #2e7d32;
+            display: block;
+        }
+
+        .feedback.incorrect {
+            color: #c62828;
+            display: block;
+        }
+
+        .show-answer-btn {
+            background: none;
+            border: none;
+            color: #b6581a;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.95rem;
+            margin-right: 1rem;
+            margin-top: 0.3rem;
+        }
+
         .answers-section {
-            margin-top: 3rem;
+            margin-top: 2rem;
             padding: 2rem;
             background: #f0f8ff;
-            border-radius: 15px;
-            border: 2px solid var(--success-color);
+            border-radius: 30px;
+            border: 2px solid #27ae60;
+            display: none;
         }
-        
+
         .answer-item {
-            padding: 0.8rem;
-            margin: 0.5rem 0;
             background: white;
-            border-radius: 8px;
-            border-right: 4px solid var(--success-color);
+            padding: 0.8rem 1.5rem;
+            margin: 0.8rem 0;
+            border-radius: 50px;
+            border-right: 5px solid #27ae60;
         }
-        
+
         .btn-show-answers {
-            background: var(--success-color);
+            background: #27ae60;
             color: white;
             border: none;
             padding: 1rem 2rem;
-            border-radius: 50px;
+            border-radius: 60px;
             cursor: pointer;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             margin: 2rem 0;
             transition: all 0.3s ease;
             width: 100%;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
         }
-        
+
         .btn-show-answers:hover {
             background: #219a52;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(39, 174, 96, 0.4);
+            transform: translateY(-3px);
         }
-        
-        .back-link {
-            display: inline-block;
-            margin-bottom: 2rem;
-            color: var(--secondary-color);
-            text-decoration: none;
-            font-size: 1.1rem;
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            color: #7e6b5a;
         }
-        
-        .back-link:hover {
-            text-decoration: underline;
-        }
-        
-        .level-badge {
-            background: var(--success-color);
-            color: white;
-            padding: 0.3rem 1rem;
-            border-radius: 50px;
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
-        
-        @media (max-width: 768px) {
+
+        @media (max-width: 700px) {
             .options {
                 grid-template-columns: 1fr;
             }
-            
-            .vocab-table {
-                font-size: 0.9rem;
-            }
-            
-            .passage-container {
-                padding: 1rem;
+            .question-item {
+                padding: 1.5rem;
             }
         }
     </style>
@@ -208,7 +347,7 @@
 <body>
     <header>
         <h1><i class="fas fa-book-open"></i> قطعة قراءة - المستوى A1</h1>
-        <p><a href="../levels.html?level=a1" class="back-link"><i class="fas fa-arrow-right"></i> العودة إلى المستوى A1</a></p>
+        <a href="../levels.html?level=a1" class="back-link"><i class="fas fa-arrow-right"></i> العودة إلى المستوى A1</a>
     </header>
     
     <main>
@@ -219,43 +358,58 @@
             <!-- Passage Text with Translation -->
             <div class="passage-text">
                 <!-- Paragraph 1 -->
-                <div class="english-text">
+                <div class="english-text" id="p1">
                     <p><strong>Paragraph 1:</strong> Every day I wake up at 6 o'clock in the morning. The sun is bright and the birds are singing outside my window. I feel happy and ready to start my day.</p>
-                </div>
-                <div class="arabic-translation">
-                    <p><strong>الترجمة:</strong> كل يوم أستيقظ في الساعة السادسة صباحاً. الشمس مشرقة والعصافير تغرد خارج نافذتي. أشعر بالسعادة والاستعداد لبدء يومي.</p>
+                    <div class="arabic-translation">
+                        <p><strong>الترجمة:</strong> كل يوم أستيقظ في الساعة السادسة صباحاً. الشمس مشرقة والعصافير تغرد خارج نافذتي. أشعر بالسعادة والاستعداد لبدء يومي.</p>
+                    </div>
+                    <div class="listen-wrapper">
+                        <button class="listen-btn" onclick="readAloud('p1')"><i class="fas fa-headphones"></i> استمع للفقرة</button>
+                    </div>
                 </div>
                 
                 <!-- Paragraph 2 -->
-                <div class="english-text">
+                <div class="english-text" id="p2">
                     <p><strong>Paragraph 2:</strong> First, I go to the bathroom and wash my face with cold water. This helps me feel awake and fresh. Then I brush my teeth for two minutes. My mother says healthy teeth are very important.</p>
-                </div>
-                <div class="arabic-translation">
-                    <p><strong>الترجمة:</strong> أولاً، أذهب إلى الحمام وأغسل وجهي بالماء البارد. هذا يساعدني على الشعور باليقظة والانتعاش. ثم أفرش أسناني لمدة دقيقتين. تقول أمي أن الأسنان الصحية مهمة جداً.</p>
+                    <div class="arabic-translation">
+                        <p><strong>الترجمة:</strong> أولاً، أذهب إلى الحمام وأغسل وجهي بالماء البارد. هذا يساعدني على الشعور باليقظة والانتعاش. ثم أفرش أسناني لمدة دقيقتين. تقول أمي أن الأسنان الصحية مهمة جداً.</p>
+                    </div>
+                    <div class="listen-wrapper">
+                        <button class="listen-btn" onclick="readAloud('p2')"><i class="fas fa-headphones"></i> استمع للفقرة</button>
+                    </div>
                 </div>
                 
                 <!-- Paragraph 3 -->
-                <div class="english-text">
+                <div class="english-text" id="p3">
                     <p><strong>Paragraph 3:</strong> After that, I go to the kitchen and eat a good breakfast. I usually eat bread with cheese and a banana. I also drink a glass of milk because it is good for my bones.</p>
-                </div>
-                <div class="arabic-translation">
-                    <p><strong>الترجمة:</strong> بعد ذلك، أذهب إلى المطبخ وأتناول فطوراً جيداً. عادةً آكل خبزاً مع جبن وموزة. وأشرب أيضاً كوباً من الحليب لأنه مفيد لعظامي.</p>
+                    <div class="arabic-translation">
+                        <p><strong>الترجمة:</strong> بعد ذلك، أذهب إلى المطبخ وأتناول فطوراً جيداً. عادةً آكل خبزاً مع جبن وموزة. وأشرب أيضاً كوباً من الحليب لأنه مفيد لعظامي.</p>
+                    </div>
+                    <div class="listen-wrapper">
+                        <button class="listen-btn" onclick="readAloud('p3')"><i class="fas fa-headphones"></i> استمع للفقرة</button>
+                    </div>
                 </div>
                 
                 <!-- Paragraph 4 -->
-                <div class="english-text">
+                <div class="english-text" id="p4">
                     <p><strong>Paragraph 4:</strong> I do not drink coffee in the morning. Coffee is not good for children. I only drink water or milk. Water gives my body energy to play and learn.</p>
-                </div>
-                <div class="arabic-translation">
-                    <p><strong>الترجمة:</strong> أنا لا أشرب القهوة في الصباح. القهوة ليست جيدة للأطفال. أنا أشرب فقط الماء أو الحليب. الماء يعطي جسمي الطاقة للعب والتعلم.</p>
+                    <div class="arabic-translation">
+                        <p><strong>الترجمة:</strong> أنا لا أشرب القهوة في الصباح. القهوة ليست جيدة للأطفال. أنا أشرب فقط الماء أو الحليب. الماء يعطي جسمي الطاقة للعب والتعلم.</p>
+                    </div>
+                    <div class="listen-wrapper">
+                        <button class="listen-btn" onclick="readAloud('p4')"><i class="fas fa-headphones"></i> استمع للفقرة</button>
+                    </div>
                 </div>
                 
                 <!-- Paragraph 5 -->
-                <div class="english-text">
+                <div class="english-text" id="p5">
                     <p><strong>Paragraph 5:</strong> At 7 o'clock, I put on my school uniform and take my bag. I walk to school with my friend Ahmed. We talk and laugh on the way. It is a nice start to the day.</p>
-                </div>
-                <div class="arabic-translation">
-                    <p><strong>الترجمة:</strong> في الساعة السابعة، أرتدي زيّ المدرسة وآخذ حقيبتي. أمشي إلى المدرسة مع صديقي أحمد. نتحدث ونضحك في الطريق. إنها بداية لطيفة لليوم.</p>
+                    <div class="arabic-translation">
+                        <p><strong>الترجمة:</strong> في الساعة السابعة، أرتدي زيّ المدرسة وآخذ حقيبتي. أمشي إلى المدرسة مع صديقي أحمد. نتحدث ونضحك في الطريق. إنها بداية لطيفة لليوم.</p>
+                    </div>
+                    <div class="listen-wrapper">
+                        <button class="listen-btn" onclick="readAloud('p5')"><i class="fas fa-headphones"></i> استمع للفقرة</button>
+                    </div>
                 </div>
             </div>
             
@@ -265,8 +419,8 @@
                 <thead>
                     <tr>
                         <th>Word الكلمة</th>
-                        <th>Simple English Meaning المعنى بالإنجليزية</th>
-                        <th>Arabic Meaning المعنى بالعربية</th>
+                        <th>Simple English Meaning</th>
+                        <th>Arabic Meaning</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -284,60 +438,70 @@
             <!-- Questions Section -->
             <h3 class="section-title"><i class="fas fa-question-circle"></i> الأسئلة Questions</h3>
             
-            <div class="question" id="q1">
-                <p><strong>1. Vocabulary Question:</strong> What does the word "bright" mean in the passage?</p>
+            <div class="question-item" id="q1">
+                <span class="question-num">1</span> <strong>Vocabulary Question:</strong> What does the word "bright" mean in the passage?
                 <div class="options">
                     <label class="option"><input type="radio" name="q1" value="A"> A) Dark and cloudy</label>
                     <label class="option"><input type="radio" name="q1" value="B"> B) Full of light</label>
                     <label class="option"><input type="radio" name="q1" value="C"> C) Very cold</label>
                     <label class="option"><input type="radio" name="q1" value="D"> D) Quiet and calm</label>
                 </div>
+                <div class="feedback" id="feedback1"></div>
+                <button class="show-answer-btn" onclick="showAnswer(1, 'B')">🔍 إظهار الإجابة</button>
             </div>
             
-            <div class="question" id="q2">
-                <p><strong>2. Main Idea Question:</strong> What is the main idea of this passage?</p>
+            <div class="question-item" id="q2">
+                <span class="question-num">2</span> <strong>Main Idea Question:</strong> What is the main idea of this passage?
                 <div class="options">
                     <label class="option"><input type="radio" name="q2" value="A"> A) How to cook breakfast</label>
                     <label class="option"><input type="radio" name="q2" value="B"> B) A student's healthy morning routine</label>
                     <label class="option"><input type="radio" name="q2" value="C"> C) Why birds sing in the morning</label>
                     <label class="option"><input type="radio" name="q2" value="D"> D) The best time to go to school</label>
                 </div>
+                <div class="feedback" id="feedback2"></div>
+                <button class="show-answer-btn" onclick="showAnswer(2, 'B')">🔍 إظهار الإجابة</button>
             </div>
             
-            <div class="question" id="q3">
-                <p><strong>3. Reference Question:</strong> In paragraph 3, what does the word "it" refer to?</p>
+            <div class="question-item" id="q3">
+                <span class="question-num">3</span> <strong>Reference Question:</strong> In paragraph 3, what does the word "it" refer to?
                 <div class="options">
                     <label class="option"><input type="radio" name="q3" value="A"> A) Breakfast</label>
                     <label class="option"><input type="radio" name="q3" value="B"> B) Cheese</label>
                     <label class="option"><input type="radio" name="q3" value="C"> C) Milk</label>
                     <label class="option"><input type="radio" name="q3" value="D"> D) A banana</label>
                 </div>
+                <div class="feedback" id="feedback3"></div>
+                <button class="show-answer-btn" onclick="showAnswer(3, 'C')">🔍 إظهار الإجابة</button>
             </div>
             
-            <div class="question" id="q4">
-                <p><strong>4. Detail Question:</strong> What time does the writer wake up?</p>
+            <div class="question-item" id="q4">
+                <span class="question-num">4</span> <strong>Detail Question:</strong> What time does the writer wake up?
                 <div class="options">
                     <label class="option"><input type="radio" name="q4" value="A"> A) 5 o'clock</label>
                     <label class="option"><input type="radio" name="q4" value="B"> B) 7 o'clock</label>
                     <label class="option"><input type="radio" name="q4" value="C"> C) 6 o'clock</label>
                     <label class="option"><input type="radio" name="q4" value="D"> D) 8 o'clock</label>
                 </div>
+                <div class="feedback" id="feedback4"></div>
+                <button class="show-answer-btn" onclick="showAnswer(4, 'C')">🔍 إظهار الإجابة</button>
             </div>
             
-            <div class="question" id="q5">
-                <p><strong>5. Detail Question:</strong> Why does the writer NOT drink coffee?</p>
+            <div class="question-item" id="q5">
+                <span class="question-num">5</span> <strong>Detail Question:</strong> Why does the writer NOT drink coffee?
                 <div class="options">
                     <label class="option"><input type="radio" name="q5" value="A"> A) He does not like the taste</label>
                     <label class="option"><input type="radio" name="q5" value="B"> B) His mother does not buy it</label>
                     <label class="option"><input type="radio" name="q5" value="C"> C) Coffee is not good for children</label>
                     <label class="option"><input type="radio" name="q5" value="D"> D) He drinks tea instead</label>
                 </div>
+                <div class="feedback" id="feedback5"></div>
+                <button class="show-answer-btn" onclick="showAnswer(5, 'C')">🔍 إظهار الإجابة</button>
             </div>
             
             <!-- Answers Section -->
-            <button class="btn-show-answers" onclick="showAnswers()"><i class="fas fa-check-circle"></i> عرض الإجابات</button>
+            <button class="btn-show-answers" onclick="toggleAnswers()"><i class="fas fa-check-circle"></i> عرض جميع الإجابات</button>
             
-            <div class="answers-section" id="answers" style="display: none;">
+            <div class="answers-section" id="answers">
                 <h4><i class="fas fa-check"></i> الإجابات الصحيحة:</h4>
                 <div class="answer-item"><strong>1.</strong> B) Full of light - مشرق</div>
                 <div class="answer-item"><strong>2.</strong> B) A student's healthy morning routine - الروتين الصباحي الصحي لطالب</div>
@@ -351,17 +515,83 @@
     <footer>
         <p>© 2024 STEP Reading - جميع الحقوق محفوظة</p>
     </footer>
-    
+
     <script>
-        function showAnswers() {
+        // دالة النطق الآلي
+        function readAloud(elementId) {
+            const textElement = document.getElementById(elementId);
+            if (!textElement) return;
+
+            // إيقاف أي نطق حالي
+            if (window.speechSynthesis.speaking) {
+                window.speechSynthesis.cancel();
+            }
+
+            // استخراج النص الإنجليزي فقط (بدون الترجمة)
+            const pElement = textElement.querySelector('p'); // النص الإنجليزي داخل <p>
+            if (!pElement) return;
+            const text = pElement.innerText.replace(/Paragraph \d+:/, '').trim(); // نزع عنوان الفقرة
+
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.9;
+            utterance.pitch = 1;
+            window.speechSynthesis.speak(utterance);
+        }
+
+        // جعل الأسئلة تفاعلية
+        document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const questionItem = this.closest('.question-item');
+                const questionId = questionItem.id; // q1, q2, ...
+                const selectedValue = this.value;
+
+                let correctAnswer = '';
+                if (questionId === 'q1') correctAnswer = 'B';
+                else if (questionId === 'q2') correctAnswer = 'B';
+                else if (questionId === 'q3') correctAnswer = 'C';
+                else if (questionId === 'q4') correctAnswer = 'C';
+                else if (questionId === 'q5') correctAnswer = 'C';
+
+                const feedbackId = 'feedback' + questionId.substring(1);
+                const feedback = document.getElementById(feedbackId);
+
+                if (selectedValue === correctAnswer) {
+                    feedback.textContent = '✅ صحيح! أحسنت.';
+                    feedback.className = 'feedback correct';
+                } else {
+                    feedback.textContent = '❌ إجابة خاطئة. حاول مرة أخرى.';
+                    feedback.className = 'feedback incorrect';
+                }
+            });
+        });
+
+        // دالة إظهار الإجابة لسؤال معين
+        function showAnswer(questionNum, correctLetter) {
+            const feedback = document.getElementById('feedback' + questionNum);
+            let answerText = '';
+
+            switch(questionNum) {
+                case 1: answerText = 'الإجابة الصحيحة: (B) Full of light'; break;
+                case 2: answerText = 'الإجابة الصحيحة: (B) A student\'s healthy morning routine'; break;
+                case 3: answerText = 'الإجابة الصحيحة: (C) Milk'; break;
+                case 4: answerText = 'الإجابة الصحيحة: (C) 6 o\'clock'; break;
+                case 5: answerText = 'الإجابة الصحيحة: (C) Coffee is not good for children'; break;
+            }
+
+            feedback.textContent = '🔍 ' + answerText;
+            feedback.className = 'feedback correct';
+        }
+
+        // دالة إظهار/إخفاء جميع الإجابات
+        function toggleAnswers() {
             const answersDiv = document.getElementById('answers');
-            if (answersDiv.style.display === 'none') {
+            if (answersDiv.style.display === 'none' || answersDiv.style.display === '') {
                 answersDiv.style.display = 'block';
             } else {
                 answersDiv.style.display = 'none';
             }
         }
     </script>
-    <script src="../js/main.js"></script>
 </body>
 </html>
