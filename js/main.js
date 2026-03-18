@@ -1,6 +1,11 @@
 // ================================================
 // STEP Reading - الملف الرئيسي
 // جميع الحقوق محفوظة
+// إجمالي القطع: 85 قطعة
+// A1: 20 قطعة
+// A2: 20 قطعة
+// B1: 20 قطعة
+// STEP: 25 قطعة
 // ================================================
 
 // بيانات القطع (Passages Data)
@@ -504,7 +509,7 @@ function createPassageCard(passage, index, level) {
             <span class="passage-difficulty ${passage.difficulty}">${difficultyBadge}</span>
         </div>
         <p class="passage-description">${passage.description}</p>
-        <a href="passages/passage${index}.html?level=${level}" class="btn-small">
+        <a href="passages/${level}passage${index}.html?level=${level}" class="btn-small">
             <i class="fas fa-book-open"></i>
             اقرأ القطعة
         </a>
@@ -519,25 +524,27 @@ function createPassageCard(passage, index, level) {
 function loadPassagePage() {
     const urlParams = new URLSearchParams(window.location.search);
     const level = urlParams.get('level');
-    const passageId = window.location.pathname.match(/passage(\d+)\.html/)[1];
     
-    if (level && passagesData[level]) {
+    // استخراج رقم القطعة من مسار الملف (يدعم أسماء مثل a2passage1.html أو passage1.html)
+    const match = window.location.pathname.match(/(?:[a-z]+)?passage(\d+)\.html/i);
+    if (!match) return;
+    const passageId = match[1];
+    
+    if (level && passagesData[level] && passagesData[level].passages[passageId - 1]) {
         const passage = passagesData[level].passages[passageId - 1];
         
-        if (passage) {
-            // تحديث عنوان القطعة
-            const titleEl = document.querySelector('.passage-title');
-            if (titleEl) titleEl.textContent = passage.title;
-            
-            // تحديث معلومات القطعة
-            const infoEl = document.querySelector('.passage-info');
-            if (infoEl) {
-                infoEl.innerHTML = `
-                    <span>📖 ${passage.topic}</span>
-                    <span>⚡ ${passage.difficulty === 'hard' ? 'متقدم' : passage.difficulty === 'medium' ? 'متوسط' : 'مبتدئ'}</span>
-                    ${passage.author ? `<span>✍️ ${passage.author}</span>` : ''}
-                `;
-            }
+        // تحديث عنوان القطعة
+        const titleEl = document.querySelector('.passage-title');
+        if (titleEl) titleEl.textContent = passage.title;
+        
+        // تحديث معلومات القطعة
+        const infoEl = document.querySelector('.passage-info');
+        if (infoEl) {
+            infoEl.innerHTML = `
+                <span>📖 ${passage.topic}</span>
+                <span>⚡ ${passage.difficulty === 'hard' ? 'متقدم' : passage.difficulty === 'medium' ? 'متوسط' : 'مبتدئ'}</span>
+                ${passage.author ? `<span>✍️ ${passage.author}</span>` : ''}
+            `;
         }
     }
 }
