@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>STEP Reading - A1</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: #0b1d3a;
+    color: white;
+    padding: 20px;
+    line-height: 1.7;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+section {
+    margin-bottom: 30px;
+    padding: 15px;
+    background: #112b55;
+    border-radius: 12px;
+}
+
+img {
+    width: 100%;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+button {
+    background: #00c3ff;
+    border: none;
+    padding: 8px 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0099cc;
+}
+
+.question {
+    margin: 15px 0;
+}
+
+.option {
+    display: block;
+    margin: 5px 0;
+    padding: 6px;
+    background: #1c3c70;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.correct { background: green; }
+.wrong { background: red; }
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid white;
+    padding: 8px;
+}
+</style>
+
+<script>
+function speak(text, btn){
+    if (speechSynthesis.speaking) {
+        speechSynthesis.cancel();
+        btn.innerText = "🔊 Listen";
+        return;
+    }
+
+    let speech = new SpeechSynthesisUtterance(text);
+    speech.lang = "en-US";
+    speech.rate = 0.8;
+
+    speechSynthesis.speak(speech);
+    btn.innerText = "⏹ Stop";
+
+    speech.onend = () => btn.innerText = "🔊 Listen";
+}
+
+function checkAnswer(el, correct){
+    let options = el.parentElement.querySelectorAll('.option');
+    options.forEach(o => o.classList.remove('correct','wrong'));
+
+    if(correct){
+        el.classList.add('correct');
+    } else {
+        el.classList.add('wrong');
+    }
+}
+</script>
+
+</head>
+
+<body>
+
+<h1>STEP Reading - A1</h1>
+<h2>Passage Title Here</h2>
+
+<!-- PARAGRAPH 1 -->
+<section>
+<img src="https://source.unsplash.com/600x400/?family" alt="image">
+<p id="p1">
+This is paragraph one. Write simple sentences here. Keep language easy.
+Students should understand every sentence clearly. Add daily life ideas.
+Use short and simple grammar. Make it natural and human.
+</p>
+<button onclick="speak(document.getElementById('p1').innerText, this)">🔊 Listen</button>
+</section>
+
+<!-- PARAGRAPH 2 -->
+<section>
+<img src="https://source.unsplash.com/600x400/?home" alt="image">
+<p id="p2">Write paragraph two here...</p>
+<button onclick="speak(document.getElementById('p2').innerText, this)">🔊 Listen</button>
+</section>
+
+<!-- PARAGRAPH 3 -->
+<section>
+<img src="https://source.unsplash.com/600x400/?parents" alt="image">
+<p id="p3">Write paragraph three here...</p>
+<button onclick="speak(document.getElementById('p3').innerText, this)">🔊 Listen</button>
+</section>
+
+<!-- PARAGRAPH 4 -->
+<section>
+<img src="https://source.unsplash.com/600x400/?children" alt="image">
+<p id="p4">Write paragraph four here...</p>
+<button onclick="speak(document.getElementById('p4').innerText, this)">🔊 Listen</button>
+</section>
+
+<!-- PARAGRAPH 5 -->
+<section>
+<img src="https://source.unsplash.com/600x400/?happy-family" alt="image">
+<p id="p5">Write paragraph five here...</p>
+<button onclick="speak(document.getElementById('p5').innerText, this)">🔊 Listen</button>
+</section>
+
+<!-- QUESTIONS -->
+<h2>Questions</h2>
+
+<div class="question">
+<p>1. What does "happy" mean?</p>
+<span class="option" onclick="checkAnswer(this,false)">Sad</span>
+<span class="option" onclick="checkAnswer(this,true)">Feeling good</span>
+<span class="option" onclick="checkAnswer(this,false)">Angry</span>
+<span class="option" onclick="checkAnswer(this,false)">Tired</span>
+</div>
+
+<div class="question">
+<p>2. What is the main idea?</p>
+<span class="option" onclick="checkAnswer(this,true)">About a family</span>
+<span class="option" onclick="checkAnswer(this,false)">About school</span>
+<span class="option" onclick="checkAnswer(this,false)">About food</span>
+<span class="option" onclick="checkAnswer(this,false)">About travel</span>
+</div>
+
+<div class="question">
+<p>3. In paragraph 1, what do they do?</p>
+<span class="option" onclick="checkAnswer(this,true)">Spend time together</span>
+<span class="option" onclick="checkAnswer(this,false)">Sleep</span>
+<span class="option" onclick="checkAnswer(this,false)">Fight</span>
+<span class="option" onclick="checkAnswer(this,false)">Study</span>
+</div>
+
+<div class="question">
+<p>4. What detail is mentioned?</p>
+<span class="option" onclick="checkAnswer(this,true)">They eat together</span>
+<span class="option" onclick="checkAnswer(this,false)">They travel abroad</span>
+<span class="option" onclick="checkAnswer(this,false)">They play games online</span>
+<span class="option" onclick="checkAnswer(this,false)">They watch TV all day</span>
+</div>
+
+<div class="question">
+<p>5. What can we infer?</p>
+<span class="option" onclick="checkAnswer(this,true)">They love each other</span>
+<span class="option" onclick="checkAnswer(this,false)">They are strangers</span>
+<span class="option" onclick="checkAnswer(this,false)">They are unhappy</span>
+<span class="option" onclick="checkAnswer(this,false)">They never meet</span>
+</div>
+
+<!-- VOCAB TABLE -->
+<h2>Vocabulary</h2>
+<table>
+<tr><th>Word</th><th>Meaning (EN)</th><th>Arabic</th></tr>
+<tr><td>happy</td><td>feeling good</td><td>سعيد</td></tr>
+<tr><td>family</td><td>people in your home</td><td>عائلة</td></tr>
+<tr><td>together</td><td>with each other</td><td>معًا</td></tr>
+</table>
+
+</body>
+</html>
