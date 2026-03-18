@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading · B1 – Passages 1 & 2</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #e3f2fd;
+            color: #0d3b5e;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(25, 118, 210, 0.1);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: #1976d2;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #90caf9;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #1565c0;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #0d47a1;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #90caf9;
+            padding-bottom: 0.5rem;
+        }
+        .passage-text {
+            font-size: 1.2rem;
+            background: #f8fcff;
+            padding: 2rem;
+            border-radius: 28px;
+            border: 1px solid #bbdefb;
+            margin-bottom: 3rem;
+            line-height: 1.9;
+        }
+        .questions-section {
+            background: #e3f2fd;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #90caf9;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #0d47a1;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(25, 118, 210, 0.08);
+            border-left: 10px solid #42a5f5;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #1976d2;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #e3f2fd;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #1976d2;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+        }
+        .option input[type="radio"]:checked {
+            background: #1976d2;
+            border: 2px solid #1976d2;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            display: none;
+        }
+        .feedback.correct {
+            color: #2e7d32;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #c62828;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #1976d2;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #bbdefb;
+            margin: 2rem 0;
+        }
+        th {
+            background: #1976d2;
+            color: white;
+            font-weight: 500;
+            font-size: 1.2rem;
+            padding: 1rem 1.5rem;
+        }
+        td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #bbdefb;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #0d3b5e;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #90caf9, transparent);
+            margin: 3rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📘 STEP Reading · B1</h1>
+    <div class="sub-title">Passage 1 · The Power of Volunteering</div>
+
+    <!-- passage 1 (existing) -->
+    <h2>🤝 Why Volunteering Matters</h2>
+    <div class="passage-text">
+        <p>Volunteering is the act of offering one's time and energy to help others without expecting financial reward. Over the past decade, awareness of the importance of volunteering has grown significantly in many societies. Millions of volunteer hours are contributed annually in fields such as education, healthcare, and supporting the elderly.</p>
+        <p>The impact of volunteering is not limited to beneficiaries; it also offers numerous benefits to volunteers themselves. It helps develop essential soft skills like communication and teamwork, while boosting self-confidence. Furthermore, volunteering provides individuals with a sense of accomplishment and a stronger connection to their community.</p>
+        <p>However, volunteering faces certain challenges. These include poor coordination among organizations and a lack of adequate training for volunteers. Consequently, many institutions are now working to establish structured programs to train volunteers and ensure the sustainability of volunteer work.</p>
+        <p>In conclusion, volunteering is a fundamental pillar for building cohesive and supportive societies. It reflects values of generosity and cooperation and contributes to sustainable development. Therefore, we should all promote a culture of volunteerism from an early age.</p>
+    </div>
+
+    <!-- questions for passage 1 (q1-q5) -->
+    <div class="questions-section">
+        <h3>📘 STEP‑style questions (B1) – Passage 1</h3>
+        <!-- question 1 -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>What is the main idea of the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) Ways to earn money through volunteering</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) The importance and benefits of volunteering for both society and individuals</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) The history of volunteering in the Arab world</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) How to start a charitable organization</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'b')">🔍 Show answer</button>
+        </div>
+        <!-- question 2 -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>According to the passage, which of the following is a benefit for volunteers?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) Receiving a monthly salary</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) Developing soft skills and self‑confidence</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) Travelling abroad for free</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) Obtaining a university degree</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'b')">🔍 Show answer</button>
+        </div>
+        <!-- question 3 -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>In the third paragraph, the word "<em>challenges</em>" is closest in meaning to:</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) Problems or difficulties</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) Gains</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) Opportunities</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) Achievements</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'a')">🔍 Show answer</button>
+        </div>
+        <!-- question 4 -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>What challenge to volunteering is mentioned in the text?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) Lack of volunteers</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) Poor coordination and lack of training</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) Government restrictions</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) High costs of volunteering</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'b')">🔍 Show answer</button>
+        </div>
+        <!-- question 5 -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>What can be inferred from the last paragraph?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) Volunteering is only for young people.</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) Volunteering should be encouraged from childhood.</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) Volunteering has no effect on society.</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) Volunteers should always be paid.</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'b')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- vocabulary table 1 -->
+    <h3 style="font-size: 1.8rem; font-weight: 400; margin: 2rem 0 1rem;">🔤 Key Vocabulary (15 words) – Volunteering</h3>
+    <table>
+        <thead><tr><th>Word</th><th>Meaning (English)</th><th>🇸🇦 Arabic</th></tr></thead>
+        <tbody>
+            <tr><td>volunteering</td><td>offering time to help without pay</td><td class="arabic">العمل التطوعي</td></tr>
+            <tr><td>beneficiary</td><td>a person who receives help</td><td class="arabic">مستفيد</td></tr>
+            <tr><td>soft skills</td><td>personal abilities like communication</td><td class="arabic">مهارات شخصية</td></tr>
+            <tr><td>self‑confidence</td><td>belief in one's own ability</td><td class="arabic">ثقة بالنفس</td></tr>
+            <tr><td>coordination</td><td>organising people to work together</td><td class="arabic">تنسيق</td></tr>
+            <tr><td>sustainability</td><td>ability to continue over time</td><td class="arabic">استدامة</td></tr>
+            <tr><td>pillar</td><td>a fundamental principle</td><td class="arabic">ركيزة</td></tr>
+            <tr><td>cohesive</td><td>united and working well together</td><td class="arabic">متماسك</td></tr>
+            <tr><td>generosity</td><td>willingness to give</td><td class="arabic">كرم</td></tr>
+            <tr><td>sustainable development</td><td>development that meets present needs without harming the future</td><td class="arabic">تنمية مستدامة</td></tr>
+            <tr><td>awareness</td><td>knowledge or understanding of a subject</td><td class="arabic">وعي</td></tr>
+            <tr><td>contribute</td><td>to give or provide something</td><td class="arabic">يساهم</td></tr>
+            <tr><td>accomplishment</td><td>something successful achieved</td><td class="arabic">إنجاز</td></tr>
+            <tr><td>institution</td><td>an organization established for a purpose</td><td class="arabic">مؤسسة</td></tr>
+            <tr><td>promote</td><td>to support or encourage</td><td class="arabic">يشجع / يروج</td></tr>
+        </tbody>
+    </table>
+
+    <hr> <!-- separator between passages -->
+
+    <!-- #################  PASSAGE 2  ################# -->
+    <div class="sub-title">Passage 2 · The Future of Renewable Energy</div>
+
+    <h2>🌱 Renewable Energy: Power for Tomorrow</h2>
+
+    <div class="passage-text">
+        <p>Renewable energy comes from natural sources that are constantly replenished, such as sunlight, wind, and water. In recent decades, the use of renewable energy has increased dramatically as countries seek to reduce pollution and dependence on fossil fuels like coal and oil.</p>
+        <p>The benefits of renewable energy are numerous. It produces little to no greenhouse gas emissions, helping to combat climate change. Moreover, renewable sources are abundant and will not run out. Many governments are now investing heavily in solar and wind farms to generate clean electricity.</p>
+        <p>However, there are still challenges to overcome. The cost of installing renewable systems can be high, and energy storage remains a technical hurdle because the sun does not always shine and the wind does not always blow. Despite these issues, technology is advancing rapidly, and prices are falling.</p>
+        <p>In conclusion, renewable energy is essential for a sustainable future. With continued innovation and support, it is likely to become the world's primary energy source, ensuring a healthier planet for generations to come.</p>
+    </div>
+
+    <!-- questions for passage 2 (q6-q10) -->
+    <div class="questions-section">
+        <h3>📘 STEP‑style questions (B1) – Passage 2</h3>
+        <!-- question 6 -->
+        <div class="question-item" id="q6">
+            <span class="q-num">6</span> <strong>What is the main idea of the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q6" value="a"> (a) The history of oil and gas</label>
+                <label class="option"><input type="radio" name="q6" value="b"> (b) The importance and future potential of renewable energy</label>
+                <label class="option"><input type="radio" name="q6" value="c"> (c) How to build a solar panel at home</label>
+                <label class="option"><input type="radio" name="q6" value="d"> (d) Disadvantages of wind energy</label>
+            </div>
+            <div class="feedback" id="feedback6"></div>
+            <button class="show-answer-btn" onclick="showAnswer(6, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- question 7 -->
+        <div class="question-item" id="q7">
+            <span class="q-num">7</span> <strong>According to the passage, one advantage of renewable energy is that it:</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q7" value="a"> (a) produces large amounts of pollution</label>
+                <label class="option"><input type="radio" name="q7" value="b"> (b) is clean and abundant</label>
+                <label class="option"><input type="radio" name="q7" value="c"> (c) depends entirely on fossil fuels</label>
+                <label class="option"><input type="radio" name="q7" value="d"> (d) works only at night</label>
+            </div>
+            <div class="feedback" id="feedback7"></div>
+            <button class="show-answer-btn" onclick="showAnswer(7, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- question 8 (vocab) -->
+        <div class="question-item" id="q8">
+            <span class="q-num">8</span> <strong>In paragraph 4, the word "<em>sustainable</em>" is closest in meaning to:</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q8" value="a"> (a) able to continue without harming the environment</label>
+                <label class="option"><input type="radio" name="q8" value="b"> (b) temporary and short‑lived</label>
+                <label class="option"><input type="radio" name="q8" value="c"> (c) very expensive</label>
+                <label class="option"><input type="radio" name="q8" value="d"> (d) weak and unreliable</label>
+            </div>
+            <div class="feedback" id="feedback8"></div>
+            <button class="show-answer-btn" onclick="showAnswer(8, 'a')">🔍 Show answer</button>
+        </div>
+
+        <!-- question 9 (challenge) -->
+        <div class="question-item" id="q9">
+            <span class="q-num">9</span> <strong>What challenge to renewable energy is mentioned in the text?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q9" value="a"> (a) High installation cost and storage problems</label>
+                <label class="option"><input type="radio" name="q9" value="b"> (b) Too much government support</label>
+                <label class="option"><input type="radio" name="q9" value="c"> (c) Lack of wind and sun everywhere</label>
+                <label class="option"><input type="radio" name="q9" value="d"> (d) People prefer fossil fuels</label>
+            </div>
+            <div class="feedback" id="feedback9"></div>
+            <button class="show-answer-btn" onclick="showAnswer(9, 'a')">🔍 Show answer</button>
+        </div>
+
+        <!-- question 10 (inference) -->
+        <div class="question-item" id="q10">
+            <span class="q-num">10</span> <strong>What can be inferred about the author's view of renewable energy?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q10" value="a"> (a) It will never replace fossil fuels.</label>
+                <label class="option"><input type="radio" name="q10" value="b"> (b) It will probably become the main energy source in the future.</label>
+                <label class="option"><input type="radio" name="q10" value="c"> (c) Only solar energy is useful.</label>
+                <label class="option"><input type="radio" name="q10" value="d"> (d) It is too expensive for any country.</label>
+            </div>
+            <div class="feedback" id="feedback10"></div>
+            <button class="show-answer-btn" onclick="showAnswer(10, 'b')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- vocabulary table 2 – renewable energy -->
+    <h3 style="font-size: 1.8rem; font-weight: 400; margin: 2rem 0 1rem;">🔤 Key Vocabulary (15 words) – Renewable Energy</h3>
+    <table>
+        <thead><tr><th>Word</th><th>Meaning (English)</th><th>🇸🇦 Arabic</th></tr></thead>
+        <tbody>
+            <tr><td>renewable</td><td>able to be replaced naturally</td><td class="arabic">متجدد</td></tr>
+            <tr><td>source</td><td>place where something comes from</td><td class="arabic">مصدر</td></tr>
+            <tr><td>replenish</td><td>to fill up again</td><td class="arabic">يعيد ملء</td></tr>
+            <tr><td>fossil fuel</td><td>fuel like coal, oil, gas</td><td class="arabic">وقود أحفوري</td></tr>
+            <tr><td>emission</td><td>gas released into the air</td><td class="arabic">انبعاث</td></tr>
+            <tr><td>climate change</td><td>long‑term change in weather patterns</td><td class="arabic">تغير المناخ</td></tr>
+            <tr><td>abundant</td><td>existing in large quantities</td><td class="arabic">وفير</td></tr>
+            <tr><td>invest</td><td>to put money into something</td><td class="arabic">يستثمر</td></tr>
+            <tr><td>solar</td><td>relating to the sun</td><td class="arabic">شمسي</td></tr>
+            <tr><td>wind</td><td>air moving naturally</td><td class="arabic">رياح</td></tr>
+            <tr><td>turbine</td><td>machine that produces power from wind/water</td><td class="arabic">توربين</td></tr>
+            <tr><td>storage</td><td>keeping energy for later use</td><td class="arabic">تخزين</td></tr>
+            <tr><td>hurdle</td><td>difficulty or obstacle</td><td class="arabic">عائق</td></tr>
+            <tr><td>sustainable</td><td>can be maintained long‑term without harming environment</td><td class="arabic">مستدام</td></tr>
+            <tr><td>innovation</td><td>new idea or technology</td><td class="arabic">ابتكار</td></tr>
+        </tbody>
+    </table>
+    <hr>
+</div>
+
+<script>
+    // unified correct answers map
+    const correctAnswers = {
+        q1: 'b', q2: 'b', q3: 'a', q4: 'b', q5: 'b',
+        q6: 'b', q7: 'b', q8: 'a', q9: 'a', q10: 'b'
+    };
+
+    // showAnswer function used by buttons (passes question number and correct letter)
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+
+        // generate appropriate answer message
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (b) The importance and benefits of volunteering.'; break;
+            case 2: answerText = 'The correct answer is (b) Developing soft skills and self‑confidence.'; break;
+            case 3: answerText = 'The correct answer is (a) Problems or difficulties.'; break;
+            case 4: answerText = 'The correct answer is (b) Poor coordination and lack of training.'; break;
+            case 5: answerText = 'The correct answer is (b) Volunteering should be encouraged from childhood.'; break;
+            case 6: answerText = 'The correct answer is (b) The importance and future potential of renewable energy.'; break;
+            case 7: answerText = 'The correct answer is (b) is clean and abundant.'; break;
+            case 8: answerText = 'The correct answer is (a) able to continue without harming the environment.'; break;
+            case 9: answerText = 'The correct answer is (a) High installation cost and storage problems.'; break;
+            case 10: answerText = 'The correct answer is (b) It will probably become the main energy source in the future.'; break;
+            default: answerText = 'Answer';
+        }
+
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+
+    // radio button change listener for instant feedback
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;      // e.g., "q1", "q2" ... "q10"
+            const selectedValue = this.value;
+            const correct = correctAnswers[questionId];
+
+            const feedbackId = 'feedback' + questionId.substring(1); // "feedback1" etc.
+            const feedback = document.getElementById(feedbackId);
+
+            if (selectedValue === correct) {
+                feedback.textContent = '✅ Correct! Well done.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Try again!';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+</script>
+</body>
+</html>
