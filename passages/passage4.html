@@ -57,7 +57,7 @@
         .paragraph-card {
             background: #f9f5ff;
             border-radius: 28px;
-            padding: 1.8rem 1.8rem 1.8rem 1.8rem;
+            padding: 1.8rem;
             box-shadow: 0 5px 20px rgba(110, 80, 160, 0.1);
             transition: 0.2s;
             border: 1px solid #d9c9f5;
@@ -250,18 +250,6 @@
             font-size: 1.1rem;
             color: #3a2b5c;
         }
-        .footer-note {
-            margin-top: 1.5rem;
-            color: #5e4b7c;
-            font-size: 0.95rem;
-            text-align: center;
-        }
-        hr {
-            border: none;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #cdbaf0, transparent);
-            margin: 2rem 0 0.5rem 0;
-        }
         @media (max-width: 700px) {
             .container { padding: 1.5rem; }
             .para-header { flex-direction: column; align-items: start; }
@@ -277,11 +265,10 @@
 
     <h2>⭐ Let's learn about Omar's hobby</h2>
 
-    <!-- فقرة 1 مع الصورة -->
     <div class="passage-grid">
         <div class="paragraph-card">
             <div class="para-header">
-                <img class="para-image" src="https://images.pexels.com/photos/159644/art-supplies-brushes-paint-artist-159644.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Art supplies: brushes, paints, and paper">
+                <img class="para-image" src="https://images.pexels.com/photos/159644/art-supplies-brushes-paint-artist-159644.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Art supplies">
                 <span style="font-weight: 600; background: #d4c2f0; padding: 0.3rem 1.8rem; border-radius: 40px;">🎨 paragraph 1</span>
             </div>
             <div class="para-text" id="p1">
@@ -292,10 +279,9 @@
             </div>
         </div>
 
-        <!-- فقرة 2 مع الصورة -->
         <div class="paragraph-card">
             <div class="para-header">
-                <img class="para-image" src="https://images.pexels.com/photos/102127/pexels-photo-102127.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Child drawing a house and trees">
+                <img class="para-image" src="https://images.pexels.com/photos/102127/pexels-photo-102127.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Child drawing">
                 <span style="font-weight: 600; background: #d4c2f0; padding: 0.3rem 1.8rem; border-radius: 40px;">🏠 paragraph 2</span>
             </div>
             <div class="para-text" id="p2">
@@ -306,10 +292,9 @@
             </div>
         </div>
 
-        <!-- فقرة 3 مع الصورة -->
         <div class="paragraph-card">
             <div class="para-header">
-                <img class="para-image" src="https://images.pexels.com/photos/1912868/pexels-photo-1912868.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Art class with children painting">
+                <img class="para-image" src="https://images.pexels.com/photos/1912868/pexels-photo-1912868.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Art class">
                 <span style="font-weight: 600; background: #d4c2f0; padding: 0.3rem 1.8rem; border-radius: 40px;">🏫 paragraph 3</span>
             </div>
             <div class="para-text" id="p3">
@@ -320,10 +305,9 @@
             </div>
         </div>
 
-        <!-- فقرة 4 مع الصورة -->
         <div class="paragraph-card">
             <div class="para-header">
-                <img class="para-image" src="https://images.pexels.com/photos/3755245/pexels-photo-3755245.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Child showing drawing to parent">
+                <img class="para-image" src="https://images.pexels.com/photos/3755245/pexels-photo-3755245.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Child with art supplies">
                 <span style="font-weight: 600; background: #d4c2f0; padding: 0.3rem 1.8rem; border-radius: 40px;">👨‍👦 paragraph 4</span>
             </div>
             <div class="para-text" id="p4">
@@ -334,10 +318,9 @@
             </div>
         </div>
 
-        <!-- فقرة 5 مع الصورة -->
         <div class="paragraph-card">
             <div class="para-header">
-                <img class="para-image" src="https://images.pexels.com/photos/5749776/pexels-photo-5749776.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Dream of becoming an artist">
+                <img class="para-image" src="https://images.pexels.com/photos/5749776/pexels-photo-5749776.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Future artist">
                 <span style="font-weight: 600; background: #d4c2f0; padding: 0.3rem 1.8rem; border-radius: 40px;">✨ paragraph 5</span>
             </div>
             <div class="para-text" id="p5">
@@ -349,11 +332,9 @@
         </div>
     </div>
 
-    <!-- 5 أسئلة STEP - INTERACTIVE MULTIPLE CHOICE -->
     <div class="questions-section">
         <h3>📘 STEP-style questions (A1) - Interactive</h3>
 
-        <!-- سؤال 1 -->
         <div class="question-item" id="q1">
             <span class="q-num">1</span> <strong>Word meaning:</strong> In paragraph 3, what does the word "<strong>proud</strong>" mean?
             <div class="options">
@@ -366,7 +347,6 @@
             <button class="show-answer-btn" onclick="showAnswer(1, 'b')">🔍 Show answer</button>
         </div>
 
-        <!-- سؤال 2 -->
         <div class="question-item" id="q2">
             <span class="q-num">2</span> <strong>Go back to paragraph 2:</strong> Where does Omar's mother put his drawings?
             <div class="options">
@@ -379,7 +359,6 @@
             <button class="show-answer-btn" onclick="showAnswer(2, 'b')">🔍 Show answer</button>
         </div>
 
-        <!-- سؤال 3 -->
         <div class="question-item" id="q3">
             <span class="q-num">3</span> <strong>Main idea:</strong> What is the main idea of this story?
             <div class="options">
@@ -392,7 +371,6 @@
             <button class="show-answer-btn" onclick="showAnswer(3, 'b')">🔍 Show answer</button>
         </div>
 
-        <!-- سؤال 4 -->
         <div class="question-item" id="q4">
             <span class="q-num">4</span> <strong>Detail:</strong> What did Omar draw last week in art class?
             <div class="options">
@@ -405,7 +383,6 @@
             <button class="show-answer-btn" onclick="showAnswer(4, 'c')">🔍 Show answer</button>
         </div>
 
-        <!-- سؤال 5 -->
         <div class="question-item" id="q5">
             <span class="q-num">5</span> <strong>Inference:</strong> What does Omar want to be when he grows up?
             <div class="options">
@@ -419,67 +396,39 @@
         </div>
     </div>
 
-    <!-- جدول المفردات -->
     <h3 style="font-size: 1.8rem; font-weight: 400; margin-bottom: 0.5rem;">🔤 Vocabulary from the passage</h3>
     <table>
         <thead><tr><th>Word</th><th>Simple meaning</th><th>🇸🇦 Arabic</th></tr></thead>
         <tbody>
-            <tr><td><strong>hobby</strong></td><td>an activity you do for fun in your free time</td><td class="arabic">هواية</td></tr>
-            <tr><td><strong>draw</strong></td><td>to make pictures with a pencil or pen</td><td class="arabic">يرسم</td></tr>
+            <tr><td><strong>hobby</strong></td><td>an activity you do for fun</td><td class="arabic">هواية</td></tr>
+            <tr><td><strong>draw</strong></td><td>to make pictures with a pencil</td><td class="arabic">يرسم</td></tr>
             <tr><td><strong>paint</strong></td><td>to make pictures using colors</td><td class="arabic">يرسم بالألوان</td></tr>
-            <tr><td><strong>mix</strong></td><td>to put two or more things together</td><td class="arabic">يمزج</td></tr>
-            <tr><td><strong>proud</strong></td><td>feeling good about something you did</td><td class="arabic">فخور</td></tr>
-            <tr><td><strong>art supplies</strong></td><td>things you need for drawing like pencils, paper</td><td class="arabic">أدوات الرسم</td></tr>
+            <tr><td><strong>mix</strong></td><td>to put things together</td><td class="arabic">يمزج</td></tr>
+            <tr><td><strong>proud</strong></td><td>feeling good about yourself</td><td class="arabic">فخور</td></tr>
+            <tr><td><strong>art supplies</strong></td><td>tools for drawing</td><td class="arabic">أدوات الرسم</td></tr>
             <tr><td><strong>sharpener</strong></td><td>a tool to make pencils sharp</td><td class="arabic">مبراة</td></tr>
             <tr><td><strong>artist</strong></td><td>someone who creates art</td><td class="arabic">فنان</td></tr>
         </tbody>
     </table>
-
-    <hr>
-    <div class="footer-note">
-        🌟 Passage 4: "My Favorite Hobby" - إصلاح الاستماع (نطق آلي).<br>
-        📁 <strong>Filename: passage4.html</strong>
-    </div>
-    <div style="margin-top: 1rem; font-size: 0.9rem; background: #ede1ff; border-radius: 60px; padding: 0.8rem 2rem; text-align: center;">
-        ✅ الاستماع الآن يعمل عبر زر "استمع للفقرة". جميع الأسئلة تفاعلية.
-    </div>
 </div>
 
 <script>
-    // وظيفة قراءة النص بصوت عالٍ (Web Speech API)
     function readAloud(elementId) {
         const textElement = document.getElementById(elementId);
         if (!textElement) return;
-
-        if (window.speechSynthesis.speaking) {
-            window.speechSynthesis.cancel();
-        }
-
-        const text = textElement.innerText;
-        const utterance = new SpeechSynthesisUtterance(text);
+        if (window.speechSynthesis.speaking) window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(textElement.innerText);
         utterance.lang = 'en-US';
         utterance.rate = 0.9;
-        utterance.pitch = 1;
         window.speechSynthesis.speak(utterance);
     }
 
-    // تفاعل الأسئلة
     document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
         radio.addEventListener('change', function() {
-            const questionItem = this.closest('.question-item');
-            const questionId = questionItem.id;
+            const questionId = this.closest('.question-item').id;
             const selectedValue = this.value;
-            
-            let correctAnswer = '';
-            if (questionId === 'q1') correctAnswer = 'b';
-            else if (questionId === 'q2') correctAnswer = 'b';
-            else if (questionId === 'q3') correctAnswer = 'b';
-            else if (questionId === 'q4') correctAnswer = 'c';
-            else if (questionId === 'q5') correctAnswer = 'd';
-            
-            const feedbackId = 'feedback' + questionId.substring(1);
-            const feedback = document.getElementById(feedbackId);
-            
+            let correctAnswer = {q1:'b', q2:'b', q3:'b', q4:'c', q5:'d'}[questionId];
+            const feedback = document.getElementById('feedback' + questionId.substring(1));
             if (selectedValue === correctAnswer) {
                 feedback.textContent = '✅ Correct! Well done.';
                 feedback.className = 'feedback correct';
@@ -490,19 +439,17 @@
         });
     });
 
-    function showAnswer(questionNum, correctLetter) {
-        const feedback = document.getElementById('feedback' + questionNum);
-        let answerText = '';
-        
-        switch(questionNum) {
-            case 1: answerText = 'The correct answer is (b) happy because you did something well'; break;
-            case 2: answerText = 'The correct answer is (b) on the fridge'; break;
-            case 3: answerText = 'The correct answer is (b) Omar\'s favorite hobby: drawing'; break;
-            case 4: answerText = 'The correct answer is (c) an elephant'; break;
-            case 5: answerText = 'The correct answer is (d) an artist'; break;
-        }
-        
-        feedback.textContent = '🔍 ' + answerText;
+    function showAnswer(num, letter) {
+        const feedback = document.getElementById('feedback' + num);
+        const answers = [
+            '',
+            '(b) happy because you did something well',
+            '(b) on the fridge',
+            '(b) Omar\'s favorite hobby: drawing',
+            '(c) an elephant',
+            '(d) an artist'
+        ];
+        feedback.textContent = '🔍 The correct answer is ' + answers[num];
         feedback.className = 'feedback correct';
     }
 </script>
