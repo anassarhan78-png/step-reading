@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading · A2 – A Special Day (مع الصور + استماع)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #f0f7f0;
+            color: #2d4a2d;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(40, 90, 40, 0.1);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: #4a8b4a;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #b5d8b5;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #4d6b4d;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #3b6e3b;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #b5d8b5;
+            padding-bottom: 0.5rem;
+        }
+        .passage-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        .paragraph-card {
+            background: #f5fbf5;
+            border-radius: 28px;
+            padding: 1.8rem 1.8rem 1.8rem 1.8rem;
+            box-shadow: 0 5px 20px rgba(70, 120, 70, 0.1);
+            transition: 0.2s;
+            border: 1px solid #c8e0c8;
+        }
+        .para-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        .para-image {
+            width: 140px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: 0 8px 18px -6px #a0bda0;
+            border: 2px solid white;
+            background: #dff0df;
+        }
+        .para-text {
+            font-size: 1.2rem;
+            background: #ffffff;
+            padding: 1.3rem 1.8rem;
+            border-radius: 36px 36px 36px 12px;
+            box-shadow: inset 0 1px 6px #dff0df;
+            border: 1px solid #c8e0c8;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: #2d4a2d;
+        }
+        .listen-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-top: 0.5rem;
+            margin-left: 0.2rem;
+        }
+        .listen-btn {
+            background: #dff0df;
+            border: none;
+            padding: 0.6rem 1.8rem;
+            border-radius: 40px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #3b6e3b;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 4px 8px rgba(40, 90, 40, 0.1);
+            border: 1px solid #a8d0a8;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .listen-btn:hover {
+            background: #c8e6c8;
+            transform: scale(1.02);
+        }
+        .questions-section {
+            background: #e8f3e8;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #a8d0a8;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #3b6e3b;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(40, 90, 40, 0.08);
+            border-left: 10px solid #6fa36f;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #4a8b4a;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #dff0df;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #4a8b4a;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+        }
+        .option input[type="radio"]:checked {
+            background: #4a8b4a;
+            border: 2px solid #4a8b4a;
+        }
+        .option input[type="radio"]:checked::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            top: 3px;
+            left: 3px;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            color: #2e7d32;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #c62828;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #4a8b4a;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .show-answer-btn:hover {
+            color: #3b6e3b;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #c8e0c8;
+            margin: 2rem 0 0.5rem 0;
+        }
+        th {
+            background: #4a8b4a;
+            color: white;
+            font-weight: 500;
+            font-size: 1.2rem;
+            padding: 1rem 1.5rem;
+        }
+        td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #c8e0c8;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #2d4a2d;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #b5d8b5, transparent);
+            margin: 2rem 0 0.5rem 0;
+        }
+        @media (max-width: 700px) {
+            .container { padding: 1.5rem; }
+            .para-header { flex-direction: column; align-items: start; }
+            .para-image { width: 100%; height: auto; max-height: 150px; }
+            .listen-btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📘 STEP Reading · A2</h1>
+    <div class="sub-title">Passage 8 · A Special Day (نصوص متكاملة + استماع)</div>
+
+    <h2>🎉 A Special Day: My Birthday Party</h2>
+
+    <!-- فقرة 1 -->
+    <div class="passage-grid">
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/287240/pexels-photo-287240.jpeg?auto=compress&cs=tinysrgb&w=400" alt="طفل يفتح هدية">
+                <span style="font-weight: 600; background: #dff0df; padding: 0.3rem 1.8rem; border-radius: 40px;">🎂 paragraph 1</span>
+            </div>
+            <div class="para-text" id="p1">
+                Last Saturday was my birthday. I turned twelve years old. My family planned a surprise party for me. When I came home from football practice, all my friends were there. They shouted, "Surprise!" I was very happy and excited.
+            </div>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p1')">🔊 استمع للفقرة</button>
+            </div>
+        </div>
+
+        <!-- فقرة 2 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=400" alt="ديكورات حفلة">
+                <span style="font-weight: 600; background: #dff0df; padding: 0.3rem 1.8rem; border-radius: 40px;">🎈 paragraph 2</span>
+            </div>
+            <div class="para-text" id="p2">
+                My parents decorated the living room with colorful balloons and streamers. There was a big banner that said "Happy Birthday!" on the wall. The table was full of delicious food: pizza, sandwiches, and a big chocolate cake.
+            </div>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p2')">🔊 استمع للفقرة</button>
+            </div>
+        </div>
+
+        <!-- فقرة 3 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/169193/pexels-photo-169193.jpeg?auto=compress&cs=tinysrgb&w=400" alt="أطفال يلعبون">
+                <span style="font-weight: 600; background: #dff0df; padding: 0.3rem 1.8rem; border-radius: 40px;">🎮 paragraph 3</span>
+            </div>
+            <div class="para-text" id="p3">
+                We played many fun games. My favorite game was musical chairs. Everyone laughed and had a great time. Later, we watched a movie together. My friends slept over at my house. We stayed awake talking until midnight.
+            </div>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p3')">🔊 استمع للفقرة</button>
+            </div>
+        </div>
+
+        <!-- فقرة 4 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/265962/pexels-photo-265962.jpeg?auto=compress&cs=tinysrgb&w=400" alt="هدية عيد ميلاد">
+                <span style="font-weight: 600; background: #dff0df; padding: 0.3rem 1.8rem; border-radius: 40px;">🎁 paragraph 4</span>
+            </div>
+            <div class="para-text" id="p4">
+                I received many nice presents. My best friend Ahmed gave me a new video game. My parents bought me a bicycle. It is blue and white, my favorite colors. I can't wait to ride it with my friends in the park.
+            </div>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p4')">🔊 استمع للفقرة</button>
+            </div>
+        </div>
+
+        <!-- فقرة 5 -->
+        <div class="paragraph-card">
+            <div class="para-header">
+                <img class="para-image" src="https://images.pexels.com/photos/2747449/pexels-photo-2747449.jpeg?auto=compress&cs=tinysrgb&w=400" alt="عائلة سعيدة">
+                <span style="font-weight: 600; background: #dff0df; padding: 0.3rem 1.8rem; border-radius: 40px;">❤️ paragraph 5</span>
+            </div>
+            <div class="para-text" id="p5">
+                It was the best birthday ever. I felt so loved by my family and friends. I will never forget this special day. I am already looking forward to my next birthday. I hope it will be just as wonderful.
+            </div>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p5')">🔊 استمع للفقرة</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- أسئلة تفاعلية (STEP‑style) -->
+    <div class="questions-section">
+        <h3>📘 STEP‑style questions (A2) – اختبر فهمك</h3>
+
+        <!-- سؤال 1: معنى كلمة -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>Word meaning:</strong> In paragraph 1, what does “<strong>surprise</strong>” mean?
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) something you expect to happen</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) something unexpected that makes you happy</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) a loud noise</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) a type of game</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 2: تفاصيل من الفقرة 2 -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>Detail (paragraph 2):</strong> What did the parents use to decorate the room?
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) flowers and lights</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) balloons and streamers</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) pictures and posters</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) candles and ribbons</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 3: فكرة رئيسية -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>Main idea:</strong> What is the passage mainly about?
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) How to plan a party</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) The writer's birthday celebration</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) Different types of games</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) A day at football practice</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 4: تفاصيل من الفقرة 4 -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>Detail (paragraph 4):</strong> What did the writer's parents give him?
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) a video game</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) a bicycle</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) a book</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) a football</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- سؤال 5: استنتاج -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>Inference:</strong> How did the writer feel about his birthday?
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) He was disappointed.</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) He felt it was ordinary.</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) He thought it was the best ever.</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) He forgot about it.</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'c')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- جدول المفردات -->
+    <h3 style="font-size: 1.8rem; font-weight: 400; margin-bottom: 0.5rem;">🔤 Vocabulary from the passage</h3>
+    <table>
+        <thead><tr><th>Word</th><th>Simple meaning</th><th>🇸🇦 Arabic</th></tr></thead>
+        <tbody>
+            <tr><td><strong>birthday</strong></td><td>the day you were born</td><td class="arabic">عيد ميلاد</td></tr>
+            <tr><td><strong>surprise</strong></td><td>something unexpected</td><td class="arabic">مفاجأة</td></tr>
+            <tr><td><strong>decorate</strong></td><td>to make something look nice for a party</td><td class="arabic">يزيّن</td></tr>
+            <tr><td><strong>balloon</strong></td><td>a rubber bag filled with air</td><td class="arabic">بالون</td></tr>
+            <tr><td><strong>streamer</strong></td><td>a long thin strip of colored paper used for decoration</td><td class="arabic">شريط زينة</td></tr>
+            <tr><td><strong>banner</strong></td><td>a long piece of cloth with a message</td><td class="arabic">لافتة</td></tr>
+            <tr><td><strong>cake</strong></td><td>a sweet food made for special occasions</td><td class="arabic">كعكة</td></tr>
+            <tr><td><strong>game</strong></td><td>an activity you play for fun</td><td class="arabic">لعبة</td></tr>
+            <tr><td><strong>musical chairs</strong></td><td>a game where players walk around chairs and sit when music stops</td><td class="arabic">لعبة الكراسي الموسيقية</td></tr>
+            <tr><td><strong>sleep over</strong></td><td>to stay overnight at a friend's house</td><td class="arabic">مبيت</td></tr>
+            <tr><td><strong>present</strong></td><td>a gift</td><td class="arabic">هدية</td></tr>
+            <tr><td><strong>bicycle</strong></td><td>a vehicle with two wheels</td><td class="arabic">دراجة</td></tr>
+            <tr><td><strong>look forward to</strong></td><td>to feel excited about something in the future</td><td class="arabic">يتطلع إلى</td></tr>
+        </tbody>
+    </table>
+
+    <hr>
+</div>
+
+<script>
+    // قراءة النص بصوت عالٍ (Web Speech API)
+    function readAloud(elementId) {
+        const textElement = document.getElementById(elementId);
+        if (!textElement) return;
+
+        if (window.speechSynthesis.speaking) {
+            window.speechSynthesis.cancel();
+        }
+
+        const text = textElement.innerText;
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.9;
+        utterance.pitch = 1;
+        window.speechSynthesis.speak(utterance);
+    }
+
+    // التحقق من الإجابات عند اختيار خيار
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;
+            const selectedValue = this.value;
+            
+            // الإجابات الصحيحة
+            let correctAnswer = '';
+            if (questionId === 'q1') correctAnswer = 'b';
+            else if (questionId === 'q2') correctAnswer = 'b';
+            else if (questionId === 'q3') correctAnswer = 'b';
+            else if (questionId === 'q4') correctAnswer = 'b';
+            else if (questionId === 'q5') correctAnswer = 'c';
+            
+            const feedbackId = 'feedback' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            
+            if (selectedValue === correctAnswer) {
+                feedback.textContent = '✅ Correct! Well done.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Try again!';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+
+    // إظهار الإجابة الصحيحة عند الضغط على الزر
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (b) something unexpected that makes you happy.'; break;
+            case 2: answerText = 'The correct answer is (b) balloons and streamers.'; break;
+            case 3: answerText = 'The correct answer is (b) The writer\'s birthday celebration.'; break;
+            case 4: answerText = 'The correct answer is (b) a bicycle.'; break;
+            case 5: answerText = 'The correct answer is (c) He thought it was the best ever.'; break;
+        }
+        
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+</script>
+</body>
+</html>
