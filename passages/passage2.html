@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STEP Reading - A1 - Passage 2</title>
+    <title>STEP Reading - A1 - Passage 2 (بدون صور + استماع ناطق)</title>
     <style>
         * {
             box-sizing: border-box;
@@ -69,15 +69,7 @@
             flex-wrap: wrap;
             margin-bottom: 1.5rem;
         }
-        .para-image {
-            width: 140px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 24px;
-            box-shadow: 0 8px 18px -6px #c9b19a;
-            border: 2px solid white;
-            background: #fbede1;
-        }
+        /* تم إزالة أنماط الصور */
         .para-text {
             font-size: 1.2rem;
             background: #ffffff;
@@ -89,25 +81,35 @@
             line-height: 1.8;
             color: #3d4d3d;
         }
-        .audio-wrapper {
+        .listen-wrapper {
             display: flex;
             align-items: center;
             gap: 0.8rem;
             margin-top: 0.5rem;
             margin-left: 0.2rem;
         }
-        audio {
-            height: 42px;
-            width: 260px;
-            border-radius: 42px;
-        }
-        .audio-label {
+        .listen-btn {
             background: #f8d7b5;
-            padding: 0.3rem 1rem;
+            border: none;
+            padding: 0.6rem 1.5rem;
             border-radius: 40px;
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: 600;
             color: #6a4e2e;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 4px 8px rgba(150, 110, 70, 0.1);
+            border: 1px solid #f5cba0;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .listen-btn:hover {
+            background: #f5c89e;
+            transform: scale(1.02);
+        }
+        .listen-btn:active {
+            transform: scale(0.98);
         }
         .questions-section {
             background: #fef3e9;
@@ -258,106 +260,85 @@
         @media (max-width: 700px) {
             .container { padding: 1.5rem; }
             .para-header { flex-direction: column; align-items: start; }
-            .para-image { width: 100%; height: auto; max-height: 150px; }
-            audio { width: 100%; }
+            .listen-btn { width: 100%; justify-content: center; }
         }
     </style>
 </head>
 <body>
 <div class="container">
     <h1>👪 STEP Reading · A1</h1>
-    <div class="sub-title">Passage 2 · My Family</div>
+    <div class="sub-title">Passage 2 · My Family (بدون صور + استماع ناطق)</div>
 
     <h2>🏡 Meet Ahmed and his family</h2>
 
-    <!-- فقرة 1 -->
+    <!-- فقرة 1 (بدون صورة) -->
     <div class="passage-grid">
         <div class="paragraph-card">
             <div class="para-header">
-                <img class="para-image" src="https://images.pexels.com/photos/3769027/pexels-photo-3769027.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Family sitting together on a sofa in a living room">
                 <span style="font-weight: 600; background: #f8d7b5; padding: 0.3rem 1.8rem; border-radius: 40px;">🏠 paragraph 1</span>
             </div>
             <div class="para-text" id="p1">
                 My name is Ahmed. I am ten years old. I live with my family in a small house. The house has a kitchen, a living room, and three bedrooms. I love my home because my family is there. We laugh and talk together every day.
             </div>
-            <div class="audio-wrapper">
-                <span class="audio-label">🔊 listen</span>
-                <audio controls preload="none">
-                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
-                </audio>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p1')">🔊 استمع للفقرة</button>
             </div>
         </div>
 
         <!-- فقرة 2 -->
         <div class="paragraph-card">
             <div class="para-header">
-                <img class="para-image" src="https://images.pexels.com/photos/7030162/pexels-photo-7030162.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Mother cooking in kitchen with child">
                 <span style="font-weight: 600; background: #f8d7b5; padding: 0.3rem 1.8rem; border-radius: 40px;">👩‍🍳 paragraph 2</span>
             </div>
             <div class="para-text" id="p2">
                 My mother's name is Fatima. She is a teacher. She works at a school near our house. She makes delicious food for us. My favourite dish is her chicken biryani. After work, she helps me with my homework. She is very kind and patient.
             </div>
-            <div class="audio-wrapper">
-                <span class="audio-label">🔊 listen</span>
-                <audio controls preload="none">
-                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
-                </audio>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p2')">🔊 استمع للفقرة</button>
             </div>
         </div>
 
         <!-- فقرة 3 -->
         <div class="paragraph-card">
             <div class="para-header">
-                <img class="para-image" src="https://images.pexels.com/photos/861129/pexels-photo-861129.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Father reading newspaper with son">
                 <span style="font-weight: 600; background: #f8d7b5; padding: 0.3rem 1.8rem; border-radius: 40px;">👨‍💼 paragraph 3</span>
             </div>
             <div class="para-text" id="p3">
                 My father's name is Khalid. He is an engineer. He builds bridges and roads. He is very strong and smart. On Fridays, he takes us to the park. We play football together. He also tells me stories before I sleep. I want to be like him when I grow up.
             </div>
-            <div class="audio-wrapper">
-                <span class="audio-label">🔊 listen</span>
-                <audio controls preload="none">
-                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
-                </audio>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p3')">🔊 استمع للفقرة</button>
             </div>
         </div>
 
         <!-- فقرة 4 -->
         <div class="paragraph-card">
             <div class="para-header">
-                <img class="para-image" src="https://images.pexels.com/photos/5247039/pexels-photo-5247039.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Two sisters laughing and playing together">
                 <span style="font-weight: 600; background: #f8d7b5; padding: 0.3rem 1.8rem; border-radius: 40px;">👧👧 paragraph 4</span>
             </div>
             <div class="para-text" id="p4">
                 I have two sisters. Their names are Sara and Noura. Sara is eight years old. She likes to draw and colour. Noura is only four years old. She loves to play with her dolls. Sometimes we fight, but we always say sorry. I love playing with them.
             </div>
-            <div class="audio-wrapper">
-                <span class="audio-label">🔊 listen</span>
-                <audio controls preload="none">
-                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
-                </audio>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p4')">🔊 استمع للفقرة</button>
             </div>
         </div>
 
         <!-- فقرة 5 -->
         <div class="paragraph-card">
             <div class="para-header">
-                <img class="para-image" src="https://images.pexels.com/photos/6878295/pexels-photo-6878295.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Grandparents sitting in garden with grandchildren">
                 <span style="font-weight: 600; background: #f8d7b5; padding: 0.3rem 1.8rem; border-radius: 40px;">👴👵 paragraph 5</span>
             </div>
             <div class="para-text" id="p5">
                 My grandparents live near us. We visit them every weekend. My grandfather tells funny jokes. My grandmother gives us sweets and biscuits. She hugs us and says, "You are my favourite grandchildren!" I feel very happy when I see them.
             </div>
-            <div class="audio-wrapper">
-                <span class="audio-label">🔊 listen</span>
-                <audio controls preload="none">
-                    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp3" type="audio/mpeg">
-                </audio>
+            <div class="listen-wrapper">
+                <button class="listen-btn" onclick="readAloud('p5')">🔊 استمع للفقرة</button>
             </div>
         </div>
     </div>
 
-    <!-- 5 أسئلة STEP - INTERACTIVE MULTIPLE CHOICE -->
+    <!-- 5 أسئلة STEP - تفاعلية -->
     <div class="questions-section">
         <h3>📘 STEP-style questions (A1) - Interactive</h3>
 
@@ -445,23 +426,40 @@
 
     <hr>
     <div class="footer-note">
-        🌟 Passage 2: "My Family" - Simple words, short sentences, clear images.<br>
-        📁 <strong>Filename: passage2.html</strong> (same location as passage1.html)
+        🌟 Passage 2: "My Family" - تمت إزالة الصور وإصلاح الاستماع (نطق آلي).<br>
+        📁 <strong>Filename: passage2.html</strong> (نسخة محدثة)
     </div>
     <div style="margin-top: 1rem; font-size: 0.9rem; background: #fef3e9; border-radius: 60px; padding: 0.8rem 2rem; text-align: center;">
-        ✅ ALL questions are now INTERACTIVE ✓ Click on answers to check ✓ Show answer button ✓ Ready for STEP practice
+        ✅ الاستماع الآن يعمل عبر زر "استمع للفقرة" (تخاطب آلي). جميع الأسئلة تفاعلية.
     </div>
 </div>
 
 <script>
-    // Make all questions interactive
+    // وظيفة قراءة النص بصوت عالٍ (Web Speech API)
+    function readAloud(elementId) {
+        const textElement = document.getElementById(elementId);
+        if (!textElement) return;
+
+        // إيقاف أي تحديث جارٍ
+        if (window.speechSynthesis.speaking) {
+            window.speechSynthesis.cancel();
+        }
+
+        const text = textElement.innerText;
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.9; // سرعة مناسبة للمستوى A1
+        utterance.pitch = 1;
+        window.speechSynthesis.speak(utterance);
+    }
+
+    // تفاعل الأسئلة (كما هو)
     document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
         radio.addEventListener('change', function() {
             const questionItem = this.closest('.question-item');
             const questionId = questionItem.id;
             const selectedValue = this.value;
             
-            // Determine correct answer based on question
             let correctAnswer = '';
             if (questionId === 'q1') correctAnswer = 'b';
             else if (questionId === 'q2') correctAnswer = 'c';
@@ -469,11 +467,9 @@
             else if (questionId === 'q4') correctAnswer = 'b';
             else if (questionId === 'q5') correctAnswer = 'c';
             
-            // Get feedback element
             const feedbackId = 'feedback' + questionId.substring(1);
             const feedback = document.getElementById(feedbackId);
             
-            // Check answer
             if (selectedValue === correctAnswer) {
                 feedback.textContent = '✅ Correct! Well done.';
                 feedback.className = 'feedback correct';
@@ -484,7 +480,7 @@
         });
     });
 
-    // Function to show answer
+    // وظيفة إظهار الإجابة الصحيحة
     function showAnswer(questionNum, correctLetter) {
         const feedback = document.getElementById('feedback' + questionNum);
         let answerText = '';
