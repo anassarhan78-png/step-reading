@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading · B1 – Passage 18: Digital Detox</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #e3f2fd;
+            color: #0d3b5e;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(25, 118, 210, 0.1);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: #1976d2;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #90caf9;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #1565c0;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #0d47a1;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #90caf9;
+            padding-bottom: 0.5rem;
+        }
+        .passage-text {
+            font-size: 1.2rem;
+            background: #f8fcff;
+            padding: 2rem;
+            border-radius: 28px;
+            border: 1px solid #bbdefb;
+            margin-bottom: 3rem;
+            line-height: 1.9;
+        }
+        .questions-section {
+            background: #e3f2fd;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #90caf9;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #0d47a1;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(25, 118, 210, 0.08);
+            border-left: 10px solid #42a5f5;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #1976d2;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #e3f2fd;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #1976d2;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+        }
+        .option input[type="radio"]:checked {
+            background: #1976d2;
+            border: 2px solid #1976d2;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            display: none;
+        }
+        .feedback.correct {
+            color: #2e7d32;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #c62828;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #1976d2;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #bbdefb;
+            margin: 2rem 0;
+        }
+        th {
+            background: #1976d2;
+            color: white;
+            font-weight: 500;
+            font-size: 1.2rem;
+            padding: 1rem 1.5rem;
+        }
+        td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #bbdefb;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #0d3b5e;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #90caf9, transparent);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📘 STEP Reading · B1</h1>
+    <div class="sub-title">Passage 18 · Digital Detox: Unplug to Reconnect</div>
+
+    <h2>📵 Finding Balance in a Connected World</h2>
+
+    <div class="passage-text">
+        <p>In our hyper‑connected era, smartphones, tablets, and laptops have become extensions of ourselves. We check emails, scroll through social media, and stream videos for hours each day. While technology offers undeniable benefits, many people are starting to feel overwhelmed by the constant notifications and the pressure to be always available. This has given rise to the concept of "digital detox" – a period during which a person voluntarily refrains from using electronic devices.</p>
+        <p>The reasons for trying a digital detox are compelling. Psychologists point to the phenomenon of "technostress," a modern form of stress caused by the inability to cope with new technologies in a healthy way. Excessive screen time is linked to poor sleep, eye strain, and reduced attention spans. Social media, in particular, can create feelings of inadequacy as users compare their real lives to the curated, often unrealistic, highlight reels of others. Taking a break can help reset these patterns, reduce anxiety, and improve overall mental well‑being.</p>
+        <p>Implementing a digital detox doesn't mean abandoning technology forever. It can take many forms: a screen‑free Sunday, a week‑long camping trip without gadgets, or simply turning off notifications during meals and family time. The key is intentionality. Even small changes can have noticeable effects. People often report feeling more present, sleeping better, and rediscovering hobbies they had neglected. They also find that they have more time for face‑to‑face conversations and outdoor activities.</p>
+        <p>Of course, a digital detox is not always easy. Many jobs require constant connectivity, and social pressure can make it hard to disconnect. Fear of missing out (FOMO) is a real obstacle. However, experts suggest starting small: designate tech‑free zones in the home, like the bedroom or dining table, and gradually increase the time spent offline. In a world that never stops buzzing, deliberately unplugging might be the most refreshing thing you can do.</p>
+    </div>
+
+    <div class="questions-section">
+        <h3>📘 STEP‑style questions (B1) – Passage 18</h3>
+
+        <!-- Question 1: Main idea -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>What is the main idea of the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) How to choose the best smartphone</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) The benefits of social media for staying connected</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) The concept of digital detox, its benefits, and how to practice it</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) Why everyone should stop using the internet</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'c')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 2: Detail (negative effect) -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>According to the passage, which of the following is a negative effect of excessive screen time?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) Improved memory and attention span</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) Better sleep quality</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) Eye strain and feelings of inadequacy from social media</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) Increased face‑to‑face communication</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'c')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 3: Vocabulary -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>In paragraph 2, the word "<em>curated</em>" is closest in meaning to:</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) randomly selected</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) carefully chosen and presented</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) boring and dull</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) accidentally recorded</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 4: Detail (challenge) -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>What challenge to doing a digital detox is mentioned in the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) Devices are too expensive to leave at home.</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) Many jobs require constant connectivity, and people fear missing out.</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) There are no apps to help with a detox.</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) It is illegal in some countries.</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 5: Inference -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>What can be inferred from the last paragraph?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) A digital detox must last for at least one month to be effective.</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) Starting with small, manageable steps can make a digital detox more achievable.</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) Only people without jobs can do a digital detox.</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) Technology has no benefits, so everyone should quit completely.</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'b')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- Vocabulary table (15 words) – Digital Wellness -->
+    <h3 style="font-size: 1.8rem; font-weight: 400; margin: 2rem 0 1rem;">🔤 Key Vocabulary (15 words) – Digital Wellness</h3>
+    <table>
+        <thead><tr><th>Word</th><th>Meaning (English)</th><th>🇸🇦 Arabic</th></tr></thead>
+        <tbody>
+            <tr><td>digital detox</td><td>period of refraining from electronic devices</td><td class="arabic">إزالة السموم الرقمية</td></tr>
+            <tr><td>hyper‑connected</td><td>excessively linked via technology</td><td class="arabic">مفرط الاتصال</td></tr>
+            <tr><td>overwhelmed</td><td>feeling unable to cope</td><td class="arabic">مغمور / مرهق</td></tr>
+            <tr><td>technostress</td><td>stress caused by technology use</td><td class="arabic">إجهاد تكنولوجي</td></tr>
+            <tr><td>screen time</td><td>time spent using a device with a screen</td><td class="arabic">وقت الشاشة</td></tr>
+            <tr><td>eye strain</td><td>fatigue of the eyes from overuse</td><td class="arabic">إجهاد العين</td></tr>
+            <tr><td>attention span</td><td>length of time one can focus</td><td class="arabic">مدى الانتباه</td></tr>
+            <tr><td>inadequacy</td><td>feeling of not being good enough</td><td class="arabic">شعور بالنقص</td></tr>
+            <tr><td>curated</td><td>carefully selected and presented</td><td class="arabic">منتقى بعناية</td></tr>
+            <tr><td>unrealistic</td><td>not practical or possible</td><td class="arabic">غير واقعي</td></tr>
+            <tr><td>well‑being</td><td>state of being comfortable and healthy</td><td class="arabic">رفاهية</td></tr>
+            <tr><td>intentionality</td><td>acting with purpose</td><td class="arabic">قصدية</td></tr>
+            <tr><td>FOMO (fear of missing out)</td><td>anxiety that others are having fun without you</td><td class="arabic">الخوف من الفوات</td></tr>
+            <tr><td>tech‑free zone</td><td>area where devices are not allowed</td><td class="arabic">منطقة خالية من التكنولوجيا</td></tr>
+            <tr><td>unplug</td><td>to disconnect from devices</td><td class="arabic">يفصل / ينقطع</td></tr>
+        </tbody>
+    </table>
+    <hr>
+</div>
+
+<script>
+    // Correct answers for passage 18 (questions 1-5)
+    const correctAnswers = {
+        q1: 'c',
+        q2: 'c',
+        q3: 'b',
+        q4: 'b',
+        q5: 'b'
+    };
+
+    // Function used by "Show answer" buttons
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (c) The concept of digital detox, its benefits, and how to practice it.'; break;
+            case 2: answerText = 'The correct answer is (c) Eye strain and feelings of inadequacy from social media.'; break;
+            case 3: answerText = 'The correct answer is (b) carefully chosen and presented.'; break;
+            case 4: answerText = 'The correct answer is (b) Many jobs require constant connectivity, and people fear missing out.'; break;
+            case 5: answerText = 'The correct answer is (b) Starting with small, manageable steps can make a digital detox more achievable.'; break;
+            default: answerText = 'Correct answer displayed.';
+        }
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+
+    // Radio button instant feedback
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;       // "q1" to "q5"
+            const selectedValue = this.value;
+            const correct = correctAnswers[questionId];
+
+            const feedbackId = 'feedback' + questionId.substring(1); // "feedback1", etc.
+            const feedback = document.getElementById(feedbackId);
+
+            if (selectedValue === correct) {
+                feedback.textContent = '✅ Correct! Well done.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Try again!';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+</script>
+</body>
+</html>
