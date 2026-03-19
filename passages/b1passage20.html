@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading · B1 – Passage 20: The Importance of Breakfast</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #e3f2fd;
+            color: #0d3b5e;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(25, 118, 210, 0.1);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: #1976d2;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #90caf9;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #1565c0;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #0d47a1;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #90caf9;
+            padding-bottom: 0.5rem;
+        }
+        .passage-text {
+            font-size: 1.2rem;
+            background: #f8fcff;
+            padding: 2rem;
+            border-radius: 28px;
+            border: 1px solid #bbdefb;
+            margin-bottom: 3rem;
+            line-height: 1.9;
+        }
+        .questions-section {
+            background: #e3f2fd;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #90caf9;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #0d47a1;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(25, 118, 210, 0.08);
+            border-left: 10px solid #42a5f5;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #1976d2;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #e3f2fd;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #1976d2;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+        }
+        .option input[type="radio"]:checked {
+            background: #1976d2;
+            border: 2px solid #1976d2;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            display: none;
+        }
+        .feedback.correct {
+            color: #2e7d32;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #c62828;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #1976d2;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #bbdefb;
+            margin: 2rem 0;
+        }
+        th {
+            background: #1976d2;
+            color: white;
+            font-weight: 500;
+            font-size: 1.2rem;
+            padding: 1rem 1.5rem;
+        }
+        td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #bbdefb;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #0d3b5e;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #90caf9, transparent);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📘 STEP Reading · B1</h1>
+    <div class="sub-title">Passage 20 · The Importance of Breakfast</div>
+
+    <h2>🍳 Start Your Day Right</h2>
+
+    <div class="passage-text">
+        <p>Breakfast is often described as "the most important meal of the day." After a long night of fasting, our bodies need fuel to function properly. Yet, in today's fast‑paced world, many people skip breakfast due to busy schedules or a desire to lose weight. Nutritionists, however, warn that this habit can have negative consequences.</p>
+        <p>Eating a balanced breakfast provides essential energy. The brain relies on glucose, which comes from the food we eat. Without it, you may feel sluggish, have difficulty concentrating, and experience mood swings. Studies have shown that children who eat breakfast perform better academically, with improved memory and attention spans.</p>
+        <p>Breakfast also kick‑starts your metabolism. When you eat in the morning, you signal your body that it doesn't need to conserve energy, helping you burn calories more efficiently throughout the day. People who regularly eat breakfast are less likely to overeat later, as they experience fewer hunger pangs. A healthy breakfast can include whole grains, protein (like eggs or yogurt), and fruits – a combination that provides sustained energy.</p>
+        <p>Of course, not all breakfasts are equal. A sugary pastry or a sugary cereal may give a quick energy spike, but it is often followed by a crash. Nutritionists recommend avoiding highly processed foods and instead choosing options rich in fiber and nutrients. In short, taking just 15 minutes to have a nutritious breakfast can set a positive tone for the entire day.</p>
+    </div>
+
+    <div class="questions-section">
+        <h3>📘 STEP‑style questions (B1) – Passage 20</h3>
+
+        <!-- Question 1: Main idea -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>What is the main idea of the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) Different breakfast recipes from around the world</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) The benefits of eating a healthy breakfast and the risks of skipping it</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) Why children should not eat breakfast</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) The history of cereal production</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 2: Detail (brain function) -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>According to the passage, how does breakfast affect the brain?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) It reduces the brain's need for glucose.</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) It can improve concentration and memory, especially in children.</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) It makes the brain work slower.</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) It has no effect on brain function.</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 3: Vocabulary -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>In paragraph 2, the word "<em>sluggish</em>" is closest in meaning to:</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) full of energy</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) slow and lacking energy</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) very happy</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) extremely focused</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 4: Detail (metabolism) -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>What is mentioned as a benefit of eating breakfast for metabolism?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) It slows down metabolism to conserve energy.</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) It kick‑starts metabolism, helping burn calories efficiently.</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) It causes the body to store more fat.</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) It has no impact on metabolism.</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 5: Inference -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>What can be inferred from the last paragraph?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) All breakfast foods are equally healthy.</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) Choosing nutritious foods like whole grains and protein is better than eating sugary options.</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) Skipping breakfast is the best way to lose weight.</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) Breakfast should only consist of fruits.</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'b')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- Vocabulary table (15 words) – Nutrition & Health -->
+    <h3 style="font-size: 1.8rem; font-weight: 400; margin: 2rem 0 1rem;">🔤 Key Vocabulary (15 words) – Nutrition & Health</h3>
+    <table>
+        <thead><tr><th>Word</th><th>Meaning (English)</th><th>🇸🇦 Arabic</th></tr></thead>
+        <tbody>
+            <tr><td>breakfast</td><td>first meal of the day</td><td class="arabic">فطور</td></tr>
+            <tr><td>fasting</td><td>going without food for a period</td><td class="arabic">صيام</td></tr>
+            <tr><td>nutritionist</td><td>expert in food and nutrition</td><td class="arabic">أخصائي تغذية</td></tr>
+            <tr><td>glucose</td><td>type of sugar that gives energy</td><td class="arabic">جلوكوز</td></tr>
+            <tr><td>sluggish</td><td>slow, lacking energy</td><td class="arabic">خامل</td></tr>
+            <tr><td>concentrating</td><td>focusing attention</td><td class="arabic">تركيز</td></tr>
+            <tr><td>metabolism</td><td>process by which body converts food to energy</td><td class="arabic">أيض</td></tr>
+            <tr><td>conserve</td><td>to save or protect</td><td class="arabic">يحافظ على</td></tr>
+            <tr><td>calories</td><td>units of energy from food</td><td class="arabic">سعرات حرارية</td></tr>
+            <tr><td>hunger pangs</td><td>strong feelings of hunger</td><td class="arabic">ألم الجوع</td></tr>
+            <tr><td>whole grains</td><td>grains that contain all parts of the seed</td><td class="arabic">حبوب كاملة</td></tr>
+            <tr><td>protein</td><td>nutrient essential for growth</td><td class="arabic">بروتين</td></tr>
+            <tr><td>fiber</td><td>plant material that aids digestion</td><td class="arabic">ألياف</td></tr>
+            <tr><td>processed foods</td><td>foods altered from their natural state</td><td class="arabic">أغذية مصنعة</td></tr>
+            <tr><td>nutritious</td><td>full of nutrients, healthy</td><td class="arabic">مغذي</td></tr>
+        </tbody>
+    </table>
+    <hr>
+</div>
+
+<script>
+    // Correct answers for passage 20 (questions 1-5)
+    const correctAnswers = {
+        q1: 'b',
+        q2: 'b',
+        q3: 'b',
+        q4: 'b',
+        q5: 'b'
+    };
+
+    // Function used by "Show answer" buttons
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (b) The benefits of eating a healthy breakfast and the risks of skipping it.'; break;
+            case 2: answerText = 'The correct answer is (b) It can improve concentration and memory, especially in children.'; break;
+            case 3: answerText = 'The correct answer is (b) slow and lacking energy.'; break;
+            case 4: answerText = 'The correct answer is (b) It kick‑starts metabolism, helping burn calories efficiently.'; break;
+            case 5: answerText = 'The correct answer is (b) Choosing nutritious foods like whole grains and protein is better than eating sugary options.'; break;
+            default: answerText = 'Correct answer displayed.';
+        }
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+
+    // Radio button instant feedback
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;       // "q1" to "q5"
+            const selectedValue = this.value;
+            const correct = correctAnswers[questionId];
+
+            const feedbackId = 'feedback' + questionId.substring(1); // "feedback1", etc.
+            const feedback = document.getElementById(feedbackId);
+
+            if (selectedValue === correct) {
+                feedback.textContent = '✅ Correct! Well done.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Try again!';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+</script>
+</body>
+</html>
