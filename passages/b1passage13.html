@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading · B1 – Passage 13: Cultural Differences</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #e3f2fd;
+            color: #0d3b5e;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(25, 118, 210, 0.1);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: #1976d2;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #90caf9;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #1565c0;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #0d47a1;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #90caf9;
+            padding-bottom: 0.5rem;
+        }
+        .passage-text {
+            font-size: 1.2rem;
+            background: #f8fcff;
+            padding: 2rem;
+            border-radius: 28px;
+            border: 1px solid #bbdefb;
+            margin-bottom: 3rem;
+            line-height: 1.9;
+        }
+        .questions-section {
+            background: #e3f2fd;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #90caf9;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #0d47a1;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(25, 118, 210, 0.08);
+            border-left: 10px solid #42a5f5;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #1976d2;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #e3f2fd;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #1976d2;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+        }
+        .option input[type="radio"]:checked {
+            background: #1976d2;
+            border: 2px solid #1976d2;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            display: none;
+        }
+        .feedback.correct {
+            color: #2e7d32;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #c62828;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #1976d2;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #bbdefb;
+            margin: 2rem 0;
+        }
+        th {
+            background: #1976d2;
+            color: white;
+            font-weight: 500;
+            font-size: 1.2rem;
+            padding: 1rem 1.5rem;
+        }
+        td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #bbdefb;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #0d3b5e;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #90caf9, transparent);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📘 STEP Reading · B1</h1>
+    <div class="sub-title">Passage 13 · Understanding Cultural Differences</div>
+
+    <h2>🌍 A World of Diversity</h2>
+
+    <div class="passage-text">
+        <p>Culture can be described as the shared customs, beliefs, values, and social behaviors of a particular group of people. In our increasingly globalized world, interacting with individuals from different cultural backgrounds has become common – whether at work, school, or through travel. Understanding cultural differences is therefore an essential skill.</p>
+        <p>One area where cultural differences are very noticeable is communication. In some cultures, such as those in North America and Northern Europe, people tend to communicate directly and value honesty above saving face. In contrast, many Asian and Middle Eastern cultures prefer indirect communication, where maintaining harmony and avoiding embarrassment is more important. For example, a Japanese person might say "it's a little difficult" instead of a direct "no".</p>
+        <p>Another important aspect is attitudes toward time. In countries like Germany and Switzerland, punctuality is taken very seriously – being even five minutes late can be seen as disrespectful. However, in many Latin American and African cultures, time is viewed more flexibly, and arriving a little late to a social gathering is often expected. Neither approach is wrong; they are simply different.</p>
+        <p>Cultural misunderstandings can lead to frustration or conflict, but they can also be opportunities for growth. By learning about other cultures, we become more open‑minded and empathetic. Simple actions like reading about a country's customs, asking respectful questions, and observing before acting can prevent missteps. In a diverse world, cultural intelligence is not just nice to have – it's a necessity.</p>
+    </div>
+
+    <div class="questions-section">
+        <h3>📘 STEP‑style questions (B1) – Passage 13</h3>
+
+        <!-- Question 1: Main idea -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>What is the main idea of the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) A guide to learning foreign languages</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) The importance of understanding cultural differences in communication and attitudes, and how to navigate them</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) Why direct communication is always better</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) The history of globalization</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 2: Detail (communication styles) -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>According to the passage, how do many Asian and Middle Eastern cultures typically communicate?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) Very directly, with a focus on honesty</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) Indirectly, to maintain harmony and avoid embarrassment</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) Only through written messages</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) By using loud voices</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 3: Vocabulary -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>In paragraph 2, the phrase "<em>saving face</em>" is closest in meaning to:</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) avoiding embarrassment or loss of respect</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) being on time</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) expressing anger openly</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) wearing a mask</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'a')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 4: Detail (attitudes toward time) -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>What example of cultural difference regarding time is given in the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) In Germany, being late is acceptable, but in Brazil it is not.</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) In Switzerland, punctuality is very important, while in many Latin American cultures, time is more flexible.</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) Everyone around the world views time in the same way.</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) Africans are always early.</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 5: Inference -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>What can be inferred from the last paragraph?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) Cultural differences always lead to conflict.</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) By learning about other cultures, we can become more understanding and avoid misunderstandings.</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) It is best to avoid interacting with people from other cultures.</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) Cultural intelligence is only useful for business travelers.</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'b')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- Vocabulary table (15 words) – Culture & Communication -->
+    <h3 style="font-size: 1.8rem; font-weight: 400; margin: 2rem 0 1rem;">🔤 Key Vocabulary (15 words) – Culture & Communication</h3>
+    <table>
+        <thead><tr><th>Word</th><th>Meaning (English)</th><th>🇸🇦 Arabic</th></tr></thead>
+        <tbody>
+            <tr><td>culture</td><td>shared customs and beliefs of a group</td><td class="arabic">ثقافة</td></tr>
+            <tr><td>diversity</td><td>variety; including different types</td><td class="arabic">تنوع</td></tr>
+            <tr><td>globalized</td><td>connected around the world</td><td class="arabic">معولم</td></tr>
+            <tr><td>custom</td><td>traditional practice</td><td class="arabic">عرف / عادة</td></tr>
+            <tr><td>direct communication</td><td>saying exactly what you mean</td><td class="arabic">تواصل مباشر</td></tr>
+            <tr><td>indirect communication</td><td>hinting or implying rather than stating directly</td><td class="arabic">تواصل غير مباشر</td></tr>
+            <tr><td>harmony</td><td>peaceful agreement and cooperation</td><td class="arabic">انسجام</td></tr>
+            <tr><td>saving face</td><td>avoiding humiliation or embarrassment</td><td class="arabic">حفظ ماء الوجه</td></tr>
+            <tr><td>punctuality</td><td>being on time</td><td class="arabic">الالتزام بالمواعيد</td></tr>
+            <tr><td>flexible</td><td>able to change easily</td><td class="arabic">مرن</td></tr>
+            <tr><td>frustration</td><td>feeling of annoyance from being unable to change something</td><td class="arabic">إحباط</td></tr>
+            <tr><td>conflict</td><td>disagreement or fight</td><td class="arabic">نزاع</td></tr>
+            <tr><td>open‑minded</td><td>willing to consider new ideas</td><td class="arabic">منفتح الفكر</td></tr>
+            <tr><td>empathetic</td><td>able to understand others' feelings</td><td class="arabic">متعاطف</td></tr>
+            <tr><td>cultural intelligence</td><td>ability to relate to and work across cultures</td><td class="arabic">ذكاء ثقافي</td></tr>
+        </tbody>
+    </table>
+    <hr>
+</div>
+
+<script>
+    // Correct answers for passage 13 (questions 1-5)
+    const correctAnswers = {
+        q1: 'b',
+        q2: 'b',
+        q3: 'a',
+        q4: 'b',
+        q5: 'b'
+    };
+
+    // Function used by "Show answer" buttons
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (b) The importance of understanding cultural differences in communication and attitudes, and how to navigate them.'; break;
+            case 2: answerText = 'The correct answer is (b) Indirectly, to maintain harmony and avoid embarrassment.'; break;
+            case 3: answerText = 'The correct answer is (a) avoiding embarrassment or loss of respect.'; break;
+            case 4: answerText = 'The correct answer is (b) In Switzerland, punctuality is very important, while in many Latin American cultures, time is more flexible.'; break;
+            case 5: answerText = 'The correct answer is (b) By learning about other cultures, we can become more understanding and avoid misunderstandings.'; break;
+            default: answerText = 'Correct answer displayed.';
+        }
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+
+    // Radio button instant feedback
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;       // "q1" to "q5"
+            const selectedValue = this.value;
+            const correct = correctAnswers[questionId];
+
+            const feedbackId = 'feedback' + questionId.substring(1); // "feedback1", etc.
+            const feedback = document.getElementById(feedbackId);
+
+            if (selectedValue === correct) {
+                feedback.textContent = '✅ Correct! Well done.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Try again!';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+</script>
+</body>
+</html>
