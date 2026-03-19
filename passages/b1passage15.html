@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading · B1 – Passage 15: Urban Farming</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #e3f2fd;
+            color: #0d3b5e;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(25, 118, 210, 0.1);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: #1976d2;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #90caf9;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #1565c0;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #0d47a1;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #90caf9;
+            padding-bottom: 0.5rem;
+        }
+        .passage-text {
+            font-size: 1.2rem;
+            background: #f8fcff;
+            padding: 2rem;
+            border-radius: 28px;
+            border: 1px solid #bbdefb;
+            margin-bottom: 3rem;
+            line-height: 1.9;
+        }
+        .questions-section {
+            background: #e3f2fd;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #90caf9;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #0d47a1;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(25, 118, 210, 0.08);
+            border-left: 10px solid #42a5f5;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #1976d2;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #e3f2fd;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #1976d2;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+        }
+        .option input[type="radio"]:checked {
+            background: #1976d2;
+            border: 2px solid #1976d2;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            display: none;
+        }
+        .feedback.correct {
+            color: #2e7d32;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #c62828;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #1976d2;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #bbdefb;
+            margin: 2rem 0;
+        }
+        th {
+            background: #1976d2;
+            color: white;
+            font-weight: 500;
+            font-size: 1.2rem;
+            padding: 1rem 1.5rem;
+        }
+        td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #bbdefb;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #0d3b5e;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #90caf9, transparent);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📘 STEP Reading · B1</h1>
+    <div class="sub-title">Passage 15 · Urban Farming: Growing Food in the City</div>
+
+    <h2>🏙️ From Rooftops to Dinner Tables</h2>
+
+    <div class="passage-text">
+        <p>Urban farming is the practice of cultivating, processing, and distributing food in or around cities. As the global population becomes increasingly urban – more than half of humanity now lives in cities – innovative approaches to food production are gaining traction. Rooftop gardens, community plots, vertical farms, and even indoor hydroponic systems are transforming unused urban spaces into productive green areas.</p>
+        <p>The benefits of urban farming are manifold. Firstly, it significantly reduces "food miles" – the distance food travels from farm to plate. This cuts carbon emissions and ensures fresher produce. Secondly, urban farms can improve food security, especially in neighborhoods known as "food deserts" where access to fresh, affordable fruits and vegetables is limited. Additionally, these green spaces help insulate buildings, reduce stormwater runoff, and mitigate the "urban heat island" effect. On a social level, community gardens bring neighbors together, foster a sense of belonging, and provide educational opportunities for children to learn about nature.</p>
+        <p>However, urban farmers face distinct challenges. Soil in cities is often contaminated with heavy metals from decades of industrial activity, making it unsafe for growing food. Space is another constraint; land is expensive, and competing interests – such as housing or commercial development – often take priority. Furthermore, upfront costs for equipment like grow lights, irrigation systems, or soil testing can be prohibitive for community groups. Finally, urban agriculture requires specialized knowledge that many new farmers lack.</p>
+        <p>Despite these hurdles, the future of urban farming looks bright. Technological advances, such as LED lighting and automated hydroponics, are making indoor farming more efficient and affordable. City governments are beginning to offer incentives, like tax breaks or grants, for green roofs and community projects. By integrating food production into the fabric of cities, urban farming can help create more resilient, sustainable, and connected communities. It turns the concrete jungle into a place that can also nurture.</p>
+    </div>
+
+    <div class="questions-section">
+        <h3>📘 STEP‑style questions (B1) – Passage 15</h3>
+
+        <!-- Question 1: Main idea -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>What is the main idea of the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) How to build a skyscraper</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) The definition, benefits, and challenges of urban farming, and its promising future</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) A history of traditional agriculture</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) Why people should move to the countryside</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 2: Detail (benefit) -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>According to the passage, which of the following is a benefit of urban farming?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) It increases food miles and carbon emissions.</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) It reduces the urban heat island effect and improves food security.</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) It makes soil more contaminated.</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) It requires no special knowledge.</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 3: Vocabulary -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>In paragraph 2, the term "<em>food deserts</em>" refers to:</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) areas with very dry soil</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) neighborhoods with limited access to fresh, affordable food</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) places where only junk food is sold</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) farms located in the desert</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 4: Detail (challenge) -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>What challenge to urban farming is mentioned in the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) Too much government support</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) Soil contamination and high upfront costs</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) An overabundance of open land</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) Extremely low demand for fresh food</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 5: Inference -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>What can be inferred from the last paragraph about the future of urban farming?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) It will likely decline due to high costs.</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) Technology and government support may help it grow and become more common.</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) Only wealthy cities will be able to practice it.</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) It will replace all traditional farming.</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'b')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- Vocabulary table (15 words) – Urban Farming & Sustainability -->
+    <h3 style="font-size: 1.8rem; font-weight: 400; margin: 2rem 0 1rem;">🔤 Key Vocabulary (15 words) – Urban Farming & Sustainability</h3>
+    <table>
+        <thead><tr><th>Word</th><th>Meaning (English)</th><th>🇸🇦 Arabic</th></tr></thead>
+        <tbody>
+            <tr><td>urban farming</td><td>growing food in cities</td><td class="arabic">الزراعة الحضرية</td></tr>
+            <tr><td>cultivate</td><td>to grow plants or crops</td><td class="arabic">يزرع</td></tr>
+            <tr><td>vertical farm</td><td>farm where plants are grown in stacked layers</td><td class="arabic">مزرعة عمودية</td></tr>
+            <tr><td>hydroponic</td><td>growing plants without soil, using water with nutrients</td><td class="arabic">زراعة مائية</td></tr>
+            <tr><td>food miles</td><td>distance food travels from producer to consumer</td><td class="arabic">أميال الغذاء</td></tr>
+            <tr><td>carbon emission</td><td>release of carbon dioxide into the atmosphere</td><td class="arabic">انبعاث كربوني</td></tr>
+            <tr><td>food security</td><td>having reliable access to enough affordable, nutritious food</td><td class="arabic">أمن غذائي</td></tr>
+            <tr><td>food desert</td><td>area with limited access to fresh food</td><td class="arabic">صحراء غذائية</td></tr>
+            <tr><td>runoff</td><td>rainwater that flows over land, often picking up pollutants</td><td class="arabic">جريان المياه</td></tr>
+            <tr><td>urban heat island</td><td>city area that is significantly warmer than surrounding rural areas</td><td class="arabic">جزيرة حرارية حضرية</td></tr>
+            <tr><td>contaminated</td><td>made impure by pollution</td><td class="arabic">ملوث</td></tr>
+            <tr><td>heavy metal</td><td>toxic metallic element (e.g., lead, mercury)</td><td class="arabic">معادن ثقيلة</td></tr>
+            <tr><td>upfront cost</td><td>initial expense</td><td class="arabic">تكلفة أولية</td></tr>
+            <tr><td>prohibitive</td><td>too expensive to afford</td><td class="arabic">باهظ</td></tr>
+            <tr><td>resilient</td><td>able to recover quickly from difficulties</td><td class="arabic">مرن / قادر على التعافي</td></tr>
+        </tbody>
+    </table>
+    <hr>
+</div>
+
+<script>
+    // Correct answers for passage 15 (questions 1-5)
+    const correctAnswers = {
+        q1: 'b',
+        q2: 'b',
+        q3: 'b',
+        q4: 'b',
+        q5: 'b'
+    };
+
+    // Function used by "Show answer" buttons
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (b) The definition, benefits, and challenges of urban farming, and its promising future.'; break;
+            case 2: answerText = 'The correct answer is (b) It reduces the urban heat island effect and improves food security.'; break;
+            case 3: answerText = 'The correct answer is (b) neighborhoods with limited access to fresh, affordable food.'; break;
+            case 4: answerText = 'The correct answer is (b) Soil contamination and high upfront costs.'; break;
+            case 5: answerText = 'The correct answer is (b) Technology and government support may help it grow and become more common.'; break;
+            default: answerText = 'Correct answer displayed.';
+        }
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+
+    // Radio button instant feedback
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;       // "q1" to "q5"
+            const selectedValue = this.value;
+            const correct = correctAnswers[questionId];
+
+            const feedbackId = 'feedback' + questionId.substring(1); // "feedback1", etc.
+            const feedback = document.getElementById(feedbackId);
+
+            if (selectedValue === correct) {
+                feedback.textContent = '✅ Correct! Well done.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Try again!';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+</script>
+</body>
+</html>
