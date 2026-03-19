@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading · B1 – Passage 12: Plastic Pollution</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #e3f2fd;
+            color: #0d3b5e;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(25, 118, 210, 0.1);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: #1976d2;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #90caf9;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #1565c0;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #0d47a1;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #90caf9;
+            padding-bottom: 0.5rem;
+        }
+        .passage-text {
+            font-size: 1.2rem;
+            background: #f8fcff;
+            padding: 2rem;
+            border-radius: 28px;
+            border: 1px solid #bbdefb;
+            margin-bottom: 3rem;
+            line-height: 1.9;
+        }
+        .questions-section {
+            background: #e3f2fd;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #90caf9;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #0d47a1;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(25, 118, 210, 0.08);
+            border-left: 10px solid #42a5f5;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #1976d2;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #e3f2fd;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #1976d2;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+        }
+        .option input[type="radio"]:checked {
+            background: #1976d2;
+            border: 2px solid #1976d2;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            display: none;
+        }
+        .feedback.correct {
+            color: #2e7d32;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #c62828;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #1976d2;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #bbdefb;
+            margin: 2rem 0;
+        }
+        th {
+            background: #1976d2;
+            color: white;
+            font-weight: 500;
+            font-size: 1.2rem;
+            padding: 1rem 1.5rem;
+        }
+        td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #bbdefb;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #0d3b5e;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #90caf9, transparent);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📘 STEP Reading · B1</h1>
+    <div class="sub-title">Passage 12 · The Problem of Plastic Pollution</div>
+
+    <h2>🥤 Plastic: Convenience with a Cost</h2>
+
+    <div class="passage-text">
+        <p>Plastic is one of the most widely used materials in the world. It is cheap, lightweight, and durable, which makes it ideal for packaging, construction, and countless everyday items. However, the very qualities that make plastic useful also make it a serious environmental threat.</p>
+        <p>Most plastic does not biodegrade. Instead, it breaks down into tiny particles called microplastics, which remain in the environment for hundreds of years. Millions of tons of plastic waste enter the oceans each year, harming marine life. Turtles mistake plastic bags for jellyfish, birds feed plastic to their chicks, and fish ingest microplastics, which then move up the food chain.</p>
+        <p>The problem does not stop with wildlife. Studies have found microplastics in tap water, sea salt, and even human blood. The long‑term health effects are still unknown, but scientists are concerned about potential risks such as inflammation, hormone disruption, and other health issues. Clearly, plastic pollution is not just an eyesore – it is a public health concern.</p>
+        <p>Addressing this crisis requires action at all levels. Individuals can reduce their plastic footprint by using reusable bags, bottles, and containers. Governments can ban single‑use plastics and invest in better recycling systems. Companies can innovate by creating biodegradable materials and taking responsibility for their packaging. While the challenge is huge, every effort brings us closer to a cleaner, healthier planet.</p>
+    </div>
+
+    <div class="questions-section">
+        <h3>📘 STEP‑style questions (B1) – Passage 12</h3>
+
+        <!-- Question 1: Main idea -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>What is the main idea of the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) The many uses of plastic in modern life</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) The environmental and health dangers of plastic pollution and ways to address it</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) How to recycle plastic at home</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) Why plastic is better than glass</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 2: Detail (environmental impact) -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>According to the passage, what happens to most plastic in the environment?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) It completely disappears after a few years.</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) It breaks into microplastics and remains for centuries.</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) It is eaten by animals and becomes harmless.</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) It dissolves in water.</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 3: Vocabulary -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>In paragraph 2, the word "<em>biodegrade</em>" is closest in meaning to:</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) to be broken down naturally by living things</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) to become stronger over time</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) to float on water</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) to be recycled in factories</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'a')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 4: Detail (human health) -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>What concern about human health is mentioned in the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) Plastic causes immediate poisoning.</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) Microplastics have been found in human blood and may pose risks.</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) Plastic packaging improves food safety.</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) There is no connection between plastic and health.</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 5: Inference -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>What can be inferred from the last paragraph?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) Only governments can solve plastic pollution.</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) Everyone – individuals, governments, and companies – must take action to reduce plastic waste.</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) Plastic pollution is not a serious problem.</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) Single‑use plastics are the only solution.</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'b')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- Vocabulary table (15 words) – Plastic & Environment -->
+    <h3 style="font-size: 1.8rem; font-weight: 400; margin: 2rem 0 1rem;">🔤 Key Vocabulary (15 words) – Plastic & Environment</h3>
+    <table>
+        <thead><tr><th>Word</th><th>Meaning (English)</th><th>🇸🇦 Arabic</th></tr></thead>
+        <tbody>
+            <tr><td>plastic</td><td>synthetic material made from polymers</td><td class="arabic">بلاستيك</td></tr>
+            <tr><td>durable</td><td>long‑lasting and strong</td><td class="arabic">متين</td></tr>
+            <tr><td>biodegrade</td><td>to decay naturally</td><td class="arabic">يتحلل حيوياً</td></tr>
+            <tr><td>microplastic</td><td>tiny plastic particle</td><td class="arabic">لدائن دقيقة</td></tr>
+            <tr><td>marine life</td><td>plants and animals living in the sea</td><td class="arabic">الحياة البحرية</td></tr>
+            <tr><td>ingest</td><td>to take food or material into the body</td><td class="arabic">يبتلع</td></tr>
+            <tr><td>food chain</td><td>series of organisms each dependent on the next as food</td><td class="arabic">سلسلة غذائية</td></tr>
+            <tr><td>inflammation</td><td>body's response to injury or irritation</td><td class="arabic">التهاب</td></tr>
+            <tr><td>hormone disruption</td><td>interference with the body's chemical messengers</td><td class="arabic">اضطراب هرموني</td></tr>
+            <tr><td>eyesore</td><td>something ugly to look at</td><td class="arabic">منظر قبيح</td></tr>
+            <tr><td>footprint</td><td>impact or mark left (e.g., carbon footprint)</td><td class="arabic">بصمة</td></tr>
+            <tr><td>reusable</td><td>can be used again</td><td class="arabic">قابل لإعادة الاستخدام</td></tr>
+            <tr><td>single‑use</td><td>designed to be used once then thrown away</td><td class="arabic">أحادي الاستخدام</td></tr>
+            <tr><td>recycling</td><td>processing waste to make new materials</td><td class="arabic">إعادة تدوير</td></tr>
+            <tr><td>biodegradable</td><td>able to decay naturally and safely</td><td class="arabic">قابل للتحلل الحيوي</td></tr>
+        </tbody>
+    </table>
+    <hr>
+</div>
+
+<script>
+    // Correct answers for passage 12 (questions 1-5)
+    const correctAnswers = {
+        q1: 'b',
+        q2: 'b',
+        q3: 'a',
+        q4: 'b',
+        q5: 'b'
+    };
+
+    // Function used by "Show answer" buttons
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (b) The environmental and health dangers of plastic pollution and ways to address it.'; break;
+            case 2: answerText = 'The correct answer is (b) It breaks into microplastics and remains for centuries.'; break;
+            case 3: answerText = 'The correct answer is (a) to be broken down naturally by living things.'; break;
+            case 4: answerText = 'The correct answer is (b) Microplastics have been found in human blood and may pose risks.'; break;
+            case 5: answerText = 'The correct answer is (b) Everyone – individuals, governments, and companies – must take action to reduce plastic waste.'; break;
+            default: answerText = 'Correct answer displayed.';
+        }
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+
+    // Radio button instant feedback
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;       // "q1" to "q5"
+            const selectedValue = this.value;
+            const correct = correctAnswers[questionId];
+
+            const feedbackId = 'feedback' + questionId.substring(1); // "feedback1", etc.
+            const feedback = document.getElementById(feedbackId);
+
+            if (selectedValue === correct) {
+                feedback.textContent = '✅ Correct! Well done.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Try again!';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+</script>
+</body>
+</html>
