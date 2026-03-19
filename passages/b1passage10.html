@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading · B1 – Passage 10: The Importance of Bees</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #e3f2fd;
+            color: #0d3b5e;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(25, 118, 210, 0.1);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: #1976d2;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #90caf9;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #1565c0;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #0d47a1;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #90caf9;
+            padding-bottom: 0.5rem;
+        }
+        .passage-text {
+            font-size: 1.2rem;
+            background: #f8fcff;
+            padding: 2rem;
+            border-radius: 28px;
+            border: 1px solid #bbdefb;
+            margin-bottom: 3rem;
+            line-height: 1.9;
+        }
+        .questions-section {
+            background: #e3f2fd;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #90caf9;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #0d47a1;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(25, 118, 210, 0.08);
+            border-left: 10px solid #42a5f5;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #1976d2;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #e3f2fd;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #1976d2;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+        }
+        .option input[type="radio"]:checked {
+            background: #1976d2;
+            border: 2px solid #1976d2;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            display: none;
+        }
+        .feedback.correct {
+            color: #2e7d32;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #c62828;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #1976d2;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #bbdefb;
+            margin: 2rem 0;
+        }
+        th {
+            background: #1976d2;
+            color: white;
+            font-weight: 500;
+            font-size: 1.2rem;
+            padding: 1rem 1.5rem;
+        }
+        td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #bbdefb;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #0d3b5e;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #90caf9, transparent);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📘 STEP Reading · B1</h1>
+    <div class="sub-title">Passage 10 · The Importance of Bees</div>
+
+    <h2>🐝 Small Creatures, Big Impact</h2>
+
+    <div class="passage-text">
+        <p>Bees are small insects, but they play an enormous role in maintaining healthy ecosystems. There are over 20,000 species of bees worldwide, and they are best known for producing honey and wax. However, their most vital contribution is pollination.</p>
+        <p>As bees fly from flower to flower collecting nectar, they transfer pollen grains. This process, called pollination, allows plants to fertilize and produce fruits, seeds, and vegetables. In fact, about one‑third of the food we eat – including apples, almonds, coffee, and cucumbers – depends on pollinators like bees. Without them, many crops would fail, leading to food shortages and higher prices.</p>
+        <p>Sadly, bee populations are declining at an alarming rate. The main threats include pesticides used in farming, loss of wildflower meadows due to urban development, and diseases spread by parasites. Climate change also disrupts the timing of flower blooming, making it harder for bees to find food.</p>
+        <p>Fortunately, there are ways we can help. Planting bee‑friendly flowers in gardens, avoiding chemical sprays, and supporting local beekeepers all make a difference. Some cities are even creating "bee corridors" – networks of wildflower areas – to give bees safe routes. Protecting bees means protecting our own future. Every small action counts.</p>
+    </div>
+
+    <div class="questions-section">
+        <h3>📘 STEP‑style questions (B1) – Passage 10</h3>
+
+        <!-- Question 1: Main idea -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>What is the main idea of the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) How to become a beekeeper</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) The crucial role of bees in nature and the need to protect them</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) Different types of honey around the world</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) Why bees are dangerous insects</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 2: Detail (pollination) -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>According to the passage, what is the most vital contribution of bees?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) Producing honey and wax</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) Stinging to protect themselves</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) Pollination of plants and food crops</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) Building large hives</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'c')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 3: Vocabulary -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>In paragraph 2, the word "<em>pollination</em>" most nearly means:</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) The transfer of pollen that allows plants to reproduce</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) The process of making honey</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) A disease that affects bees</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) The act of bees building a hive</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'a')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 4: Detail (threats) -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>Which of the following is mentioned as a threat to bee populations?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) Too many beekeepers</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) Pesticides, habitat loss, and climate change</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) Lack of flowers in cities</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) Overpopulation of bees</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 5: Inference -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>What can be inferred from the last paragraph?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) Only scientists can help save bees.</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) Ordinary people can take simple actions to support bee populations.</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) Bees are no longer in danger.</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) Planting flowers has no effect on bees.</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'b')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- Vocabulary table (15 words) – Bees & Ecology -->
+    <h3 style="font-size: 1.8rem; font-weight: 400; margin: 2rem 0 1rem;">🔤 Key Vocabulary (15 words) – Bees & Ecology</h3>
+    <table>
+        <thead><tr><th>Word</th><th>Meaning (English)</th><th>🇸🇦 Arabic</th></tr></thead>
+        <tbody>
+            <tr><td>bee</td><td>flying insect that produces honey</td><td class="arabic">نحلة</td></tr>
+            <tr><td>insect</td><td>small animal with six legs</td><td class="arabic">حشرة</td></tr>
+            <tr><td>pollination</td><td>transfer of pollen for plant reproduction</td><td class="arabic">تَلقيح</td></tr>
+            <tr><td>pollen</td><td>fine powder produced by flowers</td><td class="arabic">حبوب لقاح</td></tr>
+            <tr><td>nectar</td><td>sweet liquid in flowers</td><td class="arabic">رحيق</td></tr>
+            <tr><td>hive</td><td>structure where bees live</td><td class="arabic">خلية نحل</td></tr>
+            <tr><td>colony</td><td>group of bees living together</td><td class="arabic">مستعمرة</td></tr>
+            <tr><td>pesticide</td><td>chemical used to kill pests</td><td class="arabic">مبيد حشري</td></tr>
+            <tr><td>habitat</td><td>natural home of an animal</td><td class="arabic">موطن</td></tr>
+            <tr><td>biodiversity</td><td>variety of plant and animal life</td><td class="arabic">تنوع بيولوجي</td></tr>
+            <tr><td>ecosystem</td><td>community of living things and their environment</td><td class="arabic">نظام بيئي</td></tr>
+            <tr><td>threat</td><td>danger or risk</td><td class="arabic">تهديد</td></tr>
+            <tr><td>conservation</td><td>protection of nature</td><td class="arabic">حماية / محافظة</td></tr>
+            <tr><td>beekeeper</td><td>person who keeps bees</td><td class="arabic">مربي نحل</td></tr>
+            <tr><td>sustainable</td><td>able to continue without harming the environment</td><td class="arabic">مستدام</td></tr>
+        </tbody>
+    </table>
+    <hr>
+</div>
+
+<script>
+    // Correct answers for passage 10 (questions 1-5)
+    const correctAnswers = {
+        q1: 'b',
+        q2: 'c',
+        q3: 'a',
+        q4: 'b',
+        q5: 'b'
+    };
+
+    // Function used by "Show answer" buttons
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (b) The crucial role of bees in nature and the need to protect them.'; break;
+            case 2: answerText = 'The correct answer is (c) Pollination of plants and food crops.'; break;
+            case 3: answerText = 'The correct answer is (a) The transfer of pollen that allows plants to reproduce.'; break;
+            case 4: answerText = 'The correct answer is (b) Pesticides, habitat loss, and climate change.'; break;
+            case 5: answerText = 'The correct answer is (b) Ordinary people can take simple actions to support bee populations.'; break;
+            default: answerText = 'Correct answer displayed.';
+        }
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+
+    // Radio button instant feedback
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;       // "q1" to "q5"
+            const selectedValue = this.value;
+            const correct = correctAnswers[questionId];
+
+            const feedbackId = 'feedback' + questionId.substring(1); // "feedback1", etc.
+            const feedback = document.getElementById(feedbackId);
+
+            if (selectedValue === correct) {
+                feedback.textContent = '✅ Correct! Well done.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Try again!';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+</script>
+</body>
+</html>
