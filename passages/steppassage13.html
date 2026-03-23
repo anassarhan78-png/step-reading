@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading · C1 – Passage 10: The STEP Exam (Advanced)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #e0e7ff;
+            color: #1e293b;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #4f46e5;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #a5b4fc;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #4338ca;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #a5b4fc;
+            padding-bottom: 0.5rem;
+        }
+        .passage-text {
+            font-size: 1.2rem;
+            background: #f5f3ff;
+            padding: 2rem;
+            border-radius: 28px;
+            border: 1px solid #c7d2fe;
+            margin-bottom: 3rem;
+            line-height: 1.9;
+        }
+        .questions-section {
+            background: #e0e7ff;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #a5b4fc;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(79, 70, 229, 0.1);
+            border-left: 10px solid #818cf8;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #4f46e5;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #e0e7ff;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #4f46e5;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+        }
+        .option input[type="radio"]:checked {
+            background: #4f46e5;
+            border: 2px solid #4f46e5;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            display: none;
+        }
+        .feedback.correct {
+            color: #166534;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #991b1b;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #4f46e5;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #cbd5e1;
+            margin: 2rem 0;
+            font-size: 1rem;
+        }
+        th {
+            background: #4f46e5;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+            padding: 1rem 1.2rem;
+        }
+        td {
+            padding: 1rem 1.2rem;
+            border-bottom: 1px solid #cbd5e1;
+            vertical-align: top;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #1e293b;
+        }
+        .synonyms {
+            font-size: 0.95rem;
+            color: #4b5563;
+            margin-top: 4px;
+            font-style: italic;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #a5b4fc, transparent);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📘 STEP Reading · C1</h1>
+    <div class="sub-title">Passage 10 (Advanced) · Mastering the STEP: A Strategic Approach</div>
+
+    <h2>📝 The STEP Exam: Gateway to Academic Success</h2>
+
+    <div class="passage-text">
+        <p>The Saudi Standardized Test for English Proficiency (STEP) represents a pivotal milestone for thousands of students pursuing higher education and professional advancement. Designed to assess non-native English speakers' readiness for academic environments, STEP evaluates four core competencies: reading comprehension, writing, listening, and grammar. Among these, the reading section is often considered the most demanding, requiring test-takers to navigate complex academic texts, discern nuanced arguments, and synthesize information under strict time constraints. Understanding the structure and underlying logic of the test is essential for achieving a competitive score.</p>
+        <p>The reading component typically presents several passages drawn from disciplines such as social sciences, humanities, and natural sciences. Each passage is accompanied by multiple-choice questions that target specific skills: identifying the main idea, interpreting vocabulary in context, recognizing rhetorical purpose, and making inferences. A distinctive feature of STEP reading is its emphasis on higher-order thinking; questions often require candidates to distinguish between explicit statements and implied meaning, or to evaluate the strength of an author's argument. This mirrors the cognitive demands of university-level coursework, where critical reading is paramount.</p>
+        <p>Success on the STEP exam is not solely a matter of language proficiency but also of strategic test-taking. Effective preparation involves systematic vocabulary building, especially of academic word lists, and extensive practice with timed reading exercises. Skimming and scanning techniques allow candidates to quickly locate key information, while annotation—mentally summarizing paragraphs—helps maintain comprehension under pressure. Furthermore, familiarity with common question formats reduces cognitive load, enabling test-takers to allocate mental resources to challenging passages. Many successful candidates adopt a recursive approach: reading questions first, then scanning for answers, before a more thorough reading if needed.</p>
+        <p>The psychological dimension of test-taking is equally critical. Anxiety can impair working memory and reading speed, undermining months of preparation. Developing a pre-test routine, including relaxation techniques and positive visualization, has been shown to enhance performance. Moreover, pacing strategies—such as allocating a set number of minutes per passage and flagging difficult questions for review—prevent time mismanagement. Understanding that the STEP exam is designed to differentiate proficiency levels, candidates should aim for accuracy over speed, recognizing that unanswered questions are penalized no more than incorrect ones in most standardized scoring models.</p>
+        <p>Ultimately, the STEP exam serves as more than a gatekeeping mechanism; it fosters the advanced literacy skills that underpin academic and professional success. By engaging deeply with challenging texts, synthesizing diverse perspectives, and articulating reasoned responses, candidates develop habits of mind that extend far beyond the test itself. Viewed through this lens, preparation becomes not a chore but an investment in lifelong intellectual growth. For those who approach it with diligence, strategy, and resilience, the STEP exam is not an obstacle but a springboard to broader opportunities.</p>
+    </div>
+
+    <div class="questions-section">
+        <h3>📘 C1 STEP‑style questions – Passage 10</h3>
+
+        <!-- Question 1: Main idea -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>What is the primary focus of the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) A detailed history of the STEP exam's development</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) The structure, skills required, and strategies for succeeding on the STEP reading section</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) A comparison of STEP with other English proficiency tests</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) The psychological effects of standardized testing</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 2: Detail (reading skills tested) -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>According to the passage, which of the following is a skill specifically targeted by STEP reading questions?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) Memorization of literary texts</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) Identifying the main idea and making inferences</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) Translating passages into Arabic</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) Writing personal responses to passages</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 3: Vocabulary in context -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>As used in paragraph 2, the phrase "<em>higher-order thinking</em>" most likely refers to:</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) memorizing facts and definitions</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) cognitive skills such as analysis, evaluation, and inference beyond basic comprehension</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) writing lengthy essays</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) translating complex sentences</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 4: Detail (strategies mentioned) -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>What test-taking strategy does the passage recommend?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) Reading every passage at least three times</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) Skimming and scanning, and using a recursive approach of previewing questions</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) Avoiding any annotation to save time</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) Answering questions only after writing a full summary</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 5: Inference (purpose of the exam) -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>What can be inferred about the author’s view of the STEP exam?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) It is an unnecessary obstacle to education</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) It develops advanced literacy skills that are valuable beyond the test itself</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) It primarily measures memorization rather than understanding</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) It should be replaced by continuous assessment</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 6: Detail (psychological aspect) -->
+        <div class="question-item" id="q6">
+            <span class="q-num">6</span> <strong>What psychological factor affecting test performance is discussed?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q6" value="a"> (a) The influence of caffeine consumption</label>
+                <label class="option"><input type="radio" name="q6" value="b"> (b) Anxiety and the use of relaxation techniques to mitigate its effects</label>
+                <label class="option"><input type="radio" name="q6" value="c"> (c) The effect of music on concentration</label>
+                <label class="option"><input type="radio" name="q6" value="d"> (d) The relationship between sleep and vocabulary recall</label>
+            </div>
+            <div class="feedback" id="feedback6"></div>
+            <button class="show-answer-btn" onclick="showAnswer(6, 'b')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- Advanced vocabulary table with 12 words -->
+    <h3 style="font-size: 1.8rem; font-weight: 500; margin: 2rem 0 1rem;">🔤 Advanced Vocabulary (12 words) · with Synonyms</h3>
+    <table>
+        <thead>
+            <tr><th>Word</th><th>Meaning (English)</th><th>🇸🇦 Arabic</th><th>Synonyms (3)</th>            
+        </thead>
+        <tbody>
+            <tr><td class="arabic-term">milestone</td><td>an important event or stage</td><td class="arabic">محطة هامة / نقطة تحول</td><td class="synonyms">landmark, turning point, watershed</td></tr>
+            <tr><td class="arabic-term">competencies</td><td>skills or abilities</td><td class="arabic">كفاءات / مهارات</td><td class="synonyms">capabilities, proficiencies, expertise</td></tr>
+            <tr><td class="arabic-term">nuanced</td><td>characterized by subtle distinctions</td><td class="arabic">دقيق / متعدد الأوجه</td><td class="synonyms">subtle, refined, sophisticated</td></tr>
+            <tr><td class="arabic-term">synthesize</td><td>combine ideas into a coherent whole</td><td class="arabic">يُركِّب / يدمج</td><td class="synonyms">integrate, combine, unify</td></tr>
+            <tr><td class="arabic-term">rhetorical purpose</td><td>the author's intended effect on the reader</td><td class="arabic">الغرض البلاغي</td><td class="synonyms">communicative intent, persuasive aim, stylistic goal</td></tr>
+            <tr><td class="arabic-term">higher-order thinking</td><td>complex cognitive processing</td><td class="arabic">تفكير عليا / استدلال متقدم</td><td class="synonyms">critical thinking, analytical reasoning, evaluative judgment</td></tr>
+            <tr><td class="arabic-term">skimming and scanning</td><td>rapid reading techniques</td><td class="arabic">تصفح سريع / مسح ضوئي للنص</td><td class="synonyms">speed reading, selective reading, quick browsing</td></tr>
+            <tr><td class="arabic-term">recursive approach</td><td>repeating steps for refinement</td><td class="arabic">نهج تكرار / استرجاعي</td><td class="synonyms">iterative method, cyclical process, repeated application</td></tr>
+            <tr><td class="arabic-term">cognitive load</td><td>mental effort being used</td><td class="arabic">عبء معرفي</td><td class="synonyms">mental burden, working memory demand, cognitive strain</td></tr>
+            <tr><td class="arabic-term">pacing strategies</td><td>time management techniques</td><td class="arabic">استراتيجيات توزيع الوقت</td><td class="synonyms">time allocation, timing tactics, rhythm management</td></tr>
+            <tr><td class="arabic-term">gatekeeping mechanism</td><td>a system that controls access</td><td class="arabic">آلية تحكم بالدخول</td><td class="synonyms">filter, screening tool, admission control</td></tr>
+            <tr><td class="arabic-term">springboard</td><td>something that provides impetus</td><td class="arabic">منصة انطلاق</td><td class="synonyms">launchpad, catalyst, stepping stone</td></tr>
+        </tbody>
+     </table>
+    <hr>
+    <p style="text-align: center; color: #4f46e5; font-weight: 500;">✨ C1 Level · Test Preparation & Strategic Reading ✨</p>
+</div>
+
+<script>
+    // Correct answers for passage 10 (STEP Exam)
+    const correctAnswers = {
+        q1: 'b',
+        q2: 'b',
+        q3: 'b',
+        q4: 'b',
+        q5: 'b',
+        q6: 'b'
+    };
+
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (b) The structure, skills required, and strategies for succeeding on the STEP reading section.';
+                break;
+            case 2: answerText = 'The correct answer is (b) Identifying the main idea and making inferences.';
+                break;
+            case 3: answerText = 'The correct answer is (b) cognitive skills such as analysis, evaluation, and inference beyond basic comprehension.';
+                break;
+            case 4: answerText = 'The correct answer is (b) Skimming and scanning, and using a recursive approach of previewing questions.';
+                break;
+            case 5: answerText = 'The correct answer is (b) It develops advanced literacy skills that are valuable beyond the test itself.';
+                break;
+            case 6: answerText = 'The correct answer is (b) Anxiety and the use of relaxation techniques to mitigate its effects.';
+                break;
+            default: answerText = 'Correct answer displayed.';
+        }
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+
+    // Radio button instant feedback
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;
+            const selectedValue = this.value;
+            const correct = correctAnswers[questionId];
+
+            const feedbackId = 'feedback' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+
+            if (selectedValue === correct) {
+                feedback.textContent = '✅ Correct! Well reasoned.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Re-read the passage and try again.';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+</script>
+</body>
+</html>
