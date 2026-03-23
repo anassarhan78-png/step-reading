@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading · C1 – Passage 12: Viruses (Advanced)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #e0e7ff;
+            color: #1e293b;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #4f46e5;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #a5b4fc;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #4338ca;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #a5b4fc;
+            padding-bottom: 0.5rem;
+        }
+        .passage-text {
+            font-size: 1.2rem;
+            background: #f5f3ff;
+            padding: 2rem;
+            border-radius: 28px;
+            border: 1px solid #c7d2fe;
+            margin-bottom: 3rem;
+            line-height: 1.9;
+        }
+        .questions-section {
+            background: #e0e7ff;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #a5b4fc;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(79, 70, 229, 0.1);
+            border-left: 10px solid #818cf8;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #4f46e5;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #e0e7ff;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #4f46e5;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+        }
+        .option input[type="radio"]:checked {
+            background: #4f46e5;
+            border: 2px solid #4f46e5;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            display: none;
+        }
+        .feedback.correct {
+            color: #166534;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #991b1b;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #4f46e5;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #cbd5e1;
+            margin: 2rem 0;
+            font-size: 1rem;
+        }
+        th {
+            background: #4f46e5;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+            padding: 1rem 1.2rem;
+        }
+        td {
+            padding: 1rem 1.2rem;
+            border-bottom: 1px solid #cbd5e1;
+            vertical-align: top;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #1e293b;
+        }
+        .synonyms {
+            font-size: 0.95rem;
+            color: #4b5563;
+            margin-top: 4px;
+            font-style: italic;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #a5b4fc, transparent);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📘 STEP Reading · C1</h1>
+    <div class="sub-title">Passage 12 (Advanced) · The Viral World: Invisible Architects of Life</div>
+
+    <h2>🦠 Beyond Disease: The Dual Nature of Viruses</h2>
+
+    <div class="passage-text">
+        <p>Viruses occupy a peculiar place in the natural world: they are not truly alive by conventional definitions, yet they possess the capacity to reshape ecosystems, drive evolution, and alter the course of human history. These submicroscopic entities consist of little more than genetic material encased in a protein shell, utterly dependent on host cells for replication. For centuries, they were understood only as agents of disease—the invisible culprits behind smallpox, influenza, and more recently, COVID-19. However, modern virology has unveiled a far more nuanced picture: viruses are ancient, abundant, and intricately woven into the fabric of life itself.</p>
+        <p>The sheer scale of viral presence is staggering. It is estimated that there are ten times more viruses on Earth than bacteria, with an estimated 10³¹ viral particles occupying virtually every environment—oceans, soil, and even the human body. The human virome, the collection of viruses residing in and on our bodies, is dominated by bacteriophages (viruses that infect bacteria) that play crucial roles in regulating microbial communities. Far from being merely parasitic, these viruses influence digestion, immunity, and even mental health through their effects on the microbiome.</p>
+        <p>Perhaps most profoundly, viruses have been instrumental in evolutionary innovation. Endogenous retroviruses—viral sequences that have become permanently integrated into host genomes—constitute approximately 8% of the human genome. Over millions of years, these viral remnants have been co-opted for essential functions. The syncytin gene, critical for placental development in mammals, is derived from an ancient retrovirus. Such findings challenge the simplistic pathogen-centric view, revealing viruses as agents of horizontal gene transfer that have facilitated evolutionary leaps.</p>
+        <p>Yet the destructive potential of viruses remains formidable. Zoonotic spillover events—where viruses jump from animal hosts to humans—have sparked pandemics with devastating social and economic consequences. The emergence of HIV/AIDS, SARS, Ebola, and SARS-CoV-2 underscores the interconnectedness of human, animal, and environmental health, a concept formalized as One Health. Emerging threats are amplified by factors such as deforestation, wildlife trade, and global travel, highlighting the need for robust surveillance and rapid response systems.</p>
+        <p>In response, science has harnessed viral biology for human benefit. Vaccines, among the greatest public health achievements, train immune systems using attenuated or engineered viral components. Gene therapy employs modified viruses as delivery vehicles to correct genetic disorders. On the horizon, oncolytic viruses are being developed to selectively destroy cancer cells. The COVID-19 pandemic accelerated the development of mRNA vaccines, a platform with potential far beyond infectious diseases. As we deepen our understanding of viruses, we move from a defensive posture to one of strategic engagement—learning to coexist with, and even exploit, these ancient biological entities.</p>
+    </div>
+
+    <div class="questions-section">
+        <h3>📘 C1 STEP‑style questions – Passage 12</h3>
+
+        <!-- Question 1: Main idea -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>What is the primary focus of the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) A detailed history of viral pandemics</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) The pathogenic nature of viruses and how to eliminate them</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) The multifaceted roles of viruses—from disease agents to evolutionary drivers and therapeutic tools</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) A comparison of bacterial and viral infections</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'c')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 2: Detail (viral abundance) -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>What does the passage state about the prevalence of viruses on Earth?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) They are rare and only found in specific environments</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) They are estimated to be ten times more numerous than bacteria</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) They exist only within human hosts</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) Their numbers have declined due to modern medicine</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 3: Vocabulary in context -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>As used in paragraph 3, the phrase "<em>co-opted</em>" most nearly means:</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) destroyed or eliminated</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) adapted for a new beneficial function</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) copied without modification</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) ignored by evolution</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 4: Detail (evolutionary contribution) -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>What evidence does the passage provide for viruses' role in evolution?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) Viruses caused the extinction of dinosaurs</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) Endogenous retroviruses make up about 8% of the human genome and have contributed genes essential for placental development</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) All viral infections lead to beneficial mutations</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) Viruses are the only drivers of evolution</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 5: Inference (zoonotic threats) -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>What can be inferred about the factors contributing to pandemic emergence?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) Pandemics are purely random and cannot be predicted</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) Human activities such as deforestation and wildlife trade increase the risk of zoonotic spillover</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) Only climate change is responsible for new viral outbreaks</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) Viruses have become less dangerous over time</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 6: Detail (therapeutic applications) -->
+        <div class="question-item" id="q6">
+            <span class="q-num">6</span> <strong>What therapeutic use of viruses is mentioned in the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q6" value="a"> (a) Using viruses to replace antibiotics entirely</label>
+                <label class="option"><input type="radio" name="q6" value="b"> (b) Gene therapy using modified viruses and oncolytic viruses to treat cancer</label>
+                <label class="option"><input type="radio" name="q6" value="c"> (c) Using viruses to produce biofuels</label>
+                <label class="option"><input type="radio" name="q6" value="d"> (d) Viruses as food supplements</label>
+            </div>
+            <div class="feedback" id="feedback6"></div>
+            <button class="show-answer-btn" onclick="showAnswer(6, 'b')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- Advanced vocabulary table with 12 words -->
+    <h3 style="font-size: 1.8rem; font-weight: 500; margin: 2rem 0 1rem;">🔤 Advanced Vocabulary (12 words) · with Synonyms</h3>
+     <table>
+        <thead>
+            <tr><th>Word</th><th>Meaning (English)</th><th>🇸🇦 Arabic</th><th>Synonyms (3)</th>            
+        </thead>
+        <tbody>
+            <tr><td class="arabic-term">submicroscopic</td><td>too small to be seen with a light microscope</td><td class="arabic">دون مجهري</td><td class="synonyms">ultramicroscopic, nanoscale, invisible to standard microscopy</td></tr>
+            <tr><td class="arabic-term">virology</td><td>the study of viruses</td><td class="arabic">علم الفيروسات</td><td class="synonyms">viral science, virological research, virus biology</td></tr>
+            <tr><td class="arabic-term">bacteriophages</td><td>viruses that infect bacteria</td><td class="arabic">بكتيريا آكلة / عاثيات</td><td class="synonyms">phages, bacterial viruses, microbial predators</td></tr>
+            <tr><td class="arabic-term">microbiome</td><td>community of microorganisms in a particular environment</td><td class="arabic">الميكروبيوم</td><td class="synonyms">microbial community, microbial flora, microbial ecosystem</td></tr>
+            <tr><td class="arabic-term">endogenous retroviruses</td><td>viral sequences integrated into host DNA</td><td class="arabic">فيروسات قهقرية داخلية</td><td class="synonyms">ERVs, genomic fossils, inherited viral elements</td></tr>
+            <tr><td class="arabic-term">horizontal gene transfer</td><td>movement of genetic material between organisms without reproduction</td><td class="arabic">نقل جيني أفقي</td><td class="synonyms">lateral gene transfer, genetic exchange, cross-species gene flow</td></tr>
+            <tr><td class="arabic-term">zoonotic spillover</td><td>transmission of a pathogen from animals to humans</td><td class="arabic">انتقال حيواني المنشأ</td><td class="synonyms">cross-species transmission, animal-to-human jump, zoonotic emergence</td></tr>
+            <tr><td class="arabic-term">One Health</td><td>approach recognizing interconnection of human, animal, and environmental health</td><td class="arabic">الصحة الواحدة</td><td class="synonyms">integrated health, holistic health, eco-health</td></tr>
+            <tr><td class="arabic-term">attenuated</td><td>weakened but still capable of provoking immunity</td><td class="arabic">مضعف / مُوهَن</td><td class="synonyms">weakened, reduced virulence, modified</td></tr>
+            <tr><td class="arabic-term">oncolytic viruses</td><td>viruses that selectively infect and destroy cancer cells</td><td class="arabic">فيروسات حالّة للورم</td><td class="synonyms">cancer-killing viruses, tumor-lytic viruses, viral oncolytics</td></tr>
+            <tr><td class="arabic-term">mRNA vaccines</td><td>vaccines using messenger RNA to elicit immune response</td><td class="arabic">لقاحات الحمض النووي المرسال</td><td class="synonyms">RNA vaccines, genetic vaccines, nucleic acid vaccines</td></tr>
+            <tr><td class="arabic-term">strategic engagement</td><td>active and planned interaction with a phenomenon</td><td class="arabic">تفاعل استراتيجي</td><td class="synonyms">deliberate interaction, planned approach, proactive involvement</td></tr>
+        </tbody>
+     </table>
+    <hr>
+    <p style="text-align: center; color: #4f46e5; font-weight: 500;">✨ C1 Level · Virology & Public Health ✨</p>
+</div>
+
+<script>
+    // Correct answers for passage 12 (Viruses)
+    const correctAnswers = {
+        q1: 'c',
+        q2: 'b',
+        q3: 'b',
+        q4: 'b',
+        q5: 'b',
+        q6: 'b'
+    };
+
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (c) The multifaceted roles of viruses—from disease agents to evolutionary drivers and therapeutic tools.';
+                break;
+            case 2: answerText = 'The correct answer is (b) They are estimated to be ten times more numerous than bacteria.';
+                break;
+            case 3: answerText = 'The correct answer is (b) adapted for a new beneficial function.';
+                break;
+            case 4: answerText = 'The correct answer is (b) Endogenous retroviruses make up about 8% of the human genome and have contributed genes essential for placental development.';
+                break;
+            case 5: answerText = 'The correct answer is (b) Human activities such as deforestation and wildlife trade increase the risk of zoonotic spillover.';
+                break;
+            case 6: answerText = 'The correct answer is (b) Gene therapy using modified viruses and oncolytic viruses to treat cancer.';
+                break;
+            default: answerText = 'Correct answer displayed.';
+        }
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+
+    // Radio button instant feedback
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;
+            const selectedValue = this.value;
+            const correct = correctAnswers[questionId];
+
+            const feedbackId = 'feedback' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+
+            if (selectedValue === correct) {
+                feedback.textContent = '✅ Correct! Well reasoned.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Re-read the passage and try again.';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+</script>
+</body>
+</html>
