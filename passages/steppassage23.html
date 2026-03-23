@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading · C1 – Passage 23: Psychology of Conspiracy Theories (Advanced)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #e0e7ff;
+            color: #1e293b;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #4f46e5;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #a5b4fc;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #4338ca;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #a5b4fc;
+            padding-bottom: 0.5rem;
+        }
+        .passage-text {
+            font-size: 1.2rem;
+            background: #f5f3ff;
+            padding: 2rem;
+            border-radius: 28px;
+            border: 1px solid #c7d2fe;
+            margin-bottom: 3rem;
+            line-height: 1.9;
+        }
+        .questions-section {
+            background: #e0e7ff;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #a5b4fc;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(79, 70, 229, 0.1);
+            border-left: 10px solid #818cf8;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #4f46e5;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #e0e7ff;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #4f46e5;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+        }
+        .option input[type="radio"]:checked {
+            background: #4f46e5;
+            border: 2px solid #4f46e5;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            display: none;
+        }
+        .feedback.correct {
+            color: #166534;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #991b1b;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #4f46e5;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #cbd5e1;
+            margin: 2rem 0;
+            font-size: 1rem;
+        }
+        th {
+            background: #4f46e5;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+            padding: 1rem 1.2rem;
+        }
+        td {
+            padding: 1rem 1.2rem;
+            border-bottom: 1px solid #cbd5e1;
+            vertical-align: top;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #1e293b;
+        }
+        .synonyms {
+            font-size: 0.95rem;
+            color: #4b5563;
+            margin-top: 4px;
+            font-style: italic;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #a5b4fc, transparent);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📘 STEP Reading · C1</h1>
+    <div class="sub-title">Passage 23 (Advanced) · The Seductive Appeal of Conspiracy Theories</div>
+
+    <h2>🕵️‍♂️ Hidden Agendas: Why We Believe the Unbelievable</h2>
+
+    <div class="passage-text">
+        <p>Conspiracy theories—explanations that attribute major events to secret plots by powerful, malevolent groups—have proliferated in the digital age. From the belief that the moon landing was staged to claims that vaccines contain tracking devices, such narratives attract adherents across ideological and demographic lines. While often dismissed as fringe beliefs, conspiracy theories have tangible consequences: they erode trust in institutions, fuel political polarization, and, in extreme cases, incite violence. Understanding why people gravitate toward these explanations is not merely an academic exercise but a pressing societal imperative.</p>
+        <p>Psychological research reveals that conspiracy theories fulfill fundamental human needs. The epistemic need—the desire for understanding and certainty—drives individuals to seek explanations for complex, unsettling events. When official accounts seem incomplete or contradictory, conspiratorial narratives offer a seductive simplicity: a single, coherent plot replaces messy ambiguity. The existential need for safety and control also plays a role; believing that powerful actors are behind events can feel less threatening than accepting randomness. Finally, social needs—a sense of belonging and identity—are met by joining communities of like-minded believers, reinforcing shared worldviews through echo chambers.</p>
+        <p>Cognitive biases further predispose individuals to conspiratorial thinking. Confirmation bias leads people to seek information that supports their existing beliefs while dismissing contradictory evidence. Proportionality bias, the tendency to assume that large events must have large causes, makes conspiracy theories intuitively appealing—how else could a single assassin kill a president? The conjunction fallacy, where people judge a specific conjunction of events as more probable than a single general one, allows elaborate narratives to seem plausible. These cognitive shortcuts, while evolutionarily useful for rapid decision-making, make the human mind fertile ground for conspiratorial reasoning.</p>
+        <p>Digital ecosystems have amplified these tendencies. Social media algorithms prioritize engagement, often surfacing sensational, emotionally charged content. Filter bubbles and echo chambers isolate users from dissenting perspectives, while the erosion of gatekeeping institutions allows misinformation to spread unchecked. The anonymity of online spaces emboldens those who might otherwise hesitate to share extreme views. Moreover, the sheer volume of information—and disinformation—makes discerning credible sources increasingly difficult, a phenomenon known as information overload.</p>
+        <p>Countering conspiracy theories requires more than debunking individual claims, which can paradoxically reinforce beliefs (the "backfire effect"). Effective strategies include pre-bunking—inoculating people against manipulation by explaining the techniques used—and fostering critical thinking skills. Building trust in institutions and addressing underlying grievances that fuel conspiratorial thinking are equally important. Ultimately, the persistence of conspiracy theories reveals a deeper truth: in an era of rapid change and complex global challenges, the human yearning for meaning, control, and community can be exploited—or, with wisdom, directed toward constructive ends.</p>
+    </div>
+
+    <div class="questions-section">
+        <h3>📘 C1 STEP‑style questions – Passage 23</h3>
+
+        <!-- Question 1: Main idea -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>What is the primary focus of the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) A historical overview of famous conspiracy theories</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) The psychological drivers, cognitive biases, and societal implications of conspiracy theories</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) A detailed analysis of social media algorithms</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) The history of government secrecy</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 2: Detail (epistemic need) -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>According to the passage, what is the "epistemic need" that conspiracy theories satisfy?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) The need for social belonging</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) The desire for understanding and certainty in the face of complex events</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) The need for physical safety</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) The desire to accumulate wealth</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 3: Vocabulary in context -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>As used in paragraph 3, the phrase "<em>conjunction fallacy</em>" most likely refers to:</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) The tendency to ignore statistical evidence</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) Judging a specific combination of events as more probable than a single general event</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) The belief that coincidences are meaningful</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) A logical error in mathematical reasoning</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 4: Detail (digital amplification) -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>How do social media platforms contribute to the spread of conspiracy theories according to the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) They strictly fact-check all content before posting</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) Algorithms prioritize engagement, surfacing sensational content, and echo chambers isolate users from dissenting views</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) They require users to verify their identity</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) They have eliminated all conspiracy content</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 5: Inference (countering strategies) -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>What can be inferred about the effectiveness of simply debunking conspiracy theories?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) It is universally effective and changes minds quickly</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) It can paradoxically reinforce beliefs (the backfire effect)</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) It has never been attempted</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) It only works on social media</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 6: Detail (proportionality bias) -->
+        <div class="question-item" id="q6">
+            <span class="q-num">6</span> <strong>What does the proportionality bias suggest about people's reasoning?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q6" value="a"> (a) They underestimate the impact of major events</label>
+                <label class="option"><input type="radio" name="q6" value="b"> (b) They assume large events must have large causes</label>
+                <label class="option"><input type="radio" name="q6" value="c"> (c) They prefer simple explanations over complex ones</label>
+                <label class="option"><input type="radio" name="q6" value="d"> (d) They reject any form of conspiracy thinking</label>
+            </div>
+            <div class="feedback" id="feedback6"></div>
+            <button class="show-answer-btn" onclick="showAnswer(6, 'b')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- Advanced vocabulary table with 12 words -->
+    <h3 style="font-size: 1.8rem; font-weight: 500; margin: 2rem 0 1rem;">🔤 Advanced Vocabulary (12 words) · with Synonyms</h3>
+       —
+        <thead>
+           <tr><th>Word</th><th>Meaning (English)</th><th>🇸🇦 Arabic</th><th>Synonyms (3)</th></tr>
+        </thead>
+        <tbody>
+           <tr><td class="arabic-term">proliferated</td><td>spread rapidly and widely</td><td class="arabic">انتشر / تكاثر</td><td class="synonyms">multiplied, mushroomed, escalated</td></tr>
+           <tr><td class="arabic-term">adherents</td><td>supporters or followers</td><td class="arabic">أتباع / مؤيدون</td><td class="synonyms">devotees, proponents, disciples</td></tr>
+           <tr><td class="arabic-term">epistemic need</td><td>desire for knowledge and understanding</td><td class="arabic">حاجة معرفية</td><td class="synonyms">cognitive drive, quest for certainty, knowledge seeking</td></tr>
+           <tr><td class="arabic-term">echo chambers</td><td>environments where beliefs are reinforced by repetition</td><td class="arabic">غرف الصدى</td><td class="synonyms">bubbles, closed loops, insular spaces</td></tr>
+           <tr><td class="arabic-term">confirmation bias</td><td>tendency to favor information confirming existing beliefs</td><td class="arabic">تحيز التأكيد</td><td class="synonyms">selective perception, belief persistence, congruence bias</td></tr>
+           <tr><td class="arabic-term">proportionality bias</td><td>assuming big events have big causes</td><td class="arabic">تحيز التناسب</td><td class="synonyms">magnitude bias, size-cause fallacy, large-cause assumption</td></tr>
+           <tr><td class="arabic-term">conjunction fallacy</td><td>judging conjunction as more probable than single event</td><td class="arabic">مغالطة الاقتران</td><td class="synonyms">probability error, specificity fallacy, conjunctive bias</td></tr>
+           <tr><td class="arabic-term">information overload</td><td>excessive information hindering decision-making</td><td class="arabic">تضخم المعلومات</td><td class="synonyms">data saturation, cognitive overload, infobesity</td></tr>
+           <tr><td class="arabic-term">backfire effect</td><td>correction strengthening false belief</td><td class="arabic">تأثير الارتداد</td><td class="synonyms">boomerang effect, belief reinforcement, paradoxical persistence</td></tr>
+           <tr><td class="arabic-term">pre-bunking</td><td>inoculating against misinformation in advance</td><td class="arabic">التحصين المسبق</td><td class="synonyms">preemptive debunking, psychological inoculation, anticipatory correction</td></tr>
+           <tr><td class="arabic-term">gatekeeping institutions</td><td>organizations that filter information</td><td class="arabic">مؤسسات حراسة البوابة</td><td class="synonyms">mediators, filters, traditional authorities</td></tr>
+           <tr><td class="arabic-term">grievances</td><td>real or imagined wrongs causing resentment</td><td class="arabic">مظالم / شكاوى</td><td class="synonyms">complaints, resentments, perceived injustices</td></tr>
+        </tbody>
+     </table>
+    <hr>
+    <p style="text-align: center; color: #4f46e5; font-weight: 500;">✨ C1 Level · Critical Thinking & Media Literacy ✨</p>
+</div>
+
+<script>
+    // Correct answers for passage 23 (Conspiracy Theories)
+    const correctAnswers = {
+        q1: 'b',
+        q2: 'b',
+        q3: 'b',
+        q4: 'b',
+        q5: 'b',
+        q6: 'b'
+    };
+
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (b) The psychological drivers, cognitive biases, and societal implications of conspiracy theories.';
+                break;
+            case 2: answerText = 'The correct answer is (b) The desire for understanding and certainty in the face of complex events.';
+                break;
+            case 3: answerText = 'The correct answer is (b) Judging a specific combination of events as more probable than a single general event.';
+                break;
+            case 4: answerText = 'The correct answer is (b) Algorithms prioritize engagement, surfacing sensational content, and echo chambers isolate users from dissenting views.';
+                break;
+            case 5: answerText = 'The correct answer is (b) It can paradoxically reinforce beliefs (the backfire effect).';
+                break;
+            case 6: answerText = 'The correct answer is (b) They assume large events must have large causes.';
+                break;
+            default: answerText = 'Correct answer displayed.';
+        }
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+
+    // Radio button instant feedback
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;
+            const selectedValue = this.value;
+            const correct = correctAnswers[questionId];
+
+            const feedbackId = 'feedback' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+
+            if (selectedValue === correct) {
+                feedback.textContent = '✅ Correct! Well analyzed.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Re-read the passage and try again.';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+</script>
+</body>
+</html>
