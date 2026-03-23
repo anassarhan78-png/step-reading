@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading · C1 – Passage 19: Behavioral Economics (Advanced)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #e0e7ff;
+            color: #1e293b;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #4f46e5;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #a5b4fc;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #4338ca;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #a5b4fc;
+            padding-bottom: 0.5rem;
+        }
+        .passage-text {
+            font-size: 1.2rem;
+            background: #f5f3ff;
+            padding: 2rem;
+            border-radius: 28px;
+            border: 1px solid #c7d2fe;
+            margin-bottom: 3rem;
+            line-height: 1.9;
+        }
+        .questions-section {
+            background: #e0e7ff;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #a5b4fc;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(79, 70, 229, 0.1);
+            border-left: 10px solid #818cf8;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #4f46e5;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #e0e7ff;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #4f46e5;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+        }
+        .option input[type="radio"]:checked {
+            background: #4f46e5;
+            border: 2px solid #4f46e5;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            display: none;
+        }
+        .feedback.correct {
+            color: #166534;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #991b1b;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #4f46e5;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #cbd5e1;
+            margin: 2rem 0;
+            font-size: 1rem;
+        }
+        th {
+            background: #4f46e5;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+            padding: 1rem 1.2rem;
+        }
+        td {
+            padding: 1rem 1.2rem;
+            border-bottom: 1px solid #cbd5e1;
+            vertical-align: top;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #1e293b;
+        }
+        .synonyms {
+            font-size: 0.95rem;
+            color: #4b5563;
+            margin-top: 4px;
+            font-style: italic;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #a5b4fc, transparent);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📘 STEP Reading · C1</h1>
+    <div class="sub-title">Passage 19 (Advanced) · Behavioral Economics: The Irrational Consumer</div>
+
+    <h2>💡 Beyond Homo Economicus: How Psychology Shapes Markets</h2>
+
+    <div class="passage-text">
+        <p>For much of the 20th century, classical economics operated under a foundational assumption: that human beings are rational actors who make decisions to maximize their utility. This idealized figure, known as <em>homo economicus</em>, was presumed to possess perfect information, stable preferences, and flawless computational abilities. Yet a quiet revolution, now known as behavioral economics, has fundamentally challenged this paradigm. Drawing on insights from psychology and neuroscience, behavioral economists have demonstrated that human decision-making is riddled with systematic biases, cognitive shortcuts, and emotional influences that deviate predictably from rationality.</p>
+        <p>One of the field's foundational contributions is the concept of cognitive biases—systematic patterns of deviation from rational judgment. The anchoring effect, for instance, shows that people rely disproportionately on the first piece of information encountered when making decisions. In one classic experiment, judges given a high anchor (a high sentencing suggestion) imposed longer prison sentences than those given a low anchor, despite the anchor being arbitrary. Loss aversion, another key finding, reveals that losses loom larger than equivalent gains; the pain of losing $100 is felt more intensely than the pleasure of gaining $100. This asymmetry helps explain why investors hold losing stocks too long or why consumers stick with default options even when better alternatives exist.</p>
+        <p>Prospect theory, developed by Daniel Kahneman and Amos Tversky, offered a formal alternative to expected utility theory. It posits that individuals evaluate potential outcomes relative to a reference point (often the status quo) and are risk-averse in the domain of gains but risk-seeking in the domain of losses. This framework elegantly explains phenomena that traditional economics could not, such as why people buy lottery tickets (risk-seeking for potential gains) yet purchase insurance (risk-averse to protect against losses). Their work earned Kahneman the Nobel Prize in Economics, marking the discipline's acceptance of psychological realism.</p>
+        <p>The practical implications of behavioral economics have been profound. In public policy, "nudge" theory—popularized by Richard Thaler and Cass Sunstein—advocates for designing choice architectures that steer individuals toward beneficial behaviors without restricting freedom. Automatic enrollment in retirement savings plans, for instance, dramatically increases participation rates by leveraging inertia. In marketing, companies exploit cognitive biases: limited-time offers create artificial scarcity (scarcity bias), while showing original prices slashed next to sale prices leverages anchoring. Critics, however, caution that such techniques can be manipulative, raising ethical questions about paternalism versus autonomy.</p>
+        <p>Behavioral economics has also reshaped personal finance. Understanding one's own biases—such as overconfidence, herding, and mental accounting—can mitigate costly errors. The rise of "fintech" apps that incorporate behavioral insights (like savings round-ups or spending alerts) reflects the field's maturation. As artificial intelligence and big data enable ever-more-sophisticated behavioral targeting, the ethical imperative to protect consumer autonomy grows. Ultimately, behavioral economics reminds us that to understand markets, we must first understand the messy, emotionally driven, wonderfully irrational creatures who inhabit them.</p>
+    </div>
+
+    <div class="questions-section">
+        <h3>📘 C1 STEP‑style questions – Passage 19</h3>
+
+        <!-- Question 1: Main idea -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>What is the primary focus of the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) A technical explanation of mathematical economics</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) The principles of behavioral economics, including cognitive biases, prospect theory, and applications</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) A biography of Daniel Kahneman and Amos Tversky</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) The history of retirement savings plans</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 2: Detail (anchoring effect) -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>What does the anchoring effect demonstrate about decision-making?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) People always make decisions based on complete information</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) Initial information disproportionately influences subsequent judgments</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) Judges are immune to psychological biases</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) People prefer risk in all situations</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 3: Vocabulary in context -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>As used in paragraph 2, the phrase "<em>loss aversion</em>" most likely means:</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) a strong preference for taking risks</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) the tendency to fear losses more than value equivalent gains</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) a complete indifference to financial outcomes</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) the desire to avoid any form of decision-making</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 4: Detail (prospect theory) -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>According to prospect theory, how do people behave differently in the domain of losses versus gains?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) They are risk-averse in both domains</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) They are risk-seeking in both domains</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) They are risk-averse for gains and risk-seeking for losses</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) They evaluate outcomes without any reference point</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'c')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 5: Inference (nudge theory) -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>What can be inferred about the ethical debate surrounding nudge theory?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) There is no controversy; nudges are universally accepted</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) Critics worry that nudges can be manipulative and raise questions about paternalism versus autonomy</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) Nudges are always ineffective in practice</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) Only governments use nudges, never private companies</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 6: Detail (applications) -->
+        <div class="question-item" id="q6">
+            <span class="q-num">6</span> <strong>What practical application of behavioral economics in public policy is mentioned?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q6" value="a"> (a) Mandatory retirement at age 65</label>
+                <label class="option"><input type="radio" name="q6" value="b"> (b) Automatic enrollment in retirement savings plans</label>
+                <label class="option"><input type="radio" name="q6" value="c"> (c) Banning all financial advertisements</label>
+                <label class="option"><input type="radio" name="q6" value="d"> (d) Eliminating all default options</label>
+            </div>
+            <div class="feedback" id="feedback6"></div>
+            <button class="show-answer-btn" onclick="showAnswer(6, 'b')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- Advanced vocabulary table with 12 words -->
+    <h3 style="font-size: 1.8rem; font-weight: 500; margin: 2rem 0 1rem;">🔤 Advanced Vocabulary (12 words) · with Synonyms</h3>
+      <table>
+        <thead>
+          <tr><th>Word</th><th>Meaning (English)</th><th>🇸🇦 Arabic</th><th>Synonyms (3)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="arabic-term">homo economicus</td><td>mythical rational economic agent</td><td class="arabic">الإنسان الاقتصادي العقلاني</td><td class="synonyms">rational actor, utility maximizer, self-interested agent</td></tr>
+          <tr><td class="arabic-term">systematic biases</td><td>predictable patterns of error</td><td class="arabic">تحيزات منهجية</td><td class="synonyms">predictable errors, consistent distortions, patterned deviations</td></tr>
+          <tr><td class="arabic-term">anchoring effect</td><td>over-reliance on initial information</td><td class="arabic">تأثير الإرساء / التثبيت</td><td class="synonyms">focalism, reference-point bias, first-impression effect</td></tr>
+          <tr><td class="arabic-term">loss aversion</td><td>fear of losses outweighs desire for gains</td><td class="arabic">النفور من الخسارة</td><td class="synonyms">loss sensitivity, negativity bias, asymmetric risk perception</td></tr>
+          <tr><td class="arabic-term">prospect theory</td><td>descriptive theory of decision under risk</td><td class="arabic">نظرية التوقع / الاحتمال</td><td class="synonyms">reference-dependent theory, behavioral utility theory</td></tr>
+          <tr><td class="arabic-term">reference point</td><td>baseline for evaluating outcomes</td><td class="arabic">نقطة مرجعية</td><td class="synonyms">status quo baseline, comparison standard, anchor</td></tr>
+          <tr><td class="arabic-term">nudge theory</td><td>choice architecture that guides behavior</td><td class="arabic">نظرية الدفع / التوجيه</td><td class="synonyms">libertarian paternalism, behavioral steering, gentle prompting</td></tr>
+          <tr><td class="arabic-term">choice architecture</td><td>design of decision environments</td><td class="arabic">هندسة الخيارات</td><td class="synonyms">decision context, option presentation, behavioral design</td></tr>
+          <tr><td class="arabic-term">scarcity bias</td><td>valuing items more when they seem limited</td><td class="arabic">تحيز الندرة</td><td class="synonyms">artificial scarcity, limited-quantity effect, exclusivity bias</td></tr>
+          <tr><td class="arabic-term">paternalism</td><td>limiting freedom for perceived benefit</td><td class="arabic">الأبوية / الوصاية</td><td class="synonyms">protectionism, guardianship, directed choice</td></tr>
+          <tr><td class="arabic-term">herding</td><td>following the actions of others</td><td class="arabic">سلوك القطيع</td><td class="synonyms">bandwagon effect, social proof, group conformity</td></tr>
+          <tr><td class="arabic-term">mental accounting</td><td>treating money differently based on source or use</td><td class="arabic">المحاسبة الذهنية</td><td class="synonyms">psychological budgeting, compartmentalized finance, cognitive segmentation</td></tr>
+        </tbody>
+      </table>
+    <hr>
+    <p style="text-align: center; color: #4f46e5; font-weight: 500;">✨ C1 Level · Behavioral Science & Economic Psychology ✨</p>
+</div>
+
+<script>
+    // Correct answers for passage 19 (Behavioral Economics)
+    const correctAnswers = {
+        q1: 'b',
+        q2: 'b',
+        q3: 'b',
+        q4: 'c',
+        q5: 'b',
+        q6: 'b'
+    };
+
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (b) The principles of behavioral economics, including cognitive biases, prospect theory, and applications.';
+                break;
+            case 2: answerText = 'The correct answer is (b) Initial information disproportionately influences subsequent judgments.';
+                break;
+            case 3: answerText = 'The correct answer is (b) the tendency to fear losses more than value equivalent gains.';
+                break;
+            case 4: answerText = 'The correct answer is (c) They are risk-averse for gains and risk-seeking for losses.';
+                break;
+            case 5: answerText = 'The correct answer is (b) Critics worry that nudges can be manipulative and raise questions about paternalism versus autonomy.';
+                break;
+            case 6: answerText = 'The correct answer is (b) Automatic enrollment in retirement savings plans.';
+                break;
+            default: answerText = 'Correct answer displayed.';
+        }
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+
+    // Radio button instant feedback
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;
+            const selectedValue = this.value;
+            const correct = correctAnswers[questionId];
+
+            const feedbackId = 'feedback' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+
+            if (selectedValue === correct) {
+                feedback.textContent = '✅ Correct! Well reasoned.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Re-read the passage and try again.';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+</script>
+</body>
+</html>
