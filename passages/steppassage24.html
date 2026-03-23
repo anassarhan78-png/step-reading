@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading · C1 – Passage 24: The Science of Aging (Advanced)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #e0e7ff;
+            color: #1e293b;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #4f46e5;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #a5b4fc;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #4338ca;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #a5b4fc;
+            padding-bottom: 0.5rem;
+        }
+        .passage-text {
+            font-size: 1.2rem;
+            background: #f5f3ff;
+            padding: 2rem;
+            border-radius: 28px;
+            border: 1px solid #c7d2fe;
+            margin-bottom: 3rem;
+            line-height: 1.9;
+        }
+        .questions-section {
+            background: #e0e7ff;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #a5b4fc;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(79, 70, 229, 0.1);
+            border-left: 10px solid #818cf8;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #4f46e5;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #e0e7ff;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #4f46e5;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+        }
+        .option input[type="radio"]:checked {
+            background: #4f46e5;
+            border: 2px solid #4f46e5;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            display: none;
+        }
+        .feedback.correct {
+            color: #166534;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #991b1b;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #4f46e5;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #cbd5e1;
+            margin: 2rem 0;
+            font-size: 1rem;
+        }
+        th {
+            background: #4f46e5;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+            padding: 1rem 1.2rem;
+        }
+        td {
+            padding: 1rem 1.2rem;
+            border-bottom: 1px solid #cbd5e1;
+            vertical-align: top;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #1e293b;
+        }
+        .synonyms {
+            font-size: 0.95rem;
+            color: #4b5563;
+            margin-top: 4px;
+            font-style: italic;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #a5b4fc, transparent);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📘 STEP Reading · C1</h1>
+    <div class="sub-title">Passage 24 (Advanced) · The Longevity Revolution: Decoding Aging</div>
+
+    <h2>⏳ Beyond the Clock: Biology, Healthspan, and the Future of Aging</h2>
+
+    <div class="passage-text">
+        <p>Aging is often viewed as an inevitable, linear decline, yet modern biogerontology has revealed it to be a malleable process shaped by genetics, environment, and chance. Over the past three decades, researchers have identified conserved molecular pathways that influence lifespan across species, from yeast to mammals. The realization that aging itself can be therapeutically targeted—rather than merely treating age-related diseases—has catalyzed a paradigm shift. Today, the pursuit of "healthspan"—the period of life spent free from chronic disease and disability—has become as important as extending total lifespan.</p>
+        <p>At the cellular level, aging is driven by the accumulation of damage across multiple systems. The hallmarks of aging, first defined in a seminal 2013 paper, include genomic instability, telomere attrition, epigenetic alterations, loss of proteostasis, mitochondrial dysfunction, cellular senescence, stem cell exhaustion, and altered intercellular communication. These interconnected processes create a vicious cycle: one hallmark can exacerbate others, accelerating decline. For example, senescent cells—"zombie" cells that stop dividing but secrete inflammatory molecules—spread damage to neighboring tissues, contributing to arthritis, cardiovascular disease, and neurodegeneration.</p>
+        <p>Caloric restriction (CR) remains the most robust intervention for extending lifespan in laboratory animals, from worms to primates. While the mechanisms are still under investigation, CR appears to activate stress-response pathways such as AMPK and sirtuins, enhancing cellular repair and metabolic efficiency. Pharmacological mimics—including metformin, rapamycin, and resveratrol—are being studied for their potential to confer CR-like benefits without severe dietary restrictions. More recently, senolytics—drugs that selectively clear senescent cells—have shown remarkable results in animal models, rejuvenating tissues and extending healthspan.</p>
+        <p>The translation of these discoveries to humans faces substantial hurdles. Aging is not a single disease but a complex, multifactorial process; interventions that work in mice may have unintended consequences in humans. Longevity clinical trials require decades of follow-up, complicating regulatory pathways. Furthermore, the commercialization of anti-aging interventions raises ethical concerns: will such treatments exacerbate inequality if available only to the wealthy? The concept of "geroscience"—that targeting aging itself can prevent multiple diseases simultaneously—offers a compelling rationale, but societal consensus on priorities and access remains elusive.</p>
+        <p>Beyond biology, aging intersects with profound philosophical questions. If we dramatically extend healthy lifespan, how would we restructure education, careers, and retirement? What would it mean for population dynamics, intergenerational equity, and the environment? The desire to transcend aging is ancient, yet its realization would demand not only scientific breakthroughs but also a reimagining of social contracts. As we inch closer to interventions that slow, halt, or reverse aspects of aging, the question shifts from "Can we?" to "Should we?"—and under what conditions.</p>
+    </div>
+
+    <div class="questions-section">
+        <h3>📘 C1 STEP‑style questions – Passage 24</h3>
+
+        <!-- Question 1: Main idea -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>What is the primary focus of the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) A detailed comparison of aging across species</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) The biological mechanisms of aging, emerging interventions, and the ethical and societal implications of longevity research</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) A historical overview of caloric restriction studies</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) The economic costs of age-related diseases</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 2: Detail (hallmarks of aging) -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>What characterizes "senescent cells" as described in the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) They divide rapidly and promote tissue growth</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) They have stopped dividing but secrete inflammatory molecules that damage neighboring tissues</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) They are immune cells that protect against infection</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) They are stem cells that regenerate damaged organs</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 3: Vocabulary in context -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>As used in paragraph 3, the word "<em>senolytics</em>" most likely refers to:</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) Drugs that mimic caloric restriction</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) Compounds that selectively eliminate senescent cells</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) Genetic therapies that extend telomeres</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) Nutritional supplements that boost mitochondrial function</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 4: Detail (caloric restriction) -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>What is caloric restriction (CR) noted for in aging research?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) It has no effect on lifespan in any species</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) It is the most robust intervention for extending lifespan in laboratory animals, activating stress-response pathways</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) It has been proven to reverse aging completely in humans</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) It works only in yeast, not in mammals</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 5: Inference (ethical concerns) -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>What can be inferred about the commercialization of anti-aging interventions?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) It is unlikely to raise any ethical concerns</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) It may exacerbate inequality if such treatments are accessible only to the wealthy</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) All anti-aging products are already affordable and widely available</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) Governments have already banned all anti-aging research</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 6: Detail (geroscience concept) -->
+        <div class="question-item" id="q6">
+            <span class="q-num">6</span> <strong>What does the concept of "geroscience" propose?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q6" value="a"> (a) Aging should be treated as a single disease with a single cure</label>
+                <label class="option"><input type="radio" name="q6" value="b"> (b) Targeting aging itself can prevent multiple age-related diseases simultaneously</label>
+                <label class="option"><input type="radio" name="q6" value="c"> (c) Only genetic interventions can influence the aging process</label>
+                <label class="option"><input type="radio" name="q6" value="d"> (d) Aging research should focus exclusively on lifespan extension, not healthspan</label>
+            </div>
+            <div class="feedback" id="feedback6"></div>
+            <button class="show-answer-btn" onclick="showAnswer(6, 'b')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- Advanced vocabulary table with 12 words -->
+    <h3 style="font-size: 1.8rem; font-weight: 500; margin: 2rem 0 1rem;">🔤 Advanced Vocabulary (12 words) · with Synonyms</h3>
+     <table>
+        <thead>
+            <tr><th>Word</th><th>Meaning (English)</th><th>🇸🇦 Arabic</th><th>Synonyms (3)</th>            
+        </thead>
+        <tbody>
+            <tr><td class="arabic-term">biogerontology</td><td>study of the biological basis of aging</td><td class="arabic">بيولوجيا الشيخوخة</td><td class="synonyms">aging biology, geroscience, senescence research</td></tr>
+            <tr><td class="arabic-term">malleable</td><td>capable of being changed or shaped</td><td class="arabic">قابل للتشكيل / مرن</td><td class="synonyms">pliable, adaptable, modifiable</td></tr>
+            <tr><td class="arabic-term">paradigm shift</td><td>fundamental change in approach</td><td class="arabic">تحول نموذجي</td><td class="synonyms">revolution, transformation, sea change</td></tr>
+            <tr><td class="arabic-term">healthspan</td><td>period of life free from serious disease</td><td class="arabic">فترة الصحة النشطة</td><td class="synonyms">healthy years, disease-free life, functional longevity</td></tr>
+            <tr><td class="arabic-term">hallmarks of aging</td><td>key biological processes driving aging</td><td class="arabic">سمات الشيخوخة المميزة</td><td class="synonyms">aging pillars, fundamental mechanisms, core processes</td></tr>
+            <tr><td class="arabic-term">telomere attrition</td><td>shortening of protective chromosome ends</td><td class="arabic">تقصير التيلوميرات</td><td class="synonyms">telomere loss, chromosomal erosion, end-replication problem</td></tr>
+            <tr><td class="arabic-term">senescent cells</td><td>non-dividing cells that secrete inflammatory factors</td><td class="arabic">خلايا شيخوخة / خلايا زومبي</td><td class="synonyms">zombie cells, aged cells, quiescent inflammatory cells</td></tr>
+            <tr><td class="arabic-term">caloric restriction (CR)</td><td>dietary regimen reducing calorie intake without malnutrition</td><td class="arabic">تقييد السعرات الحرارية</td><td class="synonyms">dietary restriction, energy limitation, CR</td></tr>
+            <tr><td class="arabic-term">senolytics</td><td>drugs that selectively eliminate senescent cells</td><td class="arabic">أدوية زوال الشيخوخة</td><td class="synonyms">anti-senescence drugs, senolytic agents, seno-therapeutics</td></tr>
+            <tr><td class="arabic-term">geroscience</td><td>approach targeting aging to prevent multiple diseases</td><td class="arabic">علوم الشيخوخة الطبية</td><td class="synonyms">aging-centered medicine, longevity science, unified aging theory</td></tr>
+            <tr><td class="arabic-term">intergenerational equity</td><td>fairness between different age cohorts</td><td class="arabic">العدالة بين الأجيال</td><td class="synonyms">generational fairness, age-group balance, cross-generational justice</td></tr>
+            <tr><td class="arabic-term">social contracts</td><td>implicit agreements shaping societal structures</td><td class="arabic">عقود اجتماعية</td><td class="synonyms">societal norms, collective agreements, civic frameworks</td></tr>
+        </tbody>
+     </table>
+    <hr>
+    <p style="text-align: center; color: #4f46e5; font-weight: 500;">✨ C1 Level · Biomedical Ethics & Longevity Science ✨</p>
+</div>
+
+<script>
+    // Correct answers for passage 24 (Aging)
+    const correctAnswers = {
+        q1: 'b',
+        q2: 'b',
+        q3: 'b',
+        q4: 'b',
+        q5: 'b',
+        q6: 'b'
+    };
+
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (b) The biological mechanisms of aging, emerging interventions, and the ethical and societal implications of longevity research.';
+                break;
+            case 2: answerText = 'The correct answer is (b) They have stopped dividing but secrete inflammatory molecules that damage neighboring tissues.';
+                break;
+            case 3: answerText = 'The correct answer is (b) Compounds that selectively eliminate senescent cells.';
+                break;
+            case 4: answerText = 'The correct answer is (b) It is the most robust intervention for extending lifespan in laboratory animals, activating stress-response pathways.';
+                break;
+            case 5: answerText = 'The correct answer is (b) It may exacerbate inequality if such treatments are accessible only to the wealthy.';
+                break;
+            case 6: answerText = 'The correct answer is (b) Targeting aging itself can prevent multiple age-related diseases simultaneously.';
+                break;
+            default: answerText = 'Correct answer displayed.';
+        }
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+
+    // Radio button instant feedback
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;
+            const selectedValue = this.value;
+            const correct = correctAnswers[questionId];
+
+            const feedbackId = 'feedback' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+
+            if (selectedValue === correct) {
+                feedback.textContent = '✅ Correct! Well reasoned.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Re-read the passage and try again.';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+</script>
+</body>
+</html>
