@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading · C1 – Passage 17: The Philosophy of Consciousness (Advanced)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #e0e7ff;
+            color: #1e293b;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #4f46e5;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #a5b4fc;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #4338ca;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #a5b4fc;
+            padding-bottom: 0.5rem;
+        }
+        .passage-text {
+            font-size: 1.2rem;
+            background: #f5f3ff;
+            padding: 2rem;
+            border-radius: 28px;
+            border: 1px solid #c7d2fe;
+            margin-bottom: 3rem;
+            line-height: 1.9;
+        }
+        .questions-section {
+            background: #e0e7ff;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #a5b4fc;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(79, 70, 229, 0.1);
+            border-left: 10px solid #818cf8;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #4f46e5;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #e0e7ff;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #4f46e5;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+        }
+        .option input[type="radio"]:checked {
+            background: #4f46e5;
+            border: 2px solid #4f46e5;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            display: none;
+        }
+        .feedback.correct {
+            color: #166534;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #991b1b;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #4f46e5;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #cbd5e1;
+            margin: 2rem 0;
+            font-size: 1rem;
+        }
+        th {
+            background: #4f46e5;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+            padding: 1rem 1.2rem;
+        }
+        td {
+            padding: 1rem 1.2rem;
+            border-bottom: 1px solid #cbd5e1;
+            vertical-align: top;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #1e293b;
+        }
+        .synonyms {
+            font-size: 0.95rem;
+            color: #4b5563;
+            margin-top: 4px;
+            font-style: italic;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #a5b4fc, transparent);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📘 STEP Reading · C1</h1>
+    <div class="sub-title">Passage 17 (Advanced) · The Enigma of Consciousness</div>
+
+    <h2>🧠 What Is It Like to Be? The Mind-Body Problem</h2>
+
+    <div class="passage-text">
+        <p>Consciousness—the subjective experience of being—remains one of the most profound and intractable puzzles in science and philosophy. Despite remarkable advances in neuroscience, the question of how physical processes in the brain give rise to the rich tapestry of sensations, emotions, and self-awareness continues to elude explanation. This "hard problem of consciousness," as philosopher David Chalmers termed it, distinguishes between easy problems (explaining brain functions like attention or memory) and the truly mysterious one: why and how do these functions generate inner experience?</p>
+        <p>The dominant framework in contemporary cognitive science is materialism, or physicalism, which holds that consciousness is entirely a product of neural activity. According to this view, once we have a complete account of the brain's information-processing mechanisms, we will have explained consciousness. Yet critics argue that this leaves a gap: no matter how detailed the neural description, it does not capture the "what it's like" dimension—the redness of red, the pain of a burn, the flavor of chocolate. This subjective quality, termed qualia, seems to resist reduction to objective description.</p>
+        <p>Alternative perspectives challenge materialism's assumptions. Panpsychism, an ancient idea revived in contemporary philosophy, posits that consciousness is a fundamental feature of reality, present to varying degrees in all matter. While counterintuitive, this view sidesteps the problem of explaining how consciousness emerges from non-conscious matter. Dualism, associated with René Descartes, maintains a separation between mind and body, though it struggles to explain how they interact. Functionalism, influential in artificial intelligence, argues that consciousness is defined by causal roles rather than physical substance—a theory that implies sufficiently advanced machines could be conscious.</p>
+        <p>Neuroscience has not remained neutral in these debates. The discovery of neural correlates of consciousness (NCC)—brain activity patterns reliably associated with conscious experience—has provided empirical traction. Techniques such as functional magnetic resonance imaging (fMRI) and electroencephalography (EEG) have identified global brain networks, particularly frontoparietal regions, that correlate with conscious awareness. Yet correlation is not causation, and the search for the "neural signature" of consciousness continues. The integrated information theory (IIT), proposed by neuroscientist Giulio Tononi, attempts to quantify consciousness mathematically, suggesting it corresponds to a system's capacity to integrate information.</p>
+        <p>The stakes of these inquiries extend beyond academia. How we understand consciousness shapes ethics: Does consciousness confer moral status? Could artificial intelligence suffer? Is brain death truly the end of experience? As neurotechnologies advance, questions of cognitive liberty and mental privacy emerge. Whether consciousness remains an impenetrable mystery or yields to scientific explanation, the quest to understand it reflects a fundamental human drive—to know not only how we function, but who we are.</p>
+    </div>
+
+    <div class="questions-section">
+        <h3>📘 C1 STEP‑style questions – Passage 17</h3>
+
+        <!-- Question 1: Main idea -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>What is the primary focus of the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) A detailed explanation of brain imaging techniques</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) The historical development of dualism in philosophy</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) The philosophical and scientific challenges of explaining consciousness</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) A comparison of animal and human consciousness</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'c')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 2: Detail (hard problem) -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>According to the passage, what distinguishes the "hard problem" of consciousness?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) It requires expensive equipment to study</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) It involves explaining how physical processes generate subjective experience</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) It has already been solved by modern neuroscience</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) It only concerns memory and attention</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 3: Vocabulary in context -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>As used in paragraph 2, the word "<em>qualia</em>" most likely refers to:</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) Electrical signals in the brain</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) The subjective, qualitative aspects of conscious experience</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) Logical reasoning processes</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) Philosophical arguments against materialism</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 4: Detail (alternative theories) -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>Which theory mentioned in the passage suggests that consciousness is a fundamental property of matter?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) Dualism</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) Functionalism</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) Panpsychism</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) Physicalism</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'c')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 5: Inference (implications) -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>What can be inferred about the ethical implications of consciousness research?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) They are irrelevant to scientific inquiry</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) They include questions about moral status, AI suffering, and brain death</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) Only philosophers should discuss ethical implications</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) Ethics will be resolved by neuroscience alone</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 6: Detail (neuroscientific approach) -->
+        <div class="question-item" id="q6">
+            <span class="q-num">6</span> <strong>What is the integrated information theory (IIT) described in the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q6" value="a"> (a) A philosophical argument that consciousness does not exist</label>
+                <label class="option"><input type="radio" name="q6" value="b"> (b) A mathematical framework proposing that consciousness corresponds to a system's capacity to integrate information</label>
+                <label class="option"><input type="radio" name="q6" value="c"> (c) A method for scanning brain activity during sleep</label>
+                <label class="option"><input type="radio" name="q6" value="d"> (d) A clinical treatment for disorders of consciousness</label>
+            </div>
+            <div class="feedback" id="feedback6"></div>
+            <button class="show-answer-btn" onclick="showAnswer(6, 'b')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- Advanced vocabulary table with 12 words -->
+    <h3 style="font-size: 1.8rem; font-weight: 500; margin: 2rem 0 1rem;">🔤 Advanced Vocabulary (12 words) · with Synonyms</h3>
+     <table>
+        <thead>
+             <tr><th>Word</th><th>Meaning (English)</th><th>🇸🇦 Arabic</th><th>Synonyms (3)</th></tr>
+        </thead>
+        <tbody>
+             <tr><td class="arabic-term">intractable</td><td>difficult to manage or solve</td><td class="arabic">عنيد / عصي الحل</td><td class="synonyms">stubborn, unyielding, insoluble</td></tr>
+             <tr><td class="arabic-term">subjective experience</td><td>personal, internal perspective</td><td class="arabic">تجربة ذاتية</td><td class="synonyms">first-person perspective, inner life, phenomenology</td></tr>
+             <tr><td class="arabic-term">materialism</td><td>view that only physical matter exists</td><td class="arabic">مادية / فيزيائية</td><td class="synonyms">physicalism, naturalism, monism</td></tr>
+             <tr><td class="arabic-term">qualia</td><td>individual instances of subjective experience</td><td class="arabic">كواليا / خبرات نوعية</td><td class="synonyms">sensory qualities, phenomenal properties, raw feels</td></tr>
+             <tr><td class="arabic-term">panpsychism</td><td>belief that consciousness is universal in matter</td><td class="arabic">شاملة الوعي / شمولية العقل</td><td class="synonyms">universal consciousness, mind-in-nature, cosmopsychism</td></tr>
+             <tr><td class="arabic-term">dualism</td><td>mind and body are distinct substances</td><td class="arabic">ثنائية</td><td class="synonyms">mind-body separation, Cartesian dualism, substance dualism</td></tr>
+             <tr><td class="arabic-term">functionalism</td><td>mental states defined by causal roles</td><td class="arabic">وظائفية</td><td class="synonyms">role functionalism, computational functionalism, causal theory</td></tr>
+             <tr><td class="arabic-term">neural correlates of consciousness (NCC)</td><td>brain activity patterns linked to awareness</td><td class="arabic">المرتبطات العصبية للوعي</td><td class="synonyms">NCC, neural substrates, consciousness signatures</td></tr>
+             <tr><td class="arabic-term">integrated information theory (IIT)</td><td>theory quantifying consciousness as information integration</td><td class="arabic">نظرية المعلومات المتكاملة</td><td class="synonyms">IIT, phi theory, information integration framework</td></tr>
+             <tr><td class="arabic-term">cognitive liberty</td><td>freedom to control one's own mental processes</td><td class="arabic">حرية معرفية</td><td class="synonyms">mental autonomy, freedom of thought, neuro-rights</td></tr>
+             <tr><td class="arabic-term">empirical traction</td><td>practical progress through evidence</td><td class="arabic">زخم تجريبي / تقدم ملموس</td><td class="synonyms">evidence-based progress, measurable advancement, data-driven insight</td></tr>
+             <tr><td class="arabic-term">correlation is not causation</td><td>relationship does not imply cause</td><td class="arabic">الارتباط لا يعني السببية</td><td class="synonyms">association ≠ causation, non-causal link, spurious correlation</td></tr>
+        </tbody>
+     </table>
+    <hr>
+    <p style="text-align: center; color: #4f46e5; font-weight: 500;">✨ C1 Level · Philosophy of Mind & Neuroscience ✨</p>
+</div>
+
+<script>
+    // Correct answers for passage 17 (Consciousness)
+    const correctAnswers = {
+        q1: 'c',
+        q2: 'b',
+        q3: 'b',
+        q4: 'c',
+        q5: 'b',
+        q6: 'b'
+    };
+
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (c) The philosophical and scientific challenges of explaining consciousness.';
+                break;
+            case 2: answerText = 'The correct answer is (b) It involves explaining how physical processes generate subjective experience.';
+                break;
+            case 3: answerText = 'The correct answer is (b) The subjective, qualitative aspects of conscious experience.';
+                break;
+            case 4: answerText = 'The correct answer is (c) Panpsychism.';
+                break;
+            case 5: answerText = 'The correct answer is (b) They include questions about moral status, AI suffering, and brain death.';
+                break;
+            case 6: answerText = 'The correct answer is (b) A mathematical framework proposing that consciousness corresponds to a system’s capacity to integrate information.';
+                break;
+            default: answerText = 'Correct answer displayed.';
+        }
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+
+    // Radio button instant feedback
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;
+            const selectedValue = this.value;
+            const correct = correctAnswers[questionId];
+
+            const feedbackId = 'feedback' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+
+            if (selectedValue === correct) {
+                feedback.textContent = '✅ Correct! Well reasoned.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Re-read the passage and try again.';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+</script>
+</body>
+</html>
