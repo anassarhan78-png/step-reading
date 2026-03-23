@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading · C1 – Passage 9: The Psychology of Social Media (Advanced)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #e0e7ff;
+            color: #1e293b;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #4f46e5;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #a5b4fc;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #4338ca;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #a5b4fc;
+            padding-bottom: 0.5rem;
+        }
+        .passage-text {
+            font-size: 1.2rem;
+            background: #f5f3ff;
+            padding: 2rem;
+            border-radius: 28px;
+            border: 1px solid #c7d2fe;
+            margin-bottom: 3rem;
+            line-height: 1.9;
+        }
+        .questions-section {
+            background: #e0e7ff;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #a5b4fc;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(79, 70, 229, 0.1);
+            border-left: 10px solid #818cf8;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #4f46e5;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #e0e7ff;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #4f46e5;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+        }
+        .option input[type="radio"]:checked {
+            background: #4f46e5;
+            border: 2px solid #4f46e5;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            display: none;
+        }
+        .feedback.correct {
+            color: #166534;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #991b1b;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #4f46e5;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #cbd5e1;
+            margin: 2rem 0;
+            font-size: 1rem;
+        }
+        th {
+            background: #4f46e5;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+            padding: 1rem 1.2rem;
+        }
+        td {
+            padding: 1rem 1.2rem;
+            border-bottom: 1px solid #cbd5e1;
+            vertical-align: top;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #1e293b;
+        }
+        .synonyms {
+            font-size: 0.95rem;
+            color: #4b5563;
+            margin-top: 4px;
+            font-style: italic;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #a5b4fc, transparent);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📘 STEP Reading · C1</h1>
+    <div class="sub-title">Passage 9 (Advanced) · The Digital Self: Psychology of Social Media</div>
+
+    <h2>📱 Beyond the Screen: Understanding Social Media’s Psychological Grip</h2>
+
+    <div class="passage-text">
+        <p>Social media platforms have evolved from mere communication tools into intricate ecosystems that profoundly shape human behavior, cognition, and emotional well-being. With over four billion active users globally, these platforms are not passive conduits but active architects of experience, employing sophisticated algorithms designed to maximize engagement. The psychological implications of this transformation are vast, encompassing both unprecedented opportunities for connection and emergent risks to mental health, identity formation, and social cohesion.</p>
+        <p>At the heart of social media’s allure lies the dopamine-driven feedback loop. Notifications, likes, and comments trigger the brain’s reward system, creating intermittent reinforcement that parallels mechanisms seen in behavioral addiction. This design, while commercially effective, can foster compulsive usage patterns. Research has linked excessive social media consumption to heightened rates of anxiety, depression, and loneliness, particularly among adolescents and young adults. The curated nature of online personas exacerbates social comparison, as users juxtapose their authentic lives against idealized portrayals, often leading to diminished self-esteem.</p>
+        <p>Beyond individual psychology, social media reshapes collective dynamics. Echo chambers and filter bubbles—products of algorithmic curation—reinforce existing beliefs while insulating users from dissenting viewpoints. This fragmentation contributes to political polarization and erodes shared epistemic foundations. Furthermore, the virality of misinformation exploits cognitive biases, with emotionally charged content spreading faster than factual reporting. The architecture of platforms prioritizes engagement over accuracy, creating perverse incentives that undermine public discourse.</p>
+        <p>Yet, the narrative is not one of unmitigated harm. Social media facilitates marginalized voices, enables grassroots movements, and provides lifelines for isolated individuals. Platforms have become arenas for identity exploration, community building, and civic participation. The challenge lies in harnessing these benefits while mitigating adverse effects. Emerging research advocates for digital literacy education, design modifications that prioritize well-being, and regulatory frameworks that demand transparency from tech companies. The concept of “digital minimalism” has gained traction, encouraging intentional technology use over passive consumption.</p>
+        <p>Ultimately, social media is a mirror reflecting human desires for connection, validation, and belonging—amplified by unprecedented technological power. Navigating this landscape requires critical self-awareness, collective responsibility, and a willingness to reshape the digital environments we inhabit. As these platforms continue to evolve, the question is no longer whether they influence us, but how we choose to wield that influence for individual and societal flourishing.</p>
+    </div>
+
+    <div class="questions-section">
+        <h3>📘 C1 STEP‑style questions – Passage 9</h3>
+
+        <!-- Question 1: Main idea -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>What is the primary focus of the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) A technical explanation of social media algorithms</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) The economic success of social media companies</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) The psychological effects of social media, both positive and negative, and potential responses</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) A comparison of different social media platforms</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'c')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 2: Detail (dopamine and addiction) -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>According to the passage, what mechanism underlies compulsive social media usage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) Constant availability of new content</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) Dopamine-driven feedback loops with intermittent reinforcement</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) Peer pressure from social circles</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) Lack of alternative entertainment</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 3: Vocabulary in context -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>As used in paragraph 2, the word "<em>curated</em>" most nearly means:</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) randomly generated</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) carefully selected and presented to create a desired impression</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) excessively filtered to the point of inauthenticity</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) automatically posted without human intervention</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 4: Detail (echo chambers) -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>What societal consequence of algorithmic curation does the passage identify?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) Increased cross-cultural understanding</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) Political polarization and erosion of shared factual understanding</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) Decline in overall internet usage</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) Strengthening of traditional media</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 5: Inference (solutions) -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>What can be inferred about the author’s view on addressing social media’s negative effects?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) Only government regulation can solve the problem</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) A combination of individual digital literacy, design changes, and regulation is needed</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) The negative effects are exaggerated and require no intervention</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) Social media should be abandoned entirely</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 6: Detail (positive aspects) -->
+        <div class="question-item" id="q6">
+            <span class="q-num">6</span> <strong>What positive aspect of social media is mentioned in the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q6" value="a"> (a) It has eliminated all forms of loneliness</label>
+                <label class="option"><input type="radio" name="q6" value="b"> (b) It facilitates marginalized voices and grassroots movements</label>
+                <label class="option"><input type="radio" name="q6" value="c"> (c) It guarantees accurate information sharing</label>
+                <label class="option"><input type="radio" name="q6" value="d"> (d) It has replaced all traditional forms of communication</label>
+            </div>
+            <div class="feedback" id="feedback6"></div>
+            <button class="show-answer-btn" onclick="showAnswer(6, 'b')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- Advanced vocabulary table with 12 words -->
+    <h3 style="font-size: 1.8rem; font-weight: 500; margin: 2rem 0 1rem;">🔤 Advanced Vocabulary (12 words) · with Synonyms</h3>
+    <table>
+        <thead>
+            <tr><th>Word</th><th>Meaning (English)</th><th>🇸🇦 Arabic</th><th>Synonyms (3)</th></tr>
+        </thead>
+        <tbody>
+            <tr><td class="arabic-term">ecosystems</td><td>complex networks or systems</td><td class="arabic">نظم بيئية / أنظمة مترابطة</td><td class="synonyms">networks, environments, interconnected systems</td></tr>
+            <tr><td class="arabic-term">conduits</td><td>channels for transmitting something</td><td class="arabic">قنوات / وسائط</td><td class="synonyms">channels, pipelines, vehicles</td></tr>
+            <tr><td class="arabic-term">dopamine-driven feedback loop</td><td>reward cycle involving the neurotransmitter dopamine</td><td class="arabic">حلقة تغذية راجعة مدفوعة بالدوبامين</td><td class="synonyms">reward cycle, reinforcement mechanism, pleasure loop</td></tr>
+            <tr><td class="arabic-term">intermittent reinforcement</td><td>unpredictable reward schedule that encourages repeated behavior</td><td class="arabic">تعزيز متقطع</td><td class="synonyms">variable rewards, unpredictable incentives, sporadic reinforcement</td></tr>
+            <tr><td class="arabic-term">social comparison</td><td>evaluating oneself against others</td><td class="arabic">مقارنة اجتماعية</td><td class="synonyms">self-evaluation, relative standing, peer comparison</td></tr>
+            <tr><td class="arabic-term">echo chambers</td><td>environments where beliefs are reinforced by repetition</td><td class="arabic">غرف الصدى</td><td class="synonyms">bubbles, closed loops, insular spaces</td></tr>
+            <tr><td class="arabic-term">filter bubbles</td><td>algorithmic isolation from opposing views</td><td class="arabic">فقاعات التصفية</td><td class="synonyms">personalized silos, algorithmic segregation, curated isolation</td></tr>
+            <tr><td class="arabic-term">epistemic foundations</td><td>bases of knowledge or belief</td><td class="arabic">أسس معرفية</td><td class="synonyms">knowledge bases, belief structures, truth frameworks</td></tr>
+            <tr><td class="arabic-term">virality</td><td>rapid widespread sharing</td><td class="arabic">الانتشار الفيروسي</td><td class="synonyms">rapid spread, contagious distribution, exponential sharing</td></tr>
+            <tr><td class="arabic-term">perverse incentives</td><td>rewards that produce unintended negative outcomes</td><td class="arabic">حوافز منحرفة</td><td class="synonyms">counterproductive motivations, adverse incentives, dysfunctional rewards</td></tr>
+            <tr><td class="arabic-term">digital minimalism</td><td>philosophy of intentional technology use</td><td class="arabic">الحد الأدنى الرقمي</td><td class="synonyms">tech intentionality, mindful technology use, restrained digital consumption</td></tr>
+            <tr><td class="arabic-term">flourishing</td><td>thriving; optimal well-being</td><td class="arabic">ازدهار / رفاهية متكاملة</td><td class="synonyms">thriving, prospering, well-being</td></tr>
+        </tbody>
+     </table>
+    <hr>
+    <p style="text-align: center; color: #4f46e5; font-weight: 500;">✨ C1 Level · Digital Literacy & Critical Psychology ✨</p>
+</div>
+
+<script>
+    // Correct answers for passage 9 (Social Media Psychology)
+    const correctAnswers = {
+        q1: 'c',
+        q2: 'b',
+        q3: 'b',
+        q4: 'b',
+        q5: 'b',
+        q6: 'b'
+    };
+
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (c) The psychological effects of social media, both positive and negative, and potential responses.';
+                break;
+            case 2: answerText = 'The correct answer is (b) Dopamine-driven feedback loops with intermittent reinforcement.';
+                break;
+            case 3: answerText = 'The correct answer is (b) carefully selected and presented to create a desired impression.';
+                break;
+            case 4: answerText = 'The correct answer is (b) Political polarization and erosion of shared factual understanding.';
+                break;
+            case 5: answerText = 'The correct answer is (b) A combination of individual digital literacy, design changes, and regulation is needed.';
+                break;
+            case 6: answerText = 'The correct answer is (b) It facilitates marginalized voices and grassroots movements.';
+                break;
+            default: answerText = 'Correct answer displayed.';
+        }
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+
+    // Radio button instant feedback
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;
+            const selectedValue = this.value;
+            const correct = correctAnswers[questionId];
+
+            const feedbackId = 'feedback' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+
+            if (selectedValue === correct) {
+                feedback.textContent = '✅ Correct! Well analyzed.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Re-read the passage and try again.';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+</script>
+</body>
+</html>
