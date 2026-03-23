@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading · C1 – Passage 21: Climate Change (Advanced)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #e0e7ff;
+            color: #1e293b;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #4f46e5;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #a5b4fc;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #4338ca;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #a5b4fc;
+            padding-bottom: 0.5rem;
+        }
+        .passage-text {
+            font-size: 1.2rem;
+            background: #f5f3ff;
+            padding: 2rem;
+            border-radius: 28px;
+            border: 1px solid #c7d2fe;
+            margin-bottom: 3rem;
+            line-height: 1.9;
+        }
+        .questions-section {
+            background: #e0e7ff;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #a5b4fc;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(79, 70, 229, 0.1);
+            border-left: 10px solid #818cf8;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #4f46e5;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #e0e7ff;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #4f46e5;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+        }
+        .option input[type="radio"]:checked {
+            background: #4f46e5;
+            border: 2px solid #4f46e5;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            display: none;
+        }
+        .feedback.correct {
+            color: #166534;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #991b1b;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #4f46e5;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #cbd5e1;
+            margin: 2rem 0;
+            font-size: 1rem;
+        }
+        th {
+            background: #4f46e5;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+            padding: 1rem 1.2rem;
+        }
+        td {
+            padding: 1rem 1.2rem;
+            border-bottom: 1px solid #cbd5e1;
+            vertical-align: top;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #1e293b;
+        }
+        .synonyms {
+            font-size: 0.95rem;
+            color: #4b5563;
+            margin-top: 4px;
+            font-style: italic;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #a5b4fc, transparent);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📘 STEP Reading · C1</h1>
+    <div class="sub-title">Passage 21 (Advanced) · The Climate Imperative: Science, Impacts, and Pathways</div>
+
+    <h2>🌡️ Earth's Fever: Understanding and Responding to Climate Change</h2>
+
+    <div class="passage-text">
+        <p>Climate change has emerged as the defining challenge of the twenty-first century, a phenomenon that transcends national borders and demands collective action. The scientific consensus is unequivocal: Earth's average surface temperature has risen by approximately 1.1°C since the pre-industrial era, driven primarily by anthropogenic emissions of greenhouse gases—carbon dioxide, methane, and nitrous oxide. These emissions, largely from burning fossil fuels, deforestation, and industrial processes, trap heat in the atmosphere, altering the planet's energy balance. The consequences extend far beyond rising thermometers, manifesting in intensifying extreme weather, sea-level rise, biodiversity collapse, and profound disruptions to human systems.</p>
+        <p>The Intergovernmental Panel on Climate Change (IPCC), the UN's authoritative body on climate science, has warned that every increment of warming amplifies risks. At 1.5°C, coral reefs are projected to decline by 70-90%; at 2°C, virtually all are lost. Agricultural yields decline, heatwaves become life-threatening, and the probability of crossing irreversible tipping points—such as the collapse of the Greenland ice sheet or the Amazon rainforest dieback—increases. The concept of "climate justice" has gained prominence, recognizing that those least responsible for emissions—low-income nations and marginalized communities—often bear the heaviest burdens.</p>
+        <p>Mitigation—reducing greenhouse gas emissions—constitutes the primary response. The Paris Agreement of 2015 established a framework for nations to set nationally determined contributions (NDCs) toward limiting warming to well below 2°C, ideally 1.5°C. Achieving these goals requires a fundamental transformation of energy systems, transport, agriculture, and industry. The shift to renewable energy has accelerated dramatically, with solar and wind now cheaper than new fossil-fuel plants in most regions. Yet current pledges fall short; emissions continue to rise, and the window for limiting warming to 1.5°C is rapidly closing.</p>
+        <p>Adaptation, the second pillar of response, involves adjusting to unavoidable impacts. This ranges from building sea walls and developing drought-resistant crops to redesigning urban infrastructure and establishing early-warning systems. However, adaptation has limits, and beyond certain thresholds, some impacts become unmanageable. The concept of "loss and damage" has emerged as a contentious issue in international negotiations, referring to the irreversible harms that exceed adaptive capacity.</p>
+        <p>Technological innovation offers hope: carbon capture and storage, green hydrogen, advanced nuclear, and nature-based solutions like reforestation all play roles. Yet technology alone cannot solve a problem rooted in economic systems and consumption patterns. The transition requires political will, behavioral change, and a reimagining of prosperity beyond GDP. As the impacts of climate change intensify, the distinction between mitigation and adaptation blurs; every fraction of a degree prevented reduces suffering. Ultimately, the climate crisis is a test of human foresight, cooperation, and capacity for collective action—a test that will define the legacy of our generation.</p>
+    </div>
+
+    <div class="questions-section">
+        <h3>📘 C1 STEP‑style questions – Passage 21</h3>
+
+        <!-- Question 1: Main idea -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>What is the primary focus of the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) A detailed history of the IPCC and its reports</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) The science of climate change, its impacts, and the necessary mitigation and adaptation responses</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) A comparison of renewable energy technologies</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) The economic costs of climate change in developed countries</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 2: Detail (IPCC findings) -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>According to the IPCC, what is a projected consequence of a 2°C temperature increase compared to 1.5°C?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) No additional risks beyond 1.5°C</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) Virtual loss of all coral reefs and increased risk of irreversible tipping points</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) Decreased frequency of extreme weather events</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) Agricultural yields would increase globally</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 3: Vocabulary in context -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>As used in paragraph 2, the phrase "<em>tipping points</em>" most likely means:</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) minor fluctuations in temperature</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) thresholds beyond which changes become self-perpetuating and irreversible</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) economic benchmarks for climate finance</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) temporary setbacks in emissions reduction</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 4: Detail (mitigation and adaptation) -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>What is the distinction between mitigation and adaptation as described?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) Mitigation refers to building sea walls; adaptation refers to reducing emissions</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) Mitigation reduces greenhouse gas emissions; adaptation adjusts to unavoidable impacts</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) Mitigation is only for developed nations; adaptation is only for developing nations</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) Both terms are synonymous and interchangeable</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 5: Inference (Paris Agreement) -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>What can be inferred about current global emissions trends relative to Paris Agreement goals?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) Current pledges are sufficient to meet the 1.5°C target</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) Current pledges fall short, and emissions continue to rise, closing the window for limiting warming to 1.5°C</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) No country has made any emissions reduction pledges</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) Emissions have already been reduced to zero globally</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 6: Detail (technological solutions) -->
+        <div class="question-item" id="q6">
+            <span class="q-num">6</span> <strong>What technological innovations are mentioned as part of the climate response?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q6" value="a"> (a) Geoengineering and space-based solar reflectors</label>
+                <label class="option"><input type="radio" name="q6" value="b"> (b) Carbon capture and storage, green hydrogen, advanced nuclear, and nature-based solutions</label>
+                <label class="option"><input type="radio" name="q6" value="c"> (c) Artificial intelligence for weather prediction only</label>
+                <label class="option"><input type="radio" name="q6" value="d"> (d) Fusion power exclusively</label>
+            </div>
+            <div class="feedback" id="feedback6"></div>
+            <button class="show-answer-btn" onclick="showAnswer(6, 'b')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- Advanced vocabulary table with 12 words -->
+    <h3 style="font-size: 1.8rem; font-weight: 500; margin: 2rem 0 1rem;">🔤 Advanced Vocabulary (12 words) · with Synonyms</h3>
+      <table>
+        <thead>
+          <tr><th>Word</th><th>Meaning (English)</th><th>🇸🇦 Arabic</th><th>Synonyms (3)</th>            </tr>
+        </thead>
+        <tbody>
+          <tr><td class="arabic-term">anthropogenic</td><td>originating from human activity</td><td class="arabic">بشري المنشأ</td><td class="synonyms">human-caused, man-made, human-induced</td></tr>
+           <tr><td class="arabic-term">unequivocal</td><td>leaving no doubt; unambiguous</td><td class="arabic">لا لبس فيه / قاطع</td><td class="synonyms">unquestionable, indisputable, certain</td></tr>
+           <tr><td class="arabic-term">amplifies</td><td>increases the magnitude or effect</td><td class="arabic">يضخم / يكثف</td><td class="synonyms">intensifies, magnifies, escalates</td></tr>
+           <tr><td class="arabic-term">tipping points</td><td>thresholds beyond which change becomes irreversible</td><td class="arabic">نقاط التحول / العتبات الحرجة</td><td class="synonyms">critical thresholds, irreversible thresholds, points of no return</td></tr>
+           <tr><td class="arabic-term">climate justice</td><td>fair distribution of climate burdens and benefits</td><td class="arabic">العدالة المناخية</td><td class="synonyms">equity, fair treatment, distributional fairness</td></tr>
+           <tr><td class="arabic-term">mitigation</td><td>actions to reduce greenhouse gas emissions</td><td class="arabic">التخفيف / الحد</td><td class="synonyms">emissions reduction, abatement, curtailment</td></tr>
+           <tr><td class="arabic-term">adaptation</td><td>adjustment to actual or expected climate effects</td><td class="arabic">التكيف / التأقلم</td><td class="synonyms">adjustment, accommodation, resilience-building</td></tr>
+           <tr><td class="arabic-term">nationally determined contributions (NDCs)</td><td>countries' climate action pledges</td><td class="arabic">المساهمات المحددة وطنياً</td><td class="synonyms">climate pledges, emissions targets, national commitments</td></tr>
+           <tr><td class="arabic-term">loss and damage</td><td>irreparable harm beyond adaptive capacity</td><td class="arabic">الخسائر والأضرار</td><td class="synonyms">irreversible impacts, uncompensated harm, residual damage</td></tr>
+           <tr><td class="arabic-term">carbon capture and storage</td><td>technology to trap CO₂ emissions</td><td class="arabic">احتجاز الكربون وتخزينه</td><td class="synonyms">CCS, CO₂ sequestration, emissions capture</td></tr>
+           <tr><td class="arabic-term">green hydrogen</td><td>hydrogen produced using renewable energy</td><td class="arabic">الهيدروجين الأخضر</td><td class="synonyms">clean hydrogen, renewable hydrogen, zero-carbon hydrogen</td></tr>
+           <tr><td class="arabic-term">foresight</td><td>ability to predict and prepare for future needs</td><td class="arabic">تبصر / استشراف</td><td class="synonyms">anticipation, forethought, prescience</td></tr>
+        </tbody>
+      </table>
+    <hr>
+    <p style="text-align: center; color: #4f46e5; font-weight: 500;">✨ C1 Level · Environmental Science & Policy ✨</p>
+</div>
+
+<script>
+    // Correct answers for passage 21 (Climate Change)
+    const correctAnswers = {
+        q1: 'b',
+        q2: 'b',
+        q3: 'b',
+        q4: 'b',
+        q5: 'b',
+        q6: 'b'
+    };
+
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (b) The science of climate change, its impacts, and the necessary mitigation and adaptation responses.';
+                break;
+            case 2: answerText = 'The correct answer is (b) Virtual loss of all coral reefs and increased risk of irreversible tipping points.';
+                break;
+            case 3: answerText = 'The correct answer is (b) thresholds beyond which changes become self-perpetuating and irreversible.';
+                break;
+            case 4: answerText = 'The correct answer is (b) Mitigation reduces greenhouse gas emissions; adaptation adjusts to unavoidable impacts.';
+                break;
+            case 5: answerText = 'The correct answer is (b) Current pledges fall short, and emissions continue to rise, closing the window for limiting warming to 1.5°C.';
+                break;
+            case 6: answerText = 'The correct answer is (b) Carbon capture and storage, green hydrogen, advanced nuclear, and nature-based solutions.';
+                break;
+            default: answerText = 'Correct answer displayed.';
+        }
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+
+    // Radio button instant feedback
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;
+            const selectedValue = this.value;
+            const correct = correctAnswers[questionId];
+
+            const feedbackId = 'feedback' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+
+            if (selectedValue === correct) {
+                feedback.textContent = '✅ Correct! Well analyzed.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Re-read the passage and try again.';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+</script>
+</body>
+</html>
