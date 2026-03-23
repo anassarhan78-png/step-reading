@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading · C1 – Passage 3: AI Ethics (Advanced)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #e0e7ff;
+            color: #1e293b;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #4f46e5;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #a5b4fc;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #4338ca;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #a5b4fc;
+            padding-bottom: 0.5rem;
+        }
+        .passage-text {
+            font-size: 1.2rem;
+            background: #f5f3ff;
+            padding: 2rem;
+            border-radius: 28px;
+            border: 1px solid #c7d2fe;
+            margin-bottom: 3rem;
+            line-height: 1.9;
+        }
+        .questions-section {
+            background: #e0e7ff;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #a5b4fc;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(79, 70, 229, 0.1);
+            border-left: 10px solid #818cf8;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #4f46e5;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #e0e7ff;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #4f46e5;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+        }
+        .option input[type="radio"]:checked {
+            background: #4f46e5;
+            border: 2px solid #4f46e5;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            display: none;
+        }
+        .feedback.correct {
+            color: #166534;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #991b1b;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #4f46e5;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #cbd5e1;
+            margin: 2rem 0;
+            font-size: 1rem;
+        }
+        th {
+            background: #4f46e5;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+            padding: 1rem 1.2rem;
+        }
+        td {
+            padding: 1rem 1.2rem;
+            border-bottom: 1px solid #cbd5e1;
+            vertical-align: top;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #1e293b;
+        }
+        .synonyms {
+            font-size: 0.95rem;
+            color: #4b5563;
+            margin-top: 4px;
+            font-style: italic;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #a5b4fc, transparent);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📘 STEP Reading · C1</h1>
+    <div class="sub-title">Passage 3 (Advanced) · The Ethical Frontier of Artificial Intelligence</div>
+
+    <h2>🤖 Between Promise and Peril: Navigating AI Ethics</h2>
+
+    <div class="passage-text">
+        <p>Artificial intelligence has ceased to be a speculative concept and has become an omnipresent force reshaping industries, governance, and everyday life. From algorithmic hiring tools to predictive policing and autonomous vehicles, AI systems now wield unprecedented influence over human opportunities and safety. Yet alongside remarkable efficiency gains, a constellation of ethical dilemmas has emerged. These challenges compel policymakers, engineers, and the public to confront fundamental questions about fairness, accountability, and the preservation of human autonomy in an increasingly automated world.</p>
+
+        <p>One of the most pressing concerns is algorithmic bias. Machine learning models, trained on historical data, frequently inherit and amplify existing societal prejudices. For instance, facial recognition systems have demonstrated significantly higher error rates for individuals with darker skin tones, while recruitment algorithms have been shown to penalize applicants from marginalized groups. Such bias is not a glitch but a reflection of flawed training data and inadequate oversight. The opacity of many deep-learning models compounds the problem, creating “black boxes” whose decision-making processes resist scrutiny. This lack of transparency hinders efforts to detect discrimination or assign responsibility when harm occurs.</p>
+
+        <p>Equally contentious is the question of accountability. When an autonomous vehicle causes a fatal accident, or an AI-driven medical diagnosis leads to patient harm, who bears liability? The diffuse nature of AI development—involving data scientists, engineers, corporate entities, and end-users—complicates traditional frameworks of legal and moral responsibility. Furthermore, the deployment of AI in surveillance and social scoring systems raises profound concerns about privacy erosion and state overreach. In some contexts, AI-enabled predictive algorithms have been used to allocate public resources or restrict civil liberties, often without meaningful due process.</p>
+
+        <p>Addressing these ethical challenges demands more than technical fixes. A growing chorus of researchers advocates for “value-sensitive design”—integrating ethical considerations from the earliest stages of system development. Initiatives such as algorithmic impact assessments, mandatory bias audits, and the establishment of independent ethics review boards are gaining traction. Moreover, fostering algorithmic literacy among the general population empowers citizens to question and contest automated decisions that affect their lives. International collaboration is also essential, as AI systems operate across borders, yet regulatory frameworks remain fragmented.</p>
+
+        <p>Ultimately, the trajectory of AI will be determined not by technological capability alone, but by the values we choose to embed in our machines. The ethical frontier demands that we treat AI not as a neutral tool, but as a sociotechnical system reflecting human priorities. Striking a balance between innovation and accountability is perhaps the defining challenge of our era. As we delegate more decisions to algorithms, the imperative to govern them with wisdom, foresight, and justice becomes not optional, but existential.</p>
+    </div>
+
+    <div class="questions-section">
+        <h3>📘 C1 STEP‑style questions – Passage 3</h3>
+
+        <!-- Question 1: Main idea -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>What is the primary focus of the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) A technical explanation of how machine learning algorithms function</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) The ethical challenges of AI, including bias, accountability, and proposed governance measures</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) A comparison of AI development in different countries</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) The economic benefits of automating decision-making processes</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 2: Detail (algorithmic bias) -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>According to the passage, why do facial recognition systems often show higher error rates for darker skin tones?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) Because the technology is inherently flawed for all users</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) Because of flawed training data and inadequate oversight</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) Because developers intentionally designed them to be discriminatory</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) Because darker skin tones are more difficult to detect for any optical device</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 3: Vocabulary in context -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>As used in paragraph 2, the phrase "<em>black boxes</em>" most likely refers to:</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) Physical hardware components of AI systems</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) Opaque decision-making processes that are difficult to understand or audit</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) Secure storage containers for sensitive data</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) AI systems designed exclusively for military applications</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 4: Detail (accountability challenge) -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>What complicates the assignment of liability when AI systems cause harm?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) Lack of legal frameworks for technology companies</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) The diffuse nature of AI development involving multiple stakeholders</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) The fact that AI systems never cause real harm</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) Overregulation that shields developers from responsibility</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 5: Inference -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>What can be reasonably inferred from the final paragraph about the author’s perspective on AI governance?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) Technological advancement should proceed without ethical constraints</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) Values and foresight must guide the development and deployment of AI</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) Only governments can regulate AI effectively</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) AI systems will eventually solve all ethical dilemmas automatically</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'b')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- Advanced vocabulary table with 15 words, each with 3 synonyms -->
+    <h3 style="font-size: 1.8rem; font-weight: 500; margin: 2rem 0 1rem;">🔤 Advanced Vocabulary (15 words) · with Synonyms</h3>
+    <table>
+        <thead>
+            <tr><th>Word</th><th>Meaning (English)</th><th>🇸🇦 Arabic</th><th>Synonyms (3)</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>omnipresent</td><td>present everywhere simultaneously</td><td class="arabic">موجود في كل مكان</td><td class="synonyms">ubiquitous, pervasive, universal</td></tr>
+            <tr><td>algorithmic bias</td><td>systematic unfairness in computer outputs</td><td class="arabic">تحيز خوارزمي</td><td class="synonyms">machine prejudice, model discrimination, automated inequity</td></tr>
+            <tr><td>opacity</td><td>lack of transparency; obscurity</td><td class="arabic">غموض / عدم شفافية</td><td class="synonyms">obscurity, impenetrability, unclarity</td></tr>
+            <tr><td>scrutiny</td><td>critical observation or examination</td><td class="arabic">تدقيق / فحص دقيق</td><td class="synonyms">inspection, analysis, oversight</td></tr>
+            <tr><td>diffuse</td><td>spread out over a wide area; not concentrated</td><td class="arabic">منتشر / غير مركزي</td><td class="synonyms">dispersed, decentralized, fragmented</td></tr>
+            <tr><td>liability</td><td>legal responsibility for harm</td><td class="arabic">مسؤولية قانونية</td><td class="synonyms">accountability, culpability, legal obligation</td></tr>
+            <tr><td>social scoring</td><td>rating individuals based on behavior</td><td class="arabic">التقييم الاجتماعي</td><td class="synonyms">citizen rating, behavioral credit, reputation ranking</td></tr>
+            <tr><td>due process</td><td>fair treatment through normal judicial system</td><td class="arabic">الإجراءات القانونية الواجبة</td><td class="synonyms">fair procedure, legal safeguards, procedural justice</td></tr>
+            <tr><td>value-sensitive design</td><td>development approach embedding human values</td><td class="arabic">التصميم المراعي للقيم</td><td class="synonyms">ethics-by-design, value-oriented engineering, principled development</td></tr>
+            <tr><td>algorithmic impact assessment</td><td>evaluation of AI system’s potential effects</td><td class="arabic">تقييم الأثر الخوارزمي</td><td class="synonyms">risk evaluation, consequence analysis, algorithmic audit</td></tr>
+            <tr><td>algorithmic literacy</td><td>understanding of how algorithms work</td><td class="arabic">المعرفة الخوارزمية</td><td class="synonyms">AI awareness, computational understanding, data competency</td></tr>
+            <tr><td>fragmented</td><td>broken into separate parts; disunified</td><td class="arabic">مجزأ / غير مكتمل</td><td class="synonyms">piecemeal, disjointed, scattered</td></tr>
+            <tr><td>sociotechnical system</td><td>interaction of social and technical elements</td><td class="arabic">نظام اجتماعي-تقني</td><td class="synonyms">human‑technology ensemble, socio‑digital infrastructure, integrated socio‑technical framework</td></tr>
+            <tr><td>existential</td><td>relating to existence; of utmost importance</td><td class="arabic">وجودي / مصيري</td><td class="synonyms">fundamental, critical, life-or-death</td></tr>
+            <tr><td>foresight</td><td>ability to predict future needs or consequences</td><td class="arabic">تبصر / استشراف</td><td class="synonyms">anticipation, forethought, prescience</td></tr>
+        </tbody>
+    </table>
+    <hr>
+    <p style="text-align: center; color: #4f46e5; font-weight: 500;">✨ C1 Level · Critical Reading & Ethical Dimensions ✨</p>
+</div>
+
+<script>
+    // Correct answers for passage 3 (AI Ethics)
+    const correctAnswers = {
+        q1: 'b',
+        q2: 'b',
+        q3: 'b',
+        q4: 'b',
+        q5: 'b'
+    };
+
+    // Function used by "Show answer" buttons
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (b) The ethical challenges of AI, including bias, accountability, and proposed governance measures.'; break;
+            case 2: answerText = 'The correct answer is (b) Because of flawed training data and inadequate oversight.'; break;
+            case 3: answerText = 'The correct answer is (b) Opaque decision-making processes that are difficult to understand or audit.'; break;
+            case 4: answerText = 'The correct answer is (b) The diffuse nature of AI development involving multiple stakeholders.'; break;
+            case 5: answerText = 'The correct answer is (b) Values and foresight must guide the development and deployment of AI.'; break;
+            default: answerText = 'Correct answer displayed.';
+        }
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+
+    // Radio button instant feedback
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;
+            const selectedValue = this.value;
+            const correct = correctAnswers[questionId];
+
+            const feedbackId = 'feedback' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+
+            if (selectedValue === correct) {
+                feedback.textContent = '✅ Correct! Well argued.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Re-read the passage and try again.';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+</script>
+</body>
+</html>
