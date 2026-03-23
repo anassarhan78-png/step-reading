@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading · C1 – Passage 8: Physics Narrative (Advanced)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #e0e7ff;
+            color: #1e293b;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #4f46e5;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #a5b4fc;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #4338ca;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #a5b4fc;
+            padding-bottom: 0.5rem;
+        }
+        .passage-text {
+            font-size: 1.2rem;
+            background: #f5f3ff;
+            padding: 2rem;
+            border-radius: 28px;
+            border: 1px solid #c7d2fe;
+            margin-bottom: 3rem;
+            line-height: 1.9;
+        }
+        .questions-section {
+            background: #e0e7ff;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #a5b4fc;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(79, 70, 229, 0.1);
+            border-left: 10px solid #818cf8;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #4f46e5;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #e0e7ff;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #4f46e5;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+        }
+        .option input[type="radio"]:checked {
+            background: #4f46e5;
+            border: 2px solid #4f46e5;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            display: none;
+        }
+        .feedback.correct {
+            color: #166534;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #991b1b;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #4f46e5;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #cbd5e1;
+            margin: 2rem 0;
+            font-size: 1rem;
+        }
+        th {
+            background: #4f46e5;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+            padding: 1rem 1.2rem;
+        }
+        td {
+            padding: 1rem 1.2rem;
+            border-bottom: 1px solid #cbd5e1;
+            vertical-align: top;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #1e293b;
+        }
+        .synonyms {
+            font-size: 0.95rem;
+            color: #4b5563;
+            margin-top: 4px;
+            font-style: italic;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #a5b4fc, transparent);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📘 STEP Reading · C1</h1>
+    <div class="sub-title">Passage 8 (Advanced) · The Elegant Universe: A Physics Narrative</div>
+
+    <h2>🔭 A Story of Falling Apples and Dancing Galaxies</h2>
+
+    <div class="passage-text">
+        <p>In the autumn of 1665, a young man retreated to his family farm in Lincolnshire, escaping the plague that ravaged Cambridge. There, Isaac Newton began a solitary quest that would unravel the mechanics of the cosmos. The legend of the falling apple—whether truth or embellishment—captures a moment of extraordinary insight: the same force that pulls fruit to earth might also govern the motion of the Moon and planets. This flash of intuition became the seed of universal gravitation, a theory so profound it would shape physics for two centuries.</p>
+
+        <p>Newton’s *Philosophiæ Naturalis Principia Mathematica*, published in 1687, laid down the laws of motion and gravitation. With elegant mathematics, he revealed that celestial bodies dance to the same rhythm as terrestrial objects. The story of physics, however, is not one of static triumph but of continual upheaval. In 1905, a patent clerk in Bern named Albert Einstein overturned Newton’s absolute space and time. Through thought experiments—chasing a beam of light, riding alongside a falling elevator—Einstein conjured a radical vision: space and time are woven into a single fabric that curves in response to matter and energy. General relativity reimagined gravity not as a force, but as geometry.</p>
+
+        <p>Yet even Einstein’s masterpiece faced its own limits. At the subatomic scale, a different narrative unfolded. Quantum mechanics, forged by Bohr, Heisenberg, Schrödinger, and others, revealed a reality where particles exist in superpositions, where measurement collapses possibility into certainty, and where nature defies intuitive causality. The clash between general relativity and quantum mechanics—the former governing the very large, the latter the very small—remains the deepest fissure in modern physics. String theory, with its vibrating filaments in higher dimensions, attempts to suture this rift, though experimental verification remains elusive.</p>
+
+        <p>What drives physicists, from Newton’s solitary meditations to today’s sprawling collaborations at CERN, is a narrative impulse: the desire to tell a coherent story about the universe. Each discovery adds a chapter, sometimes rewriting earlier pages. The search for dark matter, the detection of gravitational waves, the mapping of cosmic microwave background—each extends the narrative into territories once deemed unknowable. In this ongoing story, the reader is not a passive observer but a participant, invited to wonder, to question, and to appreciate the profound interconnectedness of all things.</p>
+    </div>
+
+    <div class="questions-section">
+        <h3>📘 C1 STEP‑style questions – Passage 8</h3>
+
+        <!-- Question 1: Main idea -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>What is the primary purpose of the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) To provide a detailed biography of Isaac Newton</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) To argue that quantum mechanics is superior to general relativity</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) To present the historical development of physics as a compelling narrative of discovery and ongoing inquiry</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) To explain string theory in technical detail</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'c')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 2: Detail (Newton's insight) -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>According to the passage, what was the key insight associated with Newton’s apple legend?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) That apples contain the secrets of gravity</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) That the same force affecting the apple might also govern the Moon’s motion</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) That trees are essential to understanding physics</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) That gravity only works on Earth</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 3: Vocabulary in context -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>As used in paragraph 2, the word "<em>conjured</em>" most nearly means:</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) magically summoned from nothing</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) imagined or brought forth through creative thought</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) disproved through experimentation</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) borrowed from previous scientists</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 4: Detail (quantum mechanics) -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>What aspect of quantum mechanics is highlighted in the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) Its perfect compatibility with general relativity</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) Its counterintuitive nature, including superposition and the role of measurement</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) Its exclusive focus on large-scale phenomena</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) Its origins in Newton’s work</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 5: Inference (current state) -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>What can be inferred about the relationship between general relativity and quantum mechanics?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) They have been fully unified into a single theory</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) They represent a fundamental incompatibility that remains unresolved, with theories like string theory attempting to bridge them</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) General relativity has been proven false by quantum experiments</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) Quantum mechanics applies only to biology</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 6: Vocabulary in context -->
+        <div class="question-item" id="q6">
+            <span class="q-num">6</span> <strong>In the final paragraph, the word "<em>fissure</em>" most likely means:</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q6" value="a"> (a) a minor disagreement</label>
+                <label class="option"><input type="radio" name="q6" value="b"> (b) a deep split or division</label>
+                <label class="option"><input type="radio" name="q6" value="c"> (c) a successful collaboration</label>
+                <label class="option"><input type="radio" name="q6" value="d"> (d) an experimental apparatus</label>
+            </div>
+            <div class="feedback" id="feedback6"></div>
+            <button class="show-answer-btn" onclick="showAnswer(6, 'b')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- Advanced vocabulary table with 12 words -->
+    <h3 style="font-size: 1.8rem; font-weight: 500; margin: 2rem 0 1rem;">🔤 Advanced Vocabulary (12 words) · with Synonyms</h3>
+     <table>
+        <thead>
+            <tr><th>Word</th><th>Meaning (English)</th><th>🇸🇦 Arabic</th><th>Synonyms (3)</th>             </tr>
+        </thead>
+        <tbody>
+            <tr><td>ravaged</td><td>caused severe damage to</td><td class="arabic">دمّر / خرب</td><td class="synonyms">devastated, destroyed, laid waste</td></tr>
+            <tr><td>embellishment</td><td>exaggerated or decorative detail added to a story</td><td class="arabic">تزيين / مبالغة</td><td class="synonyms">exaggeration, embroidery, ornamentation</td></tr>
+            <tr><td>intuition</td><td>understanding without conscious reasoning</td><td class="arabic">حدس / إدراك مباشر</td><td class="synonyms">instinct, insight, gut feeling</td></tr>
+            <tr><td>celestial</td><td>relating to the sky or outer space</td><td class="arabic">سماوي / فلكي</td><td class="synonyms">astronomical, heavenly, cosmic</td></tr>
+            <tr><td>terrestrial</td><td>relating to Earth or its inhabitants</td><td class="arabic">أرضي / دنيوي</td><td class="synonyms">earthly, ground-based, planetary</td></tr>
+            <tr><td>upheaval</td><td>a violent or sudden change</td><td class="arabic">اضطراب / انقلاب</td><td class="synonyms">turbulence, revolution, disruption</td></tr>
+            <tr><td>superpositions</td><td>quantum states where particles exist in multiple possibilities simultaneously</td><td class="arabic">تراكب كمومي</td><td class="synonyms">coexistence of states, quantum ambiguity, multiple potentialities</td></tr>
+            <tr><td>causality</td><td>relationship between cause and effect</td><td class="arabic">سببية / علاقة سببية</td><td class="synonyms">cause-effect relation, determinism, causation</td></tr>
+            <tr><td>suture</td><td>to join or heal together</td><td class="arabic">يضم / يلتئم</td><td class="synonyms">unite, bridge, reconcile</td></tr>
+            <tr><td>elusive</td><td>difficult to find, catch, or achieve</td><td class="arabic">صعب المنال / عصي</td><td class="synonyms">evasive, unattainable, slippery</td></tr>
+            <tr><td>sprawling</td><td>spreading out over a large area in an untidy way</td><td class="arabic">ممتد / واسع</td><td class="synonyms">expansive, vast, far-reaching</td></tr>
+            <tr><td>interconnectedness</td><td>the state of being connected with each other</td><td class="arabic">الترابط</td><td class="synonyms">mutual dependence, linkage, interdependence</td></tr>
+        </tbody>
+     </table>
+    <hr>
+    <p style="text-align: center; color: #4f46e5; font-weight: 500;">✨ C1 Level · Narrative Science & Historical Understanding ✨</p>
+</div>
+
+<script>
+    // Correct answers for passage 8 (Physics Narrative)
+    const correctAnswers = {
+        q1: 'c',
+        q2: 'b',
+        q3: 'b',
+        q4: 'b',
+        q5: 'b',
+        q6: 'b'
+    };
+
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (c) To present the historical development of physics as a compelling narrative of discovery and ongoing inquiry.';
+                break;
+            case 2: answerText = 'The correct answer is (b) That the same force affecting the apple might also govern the Moon’s motion.';
+                break;
+            case 3: answerText = 'The correct answer is (b) imagined or brought forth through creative thought.';
+                break;
+            case 4: answerText = 'The correct answer is (b) Its counterintuitive nature, including superposition and the role of measurement.';
+                break;
+            case 5: answerText = 'The correct answer is (b) They represent a fundamental incompatibility that remains unresolved, with theories like string theory attempting to bridge them.';
+                break;
+            case 6: answerText = 'The correct answer is (b) a deep split or division.';
+                break;
+            default: answerText = 'Correct answer displayed.';
+        }
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+
+    // Radio button instant feedback
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;
+            const selectedValue = this.value;
+            const correct = correctAnswers[questionId];
+
+            const feedbackId = 'feedback' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+
+            if (selectedValue === correct) {
+                feedback.textContent = '✅ Correct! Well understood.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Re-read the passage and try again.';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+</script>
+</body>
+</html>
