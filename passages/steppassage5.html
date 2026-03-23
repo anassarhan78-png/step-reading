@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading · C1 – Passage 10: The Future of Space Exploration (Advanced)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #e0e7ff;
+            color: #1e293b;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #4f46e5;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #a5b4fc;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #4338ca;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #a5b4fc;
+            padding-bottom: 0.5rem;
+        }
+        .passage-text {
+            font-size: 1.2rem;
+            background: #f5f3ff;
+            padding: 2rem;
+            border-radius: 28px;
+            border: 1px solid #c7d2fe;
+            margin-bottom: 3rem;
+            line-height: 1.9;
+        }
+        .questions-section {
+            background: #e0e7ff;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #a5b4fc;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(79, 70, 229, 0.1);
+            border-left: 10px solid #818cf8;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #4f46e5;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #e0e7ff;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #4f46e5;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+        }
+        .option input[type="radio"]:checked {
+            background: #4f46e5;
+            border: 2px solid #4f46e5;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            display: none;
+        }
+        .feedback.correct {
+            color: #166534;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #991b1b;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #4f46e5;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #cbd5e1;
+            margin: 2rem 0;
+            font-size: 1rem;
+        }
+        th {
+            background: #4f46e5;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+            padding: 1rem 1.2rem;
+        }
+        td {
+            padding: 1rem 1.2rem;
+            border-bottom: 1px solid #cbd5e1;
+            vertical-align: top;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #1e293b;
+        }
+        .synonyms {
+            font-size: 0.95rem;
+            color: #4b5563;
+            margin-top: 4px;
+            font-style: italic;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #a5b4fc, transparent);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📘 STEP Reading · C1</h1>
+    <div class="sub-title">Passage 10 (Advanced) · The Next Giant Leap: The Future of Space Exploration</div>
+
+    <h2>🚀 Beyond Earth: Humanity’s Expanding Cosmic Frontier</h2>
+
+    <div class="passage-text">
+        <p>For millennia, humanity has gazed at the night sky with wonder and aspiration. The twentieth century witnessed the first tentative steps beyond our planetary cradle—Sputnik’s beep, Gagarin’s orbit, Armstrong’s small step. Now, as we enter a new era, space exploration is undergoing a profound transformation. What was once the exclusive domain of superpowers is becoming a vibrant ecosystem of government agencies, private enterprises, and international partnerships. This shift promises to accelerate our reach into the solar system, but it also raises profound questions about sustainability, ethics, and the future of humanity itself.</p>
+        <p>The most immediate frontier is the Moon. NASA’s Artemis program aims to return humans to the lunar surface by the mid-2020s, this time with a focus on sustained presence. The lunar south pole, with its permanently shadowed craters containing water ice, has emerged as a strategic destination. Water can be converted into rocket fuel, oxygen, and drinking water—enabling a permanent base and a staging point for deeper space missions. Simultaneously, commercial entities are developing lunar landers, habitats, and resource extraction technologies. This convergence of public and private ambition marks a paradigm shift from exploration to economic utilization.</p>
+        <p>Mars remains the ultimate horizon. SpaceX’s Starship, designed for full reusability and massive payload capacity, aims to transport settlers to the Red Planet within the coming decade. The challenges, however, are staggering: cosmic radiation, psychological isolation, life-support reliability, and the unknown effects of Martian gravity on human physiology. Critics argue that the focus on Mars colonization distracts from pressing terrestrial concerns, while proponents counter that the technological spinoffs and existential imperative of becoming a multi-planetary species justify the endeavor.</p>
+        <p>Beyond government and corporate ambitions, a new ethos is emerging: the democratization of space. CubeSats—miniature satellites—have lowered the barrier to entry, enabling universities and developing nations to conduct space research. The rise of space tourism offers civilians a glimpse of the overview effect, the profound cognitive shift experienced when viewing Earth from orbit. Meanwhile, international frameworks like the Artemis Accords seek to establish norms for lunar activity, balancing cooperation with competition.</p>
+        <p>Yet this expansion is not without peril. Orbital debris threatens the sustainability of low Earth orbit. The militarization of space looms as a destabilizing force. And the ethical implications of exploiting extraterrestrial resources remain unresolved. As we stand at this threshold, the choices we make will shape not only the future of space exploration but also the character of human civilization. The next giant leap is not merely technological—it is a test of our wisdom, our values, and our capacity to extend the best of humanity beyond our home planet.</p>
+    </div>
+
+    <div class="questions-section">
+        <h3>📘 C1 STEP‑style questions – Passage 10</h3>
+
+        <!-- Question 1: Main idea -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>What is the primary focus of the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) A detailed technical description of rocket engines</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) The current state and future prospects of space exploration, including opportunities and challenges</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) A comparison of the Artemis program and SpaceX’s Starship</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) The history of space exploration from Sputnik to the present</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 2: Detail (lunar water) -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>Why is the lunar south pole considered strategically important for space exploration?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) It is the only location on the Moon with sunlight year-round</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) It contains water ice that can be used to produce fuel, oxygen, and water</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) It is the closest point to Mars</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) It has the lowest radiation levels on the Moon</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 3: Vocabulary in context -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>As used in paragraph 2, the phrase "<em>paradigm shift</em>" most likely refers to:</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) A minor adjustment in space agency budgets</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) A fundamental change from exploration-focused missions to economic utilization and sustained presence</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) The replacement of government programs by private companies</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) The end of lunar exploration</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 4: Detail (Mars challenges) -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>What challenges to Mars colonization are mentioned in the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) Lack of public interest and funding</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) Cosmic radiation, psychological isolation, and unknown effects of Martian gravity</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) Political disagreements among nations</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) The absence of water on Mars</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 5: Inference (democratization) -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>What can be inferred about the democratization of space described in the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) It has made space exploration accessible only to wealthy corporations</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) It has lowered barriers, allowing universities and developing nations to participate</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) It has eliminated all government involvement in space</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) It focuses exclusively on space tourism</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 6: Vocabulary in context -->
+        <div class="question-item" id="q6">
+            <span class="q-num">6</span> <strong>In the final paragraph, the word "<em>looms</em>" most nearly means:</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q6" value="a"> (a) disappears gradually</label>
+                <label class="option"><input type="radio" name="q6" value="b"> (b) appears as a threat or imminent concern</label>
+                <label class="option"><input type="radio" name="q6" value="c"> (c) is celebrated widely</label>
+                <label class="option"><input type="radio" name="q6" value="d"> (d) has been resolved</label>
+            </div>
+            <div class="feedback" id="feedback6"></div>
+            <button class="show-answer-btn" onclick="showAnswer(6, 'b')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- Advanced vocabulary table with 12 words -->
+    <h3 style="font-size: 1.8rem; font-weight: 500; margin: 2rem 0 1rem;">🔤 Advanced Vocabulary (12 words) · with Synonyms</h3>
+    <table>
+        <thead>
+            <tr><th>Word</th><th>Meaning (English)</th><th>🇸🇦 Arabic</th><th>Synonyms (3)</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>tentative</td><td>done without confidence; hesitant</td><td class="arabic">مؤقت / تجريبي</td><td class="synonyms">provisional, exploratory, uncertain</td></tr>
+            <tr><td>ecosystem</td><td>complex network or interconnected system</td><td class="arabic">نظام بيئي / منظومة</td><td class="synonyms">network, community, system</td></tr>
+            <tr><td>convergence</td><td>coming together of different elements</td><td class="arabic">تقارب / اندماج</td><td class="synonyms">merging, intersection, confluence</td></tr>
+            <tr><td>paradigm shift</td><td>fundamental change in approach or assumptions</td><td class="arabic">تحول نموذجي</td><td class="synonyms">revolution, transformation, sea change</td></tr>
+            <tr><td>staging point</td><td>intermediate base for further operations</td><td class="arabic">نقطة انطلاق / قاعدة وسيطة</td><td class="synonyms">launchpad, waystation, hub</td></tr>
+            <tr><td>existential imperative</td><td>necessary action related to survival or existence</td><td class="arabic">ضرورة وجودية</td><td class="synonyms">survival necessity, fundamental need, essential requirement</td></tr>
+            <tr><td>democratization</td><td>making something accessible to all people</td><td class="arabic">إضفاء الطابع الديمقراطي</td><td class="synonyms">broadening access, popularization, equalizing</td></tr>
+            <tr><td>overview effect</td><td>cognitive shift from viewing Earth from space</td><td class="arabic">تأثير النظرة الشاملة</td><td class="synonyms">cosmic perspective, planetary consciousness, awe experience</td></tr>
+            <tr><td>orbital debris</td><td>human-made junk in Earth's orbit</td><td class="arabic">حطام مداري</td><td class="synonyms">space junk, orbital waste, discarded satellites</td></tr>
+            <tr><td>militarization</td><td>the process of equipping for military use</td><td class="arabic">تسليح / عسكرة</td><td class="synonyms">weaponization, military buildup, strategic arming</td></tr>
+            <tr><td>extraterrestrial resources</td><td>materials found beyond Earth</td><td class="arabic">موارد خارج الأرض</td><td class="synonyms">space resources, off-world assets, asteroid minerals</td></tr>
+            <tr><td>threshold</td><td>point of entry or beginning</td><td class="arabic">عتبة / بداية مرحلة جديدة</td><td class="synonyms">brink, verge, dawn</td></tr>
+        </tbody>
+    </table>
+    <hr>
+    <p style="text-align: center; color: #4f46e5; font-weight: 500;">✨ C1 Level · Space Policy & Future Studies ✨</p>
+</div>
+
+<script>
+    // Correct answers for passage 10 (Space Exploration)
+    const correctAnswers = {
+        q1: 'b',
+        q2: 'b',
+        q3: 'b',
+        q4: 'b',
+        q5: 'b',
+        q6: 'b'
+    };
+
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (b) The current state and future prospects of space exploration, including opportunities and challenges.';
+                break;
+            case 2: answerText = 'The correct answer is (b) It contains water ice that can be used to produce fuel, oxygen, and water.';
+                break;
+            case 3: answerText = 'The correct answer is (b) A fundamental change from exploration-focused missions to economic utilization and sustained presence.';
+                break;
+            case 4: answerText = 'The correct answer is (b) Cosmic radiation, psychological isolation, and unknown effects of Martian gravity.';
+                break;
+            case 5: answerText = 'The correct answer is (b) It has lowered barriers, allowing universities and developing nations to participate.';
+                break;
+            case 6: answerText = 'The correct answer is (b) appears as a threat or imminent concern.';
+                break;
+            default: answerText = 'Correct answer displayed.';
+        }
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+
+    // Radio button instant feedback
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;
+            const selectedValue = this.value;
+            const correct = correctAnswers[questionId];
+
+            const feedbackId = 'feedback' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+
+            if (selectedValue === correct) {
+                feedback.textContent = '✅ Correct! Well analyzed.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Re-read the passage and try again.';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+</script>
+</body>
+</html>
