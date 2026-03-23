@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading · C1 – Passage 20: Genetic Engineering Ethics (Advanced)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #e0e7ff;
+            color: #1e293b;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #4f46e5;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #a5b4fc;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #4338ca;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #a5b4fc;
+            padding-bottom: 0.5rem;
+        }
+        .passage-text {
+            font-size: 1.2rem;
+            background: #f5f3ff;
+            padding: 2rem;
+            border-radius: 28px;
+            border: 1px solid #c7d2fe;
+            margin-bottom: 3rem;
+            line-height: 1.9;
+        }
+        .questions-section {
+            background: #e0e7ff;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #a5b4fc;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(79, 70, 229, 0.1);
+            border-left: 10px solid #818cf8;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #4f46e5;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #e0e7ff;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #4f46e5;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+        }
+        .option input[type="radio"]:checked {
+            background: #4f46e5;
+            border: 2px solid #4f46e5;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            display: none;
+        }
+        .feedback.correct {
+            color: #166534;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #991b1b;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #4f46e5;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #cbd5e1;
+            margin: 2rem 0;
+            font-size: 1rem;
+        }
+        th {
+            background: #4f46e5;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+            padding: 1rem 1.2rem;
+        }
+        td {
+            padding: 1rem 1.2rem;
+            border-bottom: 1px solid #cbd5e1;
+            vertical-align: top;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #1e293b;
+        }
+        .synonyms {
+            font-size: 0.95rem;
+            color: #4b5563;
+            margin-top: 4px;
+            font-style: italic;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #a5b4fc, transparent);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📘 STEP Reading · C1</h1>
+    <div class="sub-title">Passage 20 (Advanced) · Editing Life: The Ethics of Genetic Engineering</div>
+
+    <h2>🧬 The CRISPR Revolution: Promise, Peril, and Responsibility</h2>
+
+    <div class="passage-text">
+        <p>Few technologies have arrived with such breathtaking speed and profound ethical implications as CRISPR-Cas9, a gene-editing tool that allows scientists to modify DNA with unprecedented precision. Since its development in 2012, CRISPR has revolutionized molecular biology, offering the potential to cure genetic diseases, engineer resilient crops, and even eliminate inherited disorders. Yet this power to rewrite the code of life has ignited a fierce ethical debate, forcing society to confront questions that were once the stuff of science fiction: Should we edit human embryos? Where is the line between therapy and enhancement? Who decides which traits are desirable?</p>
+        <p>At the heart of the ethical quandary lies the distinction between somatic and germline editing. Somatic edits affect only the treated individual, much like conventional medicine. Germline editing, however, modifies eggs, sperm, or embryos, meaning changes are heritable and pass to future generations. While proponents argue that eliminating devastating hereditary diseases like Huntington's or cystic fibrosis is a moral imperative, critics warn of unforeseen consequences—off-target mutations, ecological disruption, and the specter of "designer babies." The 2018 announcement by Chinese scientist He Jiankui that he had created the first gene-edited babies was met with global condemnation, underscoring the urgent need for governance.</p>
+        <p>Beyond medicine, agricultural applications raise separate concerns. Genetically modified organisms (GMOs) have long been controversial, with debates over environmental impact, corporate control of food systems, and consumer labeling. Gene drive technology—which forces genetic traits through entire populations—offers potential to eradicate malaria-carrying mosquitoes but also risks unintended ecological cascades. The precautionary principle, which advocates for caution in the face of scientific uncertainty, clashes with calls for innovation to address pressing global challenges like climate change and food security.</p>
+        <p>Equity and access constitute another dimension of the ethical landscape. If gene therapies become available, will they be accessible only to the wealthy, exacerbating existing health disparities? The commercialization of genetic technologies raises concerns about a new form of inequality—genetic stratification. Meanwhile, cultural and religious perspectives vary widely, with some traditions embracing the concept of stewardship over creation, others emphasizing the sanctity of natural processes, and many navigating complex middle ground.</p>
+        <p>Governance frameworks are struggling to keep pace. International bodies like the World Health Organization have convened expert committees, but regulatory approaches differ across nations. Some countries have enacted moratoriums on germline editing, while others permit it under restrictive conditions. The challenge lies in balancing scientific freedom with societal safeguards, fostering public dialogue without succumbing to fear-mongering. As we stand at this threshold, the choices made will shape not only the trajectory of biotechnology but also the kind of future we wish to inhabit—one where genetic enhancement may become as routine as vaccination, or where we consciously set boundaries that reflect our deepest values.</p>
+    </div>
+
+    <div class="questions-section">
+        <h3>📘 C1 STEP‑style questions – Passage 20</h3>
+
+        <!-- Question 1: Main idea -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>What is the primary focus of the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) A technical explanation of how CRISPR works</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) The history of genetic engineering from Mendel to CRISPR</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) The ethical, social, and governance challenges posed by gene-editing technologies</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) A comparison of somatic and germline editing techniques</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'c')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 2: Detail (somatic vs. germline) -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>What is the key ethical distinction between somatic and germline gene editing?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) Somatic editing is always illegal; germline editing is not</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) Somatic edits affect only the individual, while germline edits are heritable and affect future generations</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) Germline editing is cheaper and more accessible</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) Somatic editing is used only in plants, germline only in animals</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 3: Vocabulary in context -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>As used in paragraph 2, the word "<em>specter</em>" most likely means:</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) a ghost or haunting vision</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) a frightening possibility or threat</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) a scientific breakthrough</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) an undeniable benefit</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 4: Detail (controversial event) -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>What event in 2018 is cited as a catalyst for global concern about gene editing?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) The first successful CRISPR treatment for cancer</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) He Jiankui's announcement that he had created gene-edited babies</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) The discovery of off-target mutations in CRISPR-edited crops</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) The WHO's ban on all human gene-editing research</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 5: Inference (governance) -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>What can be inferred about international governance of gene editing?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) There is a single, universally accepted treaty governing all gene editing</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) Regulatory approaches vary across nations, and frameworks are still evolving</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) All countries have banned germline editing indefinitely</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) No international organizations are involved in gene-editing oversight</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 6: Detail (equity concerns) -->
+        <div class="question-item" id="q6">
+            <span class="q-num">6</span> <strong>What equity-related concern about gene editing is raised in the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q6" value="a"> (a) Gene therapies may be accessible only to the wealthy, exacerbating health disparities</label>
+                <label class="option"><input type="radio" name="q6" value="b"> (b) Genetic engineering will eliminate all disease within a decade</label>
+                <label class="option"><input type="radio" name="q6" value="c"> (c) Only men will benefit from genetic therapies</label>
+                <label class="option"><input type="radio" name="q6" value="d"> (d) Developing countries have already banned all forms of gene editing</label>
+            </div>
+            <div class="feedback" id="feedback6"></div>
+            <button class="show-answer-btn" onclick="showAnswer(6, 'a')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- Advanced vocabulary table with 12 words -->
+    <h3 style="font-size: 1.8rem; font-weight: 500; margin: 2rem 0 1rem;">🔤 Advanced Vocabulary (12 words) · with Synonyms</h3>
+      <table>
+        <thead>
+          <tr><th>Word</th><th>Meaning (English)</th><th>🇸🇦 Arabic</th><th>Synonyms (3)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="arabic-term">unprecedented precision</td><td>accuracy never achieved before</td><td class="arabic">دقة غير مسبوقة</td><td class="synonyms">exceptional exactness, unparalleled accuracy, novel specificity</td></tr>
+          <tr><td class="arabic-term">somatic editing</td><td>modifications to non-reproductive cells</td><td class="arabic">تحرير جسدي</td><td class="synonyms">non-heritable editing, body-cell modification, adult cell editing</td></tr>
+          <tr><td class="arabic-term">germline editing</td><td>changes to reproductive cells passed to offspring</td><td class="arabic">تحرير الخط الجرثومي</td><td class="synonyms">heritable editing, embryo modification, inheritable genetic alteration</td></tr>
+          <tr><td class="arabic-term">off-target mutations</td><td>unintended genetic changes</td><td class="arabic">طفرات غير مستهدفة</td><td class="synonyms">unintended edits, collateral damage, non-specific alterations</td></tr>
+          <tr><td class="arabic-term">designer babies</td><td>children genetically engineered for selected traits</td><td class="arabic">أطفال مصممون</td><td class="synonyms">customized offspring, trait-selected infants, bioengineered children</td></tr>
+          <tr><td class="arabic-term">gene drive</td><td>technology that spreads genetic traits through populations</td><td class="arabic">المحرك الجيني</td><td class="synonyms">self-propagating gene, population-level editing, genetic propulsion</td></tr>
+          <tr><td class="arabic-term">precautionary principle</td><td>caution in the face of scientific uncertainty</td><td class="arabic">المبدأ الوقائي</td><td class="synonyms">preventive approach, risk-averse stance, safety-first doctrine</td></tr>
+          <tr><td class="arabic-term">genetic stratification</td><td>division of society based on genetic attributes</td><td class="arabic">تقسيم جيني</td><td class="synonyms">genetic hierarchy, bio-caste, genomic inequality</td></tr>
+          <tr><td class="arabic-term">stewardship</td><td>responsible management of something entrusted</td><td class="arabic">الإشراف المسؤول</td><td class="synonyms">custodianship, guardianship, responsible care</td></tr>
+          <tr><td class="arabic-term">moratorium</td><td>temporary prohibition</td><td class="arabic">تجميد / وقف مؤقت</td><td class="synonyms">suspension, ban, freeze</td></tr>
+          <tr><td class="arabic-term">fear-mongering</td><td>spreading exaggerated fears</td><td class="arabic">إثارة الخوف</td><td class="synonyms">alarmism, scaremongering, panic-inducing rhetoric</td></tr>
+          <tr><td class="arabic-term">threshold</td><td>point of entry or beginning</td><td class="arabic">عتبة / نقطة انطلاق</td><td class="synonyms">brink, verge, dawn</td></tr>
+        </tbody>
+      </table>
+    <hr>
+    <p style="text-align: center; color: #4f46e5; font-weight: 500;">✨ C1 Level · Bioethics & Science Policy ✨</p>
+</div>
+
+<script>
+    // Correct answers for passage 20 (Genetic Engineering Ethics)
+    const correctAnswers = {
+        q1: 'c',
+        q2: 'b',
+        q3: 'b',
+        q4: 'b',
+        q5: 'b',
+        q6: 'a'
+    };
+
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (c) The ethical, social, and governance challenges posed by gene-editing technologies.';
+                break;
+            case 2: answerText = 'The correct answer is (b) Somatic edits affect only the individual, while germline edits are heritable and affect future generations.';
+                break;
+            case 3: answerText = 'The correct answer is (b) a frightening possibility or threat.';
+                break;
+            case 4: answerText = 'The correct answer is (b) He Jiankui\'s announcement that he had created gene-edited babies.';
+                break;
+            case 5: answerText = 'The correct answer is (b) Regulatory approaches vary across nations, and frameworks are still evolving.';
+                break;
+            case 6: answerText = 'The correct answer is (a) Gene therapies may be accessible only to the wealthy, exacerbating health disparities.';
+                break;
+            default: answerText = 'Correct answer displayed.';
+        }
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+
+    // Radio button instant feedback
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;
+            const selectedValue = this.value;
+            const correct = correctAnswers[questionId];
+
+            const feedbackId = 'feedback' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+
+            if (selectedValue === correct) {
+                feedback.textContent = '✅ Correct! Well reasoned.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Re-read the passage and try again.';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+</script>
+</body>
+</html>
