@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading · C1 – Passage 8: Pollution (Advanced)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #e0e7ff;
+            color: #1e293b;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #4f46e5;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #a5b4fc;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #4338ca;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #a5b4fc;
+            padding-bottom: 0.5rem;
+        }
+        .passage-text {
+            font-size: 1.2rem;
+            background: #f5f3ff;
+            padding: 2rem;
+            border-radius: 28px;
+            border: 1px solid #c7d2fe;
+            margin-bottom: 3rem;
+            line-height: 1.9;
+        }
+        .questions-section {
+            background: #e0e7ff;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #a5b4fc;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(79, 70, 229, 0.1);
+            border-left: 10px solid #818cf8;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #4f46e5;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #e0e7ff;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #4f46e5;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+        }
+        .option input[type="radio"]:checked {
+            background: #4f46e5;
+            border: 2px solid #4f46e5;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            display: none;
+        }
+        .feedback.correct {
+            color: #166534;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #991b1b;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #4f46e5;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #cbd5e1;
+            margin: 2rem 0;
+            font-size: 1rem;
+        }
+        th {
+            background: #4f46e5;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+            padding: 1rem 1.2rem;
+        }
+        td {
+            padding: 1rem 1.2rem;
+            border-bottom: 1px solid #cbd5e1;
+            vertical-align: top;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #1e293b;
+        }
+        .synonyms {
+            font-size: 0.95rem;
+            color: #4b5563;
+            margin-top: 4px;
+            font-style: italic;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #a5b4fc, transparent);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📘 STEP Reading · C1</h1>
+    <div class="sub-title">Passage 8 (Advanced) · The Many Faces of Pollution</div>
+
+    <h2>🌍 A Planet Under Siege: Understanding Pollution’s Multifaceted Threat</h2>
+
+    <div class="passage-text">
+        <p>Pollution, in its myriad forms, constitutes one of the most pervasive and complex challenges confronting humanity. While often narrowly associated with smog-choked cities, pollution encompasses a spectrum of contaminants that infiltrate air, water, soil, and even the most remote ecosystems. The consequences extend far beyond environmental degradation, exacting a staggering toll on public health, economic productivity, and social equity. As industrialization and consumption patterns intensify, the imperative to address pollution has become inseparable from broader goals of sustainable development.</p>
+        <p>Air pollution remains the most visible and deadly manifestation. The World Health Organization estimates that ambient and household air pollution together claim approximately seven million premature deaths annually, predominantly in low- and middle-income countries. Particulate matter (PM2.5), nitrogen oxides, and ground-level ozone—byproducts of fossil fuel combustion, industrial processes, and biomass burning—penetrate deep into respiratory and cardiovascular systems, contributing to lung cancer, stroke, and chronic respiratory diseases. The disproportionate burden borne by marginalized communities highlights the intersection of environmental and social justice.</p>
+        <p>Water pollution, equally insidious, threatens freshwater and marine ecosystems. Agricultural runoff laden with nitrogen and phosphorus fertilizers triggers eutrophication, creating oxygen-depleted “dead zones” in coastal waters. Industrial discharges introduce heavy metals such as mercury and lead into waterways, bioaccumulating in food chains with devastating effects on aquatic life and human consumers. Meanwhile, plastic pollution has reached crisis proportions, with an estimated 11 million metric tons entering oceans annually. Microplastics—fragments less than five millimeters—now permeate the global environment, detected in Arctic ice, deep-sea sediments, and even human blood and placentas.</p>
+        <p>Soil contamination, often overlooked, compromises food security and ecosystem health. Persistent organic pollutants (POPs), pesticides, and industrial solvents can remain in soils for decades, leaching into groundwater and accumulating in crops. The legacy of industrial activity and improper waste disposal has created thousands of contaminated sites worldwide, many of which remain unremediated.</p>
+        <p>Addressing this polycrisis demands systemic solutions. Technological innovations—from scrubbers and catalytic converters to advanced wastewater treatment—have proven effective but are insufficient without regulatory frameworks and economic incentives. The transition to circular economies, which prioritize waste reduction, reuse, and recycling, offers a paradigm shift away from the linear “take-make-dispose” model. Furthermore, international cooperation is essential, as pollutants traverse borders with impunity. The Montreal Protocol’s success in phasing out ozone-depleting substances demonstrates that concerted global action can yield tangible results. Ultimately, combating pollution requires not only technical and policy interventions but also a fundamental reimagining of humanity’s relationship with the natural world.</p>
+    </div>
+
+    <div class="questions-section">
+        <h3>📘 C1 STEP‑style questions – Passage 8</h3>
+
+        <!-- Question 1: Main idea -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>What is the primary focus of the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) A detailed comparison of pollution control technologies</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) The economic costs of pollution in developed countries</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) The multiple types of pollution, their impacts, and potential solutions</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) A historical overview of environmental legislation</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'c')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 2: Detail (health impact of air pollution) -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>According to the passage, what is a primary health consequence of air pollution?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) Skin allergies</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) Respiratory and cardiovascular diseases leading to premature mortality</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) Hearing loss</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) Nutritional deficiencies</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 3: Vocabulary in context -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>As used in paragraph 3, the word "<em>insidious</em>" most nearly means:</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) obvious and easily noticeable</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) gradual, subtle, and harmful in a way that is not immediately apparent</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) beneficial to the environment</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) easily reversible</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 4: Detail (plastic pollution) -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>What alarming trend regarding plastic pollution is mentioned in the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) Plastic production has decreased globally</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) Microplastics have been detected in human blood and placentas</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) Plastic waste is fully biodegradable within years</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) Only oceans are affected by plastic pollution</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 5: Inference (solutions) -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>What can be inferred about the author’s view on solving pollution?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) Technological solutions alone are sufficient</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) A combination of technology, regulation, circular economy principles, and international cooperation is necessary</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) Pollution is an inevitable consequence of development and cannot be addressed</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) Only individual behavioral changes matter</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 6: Detail (success story) -->
+        <div class="question-item" id="q6">
+            <span class="q-num">6</span> <strong>What example does the passage provide as evidence that international cooperation can succeed?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q6" value="a"> (a) The Kyoto Protocol on climate change</label>
+                <label class="option"><input type="radio" name="q6" value="b"> (b) The Montreal Protocol on ozone-depleting substances</label>
+                <label class="option"><input type="radio" name="q6" value="c"> (c) The Paris Agreement on carbon emissions</label>
+                <label class="option"><input type="radio" name="q6" value="d"> (d) The Basel Convention on hazardous waste</label>
+            </div>
+            <div class="feedback" id="feedback6"></div>
+            <button class="show-answer-btn" onclick="showAnswer(6, 'b')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- Advanced vocabulary table with 12 words -->
+    <h3 style="font-size: 1.8rem; font-weight: 500; margin: 2rem 0 1rem;">🔤 Advanced Vocabulary (12 words) · with Synonyms</h3>
+    <table>
+        <thead>
+            <tr><th>Word</th><th>Meaning (English)</th><th>🇸🇦 Arabic</th><th>Synonyms (3)</th></tr>
+        </thead>
+        <tbody>
+            <tr><td class="arabic-term">myriad</td><td>a countless or extremely great number</td><td class="arabic">عدد لا يحصى / لا تعد ولا تحصى</td><td class="synonyms">countless, innumerable, manifold</td></tr>
+            <tr><td class="arabic-term">pervasive</td><td>spreading widely throughout an area or group</td><td class="arabic">منتشر / شامل</td><td class="synonyms">ubiquitous, omnipresent, prevalent</td></tr>
+            <tr><td class="arabic-term">ambient</td><td>surrounding; relating to the immediate environment</td><td class="arabic">محيط / خارجي</td><td class="synonyms">surrounding, atmospheric, environmental</td></tr>
+            <tr><td class="arabic-term">disproportionate</td><td>too large or too small in comparison to something else</td><td class="arabic">غير متناسب</td><td class="synonyms">unequal, unbalanced, inordinate</td></tr>
+            <tr><td class="arabic-term">eutrophication</td><td>excessive richness of nutrients in water, causing algal blooms</td><td class="arabic">تخثث / زيادة المغذيات</td><td class="synonyms">nutrient enrichment, algal bloom formation, oxygen depletion</td></tr>
+            <tr><td class="arabic-term">bioaccumulating</td><td>building up in living organisms over time</td><td class="arabic">تراكم حيوي</td><td class="synonyms">biomagnifying, concentrating, accumulating in tissues</td></tr>
+            <tr><td class="arabic-term">permeate</td><td>spread throughout; penetrate</td><td class="arabic">ينتشر في / يتخلل</td><td class="synonyms">infiltrate, pervade, saturate</td></tr>
+            <tr><td class="arabic-term">remediated</td><td>restored to a clean or uncontaminated state</td><td class="arabic">معالجة / إصلاح بيئي</td><td class="synonyms">cleaned up, restored, decontaminated</td></tr>
+            <tr><td class="arabic-term">polycrisis</td><td>a cluster of interrelated global crises</td><td class="arabic">أزمة متعددة الأوجه</td><td class="synonyms">multiple crises, interconnected emergencies, systemic breakdown</td></tr>
+            <tr><td class="arabic-term">circular economies</td><td>economic systems aimed at eliminating waste and continual use of resources</td><td class="arabic">اقتصاد دائري</td><td class="synonyms">closed-loop systems, regenerative economy, zero-waste model</td></tr>
+            <tr><td class="arabic-term">paradigm shift</td><td>a fundamental change in approach or underlying assumptions</td><td class="arabic">تحول نموذجي / نقلة نوعية</td><td class="synonyms">fundamental change, sea change, transformation</td></tr>
+            <tr><td class="arabic-term">with impunity</td><td>without facing punishment or consequences</td><td class="arabic">بدون عقاب / دون رادع</td><td class="synonyms">unpunished, freely, unchecked</td></tr>
+        </tbody>
+     </table>
+    <hr>
+    <p style="text-align: center; color: #4f46e5; font-weight: 500;">✨ C1 Level · Environmental Literacy & Critical Analysis ✨</p>
+</div>
+
+<script>
+    // Correct answers for passage 8 (Pollution)
+    const correctAnswers = {
+        q1: 'c',
+        q2: 'b',
+        q3: 'b',
+        q4: 'b',
+        q5: 'b',
+        q6: 'b'
+    };
+
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (c) The multiple types of pollution, their impacts, and potential solutions.';
+                break;
+            case 2: answerText = 'The correct answer is (b) Respiratory and cardiovascular diseases leading to premature mortality.';
+                break;
+            case 3: answerText = 'The correct answer is (b) gradual, subtle, and harmful in a way that is not immediately apparent.';
+                break;
+            case 4: answerText = 'The correct answer is (b) Microplastics have been detected in human blood and placentas.';
+                break;
+            case 5: answerText = 'The correct answer is (b) A combination of technology, regulation, circular economy principles, and international cooperation is necessary.';
+                break;
+            case 6: answerText = 'The correct answer is (b) The Montreal Protocol on ozone-depleting substances.';
+                break;
+            default: answerText = 'Correct answer displayed.';
+        }
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+
+    // Radio button instant feedback
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;
+            const selectedValue = this.value;
+            const correct = correctAnswers[questionId];
+
+            const feedbackId = 'feedback' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+
+            if (selectedValue === correct) {
+                feedback.textContent = '✅ Correct! Well reasoned.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Re-read the passage and try again.';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+</script>
+</body>
+</html>
