@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading · C1 – Passage 7: Energy Charts (Advanced)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #e0e7ff;
+            color: #1e293b;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #4f46e5;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #a5b4fc;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #4338ca;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #a5b4fc;
+            padding-bottom: 0.5rem;
+        }
+        .passage-text {
+            font-size: 1.2rem;
+            background: #f5f3ff;
+            padding: 2rem;
+            border-radius: 28px;
+            border: 1px solid #c7d2fe;
+            margin-bottom: 2rem;
+            line-height: 1.9;
+        }
+        .charts-container {
+            background: #ffffff;
+            border-radius: 28px;
+            border: 1px solid #c7d2fe;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        .chart-card {
+            flex: 1;
+            min-width: 280px;
+            background: #fefce8;
+            border-radius: 24px;
+            padding: 1.2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .chart-card h3 {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #4f46e5;
+        }
+        .bar-chart {
+            margin: 1rem 0;
+        }
+        .bar-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            gap: 0.5rem;
+        }
+        .bar-label {
+            width: 110px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .bar-fill {
+            background: #4f46e5;
+            height: 32px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 8px;
+            color: white;
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+        .bar-fill.solar { background: #f59e0b; }
+        .bar-fill.wind { background: #10b981; }
+        .bar-fill.hydro { background: #3b82f6; }
+        .bar-fill.gas { background: #ef4444; }
+        .bar-fill.coal { background: #6b7280; }
+        .bar-fill.nuclear { background: #8b5cf6; }
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            justify-content: center;
+        }
+        .legend span {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+            margin-right: 4px;
+        }
+        .note {
+            font-size: 0.8rem;
+            text-align: center;
+            color: #4b5563;
+            margin-top: 0.5rem;
+        }
+        .questions-section {
+            background: #e0e7ff;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2rem 0 2rem 0;
+            border: 2px solid #a5b4fc;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(79, 70, 229, 0.1);
+            border-left: 10px solid #818cf8;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #4f46e5;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #e0e7ff;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #4f46e5;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+        }
+        .option input[type="radio"]:checked {
+            background: #4f46e5;
+            border: 2px solid #4f46e5;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            display: none;
+        }
+        .feedback.correct {
+            color: #166534;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #991b1b;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #4f46e5;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #cbd5e1;
+            margin: 2rem 0;
+            font-size: 1rem;
+        }
+        th {
+            background: #4f46e5;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+            padding: 1rem 1.2rem;
+        }
+        td {
+            padding: 1rem 1.2rem;
+            border-bottom: 1px solid #cbd5e1;
+            vertical-align: top;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #1e293b;
+        }
+        .synonyms {
+            font-size: 0.95rem;
+            color: #4b5563;
+            margin-top: 4px;
+            font-style: italic;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #a5b4fc, transparent);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📘 STEP Reading · C1</h1>
+    <div class="sub-title">Passage 7 (Advanced) · Data in Context: The Global Energy Transition</div>
+
+    <h2>📊 Reading with Charts: Shifting Energy Landscapes</h2>
+
+    <div class="passage-text">
+        <p>The global energy mix is undergoing a profound transformation, driven by climate policy, technological innovation, and shifting economics. While fossil fuels still dominate, renewables have grown at an unprecedented rate over the past decade. This transition is not uniform across regions, and the pace varies significantly. The charts below illustrate recent trends in electricity generation and capacity additions, providing a data-driven perspective on the energy transition.</p>
+        <p>Chart 1 shows the percentage share of global electricity generation by source in 2023. Coal and natural gas together still account for the majority, but wind and solar combined have surpassed hydropower. Chart 2 presents the growth of renewable electricity generation from 2010 to 2023, indexed to 2010 levels. The data reveals that solar and wind have experienced exponential growth, whereas hydropower has increased modestly. These trends underscore the accelerating shift toward low-carbon sources, though challenges remain in grid integration, storage, and infrastructure investment.</p>
+    </div>
+
+    <div class="charts-container">
+        <!-- Chart 1: Global Electricity Generation Share 2023 -->
+        <div class="chart-card">
+            <h3>📊 Global Electricity Generation by Source (2023)</h3>
+            <div class="bar-chart">
+                <div class="bar-item">
+                    <div class="bar-label">Coal</div>
+                    <div class="bar-fill" style="width: 35%; background: #6b7280;">35%</div>
+                </div>
+                <div class="bar-item">
+                    <div class="bar-label">Natural Gas</div>
+                    <div class="bar-fill" style="width: 23%; background: #ef4444;">23%</div>
+                </div>
+                <div class="bar-item">
+                    <div class="bar-label">Hydropower</div>
+                    <div class="bar-fill" style="width: 14%; background: #3b82f6;">14%</div>
+                </div>
+                <div class="bar-item">
+                    <div class="bar-label">Wind</div>
+                    <div class="bar-fill wind" style="width: 10%;">10%</div>
+                </div>
+                <div class="bar-item">
+                    <div class="bar-label">Solar</div>
+                    <div class="bar-fill solar" style="width: 8%;">8%</div>
+                </div>
+                <div class="bar-item">
+                    <div class="bar-label">Nuclear</div>
+                    <div class="bar-fill nuclear" style="width: 9%;">9%</div>
+                </div>
+                <div class="bar-item">
+                    <div class="bar-label">Other Renewables</div>
+                    <div class="bar-fill" style="width: 1%; background: #a3e635;">1%</div>
+                </div>
+            </div>
+            <div class="legend">
+                <span style="background: #6b7280;"></span> Coal
+                <span style="background: #ef4444;"></span> Gas
+                <span style="background: #3b82f6;"></span> Hydro
+                <span style="background: #10b981;"></span> Wind
+                <span style="background: #f59e0b;"></span> Solar
+                <span style="background: #8b5cf6;"></span> Nuclear
+            </div>
+            <div class="note">Source: International Energy Agency (IEA) 2024 estimates</div>
+        </div>
+
+        <!-- Chart 2: Growth of Renewables (2010 = 100) -->
+        <div class="chart-card">
+            <h3>📈 Growth of Renewables (2010 = 100)</h3>
+            <div class="bar-chart">
+                <div class="bar-item">
+                    <div class="bar-label">Solar PV</div>
+                    <div class="bar-fill solar" style="width: 280%;">+1800%</div>
+                </div>
+                <div class="bar-item">
+                    <div class="bar-label">Wind</div>
+                    <div class="bar-fill wind" style="width: 130%;">+300%</div>
+                </div>
+                <div class="bar-item">
+                    <div class="bar-label">Hydropower</div>
+                    <div class="bar-fill" style="width: 115%; background: #3b82f6;">+15%</div>
+                </div>
+                <div class="bar-item">
+                    <div class="bar-label">Total Renewables</div>
+                    <div class="bar-fill" style="width: 165%; background: #4f46e5;">+65%</div>
+                </div>
+            </div>
+            <div class="note">Index: 2010 = 100 (Solar PV generation increased 18x)</div>
+        </div>
+    </div>
+
+    <div class="questions-section">
+        <h3>📘 C1 STEP‑style questions – Passage 7 (with charts)</h3>
+
+        <!-- Q1: Main idea -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>What is the primary purpose of the passage and charts?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) To argue that fossil fuels should be completely eliminated</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) To present data on global electricity generation and the rapid growth of renewable sources</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) To compare nuclear energy with renewable sources</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) To criticize government energy policies</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Q2: Chart interpretation (share of electricity) -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>According to Chart 1, which two sources combined account for more than half of global electricity generation?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) Wind and solar</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) Coal and natural gas</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) Hydropower and nuclear</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) Natural gas and nuclear</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Q3: Chart interpretation (growth) -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>Based on Chart 2, which renewable technology experienced the highest percentage growth since 2010?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) Hydropower</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) Wind</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) Solar PV</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) Total Renewables</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'c')">🔍 Show answer</button>
+        </div>
+
+        <!-- Q4: Detail from text -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>What challenge does the text mention regarding the energy transition?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) Lack of solar panels</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) Grid integration, storage, and infrastructure investment</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) Declining demand for electricity</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) Opposition from environmental groups</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Q5: Inference from combined data -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>What can be inferred from both charts together?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) Renewables now supply over 50% of global electricity</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) Although solar and wind are growing rapidly, they still represent a relatively small share of total generation</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) Hydropower is declining globally</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) Nuclear power has been replaced by solar</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Q6: Vocabulary in context -->
+        <div class="question-item" id="q6">
+            <span class="q-num">6</span> <strong>In the passage, the word "<em>unprecedented</em>" most nearly means:</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q6" value="a"> (a) without prior example; never seen before</label>
+                <label class="option"><input type="radio" name="q6" value="b"> (b) slow and predictable</label>
+                <label class="option"><input type="radio" name="q6" value="c"> (c) limited to certain regions</label>
+                <label class="option"><input type="radio" name="q6" value="d"> (d) unsustainable</label>
+            </div>
+            <div class="feedback" id="feedback6"></div>
+            <button class="show-answer-btn" onclick="showAnswer(6, 'a')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- Advanced vocabulary table with 12 terms -->
+    <h3 style="font-size: 1.8rem; font-weight: 500; margin: 2rem 0 1rem;">🔤 Advanced Vocabulary (12 words) · with Synonyms</h3>
+    <table>
+        <thead>
+            <tr><th>Word</th><th>Meaning (English)</th><th>🇸🇦 Arabic</th><th>Synonyms (3)</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>unprecedented</td><td>never done or known before</td><td class="arabic">غير مسبوق</td><td class="synonyms">record-breaking, unparalleled, extraordinary</td></tr>
+            <tr><td>transition</td><td>process of change from one state to another</td><td class="arabic">تحول / انتقال</td><td class="synonyms">shift, transformation, evolution</td></tr>
+            <tr><td>exponential growth</td><td>increase where rate accelerates rapidly</td><td class="arabic">نمو أسي / متسارع</td><td class="synonyms">explosive increase, rapid escalation, geometric progression</td></tr>
+            <tr><td>grid integration</td><td>connecting energy sources to electrical network</td><td class="arabic">دمج في الشبكة الكهربائية</td><td class="synonyms">network incorporation, system interconnection, transmission linkage</td></tr>
+            <tr><td>modestly</td><td>in a limited or moderate way</td><td class="arabic">بتواضع / بشكل محدود</td><td class="synonyms">slightly, marginally, unremarkably</td></tr>
+            <tr><td>underscore</td><td>to emphasize or highlight</td><td class="arabic">يؤكد / يبرز</td><td class="synonyms">accentuate, stress, underline</td></tr>
+            <tr><td>fossil fuels</td><td>energy sources like coal, oil, natural gas</td><td class="arabic">وقود أحفوري</td><td class="synonyms">hydrocarbons, carbon-based fuels, traditional energy sources</td></tr>
+            <tr><td>infrastructure</td><td>basic physical systems and structures</td><td class="arabic">بنية تحتية</td><td class="synonyms">facilities, framework, foundational systems</td></tr>
+            <tr><td>capacity additions</td><td>new power generation installations</td><td class="arabic">إضافات قدرة / استيعاب</td><td class="synonyms">new builds, installed capacity, generation expansion</td></tr>
+            <tr><td>low-carbon sources</td><td>energy with minimal CO2 emissions</td><td class="arabic">مصادر منخفضة الكربون</td><td class="synonyms">clean energy, green power, renewable alternatives</td></tr>
+            <tr><td>data-driven perspective</td><td>view based on empirical evidence</td><td class="arabic">منظور قائم على البيانات</td><td class="synonyms">evidence-based viewpoint, analytical approach, quantitative lens</td></tr>
+            <tr><td>accelerating shift</td><td>speeding up of change</td><td class="arabic">تحول متسارع</td><td class="synonyms">quickening transition, hastened move, rapid redirection</td></tr>
+        </tbody>
+    </table>
+    <hr>
+    <p style="text-align: center; color: #4f46e5; font-weight: 500;">✨ C1 Level · Data Literacy & Critical Interpretation ✨</p>
+</div>
+
+<script>
+    // Correct answers for Passage 7 (charts)
+    const correctAnswers = {
+        q1: 'b',
+        q2: 'b',
+        q3: 'c',
+        q4: 'b',
+        q5: 'b',
+        q6: 'a'
+    };
+
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (b) To present data on global electricity generation and the rapid growth of renewable sources.';
+                break;
+            case 2: answerText = 'The correct answer is (b) Coal and natural gas together account for 35% + 23% = 58%.';
+                break;
+            case 3: answerText = 'The correct answer is (c) Solar PV grew by over 1800%, far more than wind (300%).';
+                break;
+            case 4: answerText = 'The correct answer is (b) Grid integration, storage, and infrastructure investment.';
+                break;
+            case 5: answerText = 'The correct answer is (b) Although solar and wind are growing rapidly, they still represent a relatively small share of total generation (18% combined vs. 58% for coal and gas).';
+                break;
+            case 6: answerText = 'The correct answer is (a) without prior example; never seen before.';
+                break;
+            default: answerText = 'Correct answer displayed.';
+        }
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+
+    // Radio button instant feedback
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;
+            const selectedValue = this.value;
+            const correct = correctAnswers[questionId];
+
+            const feedbackId = 'feedback' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+
+            if (selectedValue === correct) {
+                feedback.textContent = '✅ Correct! Well interpreted.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Review the charts and passage.';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+</script>
+</body>
+</html>
