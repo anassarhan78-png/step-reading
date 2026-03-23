@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading · C1 – Passage 6: Comparative Reading (Advanced)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #e0e7ff;
+            color: #1e293b;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #4f46e5;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #a5b4fc;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #4338ca;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        .passage-grid {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .passage-card {
+            flex: 1;
+            min-width: 280px;
+            background: #f5f3ff;
+            border-radius: 28px;
+            border: 1px solid #c7d2fe;
+            padding: 1.8rem;
+            line-height: 1.9;
+        }
+        .passage-card h2 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 1.2rem;
+            border-bottom: 2px dashed #a5b4fc;
+            padding-bottom: 0.5rem;
+        }
+        .passage-text {
+            font-size: 1.1rem;
+        }
+        .questions-section {
+            background: #e0e7ff;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2rem 0 2rem 0;
+            border: 2px solid #a5b4fc;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(79, 70, 229, 0.1);
+            border-left: 10px solid #818cf8;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #4f46e5;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #e0e7ff;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #4f46e5;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+        }
+        .option input[type="radio"]:checked {
+            background: #4f46e5;
+            border: 2px solid #4f46e5;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            display: none;
+        }
+        .feedback.correct {
+            color: #166534;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #991b1b;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #4f46e5;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #cbd5e1;
+            margin: 2rem 0;
+            font-size: 1rem;
+        }
+        th {
+            background: #4f46e5;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+            padding: 1rem 1.2rem;
+        }
+        td {
+            padding: 1rem 1.2rem;
+            border-bottom: 1px solid #cbd5e1;
+            vertical-align: top;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #1e293b;
+        }
+        .synonyms {
+            font-size: 0.95rem;
+            color: #4b5563;
+            margin-top: 4px;
+            font-style: italic;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #a5b4fc, transparent);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📘 STEP Reading · C1</h1>
+    <div class="sub-title">Passage 6 (Advanced) · Comparative Analysis: Two Perspectives on the Future of Work</div>
+
+    <div class="passage-grid">
+        <!-- Passage A: Remote Work -->
+        <div class="passage-card">
+            <h2>📡 Passage A: The Remote Revolution</h2>
+            <div class="passage-text">
+                <p>The COVID-19 pandemic acted as an unprecedented catalyst, accelerating a shift to remote work that many had predicted for decades. What was once a fringe arrangement has become mainstream, with millions of professionals now operating from home offices, coffee shops, and co-working spaces. Proponents argue that this transition represents a fundamental recalibration of the work-life balance, granting employees autonomy over their schedules and eliminating the drudgery of commutes. Studies indicate that remote workers often report higher job satisfaction and, in many sectors, comparable or even increased productivity.</p>
+                <p>From an organizational perspective, remote work unlocks access to a global talent pool, untethered by geographic constraints. It reduces overhead costs associated with physical office spaces and can contribute to sustainability goals by lowering carbon emissions from transportation. However, critics caution that remote work can blur boundaries, leading to burnout and the erosion of informal mentorship opportunities. The lack of face-to-face interaction may weaken corporate culture and hinder collaboration, particularly for creative industries that thrive on spontaneous exchange. Nonetheless, the remote paradigm appears irreversible, with hybrid models emerging as a dominant compromise.</p>
+            </div>
+        </div>
+
+        <!-- Passage B: Return to Office -->
+        <div class="passage-card">
+            <h2>🏢 Passage B: The Case for Co‑location</h2>
+            <div class="passage-text">
+                <p>While remote work gained prominence during the pandemic, a counter-movement championing the return to physical offices has gained momentum. Advocates of in-person work emphasize the intangible benefits of co-location: serendipitous interactions, spontaneous brainstorming, and the organic transfer of tacit knowledge that occurs in shared spaces. They argue that innovation often emerges not from scheduled meetings but from unplanned encounters—a watercooler conversation or a chance hallway discussion—that are virtually impossible to replicate in distributed teams.</p>
+                <p>Moreover, organizations that mandate office presence cite stronger cultural cohesion, clearer communication, and more effective onboarding for junior employees who learn by observing senior colleagues. Critics of remote work point to the decline of urban centers and the loss of civic vitality as side effects. They also highlight equity concerns: remote work often favors those with dedicated home office space while marginalizing workers in cramped housing. For many CEOs, the office remains the anchor of corporate identity. The debate, therefore, is not merely logistical but strikes at the heart of what work means in the twenty-first century.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="questions-section">
+        <h3>📘 C1 STEP‑style questions – Comparative Analysis</h3>
+
+        <!-- Q1: Main idea of Passage A -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>What is the primary focus of Passage A?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) The disadvantages of working from home</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) The benefits, challenges, and lasting impact of remote work</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) A comparison of office spaces in different countries</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) The role of technology in reducing commute times</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Q2: Main idea of Passage B -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>What is the primary focus of Passage B?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) The environmental benefits of remote work</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) The advantages of co-location and the value of physical office presence</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) A historical overview of office design</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) The negative impact of technology on workplace culture</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Q3: Similarity between passages -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>Which idea is presented in BOTH passages?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) Remote work completely eliminates productivity concerns</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) The pandemic permanently changed work arrangements</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) Physical offices are the only way to build corporate culture</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) Both acknowledge that work models are undergoing significant transformation</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'd')">🔍 Show answer</button>
+        </div>
+
+        <!-- Q4: Difference in perspective -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>How do the two passages differ in their view of informal workplace interactions?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) Passage A considers them essential; Passage B considers them outdated</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) Passage B emphasizes them as critical for innovation, while Passage A acknowledges the loss of mentorship and spontaneous exchange as a drawback</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) Both passages argue that informal interactions are irrelevant</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) Passage A claims they are easily replicated online; Passage B denies this</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Q5: Inference about the debate -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>What can be inferred from both passages about the future of work?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) All companies will adopt fully remote models</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) The debate is settled in favor of office work</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) Hybrid models are likely to become a common compromise</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) Technology will make all forms of work obsolete</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'c')">🔍 Show answer</button>
+        </div>
+
+        <!-- Q6: Vocabulary in context (from Passage B) -->
+        <div class="question-item" id="q6">
+            <span class="q-num">6</span> <strong>In Passage B, the phrase "<em>tacit knowledge</em>" most likely refers to:</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q6" value="a"> (a) Information that is written in official documents</label>
+                <label class="option"><input type="radio" name="q6" value="b"> (b) Unspoken, experience-based understanding that is difficult to articulate</label>
+                <label class="option"><input type="radio" name="q6" value="c"> (c) Formal training provided by organizations</label>
+                <label class="option"><input type="radio" name="q6" value="d"> (d) Digital data stored in company databases</label>
+            </div>
+            <div class="feedback" id="feedback6"></div>
+            <button class="show-answer-btn" onclick="showAnswer(6, 'b')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- Advanced vocabulary table with 12 comparative terms, each with 3 synonyms -->
+    <h3 style="font-size: 1.8rem; font-weight: 500; margin: 2rem 0 1rem;">🔤 Advanced Vocabulary (12 words) · with Synonyms</h3>
+    <table>
+        <thead>
+            <tr><th>Word</th><th>Meaning (English)</th><th>🇸🇦 Arabic</th><th>Synonyms (3)</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>catalyst</td><td>something that precipitates a change</td><td class="arabic">محفز</td><td class="synonyms">trigger, impetus, stimulus</td></tr>
+            <tr><td>fringe arrangement</td><td>marginal or unconventional practice</td><td class="arabic">ترتيب هامشي</td><td class="synonyms">niche practice, periphery, edge case</td></tr>
+            <tr><td>recalibration</td><td>adjustment to new conditions</td><td class="arabic">إعادة معايرة</td><td class="synonyms">readjustment, realignment, fine-tuning</td></tr>
+            <tr><td>drudgery</td><td>tedious, monotonous work</td><td class="arabic">عمل شاق / روتين ممل</td><td class="synonyms">toil, grind, chore</td></tr>
+            <tr><td>untethered</td><td>freed from restrictions</td><td class="arabic">غير مقيد / حر</td><td class="synonyms">unrestricted, liberated, unfettered</td></tr>
+            <tr><td>co-location</td><td>being situated together physically</td><td class="arabic">التواجد في موقع مشترك</td><td class="synonyms">physical proximity, face-to-face setting, shared space</td></tr>
+            <tr><td>serendipitous interactions</td><td>unplanned beneficial encounters</td><td class="arabic">تفاعلات عفوية مثمرة</td><td class="synonyms">chance meetings, accidental encounters, fortuitous exchanges</td></tr>
+            <tr><td>tacit knowledge</td><td>intuitive, unspoken expertise</td><td class="arabic">معرفة ضمنية / غير معلنة</td><td class="synonyms">implicit understanding, unarticulated know-how, experiential wisdom</td></tr>
+            <tr><td>onboarding</td><td>process of integrating new employees</td><td class="arabic">دمج الموظفين الجدد</td><td class="synonyms">induction, orientation, integration</td></tr>
+            <tr><td>civic vitality</td><td>liveliness of urban community life</td><td class="arabic">حيوية مدنية</td><td class="synonyms">urban dynamism, community energy, public engagement</td></tr>
+            <tr><td>hybrid models</td><td>combination of remote and in-office work</td><td class="arabic">نماذج هجينة</td><td class="synonyms">blended approach, mixed arrangement, flexible frameworks</td></tr>
+            <tr><td>anchor of corporate identity</td><td>central element defining a company's character</td><td class="arabic">مرتكز الهوية المؤسسية</td><td class="synonyms">foundation, cornerstone, defining pillar</td></tr>
+        </tbody>
+    </table>
+    <hr>
+    <p style="text-align: center; color: #4f46e5; font-weight: 500;">✨ C1 Level · Comparative Reading & Critical Analysis ✨</p>
+</div>
+
+<script>
+    // Correct answers for the comparative passages (Passage A, B, and comparison)
+    const correctAnswers = {
+        q1: 'b',
+        q2: 'b',
+        q3: 'd',
+        q4: 'b',
+        q5: 'c',
+        q6: 'b'
+    };
+
+    // Function used by "Show answer" buttons
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (b) The benefits, challenges, and lasting impact of remote work.'; break;
+            case 2: answerText = 'The correct answer is (b) The advantages of co-location and the value of physical office presence.'; break;
+            case 3: answerText = 'The correct answer is (d) Both acknowledge that work models are undergoing significant transformation.'; break;
+            case 4: answerText = 'The correct answer is (b) Passage B emphasizes them as critical for innovation, while Passage A acknowledges the loss of mentorship and spontaneous exchange as a drawback.'; break;
+            case 5: answerText = 'The correct answer is (c) Hybrid models are likely to become a common compromise.'; break;
+            case 6: answerText = 'The correct answer is (b) Unspoken, experience-based understanding that is difficult to articulate.'; break;
+            default: answerText = 'Correct answer displayed.';
+        }
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+
+    // Radio button instant feedback
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;
+            const selectedValue = this.value;
+            const correct = correctAnswers[questionId];
+
+            const feedbackId = 'feedback' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+
+            if (selectedValue === correct) {
+                feedback.textContent = '✅ Correct! Well analyzed.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Compare the passages again.';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+</script>
+</body>
+</html>
