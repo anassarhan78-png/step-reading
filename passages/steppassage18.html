@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading · C1 – Passage 18: The Renaissance (Advanced)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #e0e7ff;
+            color: #1e293b;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #4f46e5;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #a5b4fc;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #4338ca;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #a5b4fc;
+            padding-bottom: 0.5rem;
+        }
+        .passage-text {
+            font-size: 1.2rem;
+            background: #f5f3ff;
+            padding: 2rem;
+            border-radius: 28px;
+            border: 1px solid #c7d2fe;
+            margin-bottom: 3rem;
+            line-height: 1.9;
+        }
+        .questions-section {
+            background: #e0e7ff;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #a5b4fc;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(79, 70, 229, 0.1);
+            border-left: 10px solid #818cf8;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #4f46e5;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #e0e7ff;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #4f46e5;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+        }
+        .option input[type="radio"]:checked {
+            background: #4f46e5;
+            border: 2px solid #4f46e5;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            display: none;
+        }
+        .feedback.correct {
+            color: #166534;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #991b1b;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #4f46e5;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #cbd5e1;
+            margin: 2rem 0;
+            font-size: 1rem;
+        }
+        th {
+            background: #4f46e5;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+            padding: 1rem 1.2rem;
+        }
+        td {
+            padding: 1rem 1.2rem;
+            border-bottom: 1px solid #cbd5e1;
+            vertical-align: top;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #1e293b;
+        }
+        .synonyms {
+            font-size: 0.95rem;
+            color: #4b5563;
+            margin-top: 4px;
+            font-style: italic;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #a5b4fc, transparent);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📘 STEP Reading · C1</h1>
+    <div class="sub-title">Passage 18 (Advanced) · The Renaissance: Rebirth of Human Potential</div>
+
+    <h2>🎨 A Revolution in Thought: Art, Science, and the Modern Self</h2>
+
+    <div class="passage-text">
+        <p>The Renaissance, spanning roughly the 14th to 17th centuries, represents one of history’s most transformative periods. Originating in the city-states of Italy—Florence, Venice, and Rome—this cultural movement marked a decisive break from the medieval worldview, rekindling interest in classical Greek and Roman learning while fostering unprecedented innovation in art, science, politics, and philosophy. The term "renaissance," meaning rebirth, captures the era’s dual impulse: a return to antiquity and a leap toward modernity.</p>
+        <p>Central to Renaissance thought was humanism—an intellectual movement that emphasized human agency, potential, and achievement. Unlike medieval scholasticism, which focused predominantly on theological questions, humanists like Petrarch and Erasmus championed the study of humanities: rhetoric, history, poetry, and moral philosophy. They believed that education should cultivate virtuous citizens capable of contributing to civic life. This shift laid the groundwork for individualism, encouraging figures such as Leonardo da Vinci and Michelangelo to celebrate the human form and intellect with unprecedented realism and emotional depth.</p>
+        <p>Artistic innovation flourished under the patronage of wealthy families like the Medici, who commissioned works that blended religious themes with classical motifs. Advances in linear perspective, pioneered by Brunelleschi and Alberti, allowed painters to create three-dimensional space on flat surfaces. Leonardo’s "Mona Lisa" and Michelangelo’s Sistine Chapel ceiling exemplify the era’s technical mastery and psychological complexity. Meanwhile, the invention of the printing press by Gutenberg around 1450 revolutionized the dissemination of knowledge, enabling ideas to spread rapidly across Europe and challenging established authorities.</p>
+        <p>Science underwent a parallel transformation. Copernicus challenged the geocentric model, proposing a heliocentric universe that displaced Earth from the cosmic center. Galileo’s telescopic observations provided empirical evidence for this new cosmology, provoking conflict with the Catholic Church. Vesalius’s meticulous dissections corrected centuries-old anatomical errors, establishing the foundations of modern medicine. These breakthroughs reflected a new empirical spirit—a willingness to question received wisdom and investigate nature directly.</p>
+        <p>Politically, the Renaissance gave rise to modern statecraft. Niccolò Machiavelli’s "The Prince" offered a pragmatic, sometimes ruthless, analysis of political power, divorcing governance from religious morality. This realism presaged the secularization of politics. The era also witnessed the rise of diplomacy and the consolidation of centralized states, setting patterns that would dominate European politics for centuries.</p>
+        <p>The Renaissance’s legacy is indelible. It fostered the intellectual currents that culminated in the Scientific Revolution and the Enlightenment. Its celebration of individual potential underpins modern concepts of human rights and self-determination. Yet the period was also marked by contradictions: unprecedented artistic achievement coexisted with social hierarchy, religious intolerance, and colonial expansion. To understand the Renaissance is to grapple with both its luminous achievements and its enduring complexities.</p>
+    </div>
+
+    <div class="questions-section">
+        <h3>📘 C1 STEP‑style questions – Passage 18</h3>
+
+        <!-- Question 1: Main idea -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>What is the primary focus of the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) A detailed biography of Leonardo da Vinci</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) The political history of Italian city-states</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) The cultural, artistic, scientific, and political transformations of the Renaissance</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) A comparison of Renaissance art and medieval art</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'c')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 2: Detail (humanism) -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>According to the passage, what was the central emphasis of Renaissance humanism?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) Rejection of classical learning</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) Human agency, potential, and the cultivation of virtuous citizens</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) Exclusive focus on theological questions</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) The establishment of absolute monarchy</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 3: Vocabulary in context -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>As used in paragraph 2, the word "<em>cultivate</em>" most nearly means:</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) destroy or uproot</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) ignore or neglect</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) develop or nurture</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) suppress or control</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'c')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 4: Detail (artistic innovation) -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>What artistic innovation mentioned contributed to realistic representation in painting?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) The use of gold leaf backgrounds</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) Linear perspective</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) Fresco technique</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) Oil painting on canvas</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 5: Inference (legacy) -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>What can be inferred about the Renaissance's impact on later intellectual movements?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) It had no lasting influence beyond the 17th century</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) It fostered intellectual currents that contributed to the Scientific Revolution and Enlightenment</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) It was entirely rejected by later thinkers</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) Its influence was limited to art and architecture</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 6: Detail (scientific developments) -->
+        <div class="question-item" id="q6">
+            <span class="q-num">6</span> <strong>Which scientific advancement from the Renaissance is mentioned in the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q6" value="a"> (a) The discovery of penicillin</label>
+                <label class="option"><input type="radio" name="q6" value="b"> (b) Copernicus's heliocentric theory and Vesalius's anatomical dissections</label>
+                <label class="option"><input type="radio" name="q6" value="c"> (c) The invention of the microscope</label>
+                <label class="option"><input type="radio" name="q6" value="d"> (d) The theory of relativity</label>
+            </div>
+            <div class="feedback" id="feedback6"></div>
+            <button class="show-answer-btn" onclick="showAnswer(6, 'b')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- Advanced vocabulary table with 12 words -->
+    <h3 style="font-size: 1.8rem; font-weight: 500; margin: 2rem 0 1rem;">🔤 Advanced Vocabulary (12 words) · with Synonyms</h3>
+     <table>
+        <thead>
+             <tr><th>Word</th><th>Meaning (English)</th><th>🇸🇦 Arabic</th><th>Synonyms (3)</th></tr>
+        </thead>
+        <tbody>
+             <tr><td class="arabic-term">decisive break</td><td>clear departure from the past</td><td class="arabic">انقطاع حاسم</td><td class="synonyms">radical shift, definitive rupture, fundamental change</td></tr>
+             <tr><td class="arabic-term">antiquity</td><td>ancient times, especially classical Greece and Rome</td><td class="arabic">العصور القديمة</td><td class="synonyms">ancient world, classical past, olden days</td></tr>
+             <tr><td class="arabic-term">humanism</td><td>intellectual movement emphasizing human potential</td><td class="arabic">الإنسانية / النزعة الإنسانية</td><td class="synonyms">human-centered philosophy, secular learning, classical revival</td></tr>
+             <tr><td class="arabic-term">agency</td><td>capacity to act independently</td><td class="arabic">فاعلية / قدرة على العمل</td><td class="synonyms">autonomy, initiative, self-determination</td></tr>
+             <tr><td class="arabic-term">patronage</td><td>financial support from wealthy individuals or institutions</td><td class="arabic">رعاية / دعم مالي</td><td class="synonyms">sponsorship, backing, commissioning</td></tr>
+             <tr><td class="arabic-term">linear perspective</td><td>artistic technique for representing depth</td><td class="arabic">منظور خطي</td><td class="synonyms">geometric perspective, spatial realism, vanishing-point technique</td></tr>
+             <tr><td class="arabic-term">dissemination</td><td>spreading widely</td><td class="arabic">نشر / توزيع</td><td class="synonyms">distribution, diffusion, propagation</td></tr>
+             <tr><td class="arabic-term">geocentric model</td><td>Earth-centered universe theory</td><td class="arabic">النموذج الأرضي المركز</td><td class="synonyms">Ptolemaic system, Earth-centered cosmology</td></tr>
+             <tr><td class="arabic-term">empirical spirit</td><td>approach based on observation and experiment</td><td class="arabic">الروح التجريبية</td><td class="synonyms">experimental attitude, evidence-based approach, scientific curiosity</td></tr>
+             <tr><td class="arabic-term">statecraft</td><td>skill in governing</td><td class="arabic">فن الحكم / السياسة</td><td class="synonyms">governance, statesmanship, political strategy</td></tr>
+             <tr><td class="arabic-term">secularization</td><td>separation from religious influence</td><td class="arabic">علمنة / إبعاد الدين</td><td class="synonyms">desacralization, laicization, worldly turn</td></tr>
+             <tr><td class="arabic-term">indelible</td><td>unable to be forgotten or removed</td><td class="arabic">لا يُمحى / دائم</td><td class="synonyms">permanent, enduring, ineradicable</td></tr>
+        </tbody>
+     </table>
+    <hr>
+    <p style="text-align: center; color: #4f46e5; font-weight: 500;">✨ C1 Level · Historical Analysis & Cultural Literacy ✨</p>
+</div>
+
+<script>
+    // Correct answers for passage 18 (Renaissance)
+    const correctAnswers = {
+        q1: 'c',
+        q2: 'b',
+        q3: 'c',
+        q4: 'b',
+        q5: 'b',
+        q6: 'b'
+    };
+
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (c) The cultural, artistic, scientific, and political transformations of the Renaissance.';
+                break;
+            case 2: answerText = 'The correct answer is (b) Human agency, potential, and the cultivation of virtuous citizens.';
+                break;
+            case 3: answerText = 'The correct answer is (c) develop or nurture.';
+                break;
+            case 4: answerText = 'The correct answer is (b) Linear perspective.';
+                break;
+            case 5: answerText = 'The correct answer is (b) It fostered intellectual currents that contributed to the Scientific Revolution and Enlightenment.';
+                break;
+            case 6: answerText = 'The correct answer is (b) Copernicus\'s heliocentric theory and Vesalius\'s anatomical dissections.';
+                break;
+            default: answerText = 'Correct answer displayed.';
+        }
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+
+    // Radio button instant feedback
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;
+            const selectedValue = this.value;
+            const correct = correctAnswers[questionId];
+
+            const feedbackId = 'feedback' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+
+            if (selectedValue === correct) {
+                feedback.textContent = '✅ Correct! Well reasoned.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Re-read the passage and try again.';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+</script>
+</body>
+</html>
