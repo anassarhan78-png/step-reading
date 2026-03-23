@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading · C1 – Passage 11: The Psychology of Memory (Advanced)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #e0e7ff;
+            color: #1e293b;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #4f46e5;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #a5b4fc;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #4338ca;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #a5b4fc;
+            padding-bottom: 0.5rem;
+        }
+        .passage-text {
+            font-size: 1.2rem;
+            background: #f5f3ff;
+            padding: 2rem;
+            border-radius: 28px;
+            border: 1px solid #c7d2fe;
+            margin-bottom: 3rem;
+            line-height: 1.9;
+        }
+        .questions-section {
+            background: #e0e7ff;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #a5b4fc;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(79, 70, 229, 0.1);
+            border-left: 10px solid #818cf8;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #4f46e5;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #e0e7ff;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #4f46e5;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+        }
+        .option input[type="radio"]:checked {
+            background: #4f46e5;
+            border: 2px solid #4f46e5;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            display: none;
+        }
+        .feedback.correct {
+            color: #166534;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #991b1b;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #4f46e5;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #cbd5e1;
+            margin: 2rem 0;
+            font-size: 1rem;
+        }
+        th {
+            background: #4f46e5;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+            padding: 1rem 1.2rem;
+        }
+        td {
+            padding: 1rem 1.2rem;
+            border-bottom: 1px solid #cbd5e1;
+            vertical-align: top;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #1e293b;
+        }
+        .synonyms {
+            font-size: 0.95rem;
+            color: #4b5563;
+            margin-top: 4px;
+            font-style: italic;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #a5b4fc, transparent);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📘 STEP Reading · C1</h1>
+    <div class="sub-title">Passage 11 (Advanced) · The Architecture of Memory</div>
+
+    <h2>🧠 Constructing the Past: The Psychology of Memory</h2>
+
+    <div class="passage-text">
+        <p>Memory is not a static archive but a dynamic, reconstructive process. For centuries, philosophers and scientists have grappled with the nature of remembrance, yet modern cognitive neuroscience has revealed that our memories are far more malleable than previously assumed. Rather than functioning like a video camera, the brain encodes, stores, and retrieves information through intricate networks that are susceptible to distortion, suggestion, and decay. Understanding this architecture has profound implications not only for education and clinical psychology but also for legal systems that rely on eyewitness testimony.</p>
+        <p>The classic model of memory distinguishes three stages: encoding, storage, and retrieval. Encoding transforms sensory input into a neural representation; storage maintains that information over time; and retrieval accesses it when needed. However, this linear model belies the complexity of the process. Memories are not stored in single locations but are distributed across neural circuits. The hippocampus, long recognized as crucial for forming new explicit memories, acts as a kind of indexing system, while the neocortex gradually consolidates these traces into stable, long-term representations. This consolidation process, once thought to be permanent, is now understood to be ongoing; each time a memory is retrieved, it enters a state of vulnerability, allowing new information to be integrated before it is reconsolidated.</p>
+        <p>This reconstructive nature explains many well-documented memory phenomena. The misinformation effect, demonstrated by psychologist Elizabeth Loftus, shows that post-event information can alter a person's recollection of the original event. Leading questions, suggestive language, or exposure to inaccurate details can seamlessly implant false memories, often with the same subjective certainty as authentic ones. Similarly, the phenomenon of déjà vu—the eerie feeling of having experienced a situation before—may arise from mismatches between familiarity signals and contextual recollection, highlighting the fallibility of our cognitive systems.</p>
+        <p>Beyond individual memory, collective memory shapes cultural identity and historical understanding. Societies construct narratives about their past that are continually reshaped by present concerns. Commemorative practices, monuments, and educational curricula actively select and amplify certain events while marginalizing others. This social dimension of memory underscores that remembering is not merely an individual act but a negotiated, often contested, process.</p>
+        <p>Recent advances in neurotechnology raise ethical questions about memory manipulation. Pharmaceutical interventions that blunt traumatic memories are being explored for post-traumatic stress disorder, while brain-computer interfaces promise to augment recall. Yet these possibilities invite caution: if memory defines our sense of self, then tampering with it touches the core of personal identity. As we deepen our understanding of memory's architecture, we must also consider the responsibility that comes with the power to reshape it.</p>
+    </div>
+
+    <div class="questions-section">
+        <h3>📘 C1 STEP‑style questions – Passage 11</h3>
+
+        <!-- Question 1: Main idea -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>What is the primary focus of the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) A technical explanation of the hippocampus</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) The ethical issues surrounding memory manipulation</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) The dynamic, reconstructive nature of memory and its implications</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) A comparison of individual and collective memory</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'c')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 2: Detail (stages of memory) -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>According to the passage, what are the three classic stages of memory?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) Recognition, recall, and relearning</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) Encoding, storage, and retrieval</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) Sensory, short-term, and long-term</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) Consolidation, reconsolidation, and decay</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 3: Vocabulary in context -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>As used in paragraph 2, the word "<em>belies</em>" most nearly means:</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) confirms or supports</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) hides or contradicts the true nature of something</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) simplifies unnecessarily</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) exaggerates the importance of</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 4: Detail (misinformation effect) -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>What does the misinformation effect demonstrate about memory?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) That memory is always accurate when it feels vivid</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) That post-event information can alter recollections, leading to false memories</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) That memories are stored in the hippocampus permanently</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) That déjà vu is a form of memory error</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 5: Inference (implications) -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>What can be inferred about the legal implications of memory research?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) Eyewitness testimony is always reliable and should be trusted</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) The malleability of memory raises concerns about the accuracy of eyewitness accounts</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) Courts should never allow any form of testimony</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) Memory research has no relevance to legal proceedings</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 6: Vocabulary in context -->
+        <div class="question-item" id="q6">
+            <span class="q-num">6</span> <strong>In the final paragraph, the phrase "<em>tampers with</em>" most likely means:</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q6" value="a"> (a) praises or celebrates</label>
+                <label class="option"><input type="radio" name="q6" value="b"> (b) interferes with or alters in a potentially harmful way</label>
+                <label class="option"><input type="radio" name="q6" value="c"> (c) ignores or disregards</label>
+                <label class="option"><input type="radio" name="q6" value="d"> (d) studies scientifically</label>
+            </div>
+            <div class="feedback" id="feedback6"></div>
+            <button class="show-answer-btn" onclick="showAnswer(6, 'b')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- Advanced vocabulary table with 12 words -->
+    <h3 style="font-size: 1.8rem; font-weight: 500; margin: 2rem 0 1rem;">🔤 Advanced Vocabulary (12 words) · with Synonyms</h3>
+    <table>
+        <thead>
+            <tr><th>Word</th><th>Meaning (English)</th><th>🇸🇦 Arabic</th><th>Synonyms (3)</th>            </tr>
+        </thead>
+        <tbody>
+            <tr><td>reconstructive</td><td>involving rebuilding or reassembling</td><td class="arabic">إعادة بناء / ترميمي</td><td class="synonyms">reassembled, reconstituted, pieced together</td></tr>
+            <tr><td>malleable</td><td>easily shaped or influenced</td><td class="arabic">قابل للتشكيل / مرن</td><td class="synonyms">pliable, adaptable, impressionable</td></tr>
+            <tr><td>encoding</td><td>converting information into a form that can be stored</td><td class="arabic">ترميز / تشفير</td><td class="synonyms">conversion, transformation, representation</td></tr>
+            <tr><td>consolidates</td><td>makes stronger or more stable</td><td class="arabic">يدعم / يقوي</td><td class="synonyms">strengthens, stabilizes, solidifies</td></tr>
+            <tr><td>reconsolidated</td><td>restored after being destabilized</td><td class="arabic">إعادة تثبيت / تجميع</td><td class="synonyms">restabilized, reestablished, reinforced</td></tr>
+            <tr><td>misinformation effect</td><td>memory distortion caused by misleading information</td><td class="arabic">تأثير المعلومات المضللة</td><td class="synonyms">post-event distortion, suggestion effect, false memory induction</td></tr>
+            <tr><td>fallibility</td><td>the tendency to make mistakes</td><td class="arabic">قابلية الخطأ</td><td class="synonyms">imperfection, unreliability, errancy</td></tr>
+            <tr><td>collective memory</td><td>shared pool of information held by a group</td><td class="arabic">ذاكرة جماعية</td><td class="synonyms">social memory, cultural memory, communal recollection</td></tr>
+            <tr><td>commemorative practices</td><td>rituals that honor past events</td><td class="arabic">ممارسات تذكارية</td><td class="synonyms">remembrance ceremonies, memorial activities, honoring traditions</td></tr>
+            <tr><td>blunt</td><td>reduce the intensity or impact of</td><td class="arabic">يخفف / يضعف</td><td class="synonyms">dampen, diminish, lessen</td></tr>
+            <tr><td>augment</td><td>increase or enhance</td><td class="arabic">يعزز / يوسع</td><td class="synonyms">enhance, boost, amplify</td></tr>
+            <tr><td>tampering</td><td>interfering improperly</td><td class="arabic">عبث / تدخل غير مشروع</td><td class="synonyms">meddling, interfering, altering</td></tr>
+        </tbody>
+     </table>
+    <hr>
+    <p style="text-align: center; color: #4f46e5; font-weight: 500;">✨ C1 Level · Cognitive Science & Critical Thinking ✨</p>
+</div>
+
+<script>
+    // Correct answers for passage 11 (Memory)
+    const correctAnswers = {
+        q1: 'c',
+        q2: 'b',
+        q3: 'b',
+        q4: 'b',
+        q5: 'b',
+        q6: 'b'
+    };
+
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (c) The dynamic, reconstructive nature of memory and its implications.';
+                break;
+            case 2: answerText = 'The correct answer is (b) Encoding, storage, and retrieval.';
+                break;
+            case 3: answerText = 'The correct answer is (b) hides or contradicts the true nature of something.';
+                break;
+            case 4: answerText = 'The correct answer is (b) That post-event information can alter recollections, leading to false memories.';
+                break;
+            case 5: answerText = 'The correct answer is (b) The malleability of memory raises concerns about the accuracy of eyewitness accounts.';
+                break;
+            case 6: answerText = 'The correct answer is (b) interferes with or alters in a potentially harmful way.';
+                break;
+            default: answerText = 'Correct answer displayed.';
+        }
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+
+    // Radio button instant feedback
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;
+            const selectedValue = this.value;
+            const correct = correctAnswers[questionId];
+
+            const feedbackId = 'feedback' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+
+            if (selectedValue === correct) {
+                feedback.textContent = '✅ Correct! Well reasoned.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Re-read the passage and try again.';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+</script>
+</body>
+</html>
