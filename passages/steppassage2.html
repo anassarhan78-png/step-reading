@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP Reading · C1 – Passage 2: The Psychology of Decision-Making (Advanced)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #e0e7ff;
+            color: #1e293b;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #4f46e5;
+            letter-spacing: -0.5px;
+            border-left: 8px solid #a5b4fc;
+            padding-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #4338ca;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #a5b4fc;
+            padding-bottom: 0.5rem;
+        }
+        .passage-text {
+            font-size: 1.2rem;
+            background: #f5f3ff;
+            padding: 2rem;
+            border-radius: 28px;
+            border: 1px solid #c7d2fe;
+            margin-bottom: 3rem;
+            line-height: 1.9;
+        }
+        .questions-section {
+            background: #e0e7ff;
+            border-radius: 40px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin: 2.5rem 0 2rem 0;
+            border: 2px solid #a5b4fc;
+        }
+        .questions-section h3 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3730a3;
+            margin-bottom: 1.8rem;
+        }
+        .question-item {
+            background: white;
+            border-radius: 60px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(79, 70, 229, 0.1);
+            border-left: 10px solid #818cf8;
+            font-size: 1.1rem;
+        }
+        .q-num {
+            display: inline-block;
+            background: #4f46e5;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            margin-right: 1rem;
+        }
+        .options {
+            margin: 1rem 0 0.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .option:hover {
+            background: #e0e7ff;
+        }
+        .option input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #4f46e5;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+        }
+        .option input[type="radio"]:checked {
+            background: #4f46e5;
+            border: 2px solid #4f46e5;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        .feedback {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            display: none;
+        }
+        .feedback.correct {
+            color: #166534;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #991b1b;
+            display: block;
+        }
+        .show-answer-btn {
+            margin-left: 2.5rem;
+            margin-top: 0.3rem;
+            background: none;
+            border: none;
+            color: #4f46e5;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #cbd5e1;
+            margin: 2rem 0;
+            font-size: 1rem;
+        }
+        th {
+            background: #4f46e5;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+            padding: 1rem 1.2rem;
+        }
+        td {
+            padding: 1rem 1.2rem;
+            border-bottom: 1px solid #cbd5e1;
+            vertical-align: top;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .arabic {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            direction: rtl;
+            font-size: 1.1rem;
+            color: #1e293b;
+        }
+        .synonyms {
+            font-size: 0.95rem;
+            color: #4b5563;
+            margin-top: 4px;
+            font-style: italic;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #a5b4fc, transparent);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📘 STEP Reading · C1</h1>
+    <div class="sub-title">Passage 2 (Advanced) · The Architecture of Choice: Decision-Making Under Complexity</div>
+
+    <h2>🧠 Beyond Instinct: The Complex Landscape of Human Decision-Making</h2>
+
+    <div class="passage-text">
+        <p>Decision-making is the invisible architecture of human progress. Whether in corporate boardrooms, medical emergencies, or everyday life, the mechanisms through which individuals arrive at choices shape outcomes of profound significance. Contemporary cognitive science posits that human judgment rarely follows the path of pure rationality once envisioned by classical economists. Instead, it is a dynamic interplay between two fundamental cognitive systems: the intuitive, rapid-fire System 1, and the deliberate, analytical System 2. This duality, while efficient under ideal conditions, often gives rise to systematic deviations from logical consistency — deviations known as cognitive biases.</p>
+
+        <p>System 1 operates automatically, with little sense of voluntary control. It enables us to detect hostility in a tone of voice or complete a familiar phrase without conscious effort. However, its speed comes at a cost: it is highly susceptible to heuristics — mental shortcuts that simplify complexity. For instance, the availability heuristic causes individuals to overestimate the probability of events that are emotionally charged or recently reported, skewing risk assessment. In contrast, System 2 allocates attention to effortful mental activities that demand reasoning, such as complex calculations or logical justification. Yet System 2 is notoriously indolent, often endorsing the intuitive conclusions of System 1 without rigorous scrutiny.</p>
+
+        <p>The result is a constellation of predictable cognitive biases that infiltrate high-stakes environments. Confirmation bias, for example, compels decision-makers to seek information that reaffirms pre-existing beliefs while dismissing contradictory evidence. Anchoring occurs when initial numerical values disproportionately influence final judgments — a phenomenon frequently exploited in negotiations and performance reviews. Overconfidence further compounds errors, leading executives and professionals to underestimate risks while overestimating their own expertise. In organizational contexts, groupthink can emerge when the desire for consensus overrides realistic appraisal of alternatives, culminating in catastrophic strategic blunders.</p>
+
+        <p>Despite these cognitive pitfalls, recent research emphasizes that decision quality can be cultivated. Metacognition — the capacity to reflect on one’s own thought processes — acts as a corrective mechanism. Structured decision protocols, such as pre-mortems (envisioning why a future project might fail) and red-team exercises, force deliberation and expose hidden assumptions. Moreover, fostering psychological safety within teams encourages dissenting perspectives, mitigating the uniformity that fuels groupthink. These strategies do not eradicate bias but create systematic friction against its unchecked influence.</p>
+
+        <p>In conclusion, the pursuit of optimal decisions is less about eliminating intuition and more about orchestrating a disciplined partnership between instinct and analysis. As the complexity of global systems intensifies — from climate policy to artificial intelligence governance — the capacity to navigate cognitive limitations becomes not merely a personal asset but a collective imperative. Understanding the architecture of choice equips us to design environments where better decisions emerge, not by accident, but by design.</p>
+    </div>
+
+    <div class="questions-section">
+        <h3>📘 C1 STEP‑style questions – Passage 2</h3>
+
+        <!-- Question 1: Main idea -->
+        <div class="question-item" id="q1">
+            <span class="q-num">1</span> <strong>What is the primary focus of the passage?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> (a) The superiority of intuitive decision-making over analytical reasoning</label>
+                <label class="option"><input type="radio" name="q1" value="b"> (b) The dual cognitive systems, inherent biases, and strategies to improve decision-making</label>
+                <label class="option"><input type="radio" name="q1" value="c"> (c) A historical overview of classical economic theories on rationality</label>
+                <label class="option"><input type="radio" name="q1" value="d"> (d) The impact of artificial intelligence on human judgment</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+            <button class="show-answer-btn" onclick="showAnswer(1, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 2: Detail (cognitive biases) -->
+        <div class="question-item" id="q2">
+            <span class="q-num">2</span> <strong>According to the passage, which cognitive bias involves giving disproportionate weight to initial numerical information?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> (a) Confirmation bias</label>
+                <label class="option"><input type="radio" name="q2" value="b"> (b) Availability heuristic</label>
+                <label class="option"><input type="radio" name="q2" value="c"> (c) Anchoring</label>
+                <label class="option"><input type="radio" name="q2" value="d"> (d) Overconfidence</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+            <button class="show-answer-btn" onclick="showAnswer(2, 'c')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 3: Vocabulary in context -->
+        <div class="question-item" id="q3">
+            <span class="q-num">3</span> <strong>As used in paragraph 3, the term "<em>groupthink</em>" most likely refers to:</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> (a) A collaborative brainstorming technique that encourages innovation</label>
+                <label class="option"><input type="radio" name="q3" value="b"> (b) A mode of thinking where the desire for harmony overrides critical evaluation, leading to poor decisions</label>
+                <label class="option"><input type="radio" name="q3" value="c"> (c) A statistical method used to aggregate collective judgments</label>
+                <label class="option"><input type="radio" name="q3" value="d"> (d) An individual’s tendency to rely exclusively on analytical reasoning</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+            <button class="show-answer-btn" onclick="showAnswer(3, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 4: Detail (strategies to improve decision quality) -->
+        <div class="question-item" id="q4">
+            <span class="q-num">4</span> <strong>Which of the following strategies is mentioned in the text as a way to counteract cognitive biases?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> (a) Eliminating all intuitive judgments</label>
+                <label class="option"><input type="radio" name="q4" value="b"> (b) Implementing structured protocols such as pre-mortems and red-team exercises</label>
+                <label class="option"><input type="radio" name="q4" value="c"> (c) Relying exclusively on System 1 thinking to accelerate decisions</label>
+                <label class="option"><input type="radio" name="q4" value="d"> (d) Avoiding any form of team discussion to prevent conflict</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+            <button class="show-answer-btn" onclick="showAnswer(4, 'b')">🔍 Show answer</button>
+        </div>
+
+        <!-- Question 5: Inference -->
+        <div class="question-item" id="q5">
+            <span class="q-num">5</span> <strong>What can be reasonably inferred from the final paragraph about the author’s view on decision-making in complex global systems?</strong>
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> (a) Intuition should be completely replaced by algorithmic models.</label>
+                <label class="option"><input type="radio" name="q5" value="b"> (b) Understanding cognitive limitations is essential for designing systems that foster better collective choices.</label>
+                <label class="option"><input type="radio" name="q5" value="c"> (c) Complexity makes high-quality decision-making unattainable.</label>
+                <label class="option"><input type="radio" name="q5" value="d"> (d) Individual decision skills are irrelevant compared to institutional rules.</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+            <button class="show-answer-btn" onclick="showAnswer(5, 'b')">🔍 Show answer</button>
+        </div>
+    </div>
+
+    <!-- Advanced vocabulary table with 15 words, each with 3 synonyms -->
+    <h3 style="font-size: 1.8rem; font-weight: 500; margin: 2rem 0 1rem;">🔤 Advanced Vocabulary (15 words) · with Synonyms</h3>
+    <table>
+        <thead>
+            <tr><th>Word</th><th>Meaning (English)</th><th>🇸🇦 Arabic</th><th>Synonyms (3)</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>cognitive architecture</td><td>the underlying structure of mental processes</td><td class="arabic">البنية المعرفية</td><td class="synonyms">mental framework, thought structure, neural scaffolding</td></tr>
+            <tr><td>dual-process theory</td><td>model distinguishing intuitive vs. analytical thinking</td><td class="arabic">نظرية العمليتين المزدوجتين</td><td class="synonyms">two-system model, parallel processing framework, dichotomy of thought</td></tr>
+            <tr><td>heuristics</td><td>mental shortcuts for quick judgments</td><td class="arabic">الاستدلال / الاختصارات الذهنية</td><td class="synonyms">rules of thumb, cognitive shortcuts, approximative strategies</td></tr>
+            <tr><td>systematic deviations</td><td>predictable patterns of error</td><td class="arabic">انحرافات منهجية</td><td class="synonyms">consistent biases, regular distortions, patterned errors</td></tr>
+            <tr><td>availability heuristic</td><td>overestimating likelihood based on immediate examples</td><td class="arabic">الاستدلال بالتوفر</td><td class="synonyms">recency bias, ease-of-recall effect, salience shortcut</td></tr>
+            <tr><td>indolent</td><td>lazy; disinclined to exertion</td><td class="arabic">كسول / متراخٍ</td><td class="synonyms">inactive, sluggish, effortless-avoiding</td></tr>
+            <tr><td>confirmation bias</td><td>seeking evidence that supports existing beliefs</td><td class="arabic">تحيز التأكيد</td><td class="synonyms">selective perception, belief persistence, congruence bias</td></tr>
+            <tr><td>anchoring</td><td>over-reliance on initial reference point</td><td class="arabic">التثبيت / الإرساء</td><td class="synonyms">focalism, reference-point bias, initial-value effect</td></tr>
+            <tr><td>overconfidence</td><td>unwarranted faith in one's own judgment</td><td class="arabic">الثقة المفرطة</td><td class="synonyms">hubris, illusory superiority, miscalibrated certainty</td></tr>
+            <tr><td>groupthink</td><td>consensus-driven flawed decision-making</td><td class="arabic">التفكير الجماعي</td><td class="synonyms">collective conformity, herd mentality, unanimity pressure</td></tr>
+            <tr><td>metacognition</td><td>awareness and regulation of one's own thinking</td><td class="arabic">ما وراء المعرفة</td><td class="synonyms">self-reflection, cognitive monitoring, introspective oversight</td></tr>
+            <tr><td>pre-mortem</td><td>imagining future failure to identify risks beforehand</td><td class="arabic">تشريح ما قبل الوفاة (استباقي)</td><td class="synonyms">prospective hindsight, risk pre-assessment, failure simulation</td></tr>
+            <tr><td>psychological safety</td><td>climate where candor is encouraged without fear</td><td class="arabic">الأمان النفسي</td><td class="synonyms">interpersonal trust, openness climate, fear-free expression</td></tr>
+            <tr><td>orchestrating</td><td>skillfully arranging or managing</td><td class="arabic">تنسيق / قيادة ماهرة</td><td class="synonyms">coordinating, choreographing, masterminding</td></tr>
+            <tr><td>collective imperative</td><td>a mandatory necessity for a group or society</td><td class="arabic">ضرورة جماعية</td><td class="synonyms">shared obligation, societal must, common necessity</td></tr>
+        </tbody>
+    </table>
+    <hr>
+    <p style="text-align: center; color: #4f46e5; font-weight: 500;">✨ C1 Level · Critical Reading & Cognitive Vocabulary ✨</p>
+</div>
+
+<script>
+    // Correct answers for passage 2 (C1: Decision-Making)
+    const correctAnswers = {
+        q1: 'b',
+        q2: 'c',
+        q3: 'b',
+        q4: 'b',
+        q5: 'b'
+    };
+
+    // Function used by "Show answer" buttons
+    function showAnswer(questionNum, correctLetter) {
+        const feedback = document.getElementById('feedback' + questionNum);
+        let answerText = '';
+        switch(questionNum) {
+            case 1: answerText = 'The correct answer is (b) The dual cognitive systems, inherent biases, and strategies to improve decision-making.'; break;
+            case 2: answerText = 'The correct answer is (c) Anchoring — the phenomenon where initial numerical values disproportionately influence judgments.'; break;
+            case 3: answerText = 'The correct answer is (b) A mode of thinking where the desire for harmony overrides critical evaluation, leading to poor decisions.'; break;
+            case 4: answerText = 'The correct answer is (b) Implementing structured protocols such as pre-mortems and red-team exercises.'; break;
+            case 5: answerText = 'The correct answer is (b) Understanding cognitive limitations is essential for designing systems that foster better collective choices.'; break;
+            default: answerText = 'Correct answer displayed.';
+        }
+        feedback.textContent = '🔍 ' + answerText;
+        feedback.className = 'feedback correct';
+    }
+
+    // Radio button instant feedback
+    document.querySelectorAll('.option input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const questionItem = this.closest('.question-item');
+            const questionId = questionItem.id;       // "q1" to "q5"
+            const selectedValue = this.value;
+            const correct = correctAnswers[questionId];
+
+            const feedbackId = 'feedback' + questionId.substring(1); // "feedback1", etc.
+            const feedback = document.getElementById(feedbackId);
+
+            if (selectedValue === correct) {
+                feedback.textContent = '✅ Correct! Well reasoned.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = '❌ Not correct. Re-read the passage and try again.';
+                feedback.className = 'feedback incorrect';
+            }
+        });
+    });
+</script>
+</body>
+</html>
